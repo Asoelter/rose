@@ -1,10 +1,12 @@
 #include <SFML/Graphics.hpp>
-
+#include "MainCharacter.cpp"
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
 	sf::CircleShape shape(100.f);
 	shape.setFillColor(sf::Color::Green);
+	MainCharacter mainCharacter;
+	mainCharacter = MainCharacter();
 
 	while (window.isOpen())
 	{
@@ -16,7 +18,7 @@ int main()
 		}
 
 		window.clear();
-		window.draw(shape);
+		mainCharacter.drawCharacter(window);
 		window.display();
 	}
 

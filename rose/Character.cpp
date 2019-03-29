@@ -1,3 +1,4 @@
+#include "StateOfCharacter.h"
 class CharacterStats
 {
 	int hitPoints;
@@ -6,6 +7,7 @@ class CharacterStats
 	int magic;
 	int xPosition;
 	int yPosition;
+	StateOfCharacter characterState;
 
 public:
 	CharacterStats() {
@@ -15,6 +17,7 @@ public:
 		magic = 1;
 		xPosition = 0;
 		yPosition = 0;
+		characterState = idle;
 	}
 	CharacterStats(int hitPointAmount, int attackAmount, int speedAmount, int magicAmount, int xStartPosition, int yStartPosition) {
 		hitPoints = hitPointAmount;
@@ -23,6 +26,7 @@ public:
 		magic = magicAmount;
 		xPosition = xStartPosition;
 		yPosition = yStartPosition;
+		characterState = idle;
 	}
 
 #pragma region getProperties
@@ -49,6 +53,10 @@ public:
 	int getYPosition() {
 		return yPosition;
 	}
+
+	StateOfCharacter getCharacterState() {
+		return characterState;
+	}
 #pragma endregion
 
 #pragma region setProperties
@@ -74,6 +82,10 @@ public:
 
 	void setYPosition(int newYPosition) {
 		yPosition = newYPosition;
+	}
+
+	void setCharacterState(StateOfCharacter newCharacterState) {
+		characterState = newCharacterState;
 	}
 
 	void increaseHitPoints(int hitPointAmount) {
