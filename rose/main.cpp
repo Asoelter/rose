@@ -1,8 +1,8 @@
 #include <SFML/Graphics.hpp>
-#include "MainCharacter.cpp"
+#include "MainCharacter.h"
 using namespace sf;
 
-RenderWindow window(VideoMode(1000, 200), "SFML works!");
+RenderWindow window(VideoMode(1000, 600), "SFML works!");
 bool open = true;
 
 int main()
