@@ -139,13 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="event_function.cpp" />
-    <ClCompile Include="event_handler.cpp" />
+    <ClCompile Include="actor.cpp" />
+    <ClCompile Include="CharacterStats.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainCharacter.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="event_function.h" />
-    <ClInclude Include="event_handler.h" />
+    <Image Include="warrior spritesheet calciumtrice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="actor.h" />
+    <ClInclude Include="CharacterStats.h" />
+    <ClInclude Include="MainCharacter.h" />
+    <ClInclude Include="StateOfCharacter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
