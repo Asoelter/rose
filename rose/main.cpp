@@ -47,6 +47,10 @@ int main()
 		{
 			mainCharacter.mainCharacter.setCharacterState(attacking);
 		}
+		if (Keyboard::isKeyPressed(Keyboard::D))
+		{
+			mainCharacter.mainCharacter.setCharacterState(death);
+		}
 		sf::sleep(milliseconds(10));
 
 

@@ -6,6 +6,7 @@ MainCharacter::MainCharacter() {
 	previousCharacterState = idle;
 	animationPicNumber = 1;
 	separateImageToArrayOfTextures("warrior spritesheet calciumtrice.png");
+	dying = false;
 }
 #pragma endregion
 
@@ -29,6 +30,10 @@ void MainCharacter::separateImageToArrayOfTextures(String fileName) {
 
 void MainCharacter::drawCharacter(sf::RenderWindow& window) {
 	StateOfCharacter currentCharacterState = mainCharacter.getCharacterState();
+	if (currentCharacterState == death)
+	{
+		dying = true;
+	}
 	if (previousCharacterState != currentCharacterState)
 	{
 		previousCharacterState = currentCharacterState;
@@ -55,6 +60,13 @@ void MainCharacter::drawCharacter(sf::RenderWindow& window) {
 	}
 	if (animationPicNumber > 50)
 	{
-		animationPicNumber = 1;
+		if (dying)
+		{
+			exit(0);
+		}
+		else {
+			animationPicNumber = 1;
+		}
 	}
+
 }

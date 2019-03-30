@@ -10,12 +10,14 @@ class MainCharacter
 	StateOfCharacter previousCharacterState;
 	int animationPicNumber;
 	Texture textures[100];
+	bool dying;
 public:
 	CharacterStats mainCharacter;
 	MainCharacter();
 
 	void separateImageToArrayOfTextures(String fileName);
 	void drawCharacter(sf::RenderWindow& window);
+
 
 };
 
