@@ -1,7 +1,3 @@
-﻿  Character.cpp
-  MainCharacter.cpp
-c:\users\brandon\documents\github\eecs448rpg\rose\maincharacter.cpp(34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  main.cpp
+﻿  main.cpp
 c:\users\brandon\documents\github\eecs448rpg\rose\main.cpp(18): warning C4018: '>': signed/unsigned mismatch
-  Generating Code...
   rose.vcxproj -> C:\Users\Brandon\Documents\GitHub\EECS448RPG\Debug\rose.exe

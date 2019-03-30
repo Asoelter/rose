@@ -43,7 +43,7 @@ int main()
 			mainCharacter.mainCharacter.setCharacterState(walking);
 			mainCharacter.mainCharacter.increaseYPosition(4);
 		}
-		sf::sleep(milliseconds(5));
+		sf::sleep(milliseconds(10));
 
 
 
