@@ -43,6 +43,10 @@ int main()
 			mainCharacter.mainCharacter.setCharacterState(walking);
 			mainCharacter.mainCharacter.increaseYPosition(4);
 		}
+		if (Keyboard::isKeyPressed(Keyboard::A))
+		{
+			mainCharacter.mainCharacter.setCharacterState(attacking);
+		}
 		sf::sleep(milliseconds(10));
 
 
