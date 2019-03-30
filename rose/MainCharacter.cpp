@@ -1,14 +1,14 @@
 #include "Character.cpp"
 #include "StateOfCharacter.h"
 #include <SFML/Graphics.hpp>
+using namespace sf;
 class MainCharacter
 {
-	CharacterStats mainCharacter;
 	StateOfCharacter previousCharacterState;
 	int animationPicNumber;
 
-
 public:
+	CharacterStats mainCharacter;
 	MainCharacter() {
 		mainCharacter = CharacterStats();
 		previousCharacterState = idle;
@@ -23,23 +23,32 @@ public:
 			animationPicNumber = 1;
 		}
 		sf::Texture texture;
-
-		if (!texture.loadFromFile("warrior spritesheet calciumtrice.png", sf::IntRect((animationPicNumber-1)*32, (int(currentCharacterState) + 1) * 32, 32, 32)))
+		if (!texture.loadFromFile("warrior spritesheet calciumtrice.png", sf::IntRect((((animationPicNumber - (animationPicNumber%5))/5)-1)*32, (int(currentCharacterState) + 1) * 32, 32, 32)))
 		{
 			printf("Could not load main character image!");
 		}
-
 		sf::Sprite sprite;
 		sprite.setTexture(texture);
-		window.draw(sprite);
-
-		if (animationPicNumber>9)
-		{
-			animationPicNumber = 1;
+		sprite.setOrigin(16.f, 16.f);
+		if (!mainCharacter.getCharacterDirectionalOrientation()) {
+			sprite.scale(-1.f, 2.f);
 		}
 		else
 		{
+			sprite.scale(1.f, 2.f);
+		}
+		sprite.setPosition(mainCharacter.getXPosition(), mainCharacter.getYPosition());
+		window.draw(sprite);
+		if (currentCharacterState == 0)
+		{
 			animationPicNumber++;
+		}
+		else {
+			animationPicNumber += 5;
+		}
+		if (animationPicNumber>50)
+		{
+			animationPicNumber = 1;
 		}
 	}
 

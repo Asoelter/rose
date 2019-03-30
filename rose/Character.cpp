@@ -7,6 +7,7 @@ class CharacterStats
 	int magic;
 	int xPosition;
 	int yPosition;
+	bool facingRight;
 	StateOfCharacter characterState;
 
 public:
@@ -18,6 +19,7 @@ public:
 		xPosition = 0;
 		yPosition = 0;
 		characterState = idle;
+		facingRight = true;
 	}
 	CharacterStats(int hitPointAmount, int attackAmount, int speedAmount, int magicAmount, int xStartPosition, int yStartPosition) {
 		hitPoints = hitPointAmount;
@@ -27,6 +29,7 @@ public:
 		xPosition = xStartPosition;
 		yPosition = yStartPosition;
 		characterState = idle;
+		facingRight = true;
 	}
 
 #pragma region getProperties
@@ -57,6 +60,10 @@ public:
 	StateOfCharacter getCharacterState() {
 		return characterState;
 	}
+
+	bool getCharacterDirectionalOrientation() {
+		return facingRight;
+	}
 #pragma endregion
 
 #pragma region setProperties
@@ -86,6 +93,10 @@ public:
 
 	void setCharacterState(StateOfCharacter newCharacterState) {
 		characterState = newCharacterState;
+	}
+
+	void setCharacterDirectionalOrientation(bool faceRight) {
+		facingRight = faceRight;
 	}
 
 	void increaseHitPoints(int hitPointAmount) {
