@@ -1,11 +1,16 @@
 #include "actor.h"
+#include <iostream>
 
-
-Actor::Actor(sf::String&& fileName)
+Actor::Actor()
+	: textures_()
+	, sprite_()
+	, currentTextureIndex_(0)
 {
 }
 
 
-Actor::~Actor()
+void Actor::drawTo(sf::RenderWindow & window)
 {
+	sprite_.setTexture(textures_[currentTextureIndex_]);
+	window.draw(sprite_);
 }

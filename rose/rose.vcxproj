@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="actor.cpp" />
     <ClCompile Include="CharacterStats.cpp" />
+    <ClCompile Include="Cowboy.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainCharacter.cpp" />
   </ItemGroup>
@@ -150,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="actor.h" />
     <ClInclude Include="CharacterStats.h" />
+    <ClInclude Include="Cowboy.h" />
     <ClInclude Include="MainCharacter.h" />
     <ClInclude Include="StateOfCharacter.h" />
   </ItemGroup>

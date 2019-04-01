@@ -5,12 +5,14 @@
     <ClCompile Include="MainCharacter.cpp" />
     <ClCompile Include="CharacterStats.cpp" />
     <ClCompile Include="actor.cpp" />
+    <ClCompile Include="Cowboy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainCharacter.h" />
     <ClInclude Include="StateOfCharacter.h" />
     <ClInclude Include="CharacterStats.h" />
     <ClInclude Include="actor.h" />
+    <ClInclude Include="Cowboy.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="warrior spritesheet calciumtrice.png" />

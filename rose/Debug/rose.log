@@ -1,1 +1,3 @@
-﻿  rose.vcxproj -> C:\Users\soelt\Documents\Visual Studio 2017\Projects\rose\Debug\rose.exe
+﻿  Cowboy.cpp
+c:\users\soelt\documents\visual studio 2017\projects\rose\rose\cowboy.cpp(91): warning C4002: too many actual parameters for macro 'assert'
+  rose.vcxproj -> C:\Users\soelt\Documents\Visual Studio 2017\Projects\rose\Debug\rose.exe
