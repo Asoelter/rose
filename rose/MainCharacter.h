@@ -11,6 +11,8 @@ class MainCharacter
 	sf::Texture textures[100];
 	bool dying;
 	CharacterStats mainCharacter;
+	StateOfCharacter currentCharacterState;
+	StateOfCharacter nextCharacterState;
 
 public:
 	MainCharacter();

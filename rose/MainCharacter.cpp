@@ -30,15 +30,37 @@ void MainCharacter::separateImageToArrayOfTextures(sf::String fileName) {
 }
 
 void MainCharacter::drawCharacter(sf::RenderWindow& window) {
-	StateOfCharacter currentCharacterState = mainCharacter.getCharacterState();
+
+	if (!dying)
+	{
+		if (nextCharacterState != death)
+		{
+			if (nextCharacterState != attacking) {
+				if (nextCharacterState != walking)
+				{
+					nextCharacterState = mainCharacter.getCharacterState();
+				}
+				else {
+					if ((mainCharacter.getCharacterState() == attacking) || (mainCharacter.getCharacterState() == death))
+					{
+						nextCharacterState = mainCharacter.getCharacterState();
+					}
+				}
+			}
+			else {
+				if (mainCharacter.getCharacterState() == death)
+				{
+					nextCharacterState = death;
+				}
+			}
+		}
+	}
+	else {
+		currentCharacterState = death;
+	}
 	if (currentCharacterState == death)
 	{
 		dying = true;
-	}
-	if (previousCharacterState != currentCharacterState)
-	{
-		previousCharacterState = currentCharacterState;
-		animationPicNumber = 1;
 	}
 	sf::Sprite sprite;
 	sprite.setTexture(textures[((int(currentCharacterState) + 1)*10) + (((animationPicNumber - (animationPicNumber % 5)) / 5) - 1)]);
@@ -52,14 +74,14 @@ void MainCharacter::drawCharacter(sf::RenderWindow& window) {
 	}
 	sprite.setPosition(mainCharacter.getXPosition(), mainCharacter.getYPosition());
 	window.draw(sprite);
-	if (currentCharacterState == 0)
+	if (currentCharacterState != walking)
 	{
 		animationPicNumber++;
 	}
 	else {
 		animationPicNumber += 5;
 	}
-	if (animationPicNumber > 50)
+	if (animationPicNumber > 59)
 	{
 		if (dying)
 		{
@@ -67,6 +89,8 @@ void MainCharacter::drawCharacter(sf::RenderWindow& window) {
 		}
 		else {
 			animationPicNumber = 1;
+			currentCharacterState = nextCharacterState;
+			nextCharacterState = idle;
 		}
 	}
 
