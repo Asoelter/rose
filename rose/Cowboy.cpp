@@ -7,7 +7,7 @@ Cowboy::Cowboy()
 	: Actor()
 	, framesBetweenMoves_(0)
 {
-	loadTexture("18thCenturyAssets.png");
+	loadTexture("assets/18thCenturyAssets.png");
 	Actor::sprite_.setPosition({ 500.0f, 300.0f });
 }
 

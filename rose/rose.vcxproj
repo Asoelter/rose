@@ -144,6 +144,7 @@
     <ClCompile Include="Cowboy.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainCharacter.cpp" />
+    <ClCompile Include="tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="warrior spritesheet calciumtrice.png" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Cowboy.h" />
     <ClInclude Include="MainCharacter.h" />
     <ClInclude Include="StateOfCharacter.h" />
+    <ClInclude Include="tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
