@@ -1,0 +1,5 @@
+﻿  MainCharacter.cpp
+c:\users\soelt\documents\visual studio 2017\projects\rose\rose\maincharacter.cpp(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+  Generating Code...
+  rose.vcxproj -> C:\Users\soelt\Documents\Visual Studio 2017\Projects\rose\Debug\rose.exe
