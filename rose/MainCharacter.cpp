@@ -2,17 +2,16 @@
 
 #pragma region Constructors
 MainCharacter::MainCharacter() 
-	: mainCharacter()
-	, previousCharacterState(idle)
-	, animationPicNumber(1)
-	, dying(false)
+	: animationPicNumber(1)			//This should be added 
+	, dying(false)					//in the order they're 
+	, mainCharacter()				//declared in the .h file
 {
 	separateImageToArrayOfTextures("warrior spritesheet calciumtrice.png");
 }
 #pragma endregion
 
 
-void MainCharacter::separateImageToArrayOfTextures(sf::String fileName) {
+void MainCharacter::separateImageToArrayOfTextures(std::string fileName) {
 	sf::Texture texture;
 	for (int i = 0; i < 10; i++)
 	{

@@ -81,14 +81,14 @@ void Cowboy::drawTo(sf::RenderWindow & window)
 }
 
 
-void Cowboy::loadTexture(const sf::String && fileName)
+void Cowboy::loadTexture(const std::string && fileName)
 {
 	sf::Texture loader;
 	for (int i = 0; i < 12; ++i)
 	{
 		int leftEdge = 64 * i;
 		bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 0, 64, 60));
-		assert(success, "Unable to load texture file");
+		assert(success);
 		Actor::textures_.push_back(loader);
 	}
 }

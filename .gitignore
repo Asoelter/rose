@@ -1,4 +1,6 @@
 .vs/rose/v15/.suo
 .vs/rose/v15/Browse.VC.db
+rose/Makefile
 .gitignore
+**.o
 *.tlog

@@ -21,7 +21,7 @@ public:
 
 private:
 
-	void loadTexture(const sf::String&& fileName);
+	void loadTexture(const std::string&& fileName);
 
 	static constexpr int idleTextureIndex_ = 7;
 
