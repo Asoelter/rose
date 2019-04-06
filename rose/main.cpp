@@ -3,11 +3,13 @@
 #include "MainCharacter.h"
 #include "Cowboy.h"
 #include "tile.h"
+#include "skeleton.h"
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works");
 	Cowboy cowboy;
+	skeleton skeleton1;
 	//GrassyTile tile({ 500.0f, 300.0f });
 	GrassyTile tile({ 0.0f, 0.0f });
 
@@ -42,6 +44,8 @@ int main()
 		window.clear(sf::Color::Black);
 		tile.drawTo(window);
 		cowboy.drawTo(window);
+		skeleton1.drawTo(window);
+		skeleton1.idle();
 		window.display();
 	}
 }

@@ -7,6 +7,7 @@
     <ClCompile Include="actor.cpp" />
     <ClCompile Include="Cowboy.cpp" />
     <ClCompile Include="tile.cpp" />
+    <ClCompile Include="skeleton.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainCharacter.h" />
@@ -15,6 +16,7 @@
     <ClInclude Include="actor.h" />
     <ClInclude Include="Cowboy.h" />
     <ClInclude Include="tile.h" />
+    <ClInclude Include="skeleton.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="warrior spritesheet calciumtrice.png" />

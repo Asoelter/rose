@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{EA3D4F12-5779-4B6E-BF1C-AA039321AB04}</ProjectGuid>
     <RootNamespace>rose</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -144,6 +144,7 @@
     <ClCompile Include="Cowboy.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainCharacter.cpp" />
+    <ClCompile Include="skeleton.cpp" />
     <ClCompile Include="tile.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +155,7 @@
     <ClInclude Include="CharacterStats.h" />
     <ClInclude Include="Cowboy.h" />
     <ClInclude Include="MainCharacter.h" />
+    <ClInclude Include="skeleton.h" />
     <ClInclude Include="StateOfCharacter.h" />
     <ClInclude Include="tile.h" />
   </ItemGroup>
