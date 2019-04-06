@@ -8,7 +8,7 @@ class Actor
 {
 public:
 	Actor();
-	virtual ~Actor() = default;
+	virtual ~Actor()			= default;
 
 	virtual void moveUp()		= 0;
 	virtual void moveRight()	= 0;

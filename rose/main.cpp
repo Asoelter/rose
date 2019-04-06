@@ -3,12 +3,12 @@
 #include "MainCharacter.h"
 #include "Cowboy.h"
 #include "tile.h"
+#include <vector>
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works");
 	Cowboy cowboy;
-	//GrassyTile tile({ 500.0f, 300.0f });
 	GrassyTile tile({ 0.0f, 0.0f });
 
 	std::cout << tile.width() << std::endl;
