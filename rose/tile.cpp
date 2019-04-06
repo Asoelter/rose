@@ -1,6 +1,8 @@
 #include "tile.h"
 #include <cassert>
 
+#include <iostream>
+
 
 //--------------------------------------------------------Base Tile----------------------------------------------------------------
 
@@ -24,6 +26,14 @@ Tile::Tile(const std::string && fileName, const sf::Vector2f&& position)
 	sprite_.setPosition(std::move(position));
 }
 
+Tile::Tile(const Tile& other)
+	: texture_(other.texture_)
+{
+	sprite_.setTexture(texture_);
+	auto xPos = other.sprite_.getPosition().x;
+	auto yPos = other.sprite_.getPosition().y;
+	sprite_.setPosition({xPos, yPos});
+}
 
 void Tile::drawTo(sf::RenderWindow & window)
 {

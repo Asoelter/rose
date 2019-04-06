@@ -10,6 +10,8 @@ public:
 	explicit Tile(const std::string&  fileName, const sf::Vector2f&  position);
 	explicit Tile(const std::string&& fileName, const sf::Vector2f&& position);
 
+	Tile(const Tile& other);
+
 	virtual ~Tile() = default;
 
 	virtual void drawTo(sf::RenderWindow& window);
