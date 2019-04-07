@@ -7,7 +7,11 @@
     <ClCompile Include="actor.cpp" />
     <ClCompile Include="Cowboy.cpp" />
     <ClCompile Include="tile.cpp" />
+<<<<<<< Updated upstream
     <ClCompile Include="Skeleton.cpp" />
+=======
+    <ClCompile Include="link.cpp" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainCharacter.h" />
@@ -18,7 +22,11 @@
     <ClInclude Include="tile.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="ChaseUser.h" />
+<<<<<<< Updated upstream
     <ClInclude Include="Skeleton.h" />
+=======
+    <ClInclude Include="link.h" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Image Include="warrior spritesheet calciumtrice.png" />

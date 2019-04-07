@@ -142,6 +142,7 @@
     <ClCompile Include="actor.cpp" />
     <ClCompile Include="CharacterStats.cpp" />
     <ClCompile Include="Cowboy.cpp" />
+    <ClCompile Include="link.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainCharacter.cpp" />
     <ClCompile Include="Skeleton.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="CharacterStats.h" />
     <ClInclude Include="ChaseUser.h" />
     <ClInclude Include="Cowboy.h" />
+    <ClInclude Include="link.h" />
     <ClInclude Include="MainCharacter.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Skeleton.h" />
