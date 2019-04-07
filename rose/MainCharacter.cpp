@@ -1,4 +1,8 @@
+#include<iostream>
+#include<vector>
 #include "MainCharacter.h"
+#include "Math.h"
+#include "ChaseUser.h"
 
 #pragma region Constructors
 MainCharacter::MainCharacter() 
@@ -26,6 +30,14 @@ void MainCharacter::separateImageToArrayOfTextures(std::string fileName) {
 	}
 
 	
+}
+
+float MainCharacter::getXLocation() {
+	return mainCharacter.getXPosition();
+}
+
+float MainCharacter::getYLocation() {
+	return mainCharacter.getYPosition();
 }
 
 void MainCharacter::drawCharacter(sf::RenderWindow& window) {
@@ -71,15 +83,9 @@ void MainCharacter::drawCharacter(sf::RenderWindow& window) {
 	{
 		sprite.scale(1.f, 2.f);
 	}
-	sprite.setPosition(mainCharacter.getXPosition(), mainCharacter.getYPosition());
+	sprite.setPosition(mainCharacter.getXPosition() + 32, mainCharacter.getYPosition() + 16);
 	window.draw(sprite);
-	if (currentCharacterState != walking)
-	{
-		animationPicNumber++;
-	}
-	else {
-		animationPicNumber += 5;
-	}
+	animationPicNumber += 5;
 	if (animationPicNumber > 59)
 	{
 		if (dying)
@@ -89,39 +95,82 @@ void MainCharacter::drawCharacter(sf::RenderWindow& window) {
 		else {
 			animationPicNumber = 1;
 			currentCharacterState = nextCharacterState;
+			mainCharacter.setCharacterState(idle);
 			nextCharacterState = idle;
 		}
 	}
 
 }
 
-void MainCharacter::walkRight()
+void MainCharacter::walkRight(float amount)
 {
-	mainCharacter.setCharacterState(walking);
-	mainCharacter.increaseXPosition(4);
+	if (amount>=1)
+	{
+		mainCharacter.setCharacterState(walking);
+	}
+	mainCharacter.increaseXPosition(amount);
 	mainCharacter.setCharacterDirectionalOrientation(true);
 }
 
-void MainCharacter::walkLeft()
+void MainCharacter::walkLeft(float amount)
 {
-	mainCharacter.setCharacterState(walking);
-	mainCharacter.increaseXPosition(-4);
+	if (amount >= 1)
+	{
+		mainCharacter.setCharacterState(walking);
+	}
+	mainCharacter.increaseXPosition(-1*amount);
 	mainCharacter.setCharacterDirectionalOrientation(false);
 }
 
-void MainCharacter::walkUp()
+void MainCharacter::walkUp(float amount)
 {
-	mainCharacter.setCharacterState(walking);
-	mainCharacter.increaseYPosition(-4);
+	if (amount >= 1)
+	{
+		mainCharacter.setCharacterState(walking);
+	}
+	mainCharacter.increaseYPosition(-1*amount);
 }
 
-void MainCharacter::walkDown()
+void MainCharacter::walkDown(float amount)
 {
-	mainCharacter.setCharacterState(walking);
-	mainCharacter.increaseYPosition(4);
+	if (amount>=1)
+	{
+		mainCharacter.setCharacterState(walking);
+	}
+	mainCharacter.increaseYPosition(amount);
 }
 
 void MainCharacter::setState(StateOfCharacter state)
 {
 	mainCharacter.setCharacterState(state);
+}
+
+
+void MainCharacter::chaseUser(float UserXPosition, float UserYPosition) {
+	std::vector<float> coordinates = getChaseUserMovementAmount(UserXPosition, UserYPosition, getXLocation(), getYLocation());
+	if (coordinates[0]>0)
+	{
+		walkRight(coordinates[0]);
+	}
+	else if (coordinates[0] < 0) {
+		walkLeft(-1 * coordinates[0]);
+	}
+	if (coordinates[1] >0)
+	{
+		walkDown(coordinates[1]);
+	}
+	else if (coordinates[1] < 0) {
+		walkUp(-1 * coordinates[1]);
+	}
+	if (coordinates[4] <17)
+	{
+		mainCharacter.setCharacterState(attacking);
+	}
+
+
+
+
+
+
+
 }

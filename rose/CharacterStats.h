@@ -7,14 +7,14 @@ class CharacterStats
 	int attack;
 	int speed;
 	int magic;
-	int xPosition;
-	int yPosition;
+	float xPosition;
+	float yPosition;
 	bool facingRight;
 	StateOfCharacter characterState;
 
 public:
 	CharacterStats();
-	CharacterStats(int hitPointAmount, int attackAmount, int speedAmount, int magicAmount, int xStartPosition, int yStartPosition);
+	CharacterStats(int hitPointAmount, int attackAmount, int speedAmount, int magicAmount, float xStartPosition, float yStartPosition);
 
 #pragma region getProperties
 	int getHitPoints() {
@@ -33,11 +33,11 @@ public:
 		return magic;
 	}
 
-	int getXPosition() {
+	float getXPosition() {
 		return xPosition;
 	}
 
-	int getYPosition() {
+	float getYPosition() {
 		return yPosition;
 	}
 
@@ -67,11 +67,11 @@ public:
 		magic = MagicAmount;
 	}
 
-	void setXPosition(int newXPosition) {
+	void setXPosition(float newXPosition) {
 		xPosition = newXPosition;
 	}
 
-	void setYPosition(int newYPosition) {
+	void setYPosition(float newYPosition) {
 		yPosition = newYPosition;
 	}
 
@@ -94,9 +94,9 @@ public:
 
 	void increaseMagic(int MagicAmount);
 
-	void increaseXPosition(int xPositionIncrease);
+	void increaseXPosition(float xPositionIncrease);
 
-	void increaseYPosition(int yPositionIncrease);
+	void increaseYPosition(float yPositionIncrease);
 #pragma endregion
 
 

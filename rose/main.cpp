@@ -8,6 +8,19 @@
 
 #define ENABLED
 
+Cowboy cowboy;
+MainCharacter mainCharacter;
+
+
+void runContinuousPartOfGame() {
+	while (true)
+	{
+		mainCharacter.chaseUser(cowboy.getXLocation(), cowboy.getYLocation());
+		sf::sleep(sf::milliseconds(100));
+	}
+}
+
+
 auto widthOf(std::vector<GrassyTile>& tiles)
 {
 	return tiles[0].width() * tiles.size();
@@ -51,7 +64,7 @@ int main()
 		++currentIndex;
 	}
 #endif 
-
+	
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -89,6 +102,7 @@ int main()
 		draw(tiles, window);
 #endif
 		cowboy.drawTo(window);
+		mainCharacter.drawCharacter(window);
 		window.display();
 
 	}

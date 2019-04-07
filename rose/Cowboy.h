@@ -16,6 +16,8 @@ public:
 	void moveRight();
 	void moveDown();
 	void moveLeft();
+	float getXLocation();
+	float getYLocation();
 
 	virtual void drawTo(sf::RenderWindow& window);
 
@@ -25,6 +27,6 @@ private:
 
 	static constexpr int idleTextureIndex_ = 7;
 
-	uint8_t		framesBetweenMoves_;
+	uint8_t	framesBetweenMoves_;
 };
 

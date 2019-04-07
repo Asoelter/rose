@@ -12,7 +12,7 @@ CharacterStats::CharacterStats() {
 	facingRight = true;
 }
 
-CharacterStats::CharacterStats(int hitPointAmount, int attackAmount, int speedAmount, int magicAmount, int xStartPosition, int yStartPosition) {
+CharacterStats::CharacterStats(int hitPointAmount, int attackAmount, int speedAmount, int magicAmount, float xStartPosition, float yStartPosition) {
 	hitPoints = hitPointAmount;
 	attack = attackAmount;
 	speed = speedAmount;
@@ -42,11 +42,11 @@ void CharacterStats::increaseMagic(int MagicAmount) {
 	magic += MagicAmount;
 }
 
-void CharacterStats::increaseXPosition(int xPositionIncrease) {
+void CharacterStats::increaseXPosition(float xPositionIncrease) {
 	xPosition += xPositionIncrease;
 }
 
-void CharacterStats::increaseYPosition(int yPositionIncrease) {
+void CharacterStats::increaseYPosition(float yPositionIncrease) {
 	yPosition += yPositionIncrease;
 }
 #pragma endregion

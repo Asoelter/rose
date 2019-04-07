@@ -17,14 +17,16 @@ class MainCharacter
 
 public:
 	MainCharacter();
-
 	void separateImageToArrayOfTextures(std::string fileName);
 	void drawCharacter(sf::RenderWindow& window);
 
-	void walkRight();
-	void walkLeft();
-	void walkUp();
-	void walkDown();
+	float getXLocation();
+	float getYLocation();
+	void walkRight(float amount);
+	void walkLeft(float amount);
+	void walkUp(float amount);
+	void walkDown(float amount);
+	void chaseUser(float UserXPosition, float UserYPosition);
 	void setState(StateOfCharacter state);
 };
 
