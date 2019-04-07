@@ -25,3 +25,4 @@ int Enemy::sendXP(int x)
 {
 	return x;
 }
+

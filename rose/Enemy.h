@@ -1,4 +1,6 @@
+#include "actor.h"
 #pragma once
+
 class Enemy
 {
 public:
@@ -14,5 +16,6 @@ protected:
 	virtual void heal();
 	virtual void takeDamage(int damage);
 	virtual int sendXP(int x);
+
 };
 
