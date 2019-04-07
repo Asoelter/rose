@@ -5,6 +5,7 @@
 #include "Skeleton.h"
 #include "tile.h"
 #include <vector>
+#include "link.h"
 
 #define ENABLED
 
@@ -37,9 +38,7 @@ void draw(std::vector<std::vector<GrassyTile>>& tiles, sf::RenderWindow& window)
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works");
-	sf::Thread thread(&runContinuousPartOfGame);
-	// run it
-	thread.launch();
+	Link cowboy;
 	GrassyTile tile({ 0.0f, 0.0f });
 	GrassyTile tile2({500.f, 300.f});
 
@@ -98,6 +97,10 @@ int main()
 			{
 				cowboy.moveLeft();
 				skeleton.moveLeft();
+			}
+			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+			{
+				cowboy.attack();
 			}
 		}
 

@@ -27,6 +27,6 @@ private:
 
 	static constexpr int idleTextureIndex_ = 7;
 
-	uint8_t		framesBetweenMoves_;
+	uint8_t	framesBetweenMoves_;
 };
 

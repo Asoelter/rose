@@ -18,13 +18,13 @@ public:
 	virtual void drawTo(sf::RenderWindow& window);
 
 protected:
-	enum class State
+	enum class Orientation
 	{
-		WALKING_UP,
-		WALKING_RIGHT,
-		WALKING_DOWN,
-		WALKING_LEFT,
-		IDLE
+		IDLE,
+		FACING_DOWN,
+		FACING_LEFT,
+		FACING_UP,
+		FACING_RIGHT
 	};
 	
 	std::vector<sf::Texture> textures_; //A vector of textures to be loaded by the derived class
