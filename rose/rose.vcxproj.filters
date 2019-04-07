@@ -1,22 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="actor.cpp" />
+    <ClCompile Include="CharacterStats.cpp" />
+    <ClCompile Include="Cowboy.cpp" />
+    <ClCompile Include="link.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainCharacter.cpp" />
-    <ClCompile Include="CharacterStats.cpp" />
-    <ClCompile Include="actor.cpp" />
-    <ClCompile Include="Cowboy.cpp" />
+    <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="tile.cpp" />
+    <ClCompile Include="Enemy.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MainCharacter.h" />
-    <ClInclude Include="StateOfCharacter.h" />
-    <ClInclude Include="CharacterStats.h" />
     <ClInclude Include="actor.h" />
-    <ClInclude Include="Cowboy.h" />
-    <ClInclude Include="tile.h" />
-    <ClInclude Include="Math.h" />
+    <ClInclude Include="CharacterStats.h" />
     <ClInclude Include="ChaseUser.h" />
+    <ClInclude Include="Cowboy.h" />
+    <ClInclude Include="link.h" />
+    <ClInclude Include="MainCharacter.h" />
+    <ClInclude Include="Math.h" />
+    <ClInclude Include="Skeleton.h" />
+    <ClInclude Include="StateOfCharacter.h" />
+    <ClInclude Include="tile.h" />
+    <ClInclude Include="Enemy.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="warrior spritesheet calciumtrice.png" />

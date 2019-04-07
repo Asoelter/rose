@@ -15,17 +15,14 @@ MainCharacter::MainCharacter()
 #pragma endregion
 
 
-void MainCharacter::separateImageToArrayOfTextures(std::string fileName) {
-	sf::Texture texture;
+void MainCharacter::separateImageToArrayOfTextures(const std::string& filename) {
 	for (int i = 0; i < 10; i++)
 	{
 		for (int j = 0; j <10; j++)
 		{
-			if (!texture.loadFromFile(fileName, sf::IntRect(j * 32, i * 32, 32, 32)))
-			{
-				printf("Could not load main character image!");
-			}
-			textures[(10 * i) + j] = texture;
+			sf::Texture texture;
+			texture.loadFromFile(filename, sf::IntRect(j * 32, i * 32, 32, 32));
+			textures.push_back(texture); // error thrown here, does not seems to effect anything
 		}
 	}
 
@@ -83,7 +80,7 @@ void MainCharacter::drawCharacter(sf::RenderWindow& window) {
 	{
 		sprite.scale(1.f, 2.f);
 	}
-	sprite.setPosition(mainCharacter.getXPosition() + 32, mainCharacter.getYPosition() + 16);
+	sprite.setPosition(mainCharacter.getXPosition() + 8, mainCharacter.getYPosition() + 16);
 	window.draw(sprite);
 	animationPicNumber += 5;
 	if (animationPicNumber > 59)

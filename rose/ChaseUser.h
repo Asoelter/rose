@@ -12,8 +12,15 @@ std::vector<float> getChaseUserMovementAmount(float UserXPosition, float UserYPo
 	xMovementAmount = MinByMagnitude(xMovementAmount, magnitudeSub(XPositionDifference, userPersonalBubble));
 	float yMovementAmount = (enemySpeed * YPositionDifference) / totalMagnitudeDifference;
 	yMovementAmount = MinByMagnitude(yMovementAmount, YPositionDifference);
-	xyMovement.push_back(xMovementAmount);
-	xyMovement.push_back(yMovementAmount);
+	if (totalMagnitudeDifference < 250)
+	{
+		xyMovement.push_back(xMovementAmount);
+		xyMovement.push_back(yMovementAmount);
+	}
+	else {
+		xyMovement.push_back(0.f);
+		xyMovement.push_back(0.f);
+	}
 	xyMovement.push_back(XPositionDifference);
 	xyMovement.push_back(YPositionDifference);
 	xyMovement.push_back(totalMagnitudeDifference);
