@@ -2,6 +2,7 @@
 .vs/rose/v15/Browse.VC.db
 rose/Makefile
 rose/temp.txt
+rose/main
 .gitignore
 **.o
 *.tlog

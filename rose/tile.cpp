@@ -68,3 +68,19 @@ GrassyTile::GrassyTile(const sf::Vector2f && position)
 {
 
 }
+
+
+//--------------------------------------------------------Grassy Tile----------------------------------------------------------------
+
+SandyTile::SandyTile(const sf::Vector2f& position)
+	: Tile("assets/rpg_pack/tiles/generic-rpg-tile02.png", position)
+{
+
+}
+
+
+SandyTile::SandyTile(const sf::Vector2f&& position)
+	: Tile("assets/rpg_pack/tiles/generic-rpg-tile02.png", std::move(position))
+{
+
+}

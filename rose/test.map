@@ -1,0 +1,7 @@
+#Variables test
+
+let g = GrassyTile
+let s = sandytile
+
+g
+s

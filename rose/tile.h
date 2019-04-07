@@ -31,3 +31,11 @@ struct GrassyTile : public Tile
 	explicit GrassyTile(const sf::Vector2f& position);
 	explicit GrassyTile(const sf::Vector2f&& position);
 };
+
+//--------------------------------------------------------Sandy Tile----------------------------------------------------------------
+
+struct SandyTile : public Tile
+{
+	explicit SandyTile(const sf::Vector2f& position);
+	explicit SandyTile(const sf::Vector2f&& position);
+};
