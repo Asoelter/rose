@@ -1,15 +1,16 @@
 #pragma once
-
+#include <iostream>
 #include "CharacterStats.h"
 #include "StateOfCharacter.h"
 #include <SFML/Graphics.hpp>
-#include <string>
+#include <vector>
+using namespace sf;
 
 class MainCharacter
 {
 	//StateOfCharacter previousCharacterState; //this was unused so i removed it
 	int animationPicNumber;
-	sf::Texture textures[100];
+	std::vector<Texture> textures;
 	bool dying;
 	CharacterStats mainCharacter;
 	StateOfCharacter currentCharacterState;
@@ -17,7 +18,7 @@ class MainCharacter
 
 public:
 	MainCharacter();
-	void separateImageToArrayOfTextures(std::string fileName);
+	void separateImageToArrayOfTextures(const std::string& filename);
 	void drawCharacter(sf::RenderWindow& window);
 
 	float getXLocation();

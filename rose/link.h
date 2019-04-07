@@ -6,12 +6,14 @@
 class Link : public Attacker 
 {
 	public:
-		Link(float xPos = 0.0f, float yPos = 0.0f);
+		Link(float xPos = 100.0f, float yPos = 100.0f);
 
 		void moveUp();
 		void moveRight();
 		void moveDown();
 		void moveLeft();
+		float getXLocation();
+		float getYLocation();
 		
 		void attack();
 

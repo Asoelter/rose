@@ -9,17 +9,32 @@
 
 #define ENABLED
 
-Cowboy cowboy;
-MainCharacter mainCharacter;
+
+
+
+Link cowboy;
+std::vector<MainCharacter> mainCharacters;
 Skeleton skeleton;
 
 
+
+
 void runContinuousPartOfGame() {
+	int counter = 0;
 	while (true)
 	{
-		mainCharacter.chaseUser(cowboy.getXLocation(), cowboy.getYLocation());
+		if (counter%100==0)
+		{
+			mainCharacters.push_back(MainCharacter());
+		}
+		for (int i = 0; i < mainCharacters.size(); i++)
+		{
+			mainCharacters[i].chaseUser(cowboy.getXLocation(), cowboy.getYLocation());
+		}
 		sf::sleep(sf::milliseconds(100));
+		counter++;
 	}
+
 }
 
 
@@ -38,9 +53,10 @@ void draw(std::vector<std::vector<GrassyTile>>& tiles, sf::RenderWindow& window)
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works");
-	Link cowboy;
 	GrassyTile tile({ 0.0f, 0.0f });
 	GrassyTile tile2({500.f, 300.f});
+	sf::Thread thread(&runContinuousPartOfGame);
+	thread.launch();
 
 #ifdef ENABLED
 	std::vector<std::vector<GrassyTile>> tiles;
@@ -111,7 +127,10 @@ int main()
 		draw(tiles, window);
 #endif
 		cowboy.drawTo(window);
-		mainCharacter.drawCharacter(window);
+		for (int i = 0; i < mainCharacters.size(); i++)
+		{
+			mainCharacters[i].drawCharacter(window);
+		}
 		skeleton.drawTo(window);
 		window.display();
 
