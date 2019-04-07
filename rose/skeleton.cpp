@@ -10,19 +10,29 @@ skeleton::skeleton()
 
 	{
 		loadTexture("assets/skeletonSpriteSheet.png");
-		Actor::sprite_.setPosition({ 500.0f, 300.0f });
+		Actor::sprite_.setPosition({ 800.0f, 300.0f });
 	}
 }
 
 
 void skeleton::idle() 
 {
+
+	
 	++Actor::currentTextureIndex_;
 	if (Actor::currentTextureIndex_ > 6)
 	{
 		Actor::currentTextureIndex_ = 0;
 	}
-	framesBetweenMoves_ = 120;
+	std::cout << currentTextureIndex_ << "\n";
+
+	
+	
+	
+	
+	
+	
+	framesBetweenMoves_ = 0;
 }
 void skeleton::moveUp()
 {
@@ -72,10 +82,12 @@ void skeleton::drawTo(sf::RenderWindow & window)
 void skeleton::loadTexture(const std::string && fileName)
 {
 	sf::Texture loader;
+	int column = 64;
+	int leftEdge = 0;
 	for (int i = 0; i < 7; ++i)
 	{
-		int leftEdge = 64 * i;
-		bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 135, 64, 60));
+		leftEdge = 64 * i;
+		bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 135, 64, 64));
 		assert(success);
 		Actor::textures_.push_back(loader);
 	}

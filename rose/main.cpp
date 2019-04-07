@@ -12,6 +12,8 @@ int main()
 	skeleton skeleton1;
 	//GrassyTile tile({ 500.0f, 300.0f });
 	GrassyTile tile({ 0.0f, 0.0f });
+	int counter = 1;
+	int multiplier = 0;
 
 	std::cout << tile.width() << std::endl;
 
