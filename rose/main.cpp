@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "MainCharacter.h"
 #include "Cowboy.h"
+#include "Skeleton.h"
 #include "tile.h"
 #include <vector>
 
@@ -9,6 +10,7 @@
 
 Cowboy cowboy;
 MainCharacter mainCharacter;
+Skeleton skeleton;
 
 
 void runContinuousPartOfGame() {
@@ -73,22 +75,29 @@ int main()
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
-
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) 
+			{
+				skeleton.shockWave();
+			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
 				cowboy.moveUp();
+				skeleton.moveUp();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
 				cowboy.moveRight();
+				skeleton.moveRight();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 			{
 				cowboy.moveDown();
+				skeleton.moveDown();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 			{
 				cowboy.moveLeft();
+				skeleton.moveLeft();
 			}
 		}
 
@@ -100,6 +109,7 @@ int main()
 #endif
 		cowboy.drawTo(window);
 		mainCharacter.drawCharacter(window);
+		skeleton.drawTo(window);
 		window.display();
 
 	}
