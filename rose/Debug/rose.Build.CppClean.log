@@ -1,16 +1,23 @@
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\vc141.pdb
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\vc141.idb
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\main.obj
-c:\users\soelt\documents\visual studio 2017\projects\rose\debug\rose.pdb
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\cl.command.1.tlog
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\cl.read.1.tlog
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\cl.write.1.tlog
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\link.13056-cvtres.read.1.tlog
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\link.13056-cvtres.write.1.tlog
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\link.13056-rc.read.1.tlog
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\link.13056-rc.write.1.tlog
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\link.13056.read.1.tlog
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\link.13056.write.1.tlog
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\link.command.1.tlog
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\link.read.1.tlog
-c:\users\soelt\documents\visual studio 2017\projects\rose\rose\debug\rose.tlog\link.write.1.tlog
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\vc141.pdb
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\vc141.idb
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\tile.obj
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\maincharacter.obj
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\main.obj
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\cowboy.obj
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\characterstats.obj
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\actor.obj
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\skeleton.obj
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\link.obj
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\debug\rose.ilk
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\debug\rose.exe
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\debug\rose.pdb
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\character.obj
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\event_function.obj
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\event_handler.obj
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\maincharacter.obj.enc
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\rose.tlog\cl.command.1.tlog
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\rose.tlog\cl.read.1.tlog
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\rose.tlog\cl.write.1.tlog
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\rose.tlog\link.command.1.tlog
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\rose.tlog\link.read.1.tlog
+d:\ku\classes\eecs_448\projects\rpg\eecs448rpg\rose\debug\rose.tlog\link.write.1.tlog

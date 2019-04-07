@@ -2,8 +2,9 @@
 #include <array>
 #include <stdint.h>
 #include "actor.h"
+#include "Enemy.h"
 
-class Skeleton : public Actor
+class Skeleton : public Actor, public Enemy
 {
 public:
 	Skeleton();
