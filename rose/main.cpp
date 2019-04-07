@@ -7,6 +7,19 @@
 
 #define ENABLED
 
+Cowboy cowboy;
+MainCharacter mainCharacter;
+
+
+void runContinuousPartOfGame() {
+	while (true)
+	{
+		mainCharacter.chaseUser(cowboy.getXLocation(), cowboy.getYLocation());
+		sf::sleep(sf::milliseconds(100));
+	}
+}
+
+
 auto widthOf(std::vector<GrassyTile>& tiles)
 {
 	return tiles[0].width() * tiles.size();
@@ -22,7 +35,9 @@ void draw(std::vector<std::vector<GrassyTile>>& tiles, sf::RenderWindow& window)
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works");
-	Cowboy cowboy;
+	sf::Thread thread(&runContinuousPartOfGame);
+	// run it
+	thread.launch();
 	GrassyTile tile({ 0.0f, 0.0f });
 	GrassyTile tile2({500.f, 300.f});
 
@@ -50,7 +65,7 @@ int main()
 		++currentIndex;
 	}
 #endif 
-
+	
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -84,6 +99,7 @@ int main()
 		draw(tiles, window);
 #endif
 		cowboy.drawTo(window);
+		mainCharacter.drawCharacter(window);
 		window.display();
 
 	}

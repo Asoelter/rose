@@ -16,6 +16,8 @@ public:
 	void moveRight();
 	void moveDown();
 	void moveLeft();
+	float getXLocation();
+	float getYLocation();
 
 	virtual void drawTo(sf::RenderWindow& window);
 

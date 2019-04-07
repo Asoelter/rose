@@ -152,8 +152,10 @@
   <ItemGroup>
     <ClInclude Include="actor.h" />
     <ClInclude Include="CharacterStats.h" />
+    <ClInclude Include="ChaseUser.h" />
     <ClInclude Include="Cowboy.h" />
     <ClInclude Include="MainCharacter.h" />
+    <ClInclude Include="Math.h" />
     <ClInclude Include="StateOfCharacter.h" />
     <ClInclude Include="tile.h" />
   </ItemGroup>
