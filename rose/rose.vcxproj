@@ -146,6 +146,7 @@
     <ClCompile Include="link.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainCharacter.cpp" />
+    <ClCompile Include="map.cpp" />
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="tile.cpp" />
   </ItemGroup>
@@ -160,6 +161,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="link.h" />
     <ClInclude Include="MainCharacter.h" />
+    <ClInclude Include="map.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Skeleton.h" />
     <ClInclude Include="StateOfCharacter.h" />

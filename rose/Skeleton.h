@@ -14,9 +14,12 @@ public:
 	void moveDown();
 	void moveLeft();
 	void shockWave();
+	void chasePlayer(float playerX, float playerY);
 	virtual void drawTo(sf::RenderWindow& window);
 
 private:
+	float m_xPos;
+	float m_yPos;
 	float enemyMovementSpeed = 3;
 
 	void loadTexture(const std::string&& fileName);

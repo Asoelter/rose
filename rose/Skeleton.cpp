@@ -30,6 +30,8 @@ void Skeleton::moveUp()
 	}
 
 	Actor::sprite_.move({ 0.0f, -4.0f });
+	m_xPos = Actor::sprite_.getPosition().x;
+	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;
 }
 
@@ -48,6 +50,8 @@ void Skeleton::moveRight()
 	}
 
 	Actor::sprite_.move({ 4.0f, 0.0f });
+	m_xPos = Actor::sprite_.getPosition().x;
+	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;
 }
 
@@ -66,6 +70,8 @@ void Skeleton::moveDown()
 	}
 
 	Actor::sprite_.move({ 0.0f, 4.0f });
+	m_xPos = Actor::sprite_.getPosition().x;
+	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;
 }
 
@@ -84,6 +90,8 @@ void Skeleton::moveLeft()
 	}
 
 	Actor::sprite_.move({ -4.0f, 0.0f });
+	m_xPos = Actor::sprite_.getPosition().x;
+	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;
 }
 // index 15-21
@@ -102,6 +110,40 @@ void Skeleton::shockWave()
 		Actor::currentTextureIndex_++;
 	}
 	framesBetweenMoves_ = 0;
+}
+
+void Skeleton::chasePlayer(float playerX, float playerY)
+{
+	if (m_xPos != playerX) 
+	{
+		if (m_xPos < playerX) 
+		{
+			Actor::sprite_.move(3.0f, 0.0f);
+			this->moveRight();
+		}
+		if (m_xPos > playerX)
+		{
+			Actor::sprite_.move(-3.0f, 0.0f);
+			this->moveLeft();
+		}
+	}
+	if (m_yPos != playerY)
+	{
+		if (m_yPos < playerY)
+		{
+			Actor::sprite_.move(0.0f, 3.0f);
+			this->moveDown();
+		}
+		if (m_yPos > playerY)
+		{
+			Actor::sprite_.move(0.0f, 3.0f);
+			this->moveUp();
+		}
+	}
+	if (m_xPos == playerX && m_yPos == playerY) 
+	{
+		this->shockWave();
+	}
 }
 
 

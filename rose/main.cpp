@@ -31,6 +31,7 @@ void runContinuousPartOfGame() {
 		}
 		sf::sleep(sf::milliseconds(100));
 		counter++;
+		skeleton.chasePlayer(cowboy.getXLocation(), cowboy.getYLocation());
 	}
 
 }
@@ -52,29 +53,21 @@ int main()
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) 
-			{
-				skeleton.shockWave();
-			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
 				cowboy.moveUp();
-				skeleton.moveUp();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
 				cowboy.moveRight();
-				skeleton.moveRight();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 			{
 				cowboy.moveDown();
-				skeleton.moveDown();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 			{
 				cowboy.moveLeft();
-				skeleton.moveLeft();
 			}
 			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 			{

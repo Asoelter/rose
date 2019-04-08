@@ -10,6 +10,7 @@
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="tile.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h" />
@@ -23,6 +24,7 @@
     <ClInclude Include="StateOfCharacter.h" />
     <ClInclude Include="tile.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="map.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="warrior spritesheet calciumtrice.png" />
