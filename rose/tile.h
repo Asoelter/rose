@@ -4,6 +4,10 @@
 
 #include <SFML/Graphics.hpp>
 
+#ifndef ACTOR_H
+#	include "actor.h"
+#endif 
+
 class Tile
 {
 public:
@@ -19,9 +23,12 @@ public:
 	float width() const;
 	float height() const;
 
+	void setOccupier(Actor* occupier);
+
 private:
 	sf::Texture texture_;
 	sf::Sprite	sprite_;
+	Actor*		occupier_;
 };
 
 //--------------------------------------------------------Grassy Tile----------------------------------------------------------------

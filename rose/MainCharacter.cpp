@@ -163,11 +163,4 @@ void MainCharacter::chaseUser(float UserXPosition, float UserYPosition) {
 	{
 		mainCharacter.setCharacterState(attacking);
 	}
-
-
-
-
-
-
-
 }

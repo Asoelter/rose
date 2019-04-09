@@ -14,14 +14,6 @@ Link::Link(float xPos, float yPos)
 	Actor::sprite_.setPosition(xPos, yPos);
 }
 
-float Link::getXLocation() {
-	return Actor::sprite_.getPosition().x;
-}
-
-float Link::getYLocation() {
-	return Actor::sprite_.getPosition().y;
-}
-
 void Link::moveUp()
 {
 	genericMove(startOfWalkUp, endOfWalkUp);

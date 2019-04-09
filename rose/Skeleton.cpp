@@ -8,10 +8,8 @@ Skeleton::Skeleton()
 	, framesBetweenMoves_(0)
 {
 
-	{
-		loadTexture("assets/skeletonSpriteSheet.png");
-		Actor::sprite_.setPosition({ 800.0f, 300.0f });
-	}
+	loadTexture("assets/skeletonSpriteSheet.png");
+	Actor::sprite_.setPosition({ 800.0f, 300.0f });
 }
 
 
@@ -22,6 +20,7 @@ void Skeleton::moveUp()
 	{
 		Actor::currentTextureIndex_ = 60;
 	}
+
 	++Actor::currentTextureIndex_;
 
 	if (Actor::currentTextureIndex_ > 67)
@@ -40,6 +39,7 @@ void Skeleton::moveRight()
 	{
 		Actor::currentTextureIndex_ = 87;
 	}
+
 	++Actor::currentTextureIndex_;
 
 	if (Actor::currentTextureIndex_ > 95)
@@ -58,6 +58,7 @@ void Skeleton::moveDown()
 	{
 		Actor::currentTextureIndex_ = 78;
 	}
+
 	++Actor::currentTextureIndex_;
 
 	if (Actor::currentTextureIndex_ > 86)

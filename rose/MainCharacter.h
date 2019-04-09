@@ -4,13 +4,12 @@
 #include "StateOfCharacter.h"
 #include <SFML/Graphics.hpp>
 #include <vector>
-using namespace sf;
+#include "actor.h"
 
-class MainCharacter
+class MainCharacter : public Actor
 {
-	//StateOfCharacter previousCharacterState; //this was unused so i removed it
 	int animationPicNumber;
-	std::vector<Texture> textures;
+	std::vector<sf::Texture> textures;
 	bool dying;
 	CharacterStats mainCharacter;
 	StateOfCharacter currentCharacterState;

@@ -3,6 +3,8 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 
+class Tile;
+
 //Base class for any character type to inherit from 
 class Actor
 {
@@ -15,7 +17,12 @@ public:
 	virtual void moveDown()		= 0;
 	virtual void moveLeft()		= 0;
 
+	virtual float xPos() const;
+	virtual float yPos() const;
+
 	virtual void drawTo(sf::RenderWindow& window);
+
+	void occupy(Tile* tile);
 
 protected:
 	enum class Orientation
@@ -27,9 +34,9 @@ protected:
 		FACING_RIGHT
 	};
 	
-	std::vector<sf::Texture> textures_; //A vector of textures to be loaded by the derived class
-	sf::Sprite sprite_;					//The sprite used to draw with 
-	int currentTextureIndex_;			//The index of the current texture in textures_...
-										//manipulated by the derived class
+	std::vector<sf::Texture> textures_;  
+	sf::Sprite sprite_;					
+	int currentTextureIndex_;			
+	Tile* occupiedTile_;
 };
 

@@ -12,16 +12,6 @@ Cowboy::Cowboy()
 }
 
 
-float Cowboy::getXLocation() {
-	return Actor::sprite_.getPosition().x;
-}
-
-
-float Cowboy::getYLocation() {
-	return Actor::sprite_.getPosition().y;
-}
-
-
 void Cowboy::moveUp()
 {
 	++Actor::currentTextureIndex_;

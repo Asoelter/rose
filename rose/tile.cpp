@@ -10,6 +10,7 @@
 Tile::Tile(const std::string & fileName, const sf::Vector2f& position)
 	: texture_()
 	, sprite_()
+	, occupier_(nullptr)
 {
 	bool success = texture_.loadFromFile(fileName);
 	assert(success);
@@ -19,6 +20,9 @@ Tile::Tile(const std::string & fileName, const sf::Vector2f& position)
 
 
 Tile::Tile(const std::string && fileName, const sf::Vector2f&& position)
+	: texture_()
+	, sprite_()
+	, occupier_(nullptr)
 {
 	bool success = texture_.loadFromFile(std::move(fileName));
 	assert(success);
@@ -50,6 +54,11 @@ float Tile::width() const
 float Tile::height() const
 {
 	return sprite_.getGlobalBounds().height;
+}
+
+void Tile::setOccupier(Actor* occupier)
+{
+	occupier_ = occupier;
 }
 
 

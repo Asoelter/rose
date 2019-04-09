@@ -13,12 +13,14 @@ class Map
 	using MapElements = std::vector<std::vector<std::unique_ptr<Tile>>> ;
 
 	public:
-		Map();
+		Map(int width, int height);
 		virtual ~Map() = default;
 		virtual void drawTo(sf::RenderWindow& window);
 
 	protected:
 		MapElements tiles_;
+		int width_;
+		int height_;
 };
 
 //------------------------------Grassy Map-----------------------------------------
@@ -26,7 +28,7 @@ class Map
 class GrassyMap : public Map
 {
 	public:
-		GrassyMap();
+		GrassyMap(int width, int height);
 
 	private:
 		void fillMap();
