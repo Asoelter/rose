@@ -3,6 +3,17 @@
 #include "Math.h"
 #include <vector>
 
+/**
+ * @brief Get the Chase User Movement Amount object
+ * 
+ * @param UserXPosition 
+ * @param UserYPosition 
+ * @param enemyXPosition 
+ * @param enemyYPosition 
+ * @param enemySpeed 
+ * @param userPersonalBubble 
+ * @return std::vector<float> 
+ */
 std::vector<float> getChaseUserMovementAmount(float UserXPosition, float UserYPosition, float enemyXPosition, float enemyYPosition, float enemySpeed = 4.f, float userPersonalBubble = 16.f) {
 	std::vector<float> xyMovement;
 	float XPositionDifference = UserXPosition - enemyXPosition;

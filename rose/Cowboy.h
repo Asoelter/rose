@@ -5,7 +5,10 @@
 
 #include "actor.h"
 
-
+/**
+ * @brief A class for drawing a cowboy character.
+ * 
+ */
 class Cowboy : public Actor
 {
 public:

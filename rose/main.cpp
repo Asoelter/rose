@@ -8,37 +8,8 @@
 #include "link.h"
 #include "map.h"
 
-<<<<<<< HEAD
-=======
-using size = std::vector<MainCharacter>::size_type;
+//TODO: Move this all to an executive class 
 
-Link cowboy;
-std::vector<MainCharacter> mainCharacters;
-Skeleton skeleton;
-
-
-
-
-void runContinuousPartOfGame() {
-	int counter = 0;
-	while (true)
-	{
-		if (counter%100==0)
-		{
-			mainCharacters.push_back(MainCharacter());
-		}
-		for (size i = 0; i < mainCharacters.size(); i++)
-		{
-			mainCharacters[i].chaseUser(cowboy.getXLocation(), cowboy.getYLocation());
-		}
-		sf::sleep(sf::milliseconds(100));
-		counter++;
-		skeleton.chasePlayer(cowboy.getXLocation(), cowboy.getYLocation());
-	}
-
-}
-
->>>>>>> 58f91d5bcbd835c747ba7e67fe8813861522e368
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works");
@@ -56,7 +27,6 @@ int main()
 			if (event.type == sf::Event::Closed)
 			{
 				window.close();
-<<<<<<< HEAD
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) 
 			{
@@ -77,23 +47,6 @@ int main()
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 			{
 				link.moveLeft();
-=======
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-			{
-				cowboy.moveUp();
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			{
-				cowboy.moveRight();
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-			{
-				cowboy.moveDown();
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-			{
-				cowboy.moveLeft();
->>>>>>> 58f91d5bcbd835c747ba7e67fe8813861522e368
 			}
 			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 			{
