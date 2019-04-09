@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['walkdown',['walkDown',['../classMainCharacter.html#afdd71154e531e45bc152c52df4d35bd2',1,'MainCharacter']]],
-  ['walkleft',['walkLeft',['../classMainCharacter.html#a469893887080b1ae57fd0efa260d1434',1,'MainCharacter']]],
-  ['walkright',['walkRight',['../classMainCharacter.html#abe834fc327cbaa6192563729df589297',1,'MainCharacter']]],
-  ['walkup',['walkUp',['../classMainCharacter.html#a23348476f59cb79981311cac30266ed5',1,'MainCharacter']]]
+  ['takedamage',['takeDamage',['../classEnemy.html#ae01c62a474fbcd547000ff1068976d49',1,'Enemy']]]
 ];

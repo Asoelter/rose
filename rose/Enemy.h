@@ -1,7 +1,7 @@
 #include "actor.h"
 #pragma once
 
-class Enemy
+class Enemy 
 {
 public:
 	/**

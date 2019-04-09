@@ -5,4 +5,6 @@ rose/temp.txt
 rose/main
 .gitignore
 **.o
+**/.vscode/**
+/.vscode
 *.tlog
