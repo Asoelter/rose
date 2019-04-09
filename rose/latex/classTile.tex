@@ -9,27 +9,143 @@ Inheritance diagram for Tile\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classTile_aa56994a706f8b5f5468d7fa7c9820346}{Tile}} (const std\+::string \&file\+Name, const sf\+::\+Vector2f \&position)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classTile}{Tile}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTile_a6583b7a8d50b38d972865eb3440251fc}{Tile}} (const std\+::string \&\&file\+Name, const sf\+::\+Vector2f \&\&position)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classTile}{Tile}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTile_a480e50775203166df068f0cfc889d91b}{Tile}} (const \mbox{\hyperlink{classTile}{Tile}} \&other)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classTile}{Tile}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classTile_aecd90209e168f26bcdf36c2e445f424a}{$\sim$\+Tile}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classTile}{Tile}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTile_ab83f64c1d7fdeba49f9d84bd1a33e612}{draw\+To}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Draws the tile to the window. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTile_a819194106af71d48f48d0fedfcccc31e}{width}} () const
+\begin{DoxyCompactList}\small\item\em Returns the width of the tile in pixels. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTile_a93878ba24748c81017215d97efd1a2f0}{height}} () const
+\begin{DoxyCompactList}\small\item\em Returns the height of the tile in pixels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTile_ace2e0e7d2aacf0190bcf10bf34a0c9f2}{set\+Occupier}} (\mbox{\hyperlink{classActor}{Actor}} $\ast$occupier)
+\begin{DoxyCompactList}\small\item\em Set the Occupier \mbox{\hyperlink{classActor}{Actor}}. (Not currently implemented) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classTile_aa56994a706f8b5f5468d7fa7c9820346}\label{classTile_aa56994a706f8b5f5468d7fa7c9820346}} 
-{\bfseries Tile} (const std\+::string \&file\+Name, const sf\+::\+Vector2f \&position)
-\item 
+\index{Tile@{Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{Tile()}{Tile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name,  }\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \mbox{\hyperlink{classTile}{Tile}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the file to load the texture from \\
+\hline
+{\em position} & A vector that contains the screen coordinates to display the tile at \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTile_a6583b7a8d50b38d972865eb3440251fc}\label{classTile_a6583b7a8d50b38d972865eb3440251fc}} 
-{\bfseries Tile} (const std\+::string \&\&file\+Name, const sf\+::\+Vector2f \&\&position)
-\item 
+\index{Tile@{Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{Tile()}{Tile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}\item[{const std\+::string \&\&}]{file\+Name,  }\item[{const sf\+::\+Vector2f \&\&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \mbox{\hyperlink{classTile}{Tile}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the file to load the texture from \\
+\hline
+{\em position} & A vector that contains the screen coordinates to display the tile at \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTile_a480e50775203166df068f0cfc889d91b}\label{classTile_a480e50775203166df068f0cfc889d91b}} 
-{\bfseries Tile} (const \mbox{\hyperlink{classTile}{Tile}} \&other)
-\item 
+\index{Tile@{Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{Tile()}{Tile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTile}{Tile}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classTile}{Tile}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The tile object to copy from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTile_aecd90209e168f26bcdf36c2e445f424a}\label{classTile_aecd90209e168f26bcdf36c2e445f424a}} 
+\index{Tile@{Tile}!````~Tile@{$\sim$Tile}}
+\index{````~Tile@{$\sim$Tile}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{$\sim$Tile()}{~Tile()}}
+{\footnotesize\ttfamily virtual Tile\+::$\sim$\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{classTile}{Tile}} object. 
+
+
+
+\subsection{Member Function Documentation}
 \mbox{\Hypertarget{classTile_ab83f64c1d7fdeba49f9d84bd1a33e612}\label{classTile_ab83f64c1d7fdeba49f9d84bd1a33e612}} 
-virtual void {\bfseries draw\+To} (sf\+::\+Render\+Window \&window)
-\item 
-\mbox{\Hypertarget{classTile_a819194106af71d48f48d0fedfcccc31e}\label{classTile_a819194106af71d48f48d0fedfcccc31e}} 
-float {\bfseries width} () const
-\item 
+\index{Tile@{Tile}!drawTo@{drawTo}}
+\index{drawTo@{drawTo}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{drawTo()}{drawTo()}}
+{\footnotesize\ttfamily void Tile\+::draw\+To (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draws the tile to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to draw the tile to \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTile_a93878ba24748c81017215d97efd1a2f0}\label{classTile_a93878ba24748c81017215d97efd1a2f0}} 
-float {\bfseries height} () const
-\item 
+\index{Tile@{Tile}!height@{height}}
+\index{height@{height}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily float Tile\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the height of the tile in pixels. 
+
+\begin{DoxyReturn}{Returns}
+float The height of the tile in pixels 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classTile_ace2e0e7d2aacf0190bcf10bf34a0c9f2}\label{classTile_ace2e0e7d2aacf0190bcf10bf34a0c9f2}} 
-void {\bfseries set\+Occupier} (\mbox{\hyperlink{classActor}{Actor}} $\ast$occupier)
-\end{DoxyCompactItemize}
+\index{Tile@{Tile}!setOccupier@{setOccupier}}
+\index{setOccupier@{setOccupier}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{setOccupier()}{setOccupier()}}
+{\footnotesize\ttfamily void Tile\+::set\+Occupier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classActor}{Actor}} $\ast$}]{occupier }\end{DoxyParamCaption})}
+
+
+
+Set the Occupier \mbox{\hyperlink{classActor}{Actor}}. (Not currently implemented) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em occupier} & The actor that is occupying the tile \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTile_a819194106af71d48f48d0fedfcccc31e}\label{classTile_a819194106af71d48f48d0fedfcccc31e}} 
+\index{Tile@{Tile}!width@{width}}
+\index{width@{width}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily float Tile\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the width of the tile in pixels. 
+
+\begin{DoxyReturn}{Returns}
+float The width of the tile in pixels 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

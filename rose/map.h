@@ -13,8 +13,25 @@ class Map
 	using MapElements = std::vector<std::vector<std::unique_ptr<Tile>>> ;
 
 	public:
+		/**
+		 * @brief Construct a new Map object
+		 * 
+		 * @param width  The width  of the map in pixels
+		 * @param height The height of the map in pixels
+		 */
 		Map(int width, int height);
+
+		/**
+		 * @brief Destroy the Map object
+		 * 
+		 */
 		virtual ~Map() = default;
+
+		/**
+		 * @brief Draws the map to the window
+		 * 
+		 * @param window The window to draw the map to
+		 */
 		virtual void drawTo(sf::RenderWindow& window);
 
 	protected:
@@ -28,17 +45,20 @@ class Map
 class GrassyMap : public Map
 {
 	public:
+		/**
+		 * @brief Construct a new Grassy Map object
+		 * 
+		 * @param width  width  The width  of the map in pixels
+		 * @param height height The height of the map in pixels
+		 */
 		GrassyMap(int width, int height);
 
 	private:
+		/**
+		 * @brief Fills the map with tiles
+		 * 
+		 */
 		void fillMap();
-};
-
-class map
-{
-public:
-	map();
-	~map();
 };
 
 #endif //MAP_H

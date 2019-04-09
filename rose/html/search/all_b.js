@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['walkdown',['walkDown',['../classMainCharacter.html#afdd71154e531e45bc152c52df4d35bd2',1,'MainCharacter']]],
-  ['walkleft',['walkLeft',['../classMainCharacter.html#a469893887080b1ae57fd0efa260d1434',1,'MainCharacter']]],
-  ['walkright',['walkRight',['../classMainCharacter.html#abe834fc327cbaa6192563729df589297',1,'MainCharacter']]],
-  ['walkup',['walkUp',['../classMainCharacter.html#a23348476f59cb79981311cac30266ed5',1,'MainCharacter']]]
+  ['takedamage',['takeDamage',['../classEnemy.html#ae01c62a474fbcd547000ff1068976d49',1,'Enemy']]],
+  ['tile',['Tile',['../classTile.html',1,'Tile'],['../classTile.html#aa56994a706f8b5f5468d7fa7c9820346',1,'Tile::Tile(const std::string &amp;fileName, const sf::Vector2f &amp;position)'],['../classTile.html#a6583b7a8d50b38d972865eb3440251fc',1,'Tile::Tile(const std::string &amp;&amp;fileName, const sf::Vector2f &amp;&amp;position)'],['../classTile.html#a480e50775203166df068f0cfc889d91b',1,'Tile::Tile(const Tile &amp;other)']]]
 ];
