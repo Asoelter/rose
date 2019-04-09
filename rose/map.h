@@ -34,4 +34,11 @@ class GrassyMap : public Map
 		void fillMap();
 };
 
+class map
+{
+public:
+	map();
+	~map();
+};
+
 #endif //MAP_H

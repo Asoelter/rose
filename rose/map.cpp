@@ -71,3 +71,13 @@ void GrassyMap::fillMap()
 	}
 }
 
+
+
+map::map()
+{
+}
+
+
+map::~map()
+{
+}
