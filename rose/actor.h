@@ -5,8 +5,10 @@
 
 class Tile;
 
-//Base class for any character type to inherit from 
-
+/**
+ * @brief Base class for any character type to inherit from 
+ * 
+ */
 class Actor
 {
 public:

@@ -70,27 +70,32 @@ $(function() {
 <div class="title">Actor Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base class for any character type to inherit from.  
+ <a href="classActor.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="actor_8h_source.html">actor.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Actor:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classActor.png" usemap="#Actor_map" alt=""/>
   <map id="Actor_map" name="Actor_map">
-<area href="structAttacker.html" alt="Attacker" shape="rect" coords="0,56,97,80"/>
+<area href="structAttacker.html" title="Base class for all characters who are able to attack to inherit from." alt="Attacker" shape="rect" coords="0,56,97,80"/>
 <area href="classCowboy.html" title="A class for drawing a cowboy character." alt="Cowboy" shape="rect" coords="107,56,204,80"/>
 <area href="classMainCharacter.html" alt="MainCharacter" shape="rect" coords="214,56,311,80"/>
-<area href="classSkeleton.html" alt="Skeleton" shape="rect" coords="321,56,418,80"/>
-<area href="classLink.html" alt="Link" shape="rect" coords="0,112,97,136"/>
+<area href="classSkeleton.html" title="A class for drawing a Skeleton character." alt="Skeleton" shape="rect" coords="321,56,418,80"/>
+<area href="classLink.html" title="A class for drawing link from the best game series of all time: The Legend of Zelda." alt="Link" shape="rect" coords="0,112,97,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2a0ff4335a1ee9096df90f288c026c8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a2a0ff4335a1ee9096df90f288c026c8b">Actor</a> ()</td></tr>
-<tr class="memdesc:a2a0ff4335a1ee9096df90f288c026c8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classActor.html">Actor</a> object.  <a href="#a2a0ff4335a1ee9096df90f288c026c8b">More...</a><br /></td></tr>
+<tr class="memdesc:a2a0ff4335a1ee9096df90f288c026c8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classActor.html" title="Base class for any character type to inherit from.">Actor</a> object.  <a href="#a2a0ff4335a1ee9096df90f288c026c8b">More...</a><br /></td></tr>
 <tr class="separator:a2a0ff4335a1ee9096df90f288c026c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e8d9d909ec2c3d3205682e83bf8ff18"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a4e8d9d909ec2c3d3205682e83bf8ff18">~Actor</a> ()=default</td></tr>
-<tr class="memdesc:a4e8d9d909ec2c3d3205682e83bf8ff18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classActor.html">Actor</a> object.  <a href="#a4e8d9d909ec2c3d3205682e83bf8ff18">More...</a><br /></td></tr>
+<tr class="memdesc:a4e8d9d909ec2c3d3205682e83bf8ff18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classActor.html" title="Base class for any character type to inherit from.">Actor</a> object.  <a href="#a4e8d9d909ec2c3d3205682e83bf8ff18">More...</a><br /></td></tr>
 <tr class="separator:a4e8d9d909ec2c3d3205682e83bf8ff18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaa299f90233461ee4df96dcfda3008a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#afaa299f90233461ee4df96dcfda3008a">moveUp</a> ()=0</td></tr>
 <tr class="memdesc:afaa299f90233461ee4df96dcfda3008a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the actor up.  <a href="#afaa299f90233461ee4df96dcfda3008a">More...</a><br /></td></tr>
@@ -145,7 +150,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>currentTextureIndex_</
 <a class="el" href="classTile.html">Tile</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>occupiedTile_</b></td></tr>
 <tr class="separator:a175bba65c182ee06cec92accb30af570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for any character type to inherit from. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2a0ff4335a1ee9096df90f288c026c8b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a0ff4335a1ee9096df90f288c026c8b">&#9670;&nbsp;</a></span>Actor()</h2>
 
@@ -161,7 +168,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>currentTextureIndex_</
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classActor.html">Actor</a> object. </p>
+<p>Construct a new <a class="el" href="classActor.html" title="Base class for any character type to inherit from.">Actor</a> object. </p>
 
 </div>
 </div>
@@ -188,7 +195,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>currentTextureIndex_</
 </table>
 </div><div class="memdoc">
 
-<p>Destroy the <a class="el" href="classActor.html">Actor</a> object. </p>
+<p>Destroy the <a class="el" href="classActor.html" title="Base class for any character type to inherit from.">Actor</a> object. </p>
 
 </div>
 </div>
@@ -254,7 +261,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>currentTextureIndex_</
 
 <p>Moves the actor down. </p>
 
-<p>Implemented in <a class="el" href="classSkeleton.html#aee2055fa3d1db80392b365aa40c878bf">Skeleton</a>, <a class="el" href="classCowboy.html#a25b9c66203a4a5e762984ca0bed511e0">Cowboy</a>, and <a class="el" href="classLink.html#a9ff8ec271a0119f6e1ee178afb47f323">Link</a>.</p>
+<p>Implemented in <a class="el" href="classCowboy.html#a25b9c66203a4a5e762984ca0bed511e0">Cowboy</a>, <a class="el" href="classLink.html#a9ff8ec271a0119f6e1ee178afb47f323">Link</a>, and <a class="el" href="classSkeleton.html#aee2055fa3d1db80392b365aa40c878bf">Skeleton</a>.</p>
 
 </div>
 </div>
@@ -283,7 +290,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>currentTextureIndex_</
 
 <p>Moves the actor left. </p>
 
-<p>Implemented in <a class="el" href="classSkeleton.html#ab03c65cdabc94f280443691653112d3a">Skeleton</a>, <a class="el" href="classCowboy.html#a487cf6b5d1e37586e6e9b408d2aaad1a">Cowboy</a>, and <a class="el" href="classLink.html#a682bab2dc3f967e35a67dcc74c1d4722">Link</a>.</p>
+<p>Implemented in <a class="el" href="classCowboy.html#a487cf6b5d1e37586e6e9b408d2aaad1a">Cowboy</a>, <a class="el" href="classLink.html#a682bab2dc3f967e35a67dcc74c1d4722">Link</a>, and <a class="el" href="classSkeleton.html#ab03c65cdabc94f280443691653112d3a">Skeleton</a>.</p>
 
 </div>
 </div>
@@ -312,7 +319,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>currentTextureIndex_</
 
 <p>Moves the actor to the right. </p>
 
-<p>Implemented in <a class="el" href="classSkeleton.html#a3d8ce7b8a1d10e4a33a27f0eee54042e">Skeleton</a>, <a class="el" href="classCowboy.html#a2094d31b2535a25ef8a40945473cf884">Cowboy</a>, and <a class="el" href="classLink.html#aa1d60136a88be20a14179a5760ed91da">Link</a>.</p>
+<p>Implemented in <a class="el" href="classCowboy.html#a2094d31b2535a25ef8a40945473cf884">Cowboy</a>, <a class="el" href="classLink.html#aa1d60136a88be20a14179a5760ed91da">Link</a>, and <a class="el" href="classSkeleton.html#a3d8ce7b8a1d10e4a33a27f0eee54042e">Skeleton</a>.</p>
 
 </div>
 </div>
@@ -341,7 +348,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>currentTextureIndex_</
 
 <p>Moves the actor up. </p>
 
-<p>Implemented in <a class="el" href="classCowboy.html#a3c4b0540c47492d02fa64b4740a35bcf">Cowboy</a>, <a class="el" href="classSkeleton.html#a0ddbea7574ada0b5cef0cadbd4a0dd9f">Skeleton</a>, and <a class="el" href="classLink.html#a850a1e6c7a68d921b36d30dc918a7668">Link</a>.</p>
+<p>Implemented in <a class="el" href="classLink.html#a850a1e6c7a68d921b36d30dc918a7668">Link</a>, <a class="el" href="classCowboy.html#a3c4b0540c47492d02fa64b4740a35bcf">Cowboy</a>, and <a class="el" href="classSkeleton.html#a0ddbea7574ada0b5cef0cadbd4a0dd9f">Skeleton</a>.</p>
 
 </div>
 </div>

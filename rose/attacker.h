@@ -3,6 +3,11 @@
 
 #include "actor.h"
 
+/**
+ * @brief Base class for all characters who are 
+ * able to attack to inherit from 
+ * 
+ */
 struct Attacker : public Actor
 {
 	/**

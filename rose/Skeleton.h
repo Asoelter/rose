@@ -4,6 +4,10 @@
 #include "actor.h"
 #include "Enemy.h"
 
+/**
+ * @brief A class for drawing a Skeleton character
+ * 
+ */
 class Skeleton : public Actor, public Enemy
 {
 public:
@@ -20,28 +24,9 @@ public:
 	 */
 	virtual ~Skeleton() = default;
 
-	/**
-	 * @brief 
-	 * 
-	 */
 	void moveUp();
-
-	/**
-	 * @brief 
-	 * 
-	 */
 	void moveRight();
-
-	/**
-	 * @brief 
-	 * 
-	 */
 	void moveDown();
-
-	/**
-	 * @brief 
-	 * 
-	 */
 	void moveLeft();
 
 	/**

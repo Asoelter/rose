@@ -8,6 +8,10 @@
 
 #include "tile.h"
 
+/**
+ * @brief A Base class for all other map classes to inherit from 
+ * 
+ */
 class Map
 {
 	using MapElements = std::vector<std::vector<std::unique_ptr<Tile>>> ;
@@ -42,6 +46,10 @@ class Map
 
 //------------------------------Grassy Map-----------------------------------------
 
+/**
+ * @brief Implements Map, Displays all grassy tiles
+ * 
+ */
 class GrassyMap : public Map
 {
 	public:

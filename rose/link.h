@@ -3,6 +3,12 @@
 
 #include "attacker.h"
 
+
+/**
+ * @brief A class for drawing link from the best game
+ * series of all time: The Legend of Zelda
+ * 
+ */
 class Link : public Attacker 
 {
 	public:
