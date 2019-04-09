@@ -1,0 +1,97 @@
+\hypertarget{classEnemy}{}\section{Enemy Class Reference}
+\label{classEnemy}\index{Enemy@{Enemy}}
+Inheritance diagram for Enemy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEnemy}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEnemy_a94f30d348b6d2840fd71675472ba38dd}{Enemy}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classEnemy}{Enemy}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classEnemy_aafb628c66008e33afdd750e2f492bd98}{$\sim$\+Enemy}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classEnemy}{Enemy}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEnemy_a5f7ddbe448758f4a8eef7d846903ce99}\label{classEnemy_a5f7ddbe448758f4a8eef7d846903ce99}} 
+virtual void {\bfseries heal} ()
+\item 
+virtual void \mbox{\hyperlink{classEnemy_ae01c62a474fbcd547000ff1068976d49}{take\+Damage}} (int damage)
+\item 
+virtual int \mbox{\hyperlink{classEnemy_a755e7d44eb291517f28e9cad2c6c7111}{send\+XP}} (int x)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEnemy_af7da86e74d41308bc6378bf0223a5fb5}\label{classEnemy_af7da86e74d41308bc6378bf0223a5fb5}} 
+double {\bfseries m\+\_\+health} = 100
+\item 
+\mbox{\Hypertarget{classEnemy_a2fbf89783c994b155b825563a6c51fc5}\label{classEnemy_a2fbf89783c994b155b825563a6c51fc5}} 
+int {\bfseries m\+\_\+damage} = 0
+\item 
+\mbox{\Hypertarget{classEnemy_a6c93c0e43d21c5198797b386b6140848}\label{classEnemy_a6c93c0e43d21c5198797b386b6140848}} 
+int {\bfseries xp}
+\item 
+\mbox{\Hypertarget{classEnemy_a26c34811424e665a6c2efb9100cae0d8}\label{classEnemy_a26c34811424e665a6c2efb9100cae0d8}} 
+bool {\bfseries alive}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEnemy_a94f30d348b6d2840fd71675472ba38dd}\label{classEnemy_a94f30d348b6d2840fd71675472ba38dd}} 
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\subsubsection{\texorpdfstring{Enemy()}{Enemy()}}
+{\footnotesize\ttfamily Enemy\+::\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classEnemy}{Enemy}} object. 
+
+\mbox{\Hypertarget{classEnemy_aafb628c66008e33afdd750e2f492bd98}\label{classEnemy_aafb628c66008e33afdd750e2f492bd98}} 
+\index{Enemy@{Enemy}!````~Enemy@{$\sim$Enemy}}
+\index{````~Enemy@{$\sim$Enemy}!Enemy@{Enemy}}
+\subsubsection{\texorpdfstring{$\sim$Enemy()}{~Enemy()}}
+{\footnotesize\ttfamily virtual Enemy\+::$\sim$\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{classEnemy}{Enemy}} object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEnemy_a755e7d44eb291517f28e9cad2c6c7111}\label{classEnemy_a755e7d44eb291517f28e9cad2c6c7111}} 
+\index{Enemy@{Enemy}!sendXP@{sendXP}}
+\index{sendXP@{sendXP}!Enemy@{Enemy}}
+\subsubsection{\texorpdfstring{sendXP()}{sendXP()}}
+{\footnotesize\ttfamily int Enemy\+::send\+XP (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnemy_ae01c62a474fbcd547000ff1068976d49}\label{classEnemy_ae01c62a474fbcd547000ff1068976d49}} 
+\index{Enemy@{Enemy}!takeDamage@{takeDamage}}
+\index{takeDamage@{takeDamage}!Enemy@{Enemy}}
+\subsubsection{\texorpdfstring{takeDamage()}{takeDamage()}}
+{\footnotesize\ttfamily void Enemy\+::take\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Enemy.\+h\item 
+Enemy.\+cpp\end{DoxyCompactItemize}

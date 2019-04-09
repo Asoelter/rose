@@ -1,0 +1,207 @@
+\hypertarget{classActor}{}\section{Actor Class Reference}
+\label{classActor}\index{Actor@{Actor}}
+Inheritance diagram for Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classActor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classActor_a2a0ff4335a1ee9096df90f288c026c8b}{Actor}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classActor}{Actor}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classActor_a4e8d9d909ec2c3d3205682e83bf8ff18}{$\sim$\+Actor}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classActor}{Actor}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActor_afaa299f90233461ee4df96dcfda3008a}{move\+Up}} ()=0
+\begin{DoxyCompactList}\small\item\em Moves the actor up. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActor_a9176d8f8ec68fcbd91c48223e7c65775}{move\+Right}} ()=0
+\begin{DoxyCompactList}\small\item\em Moves the actor to the right. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActor_ad2737cd62ea0c96f75853afb5d1fd83a}{move\+Down}} ()=0
+\begin{DoxyCompactList}\small\item\em Moves the actor down. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActor_a522d6069bacaa9985db7a234bde2c8b6}{move\+Left}} ()=0
+\begin{DoxyCompactList}\small\item\em Moves the actor left. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{classActor_ab460c32c344963afcf476926367bd794}{x\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em Returns the position of the actor in screen coordinates measured from the left side of the screen. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{classActor_a7792909f3e9ca8eff707cf7b21b712fe}{y\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em Returns the position of the actor in screen coordinates measured from the top of the screen. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActor_af73a6f6670f0507c9e55ec2f61293535}{draw\+To}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Draws the actor to the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classActor_a75f9ef62ab9b6f7879cf0c1483b73866}{occupy}} (\mbox{\hyperlink{classTile}{Tile}} $\ast$tile)
+\begin{DoxyCompactList}\small\item\em Not implemented yet, but will be used to connect a tile and a character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActor_a4b047a88e9d99e98e3e594b6a82d5b3a}\label{classActor_a4b047a88e9d99e98e3e594b6a82d5b3a}} 
+enum {\bfseries Orientation} \{ \newline
+{\bfseries I\+D\+LE}, 
+{\bfseries F\+A\+C\+I\+N\+G\+\_\+\+D\+O\+WN}, 
+{\bfseries F\+A\+C\+I\+N\+G\+\_\+\+L\+E\+FT}, 
+{\bfseries F\+A\+C\+I\+N\+G\+\_\+\+UP}, 
+\newline
+{\bfseries F\+A\+C\+I\+N\+G\+\_\+\+R\+I\+G\+HT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActor_a43ebda582cf6b4c050da761c26f907f9}\label{classActor_a43ebda582cf6b4c050da761c26f907f9}} 
+std\+::vector$<$ sf\+::\+Texture $>$ {\bfseries textures\+\_\+}
+\item 
+\mbox{\Hypertarget{classActor_a2f9a76df5f156b58ee3f452df967ddc8}\label{classActor_a2f9a76df5f156b58ee3f452df967ddc8}} 
+sf\+::\+Sprite {\bfseries sprite\+\_\+}
+\item 
+\mbox{\Hypertarget{classActor_a86f1fc3c5134b89fa4b3be5f35db85fa}\label{classActor_a86f1fc3c5134b89fa4b3be5f35db85fa}} 
+int {\bfseries current\+Texture\+Index\+\_\+}
+\item 
+\mbox{\Hypertarget{classActor_a175bba65c182ee06cec92accb30af570}\label{classActor_a175bba65c182ee06cec92accb30af570}} 
+\mbox{\hyperlink{classTile}{Tile}} $\ast$ {\bfseries occupied\+Tile\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classActor_a2a0ff4335a1ee9096df90f288c026c8b}\label{classActor_a2a0ff4335a1ee9096df90f288c026c8b}} 
+\index{Actor@{Actor}!Actor@{Actor}}
+\index{Actor@{Actor}!Actor@{Actor}}
+\subsubsection{\texorpdfstring{Actor()}{Actor()}}
+{\footnotesize\ttfamily Actor\+::\+Actor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classActor}{Actor}} object. 
+
+\mbox{\Hypertarget{classActor_a4e8d9d909ec2c3d3205682e83bf8ff18}\label{classActor_a4e8d9d909ec2c3d3205682e83bf8ff18}} 
+\index{Actor@{Actor}!````~Actor@{$\sim$Actor}}
+\index{````~Actor@{$\sim$Actor}!Actor@{Actor}}
+\subsubsection{\texorpdfstring{$\sim$Actor()}{~Actor()}}
+{\footnotesize\ttfamily virtual Actor\+::$\sim$\+Actor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{classActor}{Actor}} object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classActor_af73a6f6670f0507c9e55ec2f61293535}\label{classActor_af73a6f6670f0507c9e55ec2f61293535}} 
+\index{Actor@{Actor}!drawTo@{drawTo}}
+\index{drawTo@{drawTo}!Actor@{Actor}}
+\subsubsection{\texorpdfstring{drawTo()}{drawTo()}}
+{\footnotesize\ttfamily void Actor\+::draw\+To (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draws the actor to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to draw the actor to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classSkeleton_aa39ac09590a5274536dc2fc125cc62e6}{Skeleton}}, \mbox{\hyperlink{classCowboy_af7e8a3e9cdcd9054b63a3661ca3f69a6}{Cowboy}}, and \mbox{\hyperlink{classLink_ac91a924fdf779fa02d477b7f60dbdc1e}{Link}}.
+
+\mbox{\Hypertarget{classActor_ad2737cd62ea0c96f75853afb5d1fd83a}\label{classActor_ad2737cd62ea0c96f75853afb5d1fd83a}} 
+\index{Actor@{Actor}!moveDown@{moveDown}}
+\index{moveDown@{moveDown}!Actor@{Actor}}
+\subsubsection{\texorpdfstring{moveDown()}{moveDown()}}
+{\footnotesize\ttfamily virtual void Actor\+::move\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves the actor down. 
+
+
+
+Implemented in \mbox{\hyperlink{classSkeleton_aee2055fa3d1db80392b365aa40c878bf}{Skeleton}}, \mbox{\hyperlink{classCowboy_a25b9c66203a4a5e762984ca0bed511e0}{Cowboy}}, and \mbox{\hyperlink{classLink_a9ff8ec271a0119f6e1ee178afb47f323}{Link}}.
+
+\mbox{\Hypertarget{classActor_a522d6069bacaa9985db7a234bde2c8b6}\label{classActor_a522d6069bacaa9985db7a234bde2c8b6}} 
+\index{Actor@{Actor}!moveLeft@{moveLeft}}
+\index{moveLeft@{moveLeft}!Actor@{Actor}}
+\subsubsection{\texorpdfstring{moveLeft()}{moveLeft()}}
+{\footnotesize\ttfamily virtual void Actor\+::move\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves the actor left. 
+
+
+
+Implemented in \mbox{\hyperlink{classSkeleton_ab03c65cdabc94f280443691653112d3a}{Skeleton}}, \mbox{\hyperlink{classCowboy_a487cf6b5d1e37586e6e9b408d2aaad1a}{Cowboy}}, and \mbox{\hyperlink{classLink_a682bab2dc3f967e35a67dcc74c1d4722}{Link}}.
+
+\mbox{\Hypertarget{classActor_a9176d8f8ec68fcbd91c48223e7c65775}\label{classActor_a9176d8f8ec68fcbd91c48223e7c65775}} 
+\index{Actor@{Actor}!moveRight@{moveRight}}
+\index{moveRight@{moveRight}!Actor@{Actor}}
+\subsubsection{\texorpdfstring{moveRight()}{moveRight()}}
+{\footnotesize\ttfamily virtual void Actor\+::move\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves the actor to the right. 
+
+
+
+Implemented in \mbox{\hyperlink{classSkeleton_a3d8ce7b8a1d10e4a33a27f0eee54042e}{Skeleton}}, \mbox{\hyperlink{classCowboy_a2094d31b2535a25ef8a40945473cf884}{Cowboy}}, and \mbox{\hyperlink{classLink_aa1d60136a88be20a14179a5760ed91da}{Link}}.
+
+\mbox{\Hypertarget{classActor_afaa299f90233461ee4df96dcfda3008a}\label{classActor_afaa299f90233461ee4df96dcfda3008a}} 
+\index{Actor@{Actor}!moveUp@{moveUp}}
+\index{moveUp@{moveUp}!Actor@{Actor}}
+\subsubsection{\texorpdfstring{moveUp()}{moveUp()}}
+{\footnotesize\ttfamily virtual void Actor\+::move\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves the actor up. 
+
+
+
+Implemented in \mbox{\hyperlink{classSkeleton_a0ddbea7574ada0b5cef0cadbd4a0dd9f}{Skeleton}}, \mbox{\hyperlink{classCowboy_a3c4b0540c47492d02fa64b4740a35bcf}{Cowboy}}, and \mbox{\hyperlink{classLink_a850a1e6c7a68d921b36d30dc918a7668}{Link}}.
+
+\mbox{\Hypertarget{classActor_a75f9ef62ab9b6f7879cf0c1483b73866}\label{classActor_a75f9ef62ab9b6f7879cf0c1483b73866}} 
+\index{Actor@{Actor}!occupy@{occupy}}
+\index{occupy@{occupy}!Actor@{Actor}}
+\subsubsection{\texorpdfstring{occupy()}{occupy()}}
+{\footnotesize\ttfamily void Actor\+::occupy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTile}{Tile}} $\ast$}]{tile }\end{DoxyParamCaption})}
+
+
+
+Not implemented yet, but will be used to connect a tile and a character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile} & The tile the character is occupying \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActor_ab460c32c344963afcf476926367bd794}\label{classActor_ab460c32c344963afcf476926367bd794}} 
+\index{Actor@{Actor}!xPos@{xPos}}
+\index{xPos@{xPos}!Actor@{Actor}}
+\subsubsection{\texorpdfstring{xPos()}{xPos()}}
+{\footnotesize\ttfamily float Actor\+::x\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the position of the actor in screen coordinates measured from the left side of the screen. 
+
+\begin{DoxyReturn}{Returns}
+float the x-\/position of the actor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActor_a7792909f3e9ca8eff707cf7b21b712fe}\label{classActor_a7792909f3e9ca8eff707cf7b21b712fe}} 
+\index{Actor@{Actor}!yPos@{yPos}}
+\index{yPos@{yPos}!Actor@{Actor}}
+\subsubsection{\texorpdfstring{yPos()}{yPos()}}
+{\footnotesize\ttfamily float Actor\+::y\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the position of the actor in screen coordinates measured from the top of the screen. 
+
+\begin{DoxyReturn}{Returns}
+float The y-\/position of the actor 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+actor.\+h\item 
+actor.\+cpp\end{DoxyCompactItemize}
