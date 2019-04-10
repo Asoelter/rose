@@ -6,7 +6,7 @@
 #include <vector>
 #include "actor.h"
 
-class MainCharacter : public Actor
+class MainCharacter 
 {
 	int animationPicNumber;
 	std::vector<sf::Texture> textures;
@@ -56,28 +56,28 @@ public:
 	 * 
 	 * @param amount 
 	 */
-	void walkRight(float amount);
+	void moveRight(float amount);
 
 	/**
 	 * @brief 
 	 * 
 	 * @param amount 
 	 */
-	void walkLeft(float amount);
+	void moveLeft(float amount);
 
 	/**
 	 * @brief 
 	 * 
 	 * @param amount 
 	 */
-	void walkUp(float amount);
+	void moveUp(float amount);
 
 	/**
 	 * @brief 
 	 * 
 	 * @param amount 
 	 */
-	void walkDown(float amount);
+	void moveDown(float amount);
 
 	/**
 	 * @brief 

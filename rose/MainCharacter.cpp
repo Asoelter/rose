@@ -99,7 +99,7 @@ void MainCharacter::drawCharacter(sf::RenderWindow& window) {
 
 }
 
-void MainCharacter::walkRight(float amount)
+void MainCharacter::moveRight(float amount)
 {
 	if (amount>=1)
 	{
@@ -109,7 +109,7 @@ void MainCharacter::walkRight(float amount)
 	mainCharacter.setCharacterDirectionalOrientation(true);
 }
 
-void MainCharacter::walkLeft(float amount)
+void MainCharacter::moveLeft(float amount)
 {
 	if (amount >= 1)
 	{
@@ -119,7 +119,7 @@ void MainCharacter::walkLeft(float amount)
 	mainCharacter.setCharacterDirectionalOrientation(false);
 }
 
-void MainCharacter::walkUp(float amount)
+void MainCharacter::moveUp(float amount)
 {
 	if (amount >= 1)
 	{
@@ -128,7 +128,7 @@ void MainCharacter::walkUp(float amount)
 	mainCharacter.increaseYPosition(-1*amount);
 }
 
-void MainCharacter::walkDown(float amount)
+void MainCharacter::moveDown(float amount)
 {
 	if (amount>=1)
 	{
@@ -147,17 +147,17 @@ void MainCharacter::chaseUser(float UserXPosition, float UserYPosition) {
 	std::vector<float> coordinates = getChaseUserMovementAmount(UserXPosition, UserYPosition, getXLocation(), getYLocation());
 	if (coordinates[0]>0)
 	{
-		walkRight(coordinates[0]);
+		moveRight(coordinates[0]);
 	}
 	else if (coordinates[0] < 0) {
-		walkLeft(-1 * coordinates[0]);
+		moveLeft(-1 * coordinates[0]);
 	}
 	if (coordinates[1] >0)
 	{
-		walkDown(coordinates[1]);
+		moveDown(coordinates[1]);
 	}
 	else if (coordinates[1] < 0) {
-		walkUp(-1 * coordinates[1]);
+		moveUp(-1 * coordinates[1]);
 	}
 	if (coordinates[4] <17)
 	{
