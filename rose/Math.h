@@ -1,10 +1,11 @@
 #pragma once
 
 /**
- * @brief 
+ * @brief Returns the absolute value of the parameter
  * 
- * @param valueToBeForcedPositive 
- * @return float 
+ * @param valueToBeForcedPositive The value who's absolute value is returned
+ * 
+ * @return float The absolute value of the parameter 
  */
 float absoluteValue(float valueToBeForcedPositive) {
 	if (valueToBeForcedPositive >= 0)
@@ -18,10 +19,11 @@ float absoluteValue(float valueToBeForcedPositive) {
 }
 
 /**
- * @brief 
+ * @brief Returns the absolute value of the parameter
  * 
- * @param valueToBeForcedPositive 
- * @return int 
+ * @param valueToBeForcedPositive The value who's absolute value is returned
+ * 
+ * @return int The absolute value of the parameter
  */
 int absoluteValue(int valueToBeForcedPositive) {
 	if (valueToBeForcedPositive >= 0)
@@ -35,11 +37,16 @@ int absoluteValue(int valueToBeForcedPositive) {
 }
 
 /**
- * @brief 
+ * @brief Returns the value of the parameter
+ * with the highest value
  * 
- * @param num1 
- * @param num2 
- * @return int 
+ * @param num1 The first parameter to be tested
+ * for having the max value
+ * 
+ * @param num2 The second parameter to be tested 
+ * for having the max value
+ *  
+ * @return int The maximum value of num1 and num2 
  */
 int Max(int num1, int num2) {
 	if (num1>num2)
@@ -50,11 +57,16 @@ int Max(int num1, int num2) {
 }
 
 /**
- * @brief 
+ * @brief Returns the value of the parameter
+ * with the highest value
  * 
- * @param num1 
- * @param num2 
- * @return float 
+ * @param num1 The first parameter to be tested
+ * for having the max value
+ * 
+ * @param num2 The second parameter to be tested 
+ * for having the max value
+ *  
+ * @return int The maximum value of num1 and num2 
  */
 float Max(float num1, float num2) {
 	if (num1 > num2)
@@ -67,11 +79,17 @@ float Max(float num1, float num2) {
 #pragma once
 
 /**
- * @brief 
+ * @brief Returns the value with the highest absolute
+ * value
  * 
- * @param num1 
- * @param num2 
- * @return int 
+ * @param num1 The first parameter to be tested
+ * for having the max value
+ * 
+ * @param num2 The second parameter to be tested
+ * for having the max value
+ * 
+ * @return int The max of the absolute value 
+ * of num1 and num2
  */
 int MaxByMagnitude(int num1, int num2) {
 	if (absoluteValue(num1) > absoluteValue(num2))
@@ -82,11 +100,17 @@ int MaxByMagnitude(int num1, int num2) {
 }
 
 /**
- * @brief 
+ * @brief Returns the value with the highest absolute
+ * value
  * 
- * @param num1 
- * @param num2 
- * @return float 
+ * @param num1 The first parameter to be tested
+ * for having the max value
+ * 
+ * @param num2 The second parameter to be tested
+ * for having the max value
+ * 
+ * @return int The max of the absolute value 
+ * of num1 and num2
  */
 float MaxByMagnitude(float num1, float num2) {
 	if (absoluteValue(num1) > absoluteValue(num2))
@@ -97,11 +121,16 @@ float MaxByMagnitude(float num1, float num2) {
 }
 
 /**
- * @brief 
+ * @brief Returns the minimum value of 
+ * num1 and num2
  * 
- * @param num1 
- * @param num2 
- * @return int 
+ * @param num1 The first parameter to be tested for
+ * having the minimum value
+ * 
+ * @param num2 num1 The second parameter to be tested for
+ * having the minimum value
+ * 
+ * @return int The minimum value of num1 and num2
  */
 int Min(int num1, int num2) {
 	if (num1 < num2)
@@ -112,11 +141,16 @@ int Min(int num1, int num2) {
 }
 
 /**
- * @brief 
+ * @brief Returns the minimum value of 
+ * num1 and num2
  * 
- * @param num1 
- * @param num2 
- * @return float 
+ * @param num1 The first parameter to be tested for
+ * having the minimum value
+ * 
+ * @param num2 num1 The second parameter to be tested for
+ * having the minimum value
+ * 
+ * @return int The minimum value of num1 and num2
  */
 float Min(float num1, float num2) {
 	if (num1 < num2)
@@ -127,11 +161,17 @@ float Min(float num1, float num2) {
 }
 
 /**
- * @brief 
+ * @brief Returns the value with the lowest absolute
+ * value
  * 
- * @param num1 
- * @param num2 
- * @return int 
+ * @param num1 The first parameter to be tested
+ * for having the min value
+ * 
+ * @param num2 The second parameter to be tested
+ * for having the min value
+ * 
+ * @return int The minimum of the absolute value 
+ * of num1 and num2
  */
 int MinByMagnitude(int num1, int num2) {
 	if (absoluteValue(num1) < absoluteValue(num2))
@@ -142,11 +182,17 @@ int MinByMagnitude(int num1, int num2) {
 }
 
 /**
- * @brief 
+ * @brief Returns the value with the lowest absolute
+ * value
  * 
- * @param num1 
- * @param num2 
- * @return float 
+ * @param num1 The first parameter to be tested
+ * for having the min value
+ * 
+ * @param num2 The second parameter to be tested
+ * for having the min value
+ * 
+ * @return int The minimum of the absolute value 
+ * of num1 and num2
  */
 float MinByMagnitude(float num1, float num2) {
 	if (absoluteValue(num1) < absoluteValue(num2))
@@ -157,11 +203,17 @@ float MinByMagnitude(float num1, float num2) {
 }
 
 /**
- * @brief 
+ * @brief Returns the sum of the absolute values of
+ * the two parameters
  * 
- * @param valueToBeAddedTo 
- * @param valueToAdd 
- * @return int 
+ * @param valueToBeAddedTo The value who's absolute value 
+ * gets added to
+ * 
+ * @param valueToAdd The value that is added to the first
+ * parameter
+ * 
+ * @return int The summation of the absolute value of 
+ * the two parameters 
  */
 int magnitudeAdd(int valueToBeAddedTo, int valueToAdd) {
 	if (valueToBeAddedTo >= 0)
@@ -172,11 +224,17 @@ int magnitudeAdd(int valueToBeAddedTo, int valueToAdd) {
 }
 
 /**
- * @brief 
+ * @brief Returns the sum of the absolute values of
+ * the two parameters
  * 
- * @param valueToBeAddedTo 
- * @param valueToAdd 
- * @return float 
+ * @param valueToBeAddedTo The value who's absolute value 
+ * gets added to
+ * 
+ * @param valueToAdd The value that is added to the first
+ * parameter
+ * 
+ * @return int The summation of the absolute value of 
+ * the two parameters 
  */
 float magnitudeAdd(float valueToBeAddedTo, float valueToAdd) {
 	if (valueToBeAddedTo >= 0)
@@ -187,11 +245,17 @@ float magnitudeAdd(float valueToBeAddedTo, float valueToAdd) {
 }
 
 /**
- * @brief 
+ * @brief Returns the difference of the absolute values of
+ * the two parameters
  * 
- * @param valueToBeSubedTo 
- * @param valueToSub 
- * @return int 
+ * @param valueToBeAddedTo The value who's absolute value 
+ * gets subtracted from 
+ * 
+ * @param valueToAdd The value that is subtacted from the first
+ * parameter
+ * 
+ * @return int The difference of the absolute value of 
+ * the two parameters 
  */
 int magnitudeSub(int valueToBeSubedTo, int valueToSub) {
 	if (valueToBeSubedTo >= 0)
@@ -202,11 +266,17 @@ int magnitudeSub(int valueToBeSubedTo, int valueToSub) {
 }
 
 /**
- * @brief 
+ * @brief Returns the difference of the absolute values of
+ * the two parameters
  * 
- * @param valueToBeSubedTo 
- * @param valueToSub 
- * @return float 
+ * @param valueToBeAddedTo The value who's absolute value 
+ * gets subtracted from 
+ * 
+ * @param valueToAdd The value that is subtacted from the first
+ * parameter
+ * 
+ * @return int The difference of the absolute value of 
+ * the two parameters 
  */
 float magnitudeSub(float valueToBeSubedTo, float valueToSub) {
 	if (valueToBeSubedTo >= 0)

@@ -1,5 +1,94 @@
-\hypertarget{classmap}{}\section{map Class Reference}
-\label{classmap}\index{map@{map}}
+\hypertarget{classMap}{}\section{Map Class Reference}
+\label{classMap}\index{Map@{Map}}
+
+
+A Base class for all other map classes to inherit from.  
+
+
+
+
+{\ttfamily \#include $<$map.\+h$>$}
+
+Inheritance diagram for Map\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMap}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMap_a8497952fd6e1f0584d868e6ceb97d42d}{Map}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMap}{Map}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMap_a1debdd8c6fec2993906ec9626045c80c}{$\sim$\+Map}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classMap}{Map}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMap_acbc620429ff8e8de0a62ad322581535f}{draw\+To}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Draws the map to the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMap_ab134971f0ca070bcf982391c5de2d913}\label{classMap_ab134971f0ca070bcf982391c5de2d913}} 
+Map\+Elements {\bfseries tiles\+\_\+}
+\item 
+\mbox{\Hypertarget{classMap_a6c90432856cd75ce1e19c4138caf82e7}\label{classMap_a6c90432856cd75ce1e19c4138caf82e7}} 
+int {\bfseries width\+\_\+}
+\item 
+\mbox{\Hypertarget{classMap_ad8bd63d7d81e3513726c55a1682afc52}\label{classMap_ad8bd63d7d81e3513726c55a1682afc52}} 
+int {\bfseries height\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Base class for all other map classes to inherit from. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMap_a8497952fd6e1f0584d868e6ceb97d42d}\label{classMap_a8497952fd6e1f0584d868e6ceb97d42d}} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\subsubsection{\texorpdfstring{Map()}{Map()}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classMap}{Map}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the map in pixels \\
+\hline
+{\em height} & The height of the map in pixels \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMap_a1debdd8c6fec2993906ec9626045c80c}\label{classMap_a1debdd8c6fec2993906ec9626045c80c}} 
+\index{Map@{Map}!````~Map@{$\sim$Map}}
+\index{````~Map@{$\sim$Map}!Map@{Map}}
+\subsubsection{\texorpdfstring{$\sim$Map()}{~Map()}}
+{\footnotesize\ttfamily virtual Map\+::$\sim$\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{classMap}{Map}} object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMap_acbc620429ff8e8de0a62ad322581535f}\label{classMap_acbc620429ff8e8de0a62ad322581535f}} 
+\index{Map@{Map}!drawTo@{drawTo}}
+\index{drawTo@{drawTo}!Map@{Map}}
+\subsubsection{\texorpdfstring{drawTo()}{drawTo()}}
+{\footnotesize\ttfamily void Map\+::draw\+To (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draws the map to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to draw the map to \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -24,73 +24,81 @@ public:
 	MainCharacter();
 
 	/**
-	 * @brief 
+	 * @brief Creates an array of textures from the file 
 	 * 
-	 * @param filename 
+	 * @param filename The name of the file that contains
+	 * the textures
 	 */
 	void separateImageToArrayOfTextures(const std::string& filename);
 
 	/**
-	 * @brief 
+	 * @brief Draws the character to the window
 	 * 
-	 * @param window 
+	 * @param window The window to be drawn to 
 	 */
 	void drawCharacter(sf::RenderWindow& window);
 
 	/**
-	 * @brief 
+	 * @brief The horizontal position of the character
 	 * 
-	 * @return float 
+	 * @return float The Horizontal position of 
+	 * the character in pixels
 	 */
 	float getXLocation();
 
-	/**
-	 * @brief 
+		/**
+	 * @brief The vertical position of the character
 	 * 
-	 * @return float 
+	 * @return float The vertical position of 
+	 * the character in pixels
 	 */
 	float getYLocation();
 
 	/**
-	 * @brief 
+	 * @brief Moves the character right
 	 * 
-	 * @param amount 
+	 * @param amount The number of pixels 
+	 * to move by 
 	 */
 	void moveRight(float amount);
 
 	/**
-	 * @brief 
+	 * @brief Moves the character left
 	 * 
-	 * @param amount 
+	 * @param amount The number of pixels 
+	 * to move by 
 	 */
 	void moveLeft(float amount);
 
 	/**
-	 * @brief 
+	 * @brief Moves the character up
 	 * 
-	 * @param amount 
+	 * @param amount The number of pixels 
+	 * to move by 
 	 */
 	void moveUp(float amount);
 
 	/**
-	 * @brief 
+	 * @brief Moves the character down
 	 * 
-	 * @param amount 
+	 * @param amount The number of pixels 
+	 * to move by 
 	 */
 	void moveDown(float amount);
 
 	/**
-	 * @brief 
+	 * @brief Chases the user 
 	 * 
-	 * @param UserXPosition 
-	 * @param UserYPosition 
+	 * @param UserXPosition The horizontal position of the user 
+	 * 
+	 * @param UserYPosition The vertical position of the user 
 	 */
 	void chaseUser(float UserXPosition, float UserYPosition);
 
 	/**
 	 * @brief Set the State object
 	 * 
-	 * @param state 
+	 * @param state The state to be set to 
 	 */
 	void setState(StateOfCharacter state);
 };
