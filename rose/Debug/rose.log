@@ -1,12 +1,1 @@
-﻿  CharacterStats.cpp
-  Cowboy.cpp
-  Enemy.cpp
-  MainCharacter.cpp
-  Skeleton.cpp
-  actor.cpp
-  link.cpp
-  main.cpp
-  map.cpp
-  tile.cpp
-  Generating Code...
-  rose.vcxproj -> C:\Users\Brandon\Documents\GitHub\EECS448RPG\Debug\rose.exe
+﻿  rose.vcxproj -> C:\Users\Brandon\Documents\GitHub\EECS448RPG\Debug\rose.exe

@@ -25,7 +25,7 @@ float Actor::xPos() const
 
 float Actor::yPos() const
 {
-	return sprite_.getPosition().x;
+	return sprite_.getPosition().y;
 }
 
 
