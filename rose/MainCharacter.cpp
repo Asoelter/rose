@@ -5,30 +5,15 @@
 #include "ChaseUser.h"
 
 #pragma region Constructors
-MainCharacter::MainCharacter() 
+MainCharacter::MainCharacter(std::vector<sf::Texture> &texturesList)
 	: animationPicNumber(1)			//This should be added 
 	, dying(false)					//in the order they're 
 	, mainCharacter()				//declared in the .h file
 {
-	separateImageToArrayOfTextures("warrior spritesheet calciumtrice.png");
+	textures = texturesList;
 }
 #pragma endregion
 
-
-void MainCharacter::separateImageToArrayOfTextures(const std::string& filename) {
-	for (int i = 0; i < 10; i++)
-	{
-		for (int j = 0; j <10; j++)
-		{
-			sf::Texture texture;
-			texture.loadFromFile(filename, sf::IntRect(j * 32, i * 32, 32, 32));
-			textures.push_back(texture); // error thrown here, does not seems to effect anything
-			system("CLS");
-		}
-	}
-
-	
-}
 
 float MainCharacter::getXLocation() {
 	return mainCharacter.getXPosition();

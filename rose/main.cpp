@@ -16,18 +16,21 @@ Link cowboy;
 std::vector<MainCharacter> mainCharacters;
 Skeleton skeleton;
 bool enabled = false;
+std::vector<sf::Texture> textures;
+void separateImageToArrayOfTextures(const std::string& filename);
 
 
 
 void runContinuousPartOfGame() {
 	int counter = 0;
+	separateImageToArrayOfTextures("warrior spritesheet calciumtrice.png");
 	while (true)
 	{
 		system("CLS");
 		if (enabled) {
 			if (counter % 100 == 0)
 			{
-				mainCharacters.push_back(MainCharacter());
+				mainCharacters.push_back(MainCharacter(textures));
 			}
 			for (size i = 0; i < mainCharacters.size(); i++)
 			{
@@ -100,4 +103,20 @@ int main()
 	}
 
 	thread.terminate();
+}
+
+
+
+
+void separateImageToArrayOfTextures(const std::string& filename) {
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			sf::Texture texture;
+			texture.loadFromFile(filename, sf::IntRect(j * 32, i * 32, 32, 32));
+			textures.push_back(texture); // error thrown here, does not seems to effect anything
+			system("CLS");
+		}
+	}
 }

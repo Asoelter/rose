@@ -9,11 +9,11 @@
 class MainCharacter 
 {
 	int animationPicNumber;
-	std::vector<sf::Texture> textures;
 	bool dying;
 	CharacterStats mainCharacter;
 	StateOfCharacter currentCharacterState;
 	StateOfCharacter nextCharacterState;
+	std::vector<sf::Texture> textures;
 
 public:
 
@@ -21,15 +21,8 @@ public:
 	 * @brief Construct a new Main Character object
 	 * 
 	 */
-	MainCharacter();
+	MainCharacter(std::vector<sf::Texture> &texturesList);
 
-	/**
-	 * @brief Creates an array of textures from the file 
-	 * 
-	 * @param filename The name of the file that contains
-	 * the textures
-	 */
-	void separateImageToArrayOfTextures(const std::string& filename);
 
 	/**
 	 * @brief Draws the character to the window
