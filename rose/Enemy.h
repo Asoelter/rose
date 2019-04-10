@@ -23,23 +23,47 @@ protected:
 	bool alive;
 
 	/**
-	 * @brief 
+	 * @brief Increases the enemies health by half
+	 * of it's current amount of health
 	 * 
 	 */
 	virtual void heal();
 
 	/**
-	 * @brief 
+	 * @brief Decreases the enemies health by damage amount
 	 * 
-	 * @param damage 
+	 * @param damage The amount of damage to take
 	 */
 	virtual void takeDamage(int damage);
 
+	// 	 			   .-"""-.
+	//                /  . -  \
+	//                \       /
+	//          .-""-.,:.-_-.<
+	//         /    _; o / )o|
+	//         \  ; / `  `"  '\
+	//          '.-| ;-.____, |             .,
+	//              \ `._~_/ /             /"/
+	// ,.           /`-.__.-'\`-._     ,",' ;
+	// \"\         / /|   o   \._ `-._; /  ./-.
+	//  ; ';,     / / |    ’___\ `-.,( /  //.-'
+	// :\  \\;_.-" ;  |.-"``    `\    /-. /.-'
+	//  :\  .\),.-'  /      }{    |   '..'
+	//    \ .-\      |          , /
+	//     '..'      ;'        , /
+	//              ( __ `;--;'__`)
+	//               `//'`    `||`
+	//              _//        ||
+	//      .-"-._,(__)      .(__).-""-.
+	//     /          \     /           \
+	//     \          /     \           /
+	//      `'--=="--`       `--""==--'`jgs+/-miK
+
 	/**
-	 * @brief 
+	 * @brief I honestly don't know what this is 
 	 * 
-	 * @param x 
-	 * @return int 
+	 * @param x The value to return
+	 * @return int The parameter
 	 */
 	virtual int sendXP(int x);
 

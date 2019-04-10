@@ -13,5 +13,6 @@ var searchData=
   ['setstate',['setState',['../classMainCharacter.html#a557d59154e4d12af391ee5d218b7dcc8',1,'MainCharacter']]],
   ['setxposition',['setXPosition',['../classCharacterStats.html#a46c3cc5fce4e17bccb2a3b690f3ac7aa',1,'CharacterStats']]],
   ['setyposition',['setYPosition',['../classCharacterStats.html#ab1ff93a3f5a89c57092b52ee6df40061',1,'CharacterStats']]],
+  ['shockwave',['shockWave',['../classSkeleton.html#a6113054cad95c0eefbe3c64c58027f86',1,'Skeleton']]],
   ['skeleton',['Skeleton',['../classSkeleton.html',1,'Skeleton'],['../classSkeleton.html#af01a02f1ce9ae4c801cd6e66ccf7407f',1,'Skeleton::Skeleton()']]]
 ];

@@ -30,24 +30,19 @@ public:
 	void moveLeft();
 
 	/**
-	 * @brief 
+	 * @brief The skeletons attack
 	 * 
 	 */
 	void shockWave();
 
 	/**
-	 * @brief 
+	 * @brief Chases the player
 	 * 
-	 * @param playerX 
-	 * @param playerY 
+	 * @param playerX The players horizontal position 
+	 * @param playerY The players vertical position 
 	 */
 	void chasePlayer(float playerX, float playerY);
 
-	/**
-	 * @brief 
-	 * 
-	 * @param window 
-	 */
 	virtual void drawTo(sf::RenderWindow& window);
 
 private:
@@ -56,9 +51,10 @@ private:
 	float enemyMovementSpeed = 3;
 
 	/**
-	 * @brief 
+	 * @brief Loads the textures from the file 
 	 * 
-	 * @param fileName 
+	 * @param fileName The name of the file to 
+	 * load the textures from 
 	 */
 	void loadTexture(const std::string&& fileName);
 

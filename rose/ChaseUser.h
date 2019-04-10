@@ -6,13 +6,13 @@
 /**
  * @brief Get the Chase User Movement Amount object
  * 
- * @param UserXPosition 
- * @param UserYPosition 
- * @param enemyXPosition 
- * @param enemyYPosition 
- * @param enemySpeed 
- * @param userPersonalBubble 
- * @return std::vector<float> 
+ * @param UserXPosition The horizontal position of the user
+ * @param UserYPosition The vertical position of the user 
+ * @param enemyXPosition The horizontal position of the enemy
+ * @param enemyYPosition the vertical position of the enemy
+ * @param enemySpeed The speed of the enemy
+ * @param userPersonalBubble The hitbox of the user
+ * @return std::vector<float> A list of movements to move by
  */
 std::vector<float> getChaseUserMovementAmount(float UserXPosition, float UserYPosition, float enemyXPosition, float enemyYPosition, float enemySpeed = 4.f, float userPersonalBubble = 16.f) {
 	std::vector<float> xyMovement;

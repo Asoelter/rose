@@ -16,13 +16,12 @@ virtual \mbox{\hyperlink{classEnemy_aafb628c66008e33afdd750e2f492bd98}{$\sim$\+E
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classEnemy_a5f7ddbe448758f4a8eef7d846903ce99}\label{classEnemy_a5f7ddbe448758f4a8eef7d846903ce99}} 
-virtual void {\bfseries heal} ()
-\item 
+virtual void \mbox{\hyperlink{classEnemy_a5f7ddbe448758f4a8eef7d846903ce99}{heal}} ()
+\begin{DoxyCompactList}\small\item\em Increases the enemies health by half of it\textquotesingle{}s current amount of health. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classEnemy_ae01c62a474fbcd547000ff1068976d49}{take\+Damage}} (int damage)
-\item 
+\begin{DoxyCompactList}\small\item\em Decreases the enemies health by damage amount. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{classEnemy_a755e7d44eb291517f28e9cad2c6c7111}{send\+XP}} (int x)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em I honestly don\textquotesingle{}t know what this is. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -64,6 +63,16 @@ Destroy the \mbox{\hyperlink{classEnemy}{Enemy}} object.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEnemy_a5f7ddbe448758f4a8eef7d846903ce99}\label{classEnemy_a5f7ddbe448758f4a8eef7d846903ce99}} 
+\index{Enemy@{Enemy}!heal@{heal}}
+\index{heal@{heal}!Enemy@{Enemy}}
+\subsubsection{\texorpdfstring{heal()}{heal()}}
+{\footnotesize\ttfamily void Enemy\+::heal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Increases the enemies health by half of it\textquotesingle{}s current amount of health. 
+
 \mbox{\Hypertarget{classEnemy_a755e7d44eb291517f28e9cad2c6c7111}\label{classEnemy_a755e7d44eb291517f28e9cad2c6c7111}} 
 \index{Enemy@{Enemy}!sendXP@{sendXP}}
 \index{sendXP@{sendXP}!Enemy@{Enemy}}
@@ -71,12 +80,16 @@ Destroy the \mbox{\hyperlink{classEnemy}{Enemy}} object.
 {\footnotesize\ttfamily int Enemy\+::send\+XP (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
+
+I honestly don\textquotesingle{}t know what this is. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em x} & \\
+{\em x} & The value to return \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int 
+int The parameter 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classEnemy_ae01c62a474fbcd547000ff1068976d49}\label{classEnemy_ae01c62a474fbcd547000ff1068976d49}} 
 \index{Enemy@{Enemy}!takeDamage@{takeDamage}}
@@ -85,8 +98,12 @@ int
 {\footnotesize\ttfamily void Enemy\+::take\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
+
+Decreases the enemies health by damage amount. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em damage} & \\
+{\em damage} & The amount of damage to take \\
 \hline
 \end{DoxyParams}
 

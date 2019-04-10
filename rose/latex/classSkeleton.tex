@@ -30,13 +30,12 @@ void \mbox{\hyperlink{classSkeleton_aee2055fa3d1db80392b365aa40c878bf}{move\+Dow
 \begin{DoxyCompactList}\small\item\em Moves the actor down. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSkeleton_ab03c65cdabc94f280443691653112d3a}{move\+Left}} ()
 \begin{DoxyCompactList}\small\item\em Moves the actor left. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classSkeleton_a6113054cad95c0eefbe3c64c58027f86}\label{classSkeleton_a6113054cad95c0eefbe3c64c58027f86}} 
-void {\bfseries shock\+Wave} ()
-\item 
+void \mbox{\hyperlink{classSkeleton_a6113054cad95c0eefbe3c64c58027f86}{shock\+Wave}} ()
+\begin{DoxyCompactList}\small\item\em The skeletons attack. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSkeleton_aefa4683beb507bafaa2b20eaba4f478d}{chase\+Player}} (float playerX, float playerY)
-\item 
+\begin{DoxyCompactList}\small\item\em Chases the player. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classSkeleton_aa39ac09590a5274536dc2fc125cc62e6}{draw\+To}} (sf\+::\+Render\+Window \&window)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draws the actor to the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -76,10 +75,14 @@ Destroy the \mbox{\hyperlink{classSkeleton}{Skeleton}} object.
 {\footnotesize\ttfamily void Skeleton\+::chase\+Player (\begin{DoxyParamCaption}\item[{float}]{playerX,  }\item[{float}]{playerY }\end{DoxyParamCaption})}
 
 
+
+Chases the player. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em playerX} & \\
+{\em playerX} & The players horizontal position \\
 \hline
-{\em playerY} & \\
+{\em playerY} & The players vertical position \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classSkeleton_aa39ac09590a5274536dc2fc125cc62e6}\label{classSkeleton_aa39ac09590a5274536dc2fc125cc62e6}} 
@@ -89,8 +92,12 @@ Destroy the \mbox{\hyperlink{classSkeleton}{Skeleton}} object.
 {\footnotesize\ttfamily void Skeleton\+::draw\+To (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
+
+Draws the actor to the window. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em window} & \\
+{\em window} & The window to draw the actor to \\
 \hline
 \end{DoxyParams}
 
@@ -152,6 +159,16 @@ Moves the actor up.
 
 
 Implements \mbox{\hyperlink{classActor_afaa299f90233461ee4df96dcfda3008a}{Actor}}.
+
+\mbox{\Hypertarget{classSkeleton_a6113054cad95c0eefbe3c64c58027f86}\label{classSkeleton_a6113054cad95c0eefbe3c64c58027f86}} 
+\index{Skeleton@{Skeleton}!shockWave@{shockWave}}
+\index{shockWave@{shockWave}!Skeleton@{Skeleton}}
+\subsubsection{\texorpdfstring{shockWave()}{shockWave()}}
+{\footnotesize\ttfamily void Skeleton\+::shock\+Wave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The skeletons attack. 
 
 
 
