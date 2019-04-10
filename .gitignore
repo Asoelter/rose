@@ -1,10 +1,10 @@
 .vs/rose/v15/.suo
 .vs/rose/v15/Browse.VC.db
-rose/Makefile
 rose/temp.txt
+Makefile
 rose/main
 .gitignore
 **.o
 **/.vscode/**
-/.vscode
+./.vscode/**
 *.tlog
