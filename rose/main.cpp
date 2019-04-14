@@ -1,14 +1,15 @@
-//TODO: Move this all to an executive class 
-
 #include <iostream>
+#include <vector>
 #include <SFML/Graphics.hpp>
-#include "MainCharacter.h"
+
 #include "Cowboy.h"
+#include "link.h"
+#include "MainCharacter.h"
+#include "map.h"
 #include "Skeleton.h"
 #include "tile.h"
-#include <vector>
-#include "link.h"
-#include "map.h"
+
+//TODO: Move this all to an executive class 
 
 using size = std::vector<MainCharacter>::size_type;
 
@@ -19,14 +20,16 @@ bool enabled = false;
 std::vector<sf::Texture> textures;
 void separateImageToArrayOfTextures(const std::string& filename);
 
-
-
 void runContinuousPartOfGame() {
 	int counter = 0;
 	separateImageToArrayOfTextures("warrior spritesheet calciumtrice.png");
 	while (true)
 	{
-		system("CLS");
+#ifdef _WIN32
+		//system("CLS");
+#else
+		//system("clear");
+#endif 
 		if (enabled) {
 			if (counter % 100 == 0)
 			{
@@ -52,7 +55,7 @@ int main()
 	GrassyTile tile({ 0.0f, 0.0f });
 	GrassyTile tile2({500.f, 300.f});
 	GrassyMap grassyMap(1000, 600);
-
+	Actor::setMap(&grassyMap);
 	
 	while (window.isOpen())
 	{
@@ -116,7 +119,11 @@ void separateImageToArrayOfTextures(const std::string& filename) {
 			sf::Texture texture;
 			texture.loadFromFile(filename, sf::IntRect(j * 32, i * 32, 32, 32));
 			textures.push_back(texture); // error thrown here, does not seems to effect anything
+#ifdef _WIN32
 			system("CLS");
+#else
+			system("clear");
+#endif 
 		}
 	}
 }

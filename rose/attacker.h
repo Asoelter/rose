@@ -8,19 +8,21 @@
  * able to attack to inherit from 
  * 
  */
-struct Attacker : public Actor
+class Attacker : public Actor
 {
+	public:
+	/**
+	 * @brief A virtual function for attacking
+	 * 
+	 */
+	virtual void attack();
+
+	protected:
 	/**
 	 * @brief Construct a new Attacker object
 	 * 
 	 */
 	Attacker() : Actor() {}
-
-	/**
-	 * @brief A virtual function for attacking
-	 * 
-	 */
-	virtual void attack() = 0;
 };
 
 #endif //ATTACKER_H

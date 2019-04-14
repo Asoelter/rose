@@ -26,14 +26,15 @@ class Link : public Attacker
 		 */
 		~Link() = default;
 
-		void moveUp();
-		void moveRight();
-		void moveDown();
-		void moveLeft();
+		void moveUp()	 override;
+		void moveRight() override;
+		void moveDown()	 override;
+		void moveLeft()	 override;
 		
-		void attack();
+		void attack()	 override;
 
-		virtual void drawTo(sf::RenderWindow& window);
+		virtual void drawTo(sf::RenderWindow& window) override;
+		virtual void damage() override;
 
 	private:
 		///////////////////
@@ -197,36 +198,35 @@ class Link : public Attacker
 		//Helper Indices//
 		//////////////////
 		
-		static constexpr int startOfWalkDown		= 0;	/*<The first index of the first texture in the walk down  	animation*/
-		static constexpr int startOfWalkLeft		= 8;	/*<The first index of the first texture in the walk left  	animation*/
-		static constexpr int startOfWalkUp			= 14;	/*<The first index of the first texture in the walk up    	animation*/
-		static constexpr int startOfWalkRight		= 22;	/*<The first index of the first texture in the walk right 	animation*/
+		static constexpr int startOfWalkDown		= 0;
+		static constexpr int startOfWalkLeft		= 8;
+		static constexpr int startOfWalkUp			= 14;
+		static constexpr int startOfWalkRight		= 22;
 
-		static constexpr int startOfSwordDown		= 28;	/*<The first index of the first texture in the attack down  animation*/
-		static constexpr int startOfSwordLeft		= 34;	/*<The first index of the first texture in the attack left  animation*/
-		static constexpr int startOfSwordUp			= 39;	/*<The first index of the first texture in the attack up    animation*/
-		static constexpr int startOfSwordRight		= 44;	/*<The first index of the first texture in the attack right animation*/
+		static constexpr int startOfSwordDown		= 28;
+		static constexpr int startOfSwordLeft		= 34;
+		static constexpr int startOfSwordUp			= 39;
+		static constexpr int startOfSwordRight		= 44;
 
-		static constexpr int endOfWalkDown			= 7;	/*<The last index of the first texture in the walk down 	animation*/
-		static constexpr int endOfWalkLeft			= 13;	/*<The last index of the first texture in the walk left	 	animation*/
-		static constexpr int endOfWalkUp			= 21;	/*<The last index of the first texture in the walk up 		animation*/
-		static constexpr int endOfWalkRight			= 27;	/*<The last index of the first texture in the walk right 	animation*/
+		static constexpr int endOfWalkDown			= 7;	
+		static constexpr int endOfWalkLeft			= 13;
+		static constexpr int endOfWalkUp			= 21;
+		static constexpr int endOfWalkRight			= 27;
 
-		static constexpr int endOfSwordDown			= 33;	/*<The last index of the first texture in the attack down 	animation*/
-		static constexpr int endOfSwordLeft			= 38;	/*<The last index of the first texture in the attack left 	animation*/
-		static constexpr int endOfSwordUp			= 43;	/*<The last index of the first texture in the attack up 	animation*/
-		static constexpr int endOfSwordRight		= 48;	/*<The last index of the first texture in the attack right 	animation*/
+		static constexpr int endOfSwordDown			= 33;
+		static constexpr int endOfSwordLeft			= 38;
+		static constexpr int endOfSwordUp			= 43;
+		static constexpr int endOfSwordRight		= 48;	
 
-		static constexpr int downIdle				= 0;	/*<The index of the down  idle animation*/
-		static constexpr int leftIdle				= 10;	/*<The index of the left  idle animation*/
-		static constexpr int upIdle					= 17;	/*<The index of the up	  idle animation*/
-		static constexpr int rightIdle				= 25;	/*<The index of the right idle animation*/
+		static constexpr int downIdle				= 0;
+		static constexpr int leftIdle				= 10;
+		static constexpr int upIdle					= 17;
+		static constexpr int rightIdle				= 25;
 
 		////////////////
 		//Private data//
 		////////////////
 
-		Orientation currentOrientation_;
 		bool 		isAttacking_;
 };
 

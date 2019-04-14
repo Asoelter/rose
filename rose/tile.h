@@ -4,9 +4,8 @@
 
 #include <SFML/Graphics.hpp>
 
-#ifndef ACTOR_H
-#	include "actor.h"
-#endif 
+//#include "actor.h"
+class Actor;
 
 class Tile
 {
@@ -69,6 +68,8 @@ public:
 	 * @param occupier The actor that is occupying the tile 
 	 */
 	void setOccupier(Actor* occupier);
+
+	Actor* occupier();
 
 private:
 	sf::Texture texture_;

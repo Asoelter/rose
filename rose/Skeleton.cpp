@@ -165,7 +165,8 @@ void Skeleton::loadTexture(const std::string && fileName)
 {
 	sf::Texture loader;
 	int leftEdge = 0;
-	int ypos = 512;
+	//int ypos = 512; // Unused to sommented out
+
 	//Row 1-4: 7 textures per row
 	//Index 0 - 6 Skeleton spreads arms facing backwards
 	for (int i = 0; i < 4; i++)

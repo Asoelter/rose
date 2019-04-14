@@ -62,6 +62,12 @@ void Tile::setOccupier(Actor* occupier)
 }
 
 
+Actor* Tile::occupier()
+{
+	return occupier_;
+}
+
+
 //--------------------------------------------------------Grassy Tile----------------------------------------------------------------
 
 

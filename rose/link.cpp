@@ -3,11 +3,11 @@
 #include <iostream>
 
 #define BE_EXACT
+#define persistant static
 
 
 Link::Link(float xPos, float yPos)
 	: Attacker()
-	, currentOrientation_(Orientation::IDLE)
 	, isAttacking_(false)
 {
 	loadTextures("assets/link2.png");
@@ -19,6 +19,7 @@ void Link::moveUp()
 	genericMove(startOfWalkUp, endOfWalkUp);
 	Actor::sprite_.move(0.0f, -4.0f);
 	currentOrientation_ = Orientation::FACING_UP;
+	Actor::updatePosition();
 }
 
 void Link::moveRight()
@@ -26,6 +27,7 @@ void Link::moveRight()
 	genericMove(startOfWalkRight, endOfWalkRight);
 	Actor::sprite_.move(4.0f, 0.0f);
 	currentOrientation_ = Orientation::FACING_RIGHT;
+	Actor::updatePosition();
 }
 
 void Link::moveDown()
@@ -33,6 +35,7 @@ void Link::moveDown()
 	genericMove(startOfWalkDown, endOfWalkDown);
 	Actor::sprite_.move(0.0f, 4.0f);
 	currentOrientation_ = Orientation::FACING_DOWN;
+	Actor::updatePosition();
 }
 
 void Link::moveLeft()
@@ -40,16 +43,56 @@ void Link::moveLeft()
 	genericMove(startOfWalkLeft, endOfWalkLeft);
 	Actor::sprite_.move(-4.0f, 0.0f);
 	currentOrientation_ = Orientation::FACING_LEFT;
+	Actor::updatePosition();
 }
 
 void Link::attack()
 {
 	isAttacking_ = true;
+	Attacker::attack();
 }
+
+void Link::drawTo(sf::RenderWindow& window)
+{
+	if(isAttacking_)
+	{
+		switch(currentOrientation_)
+		{
+			case Orientation::FACING_UP:		attackUp();		break;
+			case Orientation::FACING_RIGHT:		attackRight();	break;
+			case Orientation::FACING_DOWN:		attackDown();	break;
+			case Orientation::FACING_LEFT:		attackLeft();	break;
+			case Orientation::IDLE:				attackDown();	break;
+		}
+
+		//auto pos = Actor::sprite_.getPosition(); 
+		//auto texture = Actor::textures_[Actor::currentTextureIndex_];
+		//Actor::sprite_.setTextureRect(sf::IntRect(pos.x, pos.y, 35, 35));
+	}
+
+	Attacker::drawTo(window);
+}
+
+
+void Link::damage()
+{
+	std::cout << "damaged" << std::endl;
+}
+
+void Link::genericMove(int startingIndex, int endingIndex)
+{
+	int& index = ++Actor::currentTextureIndex_;
+
+	if(index < startingIndex || index > endingIndex)
+	{
+		index = startingIndex;
+	}
+}
+
 
 void Link::genericAttack(int startingIndex, int endingIndex)
 {
-	static bool shouldReset = true;
+	persistant bool shouldReset = true;
 
 	++Actor::currentTextureIndex_;
 
@@ -97,36 +140,6 @@ void Link::attackLeft()
 	currentOrientation_ = Orientation::FACING_LEFT;
 }
 
-void Link::drawTo(sf::RenderWindow& window)
-{
-	if(isAttacking_)
-	{
-		switch(currentOrientation_)
-		{
-			case Orientation::FACING_UP:		attackUp();		break;
-			case Orientation::FACING_RIGHT:		attackRight();	break;
-			case Orientation::FACING_DOWN:		attackDown();	break;
-			case Orientation::FACING_LEFT:		attackLeft();	break;
-			case Orientation::IDLE:				attackDown();	break;
-		}
-
-		//auto pos = Actor::sprite_.getPosition(); 
-		//auto texture = Actor::textures_[Actor::currentTextureIndex_];
-		//Actor::sprite_.setTextureRect(sf::IntRect(pos.x, pos.y, 35, 35));
-	}
-
-	Attacker::drawTo(window);
-}
-
-void Link::genericMove(int startingIndex, int endingIndex)
-{
-	int& index = ++Actor::currentTextureIndex_;
-
-	if(index < startingIndex || index > endingIndex)
-	{
-		index = startingIndex;
-	}
-}
 
 void Link::loadTextures(const std::string&& fileName)
 {

@@ -37,11 +37,19 @@ class Map
 		 * @param window The window to draw the map to
 		 */
 		virtual void drawTo(sf::RenderWindow& window);
+		
+		constexpr auto width()  const {return width_;}
+		constexpr auto height() const {return height_;}
+
+		constexpr auto tileWidth()  const {return tiles_[0][0]->width();}
+		constexpr auto tileHeight() const {return tiles_[0][0]->height();}
+
+		auto tileAt(int row, int col) const {return tiles_[row][col].get();}
 
 	protected:
 		MapElements tiles_;
-		int width_;
-		int height_;
+		int			width_;
+		int			height_;
 };
 
 //------------------------------Grassy Map-----------------------------------------

@@ -44,11 +44,12 @@ public:
 	void chasePlayer(float playerX, float playerY);
 
 	virtual void drawTo(sf::RenderWindow& window);
+	void damage(){}
 
 private:
 	float m_xPos;
 	float m_yPos;
-	float enemyMovementSpeed = 3;
+	//float enemyMovementSpeed = 3; //Unused so commented out
 
 	/**
 	 * @brief Loads the textures from the file 

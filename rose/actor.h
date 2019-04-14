@@ -1,9 +1,13 @@
 #pragma once 
 
+#include <utility>
 #include <vector>
 #include <SFML/Graphics.hpp>
 
-class Tile;
+#include "map.h"
+#include "tile.h"
+
+//class Tile;
 
 /**
  * @brief Base class for any character type to inherit from 
@@ -34,7 +38,6 @@ public:
 	 * @brief Moves the actor to the right 
 	 * 
 	 */
-
 	virtual void moveRight()	= 0;
 
 	/**
@@ -48,6 +51,12 @@ public:
 	 * 
 	 */
 	virtual void moveLeft()		= 0;
+
+	/**
+	 * @brief Makes the actor take damage
+	 * 
+	 */
+	virtual void damage() = 0;
 
 	/**
 	 * @brief Returns the position of the actor in screen 
@@ -72,13 +81,9 @@ public:
 	 */
 	virtual void drawTo(sf::RenderWindow& window);
 
-	/**
-	 * @brief Not implemented yet, but will be used to connect
-	 * a tile and a character 
-	 * 
-	 * @param tile The tile the character is occupying 
-	 */
-	void occupy(Tile* tile);
+
+	static void setMap(Map* map);
+	static Map const *	map;
 
 protected:
 	enum class Orientation
@@ -90,9 +95,16 @@ protected:
 		FACING_RIGHT
 	};
 	
-	std::vector<sf::Texture> textures_;  
-	sf::Sprite sprite_;					
-	int currentTextureIndex_;			
-	Tile* occupiedTile_;
+	void updatePosition();
+	Tile* occupiedTile() const;
+	std::pair<int, int> mapIndices() const;
+
+	std::vector<sf::Texture>	textures_;  
+	sf::Sprite					sprite_;					
+	Tile*						occupiedTile_;
+	Orientation					currentOrientation_;
+	int							currentTextureIndex_;			
+	int							horizontaltileIndex_;
+	int							verticalTileIndex_;
 };
 
