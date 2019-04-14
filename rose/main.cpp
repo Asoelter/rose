@@ -10,19 +10,19 @@
 #include "tile.h"
 
 //TODO: Move this all to an executive class 
+#include "MainCharacterTextures.h"
 
 using size = std::vector<MainCharacter>::size_type;
 
 Link cowboy;
 std::vector<MainCharacter> mainCharacters;
 Skeleton skeleton;
+MainCharacterTextures mainCharactersTextures("warrior spritesheet calciumtrice.png");
 bool enabled = false;
-std::vector<sf::Texture> textures;
-void separateImageToArrayOfTextures(const std::string& filename);
+
 
 void runContinuousPartOfGame() {
 	int counter = 0;
-	separateImageToArrayOfTextures("warrior spritesheet calciumtrice.png");
 	while (true)
 	{
 #ifdef _WIN32
@@ -33,7 +33,7 @@ void runContinuousPartOfGame() {
 		if (enabled) {
 			if (counter % 100 == 0)
 			{
-				mainCharacters.push_back(MainCharacter(textures));
+				mainCharacters.push_back(MainCharacter(mainCharactersTextures.textures));
 			}
 			for (size i = 0; i < mainCharacters.size(); i++)
 			{
@@ -110,8 +110,7 @@ int main()
 
 
 
-
-void separateImageToArrayOfTextures(const std::string& filename) {
+/*void separateImageToArrayOfTextures(const std::string& filename) {
 	for (int i = 0; i < 10; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -126,4 +125,4 @@ void separateImageToArrayOfTextures(const std::string& filename) {
 #endif 
 		}
 	}
-}
+}*/
