@@ -104,7 +104,8 @@ protected:
 	Tile*						occupiedTile_;
 	Orientation					currentOrientation_;
 	int							currentTextureIndex_;			
-	int							horizontaltileIndex_;
+	int							horizontalTileIndex_;
 	int							verticalTileIndex_;
+	int							health_;
 };
 

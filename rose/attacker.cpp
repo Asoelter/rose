@@ -1,5 +1,11 @@
 #include "attacker.h"
 
+//#define DEBUG
+
+#ifdef DEBUG
+#	include <iostream>
+#endif 
+
 void Attacker::attack()
 {
 	auto attackerIndices = Actor::mapIndices();
@@ -30,8 +36,15 @@ void Attacker::attack()
 		}break;
 	}
 
+#ifdef DEBUG
+	std::cout << "Link Indices: " << attackerIndices.first << ", " << attackerIndices.second << std::endl;
+#endif 
+
 	if(victim)
 	{
 		victim->damage();
+#ifdef DEBUG
+		std::cout << "found a victim" << std::endl;
+#endif 
 	}
 }

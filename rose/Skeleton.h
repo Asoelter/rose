@@ -44,7 +44,7 @@ public:
 	void chasePlayer(float playerX, float playerY);
 
 	virtual void drawTo(sf::RenderWindow& window);
-	void damage(){}
+	void damage();
 
 private:
 	float m_xPos;

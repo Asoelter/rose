@@ -1,4 +1,6 @@
-#pragma once
+#ifndef MAIN_CHARACTER_H
+#define MAIN_CHARACTER_H
+
 #include <iostream>
 #include "CharacterStats.h"
 #include "StateOfCharacter.h"
@@ -96,4 +98,4 @@ public:
 	void setState(StateOfCharacter state);
 };
 
-
+#endif //MAIN_CHARACTER_H

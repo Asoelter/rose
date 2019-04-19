@@ -3,7 +3,7 @@
 #include <iostream>
 
 #define BE_EXACT
-//#define DEBUG
+#define DEBUG
 
 #define persistant static
 
@@ -76,7 +76,7 @@ void Link::drawTo(sf::RenderWindow& window)
 	{
 		Actor::updatePosition();
 		std::cout << "Link index: " 
-			<< Actor::horizontalTileIndex_ << ", " 
+			<< Actor::horizontaltileIndex_ << ", " 
 			<< Actor::verticalTileIndex_ 
 			<< std::endl;
 	}

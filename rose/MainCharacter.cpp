@@ -130,7 +130,10 @@ void MainCharacter::setState(StateOfCharacter state)
 
 
 void MainCharacter::chaseUser(float UserXPosition, float UserYPosition) {
-	std::vector<float> coordinates = getChaseUserMovementAmount(UserXPosition, UserYPosition, getXLocation(), getYLocation());
+	std::vector<float> coordinates = getChaseUserMovementAmount(UserXPosition, 
+																UserYPosition, 
+																getXLocation(), 
+																getYLocation());
 	if (coordinates[0]>0)
 	{
 		moveRight(coordinates[0]);

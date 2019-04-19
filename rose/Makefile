@@ -1,11 +1,11 @@
-CXX_FLAGS   = clang++ -std=c++17 -O2 -g -Wall -Wextra -pedantic -Wno-unknown-pragmas
-HEADERS     = actor.h attacker.h Cowboy.h tile.h MainCharacter.h CharacterStats.h link.h map.h Skeleton.h Enemy.h
-OBJECTS     = main.o actor.o attacker.o Cowboy.o tile.o MainCharacter.o CharacterStats.o link.o map.o Skeleton.o Enemy.o
+CXX_FLAGS   = clang++ -std=c++17 -g -Wall -Wextra -pedantic -Wno-unknown-pragmas
+HEADERS     = actor.h attacker.h Cowboy.h tile.h MainCharacter.h CharacterStats.h link.h map.h Skeleton.h Enemy.h MainCharacterTextures.h
+OBJECTS     = main.o actor.o attacker.o Cowboy.o tile.o MainCharacter.o CharacterStats.o link.o map.o Skeleton.o Enemy.o MainCharacterTextures.o
 
 main: $(OBJECTS)
 	$(CXX_FLAGS) $(OBJECTS) -o main -lsfml-graphics -lsfml-window -lsfml-system
 
-main.o: main.cpp $(HEADERS)
+main.o: main.cpp Math.h ChaseUser.h $(HEADERS)
 	$(CXX_FLAGS) -c main.cpp                             
 
 actor.o: actor.h actor.cpp
@@ -37,6 +37,9 @@ Skeleton.o: Skeleton.h Skeleton.cpp
 
 Enemy.o: Enemy.h Enemy.cpp
 	$(CXX_FLAGS) -c Enemy.cpp             
+
+MainCharacterTextures.o: MainCharacterTextures.h MainCharacterTextures.cpp
+	$(CXX_FLAGS) -c MainCharacterTextures.cpp
 
 clean: 
 	rm *.o main

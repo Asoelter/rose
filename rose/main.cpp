@@ -14,22 +14,20 @@
 
 using size = std::vector<MainCharacter>::size_type;
 
-Link cowboy;
 std::vector<MainCharacter> mainCharacters;
-Skeleton skeleton;
 MainCharacterTextures mainCharactersTextures("warrior spritesheet calciumtrice.png");
 bool enabled = false;
 
 
-void runContinuousPartOfGame() {
+/*void runContinuousPartOfGame() {
 	int counter = 0;
 	while (true)
 	{
-#ifdef _WIN32
+#	ifdef _WIN32
 		//system("CLS");
-#else
+#	else
 		//system("clear");
-#endif 
+#	endif 
 		if (enabled) {
 			if (counter % 100 == 0)
 			{
@@ -37,25 +35,27 @@ void runContinuousPartOfGame() {
 			}
 			for (size i = 0; i < mainCharacters.size(); i++)
 			{
-				mainCharacters[i].chaseUser(cowboy.xPos(), cowboy.yPos());
+				mainCharacters[i].chaseUser(link.xPos(), link.yPos());
 			}
 			sf::sleep(sf::milliseconds(100));
 			counter++;
-			skeleton.chasePlayer(cowboy.xPos(), cowboy.yPos());
+			skeleton.chasePlayer(link.xPos(), link.yPos());
 		}
 	}
 
-}
+}*/
 
 int main()
 {
-	sf::Thread thread(&runContinuousPartOfGame);
-	thread.launch();
+	//sf::Thread thread(&runContinuousPartOfGame);
+	//thread.launch();
 	sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works");
 	GrassyTile tile({ 0.0f, 0.0f });
 	GrassyTile tile2({500.f, 300.f});
 	GrassyMap grassyMap(1000, 600);
 	Actor::setMap(&grassyMap);
+	Link link;
+	Skeleton skeleton;
 	
 	while (window.isOpen())
 	{
@@ -67,23 +67,23 @@ int main()
 				window.close();
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
-				cowboy.moveUp();
+				link.moveUp();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
-				cowboy.moveRight();
+				link.moveRight();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 			{
-				cowboy.moveDown();
+				link.moveDown();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 			{
-				cowboy.moveLeft();
+				link.moveLeft();
 			}
 			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 			{
-				cowboy.attack();
+				link.attack();
 			}
 			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 			{
@@ -95,7 +95,7 @@ int main()
 		tile.drawTo(window);
 		tile2.drawTo(window);
 		grassyMap.drawTo(window);
-		cowboy.drawTo(window);
+		link.drawTo(window);
 		for (size i = 0; i < mainCharacters.size(); i++)
 		{
 			mainCharacters[i].drawCharacter(window);
@@ -105,24 +105,6 @@ int main()
 
 	}
 
-	thread.terminate();
+	//thread.terminate();
 }
 
-
-
-/*void separateImageToArrayOfTextures(const std::string& filename) {
-	for (int i = 0; i < 10; i++)
-	{
-		for (int j = 0; j < 10; j++)
-		{
-			sf::Texture texture;
-			texture.loadFromFile(filename, sf::IntRect(j * 32, i * 32, 32, 32));
-			textures.push_back(texture); // error thrown here, does not seems to effect anything
-#ifdef _WIN32
-			system("CLS");
-#else
-			system("clear");
-#endif 
-		}
-	}
-}*/

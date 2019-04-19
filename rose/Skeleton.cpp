@@ -2,6 +2,8 @@
 #include <cassert>
 #include <iostream>
 
+//#define DEBUG
+
 
 Skeleton::Skeleton()
 	: Actor()
@@ -10,6 +12,14 @@ Skeleton::Skeleton()
 
 	loadTexture("assets/skeletonSpriteSheet.png");
 	Actor::sprite_.setPosition({ 800.0f, 300.0f });
+	Actor::health_ = 3;
+
+#ifdef DEBUG
+	std::cout << "Skeleton Coordinates: " 
+			  << Actor::horizontalTileIndex_ 
+			  << ", " << Actor::verticalTileIndex_ 
+			  << std::endl;
+#endif 
 }
 
 
@@ -158,6 +168,31 @@ void Skeleton::drawTo(sf::RenderWindow & window)
 	}
 
 	Actor::drawTo(window);
+#ifdef DEBUG
+	static int count = 0;
+
+	if(count % 100 == 0)
+	{
+		Actor::updatePosition();
+		std::cout << "Skeleton index: " 
+			<< Actor::horizontalTileIndex_ << ", " 
+			<< Actor::verticalTileIndex_ 
+			<< std::endl;
+	}
+
+	if(Actor::health_ <= 0)
+	{
+		std::cout << "SKELETON DEAD" << std::endl;
+	}
+
+	++count;
+#endif 
+}
+
+
+void Skeleton::damage()
+{
+	--Actor::health_;
 }
 
 
@@ -165,7 +200,6 @@ void Skeleton::loadTexture(const std::string && fileName)
 {
 	sf::Texture loader;
 	int leftEdge = 0;
-	//int ypos = 512; // Unused to sommented out
 
 	//Row 1-4: 7 textures per row
 	//Index 0 - 6 Skeleton spreads arms facing backwards

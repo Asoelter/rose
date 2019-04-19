@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MATH_H
+#define MATH_H
 
 /**
  * @brief Returns the absolute value of the parameter
@@ -286,3 +287,4 @@ float magnitudeSub(float valueToBeSubedTo, float valueToSub) {
 	return -Max(absoluteValue(valueToBeSubedTo) - absoluteValue(valueToSub), 0.f);
 }
 
+#endif //MATH_H
