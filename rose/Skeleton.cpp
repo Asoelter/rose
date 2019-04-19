@@ -2,7 +2,7 @@
 #include <cassert>
 #include <iostream>
 
-//#define DEBUG
+#define DEBUG
 
 
 Skeleton::Skeleton()
@@ -178,15 +178,17 @@ void Skeleton::drawTo(sf::RenderWindow & window)
 			<< Actor::horizontalTileIndex_ << ", " 
 			<< Actor::verticalTileIndex_ 
 			<< std::endl;
+
+		std::cout << "Skeleton Health: " << Actor::health_ << '\n';
 	}
 
+	++count;
+#endif 
 	if(Actor::health_ <= 0)
 	{
 		std::cout << "SKELETON DEAD" << std::endl;
 	}
 
-	++count;
-#endif 
 }
 
 

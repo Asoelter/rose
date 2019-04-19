@@ -54,7 +54,7 @@ int main()
 	GrassyTile tile2({500.f, 300.f});
 	GrassyMap grassyMap(1000, 600);
 	Actor::setMap(&grassyMap);
-	Link link;
+	Link link(800, 300);
 	Skeleton skeleton;
 	
 	while (window.isOpen())

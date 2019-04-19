@@ -43,7 +43,6 @@ void Actor::drawTo(sf::RenderWindow & window)
 void Actor::setMap(Map* map)
 {
 	Actor::map = map;
-	std::cout << "Map is set" << std::endl;
 }
 
 

@@ -1,6 +1,6 @@
 #include "attacker.h"
 
-//#define DEBUG
+#define DEBUG
 
 #ifdef DEBUG
 #	include <iostream>
@@ -9,42 +9,46 @@
 void Attacker::attack()
 {
 	auto attackerIndices = Actor::mapIndices();
-	Actor* victim = nullptr;
+	int victimXpos = 0;
+	int victimYpos = 0;
 
 	switch(Actor::currentOrientation_)
 	{
 		case Orientation::IDLE:
 		case Orientation::FACING_DOWN:
 		{
-			auto victimTile = Actor::map->tileAt(attackerIndices.first + 1, attackerIndices.second);
-			victim = victimTile->occupier();
+			victimXpos = attackerIndices.first;
+			victimYpos = attackerIndices.second + 1;
 		}break;
 		case Orientation::FACING_LEFT:
 		{
-			auto victimTile = Actor::map->tileAt(attackerIndices.first, attackerIndices.second - 1);
-			victim = victimTile->occupier();
+			victimXpos = attackerIndices.first - 1;
+			victimYpos = attackerIndices.second;
 		}break;
 		case Orientation::FACING_UP:
 		{
-			auto victimTile = Actor::map->tileAt(attackerIndices.first - 1, attackerIndices.second);
-			victim = victimTile->occupier();
+			victimXpos = attackerIndices.first;
+			victimYpos = attackerIndices.second - 1;
 		}break;
 		case Orientation::FACING_RIGHT:
 		{
-			auto victimTile = Actor::map->tileAt(attackerIndices.first, attackerIndices.second + 1);
-			victim = victimTile->occupier();
+			victimXpos = attackerIndices.first + 1;
+			victimYpos = attackerIndices.second;
 		}break;
 	}
 
-#ifdef DEBUG
-	std::cout << "Link Indices: " << attackerIndices.first << ", " << attackerIndices.second << std::endl;
-#endif 
+	auto victimTile = Actor::map->tileAt(victimYpos, victimXpos);
+	auto victim = victimTile->occupier();
+
+	std::cout << "ATTACKER INDEX: " << attackerIndices.first << ", " << attackerIndices.second << std::endl;
+	std::cout << "VICTIM INDEX: " << victimXpos << ", " << victimYpos << std::endl;
 
 	if(victim)
 	{
 		victim->damage();
-#ifdef DEBUG
-		std::cout << "found a victim" << std::endl;
-#endif 
+
+#		ifdef DEBUG
+			std::cout << "found a victim" << std::endl;
+#		endif 
 	}
 }

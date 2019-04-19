@@ -1,4 +1,4 @@
-CXX_FLAGS   = clang++ -std=c++17 -g -Wall -Wextra -pedantic -Wno-unknown-pragmas
+CXX_FLAGS   = clang++ -std=c++17 -O2 -g -Wall -Wextra -pedantic -Wno-unknown-pragmas
 HEADERS     = actor.h attacker.h Cowboy.h tile.h MainCharacter.h CharacterStats.h link.h map.h Skeleton.h Enemy.h MainCharacterTextures.h
 OBJECTS     = main.o actor.o attacker.o Cowboy.o tile.o MainCharacter.o CharacterStats.o link.o map.o Skeleton.o Enemy.o MainCharacterTextures.o
 
