@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <SFML/Graphics.hpp>
+#include <chrono>
+#include <ctime>
 
 #include "Cowboy.h"
 #include "link.h"
@@ -8,6 +10,7 @@
 #include "map.h"
 #include "Skeleton.h"
 #include "tile.h"
+#include "log.h"
 
 //TODO: Move this all to an executive class 
 #include "MainCharacterTextures.h"
@@ -49,13 +52,23 @@ int main()
 {
 	//sf::Thread thread(&runContinuousPartOfGame);
 	//thread.launch();
+
+	Rose::Logger::warn("This is a warning");
+	Rose::Logger::error("This is an error");
+	Rose::Logger::info("This is some info");
 	sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works");
 	GrassyTile tile({ 0.0f, 0.0f });
 	GrassyTile tile2({500.f, 300.f});
 	GrassyMap grassyMap(1000, 600);
+
+
 	Actor::setMap(&grassyMap);
 	Link link(800, 300);
-	Skeleton skeleton;
+	auto before = std::chrono::system_clock::now();
+	Skeleton skeleton; //This constructor taking a long time 
+	auto after = std::chrono::system_clock::now();
+	std::chrono::duration<double> duration = after - before;
+	std::cout << "elapsed time: " << duration.count() << std::endl;
 	
 	while (window.isOpen())
 	{
