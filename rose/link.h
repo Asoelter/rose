@@ -31,7 +31,7 @@ class Link : public Attacker
 		void moveDown()	 override;
 		void moveLeft()	 override;
 		
-		void attack()	 override;
+		virtual void attack()	 override;
 
 		virtual void drawTo(sf::RenderWindow& window) override;
 		virtual void damage() override;

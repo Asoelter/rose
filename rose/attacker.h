@@ -11,18 +11,20 @@
 class Attacker : public Actor
 {
 	public:
-	/**
-	 * @brief A virtual function for attacking
-	 * 
-	 */
-	virtual void attack();
+
+		virtual ~Attacker() = default;
+		/**
+		 * @brief A virtual function for attacking
+		 * 
+		 */
+		virtual void attack();
 
 	protected:
-	/**
-	 * @brief Construct a new Attacker object
-	 * 
-	 */
-	Attacker() : Actor() {}
+		/**
+		 * @brief Construct a new Attacker object
+		 * 
+		 */
+		Attacker() : Actor() {}
 };
 
 #endif //ATTACKER_H
