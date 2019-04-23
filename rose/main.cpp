@@ -53,9 +53,9 @@ int main()
 	//sf::Thread thread(&runContinuousPartOfGame);
 	//thread.launch();
 
-	Rose::Logger::warn("This is a warning");
-	Rose::Logger::error("This is an error");
-	Rose::Logger::info("This is some info");
+	Rose::Logger::warn("This is a warning", 5, "keep going");
+	Rose::Logger::error("This is an error", 5, "keep going");
+	Rose::Logger::info("This is some info", 5, "keep going");
 	sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works");
 	GrassyTile tile({ 0.0f, 0.0f });
 	GrassyTile tile2({500.f, 300.f});

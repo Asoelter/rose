@@ -47,4 +47,19 @@ void Logger::info(const std::string&& msg)
 	std::cout << greenBegin << std::move(msg) << greenEnd << std::endl;
 }
 
+void Logger::error()
+{
+	std::cout << redEnd << std::endl;
+}
+
+void Logger::warn()
+{
+	std::cout << yellowEnd << std::endl;
+}
+
+void Logger::info()
+{
+	std::cout << greenEnd << std::endl;
+}
+
 }

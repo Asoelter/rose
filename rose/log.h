@@ -19,7 +19,35 @@ namespace Rose
 			static void warn(const std::string&& msg);
 			static void info(const std::string&& msg);
 
+			template<typename T, typename... Params>
+			static void error(T msg, Params... params)
+			{
+
+				std::cout << redBegin << msg << ' ';
+				Rose::Logger::error(params...);
+			}
+
+			template<typename T, typename... Params>
+			static void warn(T msg, Params... params)
+			{
+				std::cout << yellowBegin << msg << ' ';
+				Rose::Logger::warn(params...);
+
+			}
+
+			template<typename T, typename... Params>
+			static void info(T msg, Params... params)
+			{
+				std::cout << greenBegin << msg << ' ';
+				Rose::Logger::info(params...);
+			}
+
+
 		private:
+			static void error();
+			static void warn();
+			static void info();
+
 			static bool enabled;
 			static const std::string redBegin;
 			static const std::string redEnd;
