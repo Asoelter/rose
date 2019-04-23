@@ -1,5 +1,5 @@
 #include "log.h"
-#include <iostream>
+#include <string>
 
 namespace Rose
 {

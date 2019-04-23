@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{EA3D4F12-5779-4B6E-BF1C-AA039321AB04}</ProjectGuid>
     <RootNamespace>rose</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,10 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="actor.cpp" />
+    <ClCompile Include="attacker.cpp" />
     <ClCompile Include="CharacterStats.cpp" />
     <ClCompile Include="Cowboy.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="link.cpp" />
+    <ClCompile Include="log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainCharacter.cpp" />
     <ClCompile Include="MainCharacterTextures.cpp" />
@@ -156,11 +158,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h" />
+    <ClInclude Include="attacker.h" />
     <ClInclude Include="CharacterStats.h" />
     <ClInclude Include="ChaseUser.h" />
     <ClInclude Include="Cowboy.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="link.h" />
+    <ClInclude Include="log.h" />
     <ClInclude Include="MainCharacter.h" />
     <ClInclude Include="MainCharacterTextures.h" />
     <ClInclude Include="map.h" />
