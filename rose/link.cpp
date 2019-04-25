@@ -15,7 +15,7 @@ namespace Rose::Character
 		, isAttacking_(false)
 	{
 		loadTextures("assets/link2.png");
-		Actor::sprite_.setPosition(xPos, yPos);
+		Actor::sprite_.setPosition(static_cast<float>(xPos), static_cast<float>(yPos));
 		Actor::health_ = 20;
 	}
 

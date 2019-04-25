@@ -1,6 +1,6 @@
+#include <algorithm>
 #include "game.h"
 #include "log.h"
-#include "Skeleton.h"
 
 
 Game::Game()
@@ -15,6 +15,7 @@ Game::Game()
 void Game::run()
 {
 	Skeleton skeleton; //This constructor taking a long time 
+	auto enemies = generateEnemies(5);
 	
 	while (window_.isOpen())
 	{
@@ -53,7 +54,40 @@ void Game::run()
 		map_->drawTo(window_);
 		link_.drawTo(window_);
 		skeleton.drawTo(window_);
+		std::for_each(enemies.begin(), enemies.end(), [this](std::unique_ptr<Skeleton>& s) 
+		{
+			s->drawTo(this->window_);
+		});
 		window_.display();
 	}
 
+}
+
+
+std::vector<std::unique_ptr<Skeleton>> Game::generateEnemies(int amount)
+{
+	auto xMid	= map_->width() / 2;
+	auto yMid	= map_->height() / 2;
+	auto top	= 0; 
+	auto bot	= map_->height();
+	auto right	= map_->width();
+	auto left	= 0;
+
+	std::array<sf::Vector2i, 4> positions = {
+		sf::Vector2i(xMid, top),
+		sf::Vector2i(right, yMid),
+		sf::Vector2i(xMid, bot),
+		sf::Vector2i(left, yMid)
+	};
+
+	std::vector<std::unique_ptr<Skeleton>> rval;
+	int index = 0;
+
+	for(int i = 0; i < amount; ++i)
+	{
+		rval.emplace_back(std::make_unique<Skeleton>(Skeleton(positions[index])));
+		index = (index + 1) % positions.size();
+	}
+
+	return rval;
 }

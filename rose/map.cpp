@@ -69,7 +69,7 @@ void GrassyMap::fillMap()
 			Map::tiles_[currentIndex].emplace_back(std::move(tempTile));
 			currentX += width;
 		}
-		while(widthOf(Map::tiles_[currentIndex]) < Map::width_ + Map::tiles_[0][0]->width());
+		while(widthOf(Map::tiles_[currentIndex]) < Map::width_);
 
 		currentY += Map::tiles_[0][0]->width();
 		++currentIndex;

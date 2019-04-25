@@ -22,6 +22,26 @@ Skeleton::Skeleton()
 }
 
 
+Skeleton::Skeleton(int xPos, int yPos)
+	: Actor()
+	, framesBetweenMoves_(0)
+{
+	loadTexture("assets/skeletonSpriteSheet.png");
+
+	Actor::sprite_.setPosition(static_cast<float>(xPos), static_cast<float>(yPos));
+	Actor::health_ = 3;
+}
+
+Skeleton::Skeleton(sf::Vector2i position)
+	: Actor()
+	, framesBetweenMoves_(0)
+{
+	loadTexture("assets/skeletonSpriteSheet.png");
+
+	Actor::sprite_.setPosition(static_cast<float>(position.x), static_cast<float>(position.y));
+	Actor::health_ = 3;
+}
+
 
 void Skeleton::moveUp()
 {

@@ -17,6 +17,8 @@ public:
 	 * 
 	 */
 	Skeleton();
+	Skeleton(int xPos, int yPos);
+	Skeleton(sf::Vector2i position);
 
 	/**
 	 * @brief Destroy the Skeleton object

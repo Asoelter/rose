@@ -38,16 +38,16 @@ class Map
 		 */
 		virtual void drawTo(sf::RenderWindow& window);
 		
-		auto width()			 const {return width_;}
-		auto height()			 const {return height_;}
+		auto width()					const {return width_;}
+		auto height()					const {return height_;}
 
-		auto tileWidth()		 const {return tiles_[0][0]->width();}
-		auto tileHeight()		 const {return tiles_[0][0]->height();}
+		auto tileWidth()				const {return tiles_[0][0]->width();}
+		auto tileHeight()				const {return tiles_[0][0]->height();}
 
-		auto verticalTiles()	 const {return tiles_.size();}
-		auto horizontalTiles() const {return tiles_[1].size();}
+		auto verticalTiles()			const {return tiles_.size();}
+		auto horizontalTiles()			const {return tiles_[1].size();}
 
-		auto tileAt(int row, int col)	 const {return tiles_[row][col].get();}
+		auto tileAt(int row, int col)	const {return tiles_[row][col].get();}
 
 	protected:
 		MapElements tiles_;
