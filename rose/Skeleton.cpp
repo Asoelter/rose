@@ -4,22 +4,19 @@
 
 #define DEBUG
 
+#ifdef DEBUG
+#	include <chrono>
+#	include "log.h"
+#endif 
 
 Skeleton::Skeleton()
 	: Actor()
 	, framesBetweenMoves_(0)
 {
-
 	loadTexture("assets/skeletonSpriteSheet.png");
+
 	Actor::sprite_.setPosition({ 800.0f, 300.0f });
 	Actor::health_ = 3;
-
-#ifdef DEBUG
-	std::cout << "Skeleton Coordinates: " 
-			  << Actor::horizontalTileIndex_ 
-			  << ", " << Actor::verticalTileIndex_ 
-			  << std::endl;
-#endif 
 }
 
 
@@ -173,22 +170,16 @@ void Skeleton::drawTo(sf::RenderWindow & window)
 
 	if(count % 100 == 0)
 	{
-		Actor::updatePosition();
-		std::cout << "Skeleton index: " 
-			<< Actor::horizontalTileIndex_ << ", " 
-			<< Actor::verticalTileIndex_ 
-			<< std::endl;
-
-		std::cout << "Skeleton Health: " << Actor::health_ << '\n';
+		Rose::Logger::info("Skeleton index: ", Actor::horizontalTileIndex_, ", ", Actor::verticalTileIndex_);
+		Rose::Logger::info("Skeleton Health", Actor::health_);
 	}
 
 	++count;
 #endif 
 	if(Actor::health_ <= 0)
 	{
-		std::cout << "SKELETON DEAD" << std::endl;
+		Rose::Logger::info("SKELETON DEAD");
 	}
-
 }
 
 
@@ -205,6 +196,7 @@ void Skeleton::loadTexture(const std::string && fileName)
 
 	//Row 1-4: 7 textures per row
 	//Index 0 - 6 Skeleton spreads arms facing backwards
+
 	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 7; j++) 
@@ -216,7 +208,9 @@ void Skeleton::loadTexture(const std::string && fileName)
 			Actor::textures_.push_back(loader);
 		}
 	}
+
 	//Row 5-8: 8 textures per row
+
 	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 8; j++)
@@ -228,7 +222,9 @@ void Skeleton::loadTexture(const std::string && fileName)
 			Actor::textures_.push_back(loader);
 		}
 	}
+
 	//Row 9-12: 9 textures per row 
+
 	for (int i = 0; i < 4; i++) 
 	{
 		for (int j = 0; j < 9; j++) 
@@ -240,7 +236,9 @@ void Skeleton::loadTexture(const std::string && fileName)
 			Actor::textures_.push_back(loader);
 		}
 	}
+
 	//Row 13-16: 6 textures per row 
+
 	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 6; j++)
@@ -252,7 +250,9 @@ void Skeleton::loadTexture(const std::string && fileName)
 			Actor::textures_.push_back(loader);
 		}
 	}
+
 	//Row 17-20: 13 textures per row
+
 	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 6; j++)
@@ -264,7 +264,9 @@ void Skeleton::loadTexture(const std::string && fileName)
 			Actor::textures_.push_back(loader);
 		}
 	}
+ 
 	//Last Row: 6 characters per row
+
 	for (int j = 0; j < 6; j++)
 	{
 		leftEdge = 64 * j;
@@ -274,5 +276,3 @@ void Skeleton::loadTexture(const std::string && fileName)
 		Actor::textures_.push_back(loader);
 	}
 }
-
-

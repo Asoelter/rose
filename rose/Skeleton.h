@@ -63,4 +63,3 @@ private:
 
 	uint8_t		framesBetweenMoves_;
 };
-

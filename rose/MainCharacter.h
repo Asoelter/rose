@@ -41,7 +41,7 @@ public:
 	 */
 	float getXLocation();
 
-		/**
+	/**
 	 * @brief The vertical position of the character
 	 * 
 	 * @return float The vertical position of 

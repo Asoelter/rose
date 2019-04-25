@@ -22,7 +22,8 @@ MainCharacterTextures mainCharactersTextures("warrior spritesheet calciumtrice.p
 bool enabled = false;
 
 
-/*void runContinuousPartOfGame() {
+/*void runContinuousPartOfGame() 
+{
 	int counter = 0;
 	while (true)
 	{
@@ -62,13 +63,13 @@ int main()
 	GrassyMap grassyMap(1000, 600);
 
 
-	Actor::setMap(&grassyMap);
-	Link link(800, 300);
-	auto before = std::chrono::system_clock::now();
+	Rose::Character::Actor::setMap(&grassyMap);
+	Rose::Character::Link link(800, 300);
+	//auto before = std::chrono::system_clock::now();
 	Skeleton skeleton; //This constructor taking a long time 
-	auto after = std::chrono::system_clock::now();
-	std::chrono::duration<double> duration = after - before;
-	std::cout << "elapsed time: " << duration.count() << std::endl;
+	//auto after = std::chrono::system_clock::now();
+	//std::chrono::duration<double> duration = after - before;
+	//std::cout << "elapsed time: " << duration.count() << std::endl;
 	
 	while (window.isOpen())
 	{
@@ -115,7 +116,6 @@ int main()
 		}
 		skeleton.drawTo(window);
 		window.display();
-
 	}
 
 	//thread.terminate();

@@ -4,16 +4,19 @@
 
 #ifdef DEBUG
 #	include <iostream>
+#	include "log.h"
 #endif 
 
-void Attacker::attack()
+namespace Rose::Character
 {
-	auto attackerIndices = Actor::mapIndices();
-	int victimXpos = 0;
-	int victimYpos = 0;
-
-	switch(Actor::currentOrientation_)
+	void Attacker::attack()
 	{
+		auto attackerIndices = Actor::mapIndices();
+		int victimXpos = 0;
+		int victimYpos = 0;
+
+		switch (Actor::currentOrientation_)
+		{
 		case Orientation::IDLE:
 		case Orientation::FACING_DOWN:
 		{
@@ -35,20 +38,19 @@ void Attacker::attack()
 			victimXpos = attackerIndices.first + 1;
 			victimYpos = attackerIndices.second;
 		}break;
-	}
+		}
 
-	auto victimTile = Actor::map->tileAt(victimYpos, victimXpos);
-	auto victim = victimTile->occupier();
-
-	std::cout << "ATTACKER INDEX: " << attackerIndices.first << ", " << attackerIndices.second << std::endl;
-	std::cout << "VICTIM INDEX: " << victimXpos << ", " << victimYpos << std::endl;
-
-	if(victim)
-	{
-		victim->damage();
+		auto victimTile = Actor::map->tileAt(victimYpos, victimXpos);
+		auto victim = victimTile->occupier();
 
 #		ifdef DEBUG
-			std::cout << "found a victim" << std::endl;
+		Rose::Logger::info("ATTACKER INDEX: ", attackerIndices.first, ", ", attackerIndices.second);
+		Rose::Logger::info("VICTIM INDEX: ", victimXpos, ", ", victimYpos);
 #		endif 
+
+		if (victim)
+		{
+			victim->damage();
+		}
 	}
 }
