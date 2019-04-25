@@ -1,5 +1,25 @@
+<<<<<<< HEAD
 ﻿  attacker.cpp
   link.cpp
   main.cpp
   Generating Code...
   rose.vcxproj -> C:\Users\soelt\Documents\Visual Studio 2017\Projects\rose\Debug\rose.exe
+=======
+﻿  actor.cpp
+D:\KU\Classes\EECS_448\projects\rose\rose\actor.cpp(56): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\KU\Classes\EECS_448\projects\rose\rose\actor.cpp(57): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  attacker.cpp
+  CharacterStats.cpp
+  Cowboy.cpp
+  Enemy.cpp
+  link.cpp
+  log.cpp
+  main.cpp
+  MainCharacter.cpp
+  MainCharacterTextures.cpp
+  map.cpp
+  Skeleton.cpp
+  tile.cpp
+  Generating Code...
+  rose.vcxproj -> D:\KU\Classes\EECS_448\projects\rose\Debug\rose.exe
+>>>>>>> d128752f8bac435a9bfec36571e6254d6d790ab3
