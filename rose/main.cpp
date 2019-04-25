@@ -14,6 +14,7 @@
 
 //TODO: Move this all to an executive class 
 #include "MainCharacterTextures.h"
+#define INIT_LOGGING
 
 using size = std::vector<MainCharacter>::size_type;
 
@@ -28,8 +29,6 @@ bool enabled = false;
 	{
 #	ifdef _WIN32
 		//system("CLS");
-#	else
-		//system("clear");
 #	endif 
 		if (enabled) {
 			if (counter % 100 == 0)

@@ -4,6 +4,7 @@
 #include <iostream>
 
 //Inspired from theChernoProject's youtube channel
+//#define INIT_LOGGING
 
 namespace Rose
 {
@@ -22,24 +23,28 @@ namespace Rose
 			template<typename T, typename... Params>
 			static void error(T msg, Params... params)
 			{
-
+				#ifdef INIT_LOGGING
 				std::cout << redBegin << msg << ' ';
 				Rose::Logger::error(params...);
+				#endif
 			}
 
 			template<typename T, typename... Params>
 			static void warn(T msg, Params... params)
 			{
+				#ifdef INIT_LOGGING
 				std::cout << yellowBegin << msg << ' ';
 				Rose::Logger::warn(params...);
-
+				#endif 
 			}
 
 			template<typename T, typename... Params>
 			static void info(T msg, Params... params)
 			{
+				#ifdef INIT_LOGGING
 				std::cout << greenBegin << msg << ' ';
 				Rose::Logger::info(params...);
+				#endif 
 			}
 
 
