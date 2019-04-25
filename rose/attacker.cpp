@@ -11,7 +11,7 @@ namespace Rose::Character
 {
 	void Attacker::attack()
 	{
-		auto attackerIndices = Actor::mapIndices();
+		auto attackerIndices = Rose::Character::Actor::mapIndices();
 		int victimXpos = 0;
 		int victimYpos = 0;
 

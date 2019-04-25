@@ -56,13 +56,13 @@ float Tile::height() const
 	return sprite_.getGlobalBounds().height;
 }
 
-void Tile::setOccupier(Actor* occupier)
+void Tile::setOccupier(Rose::Character::Actor* occupier)
 {
 	occupier_ = occupier;
 }
 
 
-Actor* Tile::occupier()
+Rose::Character::Actor* Tile::occupier()
 {
 	return occupier_;
 }

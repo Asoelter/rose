@@ -9,7 +9,7 @@
  * @brief A class for drawing a cowboy character.
  * 
  */
-class Cowboy : public Actor
+class Cowboy : public Rose::Character::Actor
 {
 public:
 

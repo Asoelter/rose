@@ -8,7 +8,7 @@
  * @brief A class for drawing a Skeleton character
  * 
  */
-class Skeleton : public Actor, public Enemy
+class Skeleton : public Rose::Character::Actor, public Enemy
 {
 public:
 

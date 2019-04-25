@@ -9,6 +9,8 @@
 #	include "log.h"
 #endif 
 
+using namespace Rose::Character;
+
 Skeleton::Skeleton()
 	: Actor()
 	, framesBetweenMoves_(0)
