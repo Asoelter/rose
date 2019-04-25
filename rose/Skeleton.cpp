@@ -172,7 +172,7 @@ void Skeleton::drawTo(sf::RenderWindow & window)
 
 	if(count % 100 == 0)
 	{
-		Rose::Logger::info("Skeleton index: ", Actor::horizontalTileIndex_, ", ", Actor::verticalTileIndex_);
+		Rose::Logger::info("Skeleton index:", Actor::horizontalTileIndex_, ',', Actor::verticalTileIndex_);
 		Rose::Logger::info("Skeleton Health", Actor::health_);
 	}
 

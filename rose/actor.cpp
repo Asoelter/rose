@@ -19,7 +19,10 @@ namespace Rose::Character
 		, verticalTileIndex_(0)
 		, health_(0)
 	{
-		updatePosition();
+		if(map)
+		{
+			updatePosition();
+		}
 	}
 
 
