@@ -5,7 +5,10 @@
 #include <SFML/Graphics.hpp>
 
 //#include "actor.h"
-class Actor;
+namespace Rose::Character
+{
+	class Actor;
+}
 
 class Tile
 {
@@ -67,14 +70,14 @@ public:
 	 * 
 	 * @param occupier The actor that is occupying the tile 
 	 */
-	void setOccupier(Actor* occupier);
+	void setOccupier(Rose::Character::Actor* occupier);
 
-	Actor* occupier();
+	Rose::Character::Actor* occupier();
 
 private:
-	sf::Texture texture_;
-	sf::Sprite	sprite_;
-	Actor*		occupier_;
+	sf::Texture					texture_;
+	sf::Sprite					sprite_;
+	Rose::Character::Actor*		occupier_;
 };
 
 //--------------------------------------------------------Grassy Tile----------------------------------------------------------------

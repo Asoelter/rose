@@ -4,9 +4,10 @@
 
 
 Cowboy::Cowboy()
-	: Actor()
+	: Rose::Character::Actor()
 	, framesBetweenMoves_(0)
 {
+	using namespace Rose::Character;
 	loadTexture("assets/18thCenturyAssets.png");
 	Actor::sprite_.setPosition({ 500.0f, 300.0f });
 }
@@ -14,6 +15,7 @@ Cowboy::Cowboy()
 
 void Cowboy::moveUp()
 {
+	using namespace Rose::Character;
 	++Actor::currentTextureIndex_;
 
 	if (Actor::currentTextureIndex_ > 2)
@@ -28,6 +30,7 @@ void Cowboy::moveUp()
 
 void Cowboy::moveRight()
 {
+	using namespace Rose::Character;
 	++Actor::currentTextureIndex_;
 
 	if (Actor::currentTextureIndex_ < 3 || Actor::currentTextureIndex_ > 5)
@@ -42,6 +45,7 @@ void Cowboy::moveRight()
 
 void Cowboy::moveDown()
 {
+	using namespace Rose::Character;
 	++Actor::currentTextureIndex_;
 
 	if (Actor::currentTextureIndex_ < 6 || Actor::currentTextureIndex_ > 8)
@@ -56,6 +60,7 @@ void Cowboy::moveDown()
 
 void Cowboy::moveLeft()
 {
+	using namespace Rose::Character;
 	++Actor::currentTextureIndex_;
 
 	if (Actor::currentTextureIndex_ < 9 || Actor::currentTextureIndex_ > 11)
@@ -70,6 +75,7 @@ void Cowboy::moveLeft()
 
 void Cowboy::drawTo(sf::RenderWindow & window)
 {
+	using namespace Rose::Character;
 	++framesBetweenMoves_;
 
 	if (framesBetweenMoves_ > 100)
@@ -83,6 +89,7 @@ void Cowboy::drawTo(sf::RenderWindow & window)
 
 void Cowboy::loadTexture(const std::string && fileName)
 {
+	using namespace Rose::Character;
 	sf::Texture loader;
 	for (int i = 0; i < 12; ++i)
 	{

@@ -35,4 +35,34 @@
   <ItemGroup>
     <Image Include="warrior spritesheet calciumtrice.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Object Include="Debug\actor.obj" />
+    <Object Include="Debug\attacker.obj" />
+    <Object Include="Debug\CharacterStats.obj" />
+    <Object Include="Debug\Cowboy.obj" />
+    <Object Include="Debug\Enemy.obj" />
+    <Object Include="Debug\link.obj" />
+    <Object Include="Debug\log.obj" />
+    <Object Include="Debug\main.obj" />
+    <Object Include="Debug\MainCharacter.obj" />
+    <Object Include="Debug\MainCharacterTextures.obj" />
+    <Object Include="Debug\map.obj" />
+    <Object Include="Debug\Skeleton.obj" />
+    <Object Include="Debug\tile.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\vc141.idb" />
+    <None Include="Debug\vc141.pdb" />
+    <None Include="Debug\rose.tlog\rose.lastbuildstate" />
+    <None Include="Debug\rose.tlog\link.write.1.tlog" />
+    <None Include="Debug\rose.tlog\CL.command.1.tlog" />
+    <None Include="Debug\rose.tlog\CL.read.1.tlog" />
+    <None Include="Debug\rose.tlog\CL.write.1.tlog" />
+    <None Include="Debug\rose.tlog\link.command.1.tlog" />
+    <None Include="Debug\rose.tlog\link.read.1.tlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Debug\rose.Build.CppClean.log" />
+    <Text Include="Debug\rose.log" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,70 @@
+﻿actor.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+actor.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+actor.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
+actor.obj : error LNK2005: "public: static class Map const * const Rose::Character::Actor::map" (?map@Actor@Character@Rose@@2PBVMap@@B) already defined in actor.obj
+attacker.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+attacker.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+Cowboy.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+Cowboy.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+Enemy.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+Enemy.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+link.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+link.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+log.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+log.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+log.obj : error LNK2005: "private: static bool Rose::Logger::enabled" (?enabled@Logger@Rose@@0_NA) already defined in log.obj
+log.obj : error LNK2005: "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const Rose::Logger::redBegin" (?redBegin@Logger@Rose@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B) already defined in log.obj
+log.obj : error LNK2005: "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const Rose::Logger::redEnd" (?redEnd@Logger@Rose@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B) already defined in log.obj
+log.obj : error LNK2005: "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const Rose::Logger::yellowBegin" (?yellowBegin@Logger@Rose@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B) already defined in log.obj
+log.obj : error LNK2005: "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const Rose::Logger::yellowEnd" (?yellowEnd@Logger@Rose@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B) already defined in log.obj
+log.obj : error LNK2005: "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const Rose::Logger::greenBegin" (?greenBegin@Logger@Rose@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B) already defined in log.obj
+log.obj : error LNK2005: "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const Rose::Logger::greenEnd" (?greenEnd@Logger@Rose@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B) already defined in log.obj
+main.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+main.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+main.obj : error LNK2005: "bool enabled" (?enabled@@3_NA) already defined in main.obj
+main.obj : error LNK2005: "class std::vector<class MainCharacter,class std::allocator<class MainCharacter> > mainCharacters" (?mainCharacters@@3V?$vector@VMainCharacter@@V?$allocator@VMainCharacter@@@std@@@std@@A) already defined in main.obj
+main.obj : error LNK2005: "class MainCharacterTextures mainCharactersTextures" (?mainCharactersTextures@@3VMainCharacterTextures@@A) already defined in main.obj
+MainCharacter.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+MainCharacter.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+MainCharacterTextures.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+MainCharacterTextures.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+map.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+map.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+Skeleton.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+Skeleton.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+tile.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+tile.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
+LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+map.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter
+Skeleton.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tile.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter
+log.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter
+main.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter
+MainCharacter.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter
+MainCharacterTextures.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter
+actor.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter
+attacker.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter
+Cowboy.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter
+link.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter
+map.obj : error LNK2001: unresolved external symbol __imp___calloc_dbg
+Skeleton.obj : error LNK2001: unresolved external symbol __imp___calloc_dbg
+tile.obj : error LNK2001: unresolved external symbol __imp___calloc_dbg
+link.obj : error LNK2001: unresolved external symbol __imp___calloc_dbg
+main.obj : error LNK2001: unresolved external symbol __imp___calloc_dbg
+MainCharacter.obj : error LNK2001: unresolved external symbol __imp___calloc_dbg
+MainCharacterTextures.obj : error LNK2001: unresolved external symbol __imp___calloc_dbg
+actor.obj : error LNK2001: unresolved external symbol __imp___calloc_dbg
+attacker.obj : error LNK2001: unresolved external symbol __imp___calloc_dbg
+Cowboy.obj : error LNK2001: unresolved external symbol __imp___calloc_dbg
+Enemy.obj : error LNK2001: unresolved external symbol __imp___calloc_dbg
+Skeleton.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
+tile.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
+main.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
+MainCharacter.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
+MainCharacterTextures.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
+map.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
+actor.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
+Cowboy.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
+link.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
+log.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
+C:\Users\soelt\Documents\Visual Studio 2017\Projects\rose\Release\rose.exe : fatal error LNK1120: 3 unresolved externals
