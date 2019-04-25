@@ -229,7 +229,9 @@ namespace Rose::Character
 		//Private data//
 		////////////////
 
-		bool 		isAttacking_;
+		static std::vector<sf::Texture> textures_;
+		static bool						loaded_;
+		bool							isAttacking_;
 	};
 }
 #endif //LINK_H

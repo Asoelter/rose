@@ -7,6 +7,9 @@
 
 #define persistant static
 
+std::vector<sf::Texture>	Rose::Character::Link::textures_;
+bool						Rose::Character::Link::loaded_ = false;
+
 namespace Rose::Character
 {
 
@@ -14,7 +17,12 @@ namespace Rose::Character
 		: Attacker()
 		, isAttacking_(false)
 	{
-		loadTextures("assets/link2.png");
+		Actor::textures_ = &textures_;
+		if(!loaded_)
+		{
+			loadTextures("assets/link2.png");
+			loaded_ = true;
+		}
 		Actor::sprite_.setPosition(static_cast<float>(xPos), static_cast<float>(yPos));
 		Actor::health_ = 20;
 	}
@@ -181,35 +189,35 @@ namespace Rose::Character
 #ifdef BE_EXACT
 		success = loader.loadFromFile(fileName, sf::IntRect(3, 31, 16, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(33, 31, 16, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(63, 30, 16, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(93, 30, 16, 24)); //IDLE
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(123, 31, 16, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(153, 30, 16, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(183, 30, 16, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(213, 30, 16, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 #else
 
 		int leftEdge = 3;
@@ -218,7 +226,7 @@ namespace Rose::Character
 		{
 			success = loader.loadFromFile(fileName, sf::IntRect(leftEdge, 30, 16, 24));
 			assert(success);
-			Actor::textures_.push_back(loader);
+			textures_.push_back(loader);
 			leftEdge += 30;
 		}
 #endif
@@ -232,27 +240,27 @@ namespace Rose::Character
 
 		success = loader.loadFromFile(fileName, sf::IntRect(392, 30, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(361, 30, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(331, 30, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(301, 30, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(272, 30, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(241, 30, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 #else
 		int leftEdge = 392;
 
@@ -260,7 +268,7 @@ namespace Rose::Character
 		{
 			success = loader.loadFromFile(fileName, sf::IntRect(leftEdge, 30, 19, 24));
 			assert(success);
-			Actor::textures_.push_back(loader);
+			textures_.push_back(loader);
 			leftEdge -= 30;
 		}
 #endif
@@ -274,35 +282,35 @@ namespace Rose::Character
 #ifdef BE_EXACT
 		success = loader.loadFromFile(fileName, sf::IntRect(2, 120, 17, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(32, 120, 17, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(62, 121, 17, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(92, 121, 17, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(122, 120, 17, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(152, 120, 17, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(182, 121, 17, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(212, 121, 17, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 #else
 		int leftEdge = 2;
 
@@ -310,7 +318,7 @@ namespace Rose::Character
 		{
 			success = loader.loadFromFile(fileName, sf::IntRect(leftEdge, 120, 17, 24));
 			assert(success);
-			Actor::textures_.push_back(loader);
+			 textures_.push_back(loader);
 			leftEdge += 30;
 		}
 #endif
@@ -324,27 +332,27 @@ namespace Rose::Character
 #ifdef BE_EXACT
 		success = loader.loadFromFile(fileName, sf::IntRect(241, 120, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(272, 120, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(301, 120, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(331, 120, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(361, 120, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(392, 120, 19, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 #else
 		int leftEdge = 241;
@@ -353,7 +361,7 @@ namespace Rose::Character
 		{
 			success = loader.loadFromFile(fileName, sf::IntRect(leftEdge, 120, 19, 24));
 			assert(success);
-			Actor::textures_.push_back(loader);
+			 textures_.push_back(loader);
 			leftEdge += 30;
 		}
 #endif
@@ -366,27 +374,27 @@ namespace Rose::Character
 
 		success = loader.loadFromFile(fileName, sf::IntRect(1, 90, 20, 23));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(30, 90, 22, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(61, 86, 20, 31));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(91, 86, 20, 31));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(115, 87, 28, 29));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(145, 88, 32, 27));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 	}
 
 	void Link::loadSwordLeftTextures(const std::string& fileName)
@@ -396,23 +404,23 @@ namespace Rose::Character
 
 		success = loader.loadFromFile(fileName, sf::IntRect(359, 86, 23, 31));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		 textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(327, 91, 28, 21));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		 textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(295, 91, 31, 21));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		 textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(268, 90, 26, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		 textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(242, 90, 18, 23));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 	}
 
 	void Link::loadSwordUpTextures(const std::string& fileName)
@@ -422,23 +430,23 @@ namespace Rose::Character
 
 		success = loader.loadFromFile(fileName, sf::IntRect(0, 181, 22, 22));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(30, 177, 22, 30));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(61, 174, 20, 35));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(89, 177, 24, 30));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(115, 180, 32, 23));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 	}
 
 	void Link::loadSwordRightTextures(const std::string& fileName)
@@ -448,28 +456,28 @@ namespace Rose::Character
 
 		success = loader.loadFromFile(fileName, sf::IntRect(242, 180, 18, 23));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(268, 180, 26, 24));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(295, 181, 31, 21));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(327, 181, 28, 12));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 
 		success = loader.loadFromFile(fileName, sf::IntRect(359, 176, 23, 31));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 	}
 
 	void Link::printAttackDebugInfo() const
 	{
-		std::cout << "Index = " << Actor::currentTextureIndex_ << " while attacking ";
+		std::cout << "Index = " <<  currentTextureIndex_ << " while attacking ";
 
 		std::string word;
 

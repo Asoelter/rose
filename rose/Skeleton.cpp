@@ -11,11 +11,20 @@
 
 using namespace Rose::Character;
 
+std::vector<sf::Texture>		Skeleton::textures_;
+bool							Skeleton::loaded_ = false;
+
 Skeleton::Skeleton()
 	: Actor()
 	, framesBetweenMoves_(0)
 {
-	loadTexture("assets/skeletonSpriteSheet.png");
+	Actor::textures_ = &textures_;
+
+	if(!loaded_)
+	{
+		loadTexture("assets/skeletonSpriteSheet.png");
+		loaded_ = true;
+	}
 
 	Actor::sprite_.setPosition({ 800.0f, 300.0f });
 	Actor::health_ = 3;
@@ -26,7 +35,13 @@ Skeleton::Skeleton(int xPos, int yPos)
 	: Actor()
 	, framesBetweenMoves_(0)
 {
-	loadTexture("assets/skeletonSpriteSheet.png");
+	Actor::textures_ = &textures_;
+
+	if(!loaded_)
+	{
+		loadTexture("assets/skeletonSpriteSheet.png");
+		loaded_ = true;
+	}
 
 	Actor::sprite_.setPosition(static_cast<float>(xPos), static_cast<float>(yPos));
 	Actor::health_ = 3;
@@ -36,7 +51,13 @@ Skeleton::Skeleton(sf::Vector2i position)
 	: Actor()
 	, framesBetweenMoves_(0)
 {
-	loadTexture("assets/skeletonSpriteSheet.png");
+	Actor::textures_ = &textures_;
+
+	if(!loaded_)
+	{
+		loadTexture("assets/skeletonSpriteSheet.png");
+		loaded_ = true;
+	}
 
 	Actor::sprite_.setPosition(static_cast<float>(position.x), static_cast<float>(position.y));
 	Actor::health_ = 3;
@@ -227,7 +248,7 @@ void Skeleton::loadTexture(const std::string && fileName)
 			
 			bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64*i, 64, 64));
 			assert(success);
-			Actor::textures_.push_back(loader);
+			textures_.push_back(loader);
 		}
 	}
 
@@ -241,7 +262,7 @@ void Skeleton::loadTexture(const std::string && fileName)
 
 			bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 256, 64, 64));
 			assert(success);
-			Actor::textures_.push_back(loader);
+			textures_.push_back(loader);
 		}
 	}
 
@@ -255,7 +276,7 @@ void Skeleton::loadTexture(const std::string && fileName)
 
 			bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 512, 64, 64));
 			assert(success);
-			Actor::textures_.push_back(loader);
+			textures_.push_back(loader);
 		}
 	}
 
@@ -269,7 +290,7 @@ void Skeleton::loadTexture(const std::string && fileName)
 
 			bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 768, 64, 64));
 			assert(success);
-			Actor::textures_.push_back(loader);
+			textures_.push_back(loader);
 		}
 	}
 
@@ -283,7 +304,7 @@ void Skeleton::loadTexture(const std::string && fileName)
 
 			bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 1024, 64, 64));
 			assert(success);
-			Actor::textures_.push_back(loader);
+			textures_.push_back(loader);
 		}
 	}
  
@@ -295,6 +316,6 @@ void Skeleton::loadTexture(const std::string && fileName)
 
 		bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 1280, 64, 64));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 	}
 }

@@ -61,7 +61,8 @@ private:
 	 */
 	void loadTexture(const std::string&& fileName);
 
-	static constexpr int idleTextureIndex_ = 0;
-
-	uint8_t		framesBetweenMoves_;
+	static std::vector<sf::Texture>	textures_;
+	static bool							loaded_;
+	static constexpr int				idleTextureIndex_ = 0;
+	uint8_t								framesBetweenMoves_;
 };

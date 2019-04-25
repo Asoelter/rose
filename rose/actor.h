@@ -99,7 +99,7 @@ namespace Rose::Character
 		Tile* occupiedTile() const;
 		std::pair<int, int> mapIndices() const;
 
-		std::vector<sf::Texture>	textures_;
+		std::vector<sf::Texture>*	textures_;
 		sf::Sprite					sprite_;
 		Tile*						occupiedTile_;
 		Orientation					currentOrientation_;

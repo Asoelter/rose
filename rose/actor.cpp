@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <cassert>
 
 #define DEBUG
 
@@ -10,7 +11,7 @@ namespace Rose::Character
 	Map const* Actor::map = nullptr;
 
 	Actor::Actor()
-		: textures_()
+		: textures_(nullptr)
 		, sprite_()
 		, occupiedTile_(nullptr)
 		, currentOrientation_(Orientation::IDLE)
@@ -40,7 +41,8 @@ namespace Rose::Character
 
 	void Actor::drawTo(sf::RenderWindow & window)
 	{
-		sprite_.setTexture(textures_[currentTextureIndex_]);
+		assert(textures_);
+		sprite_.setTexture((*textures_)[currentTextureIndex_]);
 		window.draw(sprite_);
 	}
 

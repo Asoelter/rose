@@ -1,7 +1,7 @@
 #include <algorithm>
 #include "game.h"
 #include "log.h"
-
+#include <chrono>
 
 Game::Game()
 	: window_(sf::VideoMode(1000, 600), "SFML works")
@@ -15,7 +15,12 @@ Game::Game()
 void Game::run()
 {
 	Skeleton skeleton; //This constructor taking a long time 
+
+	auto start = std::chrono::system_clock::now();
 	auto enemies = generateEnemies(5);
+	auto stop = std::chrono::system_clock::now();
+	std::chrono::duration<double> length = stop - start;
+	Rose::Logger::info("Duration:", length.count());
 	
 	while (window_.isOpen())
 	{
