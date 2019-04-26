@@ -96,6 +96,7 @@ void Cowboy::loadTexture(const std::string && fileName)
 		int leftEdge = 64 * i;
 		bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 0, 64, 60));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		Actor::textures_->push_back(loader);
+		//Actor::textures_.push_back(loader);
 	}
 }

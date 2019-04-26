@@ -25,7 +25,7 @@
 
 }*/
 
-int main()
+void main()
 {
 	Game game;
 	game.run();
