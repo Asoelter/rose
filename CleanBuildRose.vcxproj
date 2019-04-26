@@ -53,6 +53,8 @@
     <ClInclude Include="rose\tile.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\rpg_pack\tiles\generic-rpg-tile01.png" />
+    <Image Include="assets\rpg_pack\tiles\generic-rpg-tile02.png" />
     <Image Include="rose\assets\18thCenturyAssets.png" />
     <Image Include="rose\assets\link.png" />
     <Image Include="rose\assets\link2.png" />
@@ -141,11 +143,14 @@
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <AdditionalLibraryDirectories>$(SolutionDir)SFML/bin;$(SolutionDir)SFML/lib;$(SolutionDir)Debug</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-audio-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OptimizeReferences>false</OptimizeReferences>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

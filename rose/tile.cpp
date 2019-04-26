@@ -4,6 +4,7 @@
 #include <iostream>
 
 
+
 //--------------------------------------------------------Base Tile----------------------------------------------------------------
 
 
@@ -74,7 +75,7 @@ Rose::Character::Actor* Tile::occupier()
 GrassyTile::GrassyTile(const sf::Vector2f & position)
 	: Tile("assets/rpg_pack/tiles/generic-rpg-tile01.png", position)
 {
-
+	
 }
 
 
