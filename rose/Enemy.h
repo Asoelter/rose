@@ -1,26 +1,30 @@
-#include "actor.h"
 #pragma once
 
-class Enemy 
+#include "attacker.h"
+
+class Enemy : public Rose::Character::Attacker
 {
 public:
-	/**
-	 * @brief Construct a new Enemy object
-	 * 
-	 */
-	Enemy();
-
 	/**
 	 * @brief Destroy the Enemy object
 	 * 
 	 */
 	virtual ~Enemy() = default;
 
+
+	virtual void follow(const Rose::Character::Actor& actor);
+
 protected:
 	double m_health = 100;
 	int m_damage = 0;
 	int xp;
 	bool alive;
+
+	/**
+	 * @brief Construct a new Enemy object
+	 * 
+	 */
+	Enemy();
 
 	/**
 	 * @brief Increases the enemies health by half
@@ -66,6 +70,5 @@ protected:
 	 * @return int The parameter
 	 */
 	virtual int sendXP(int x);
-
 };
 

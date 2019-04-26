@@ -2,9 +2,6 @@
 #include <cassert>
 #include <iostream>
 
-#define BE_EXACT
-//#define DEBUG
-
 #define persistant static
 
 std::vector<sf::Texture>	Rose::Character::Link::textures_;
@@ -79,20 +76,6 @@ namespace Rose::Character
 			}
 		}
 
-#ifdef DEBUG
-		static int count = 0;
-
-		if (count % 100 == 0)
-		{
-			Actor::updatePosition();
-			std::cout << "Link index: "
-				<< Actor::horizontalTileIndex_ << ", "
-				<< Actor::verticalTileIndex_
-				<< std::endl;
-		}
-
-		++count;
-#endif
 
 		Attacker::drawTo(window);
 	}
@@ -126,17 +109,10 @@ namespace Rose::Character
 			shouldReset = false;
 		}
 
-#ifdef DEBUG
-		//printAttackDebugInfo();
-#endif 
-
 		if (Actor::currentTextureIndex_ >= endingIndex)
 		{
 			isAttacking_ = false;
 			shouldReset = true;
-#ifdef DEBUG
-			std::cout << '\n';
-#endif
 		}
 	}
 
@@ -186,7 +162,6 @@ namespace Rose::Character
 		//If BE_EXACT is defined then the exact coordinates of the texture are
 		//used, otherwise a for loop is used to approximate. I'm hoping the for 
 		//loop is close enough 
-#ifdef BE_EXACT
 		success = loader.loadFromFile(fileName, sf::IntRect(3, 31, 16, 24));
 		assert(success);
 		textures_.push_back(loader);
@@ -218,25 +193,12 @@ namespace Rose::Character
 		success = loader.loadFromFile(fileName, sf::IntRect(213, 30, 16, 24));
 		assert(success);
 		textures_.push_back(loader);
-#else
-
-		int leftEdge = 3;
-
-		for (int i = 0; i < 8; ++i)
-		{
-			success = loader.loadFromFile(fileName, sf::IntRect(leftEdge, 30, 16, 24));
-			assert(success);
-			textures_.push_back(loader);
-			leftEdge += 30;
-		}
-#endif
 	}
 
 	void Link::loadWalkLeftTextures(const std::string& fileName)
 	{
 		sf::Texture loader;
 		bool success = true;
-#ifdef BE_EXACT
 
 		success = loader.loadFromFile(fileName, sf::IntRect(392, 30, 19, 24));
 		assert(success);
@@ -261,17 +223,6 @@ namespace Rose::Character
 		success = loader.loadFromFile(fileName, sf::IntRect(241, 30, 19, 24));
 		assert(success);
 		textures_.push_back(loader);
-#else
-		int leftEdge = 392;
-
-		for (int i = 0; i < 6; ++i)
-		{
-			success = loader.loadFromFile(fileName, sf::IntRect(leftEdge, 30, 19, 24));
-			assert(success);
-			textures_.push_back(loader);
-			leftEdge -= 30;
-		}
-#endif
 	}
 
 	void Link::loadWalkUpTextures(const std::string& fileName)
@@ -279,7 +230,6 @@ namespace Rose::Character
 		sf::Texture loader;
 		bool success = true;
 
-#ifdef BE_EXACT
 		success = loader.loadFromFile(fileName, sf::IntRect(2, 120, 17, 24));
 		assert(success);
 		textures_.push_back(loader);
@@ -311,17 +261,6 @@ namespace Rose::Character
 		success = loader.loadFromFile(fileName, sf::IntRect(212, 121, 17, 24));
 		assert(success);
 		textures_.push_back(loader);
-#else
-		int leftEdge = 2;
-
-		for (int i = 0; i < 8; ++i)
-		{
-			success = loader.loadFromFile(fileName, sf::IntRect(leftEdge, 120, 17, 24));
-			assert(success);
-			 textures_.push_back(loader);
-			leftEdge += 30;
-		}
-#endif
 	}
 
 	void Link::loadWalkRightTextures(const std::string& fileName)
@@ -329,7 +268,6 @@ namespace Rose::Character
 		sf::Texture loader;
 		bool success = true;
 
-#ifdef BE_EXACT
 		success = loader.loadFromFile(fileName, sf::IntRect(241, 120, 19, 24));
 		assert(success);
 		textures_.push_back(loader);
@@ -353,18 +291,6 @@ namespace Rose::Character
 		success = loader.loadFromFile(fileName, sf::IntRect(392, 120, 19, 24));
 		assert(success);
 		textures_.push_back(loader);
-
-#else
-		int leftEdge = 241;
-
-		for (int i = 0; i < 6; ++i)
-		{
-			success = loader.loadFromFile(fileName, sf::IntRect(leftEdge, 120, 19, 24));
-			assert(success);
-			 textures_.push_back(loader);
-			leftEdge += 30;
-		}
-#endif
 	}
 
 	void Link::loadSwordDownTextures(const std::string& fileName)

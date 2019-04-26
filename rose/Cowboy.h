@@ -2,6 +2,7 @@
 
 #include <array>
 #include <stdint.h>
+#include <vector>
 
 #include "actor.h"
 
@@ -44,6 +45,8 @@ private:
 	 */
 	void loadTexture(const std::string&& fileName);
 
+	static std::vector<sf::Texture> textures_;
+	static bool loaded_;
 	static constexpr int idleTextureIndex_ = 7;
 
 	uint8_t	framesBetweenMoves_;

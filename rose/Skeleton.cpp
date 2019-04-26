@@ -15,7 +15,7 @@ std::vector<sf::Texture>		Skeleton::textures_;
 bool							Skeleton::loaded_ = false;
 
 Skeleton::Skeleton()
-	: Actor()
+	: Enemy()
 	, framesBetweenMoves_(0)
 {
 	Actor::textures_ = &textures_;
@@ -32,7 +32,7 @@ Skeleton::Skeleton()
 
 
 Skeleton::Skeleton(int xPos, int yPos)
-	: Actor()
+	: Enemy()
 	, framesBetweenMoves_(0)
 {
 	Actor::textures_ = &textures_;
@@ -48,7 +48,7 @@ Skeleton::Skeleton(int xPos, int yPos)
 }
 
 Skeleton::Skeleton(sf::Vector2i position)
-	: Actor()
+	: Enemy()
 	, framesBetweenMoves_(0)
 {
 	Actor::textures_ = &textures_;

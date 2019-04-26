@@ -14,7 +14,13 @@
  * @param userPersonalBubble The hitbox of the user
  * @return std::vector<float> A list of movements to move by
  */
-std::vector<float> getChaseUserMovementAmount(float UserXPosition, float UserYPosition, float enemyXPosition, float enemyYPosition, float enemySpeed = 4.f, float userPersonalBubble = 16.f) {
+std::vector<float> getChaseUserMovementAmount(float UserXPosition, 
+											  float UserYPosition, 
+											  float enemyXPosition, 
+											  float enemyYPosition, 
+											  float enemySpeed = 4.f, 
+											  float userPersonalBubble = 16.f) 
+{
 	std::vector<float> xyMovement;
 	float XPositionDifference = UserXPosition - enemyXPosition;
 	float YPositionDifference = UserYPosition - enemyYPosition;

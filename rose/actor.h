@@ -109,3 +109,14 @@ namespace Rose::Character
 		int							health_;
 	};
 }
+
+#define CHARACTER_CLASS()			private:\
+									static std::vector<sf::Texture> textures;\
+									static bool loaded;
+
+#define REGISTER_CHARACTER_CLASS()	loaded = true;
+
+#define REGISTER_TEXTURE(texture)	if(!loaded)\
+									{\
+										textures.push_back(texture);\
+									}\

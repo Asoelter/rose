@@ -3,12 +3,20 @@
 #include <iostream>
 
 
+std::vector<sf::Texture> Cowboy::textures_;
+bool Cowboy::loaded_ = false;
+
+
 Cowboy::Cowboy()
 	: Rose::Character::Actor()
 	, framesBetweenMoves_(0)
 {
 	using namespace Rose::Character;
-	loadTexture("assets/18thCenturyAssets.png");
+	if(!loaded_)
+	{
+		loadTexture("assets/18thCenturyAssets.png");
+		loaded_ = true;
+	}
 	Actor::sprite_.setPosition({ 500.0f, 300.0f });
 }
 
@@ -96,6 +104,6 @@ void Cowboy::loadTexture(const std::string && fileName)
 		int leftEdge = 64 * i;
 		bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 0, 64, 60));
 		assert(success);
-		Actor::textures_.push_back(loader);
+		textures_.push_back(loader);
 	}
 }

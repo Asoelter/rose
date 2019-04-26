@@ -5,6 +5,7 @@ rose/temp.txt
 rose/main
 **.o
 **.obj
+**.sln
 **/.vscode/**
 ./.vscode/**
 *.tlog

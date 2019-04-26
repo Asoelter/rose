@@ -8,7 +8,7 @@
  * @brief A class for drawing a Skeleton character
  * 
  */
-class Skeleton : public Rose::Character::Actor, public Enemy
+class Skeleton : public Enemy
 {
 public:
 
@@ -61,7 +61,7 @@ private:
 	 */
 	void loadTexture(const std::string&& fileName);
 
-	static std::vector<sf::Texture>	textures_;
+	static std::vector<sf::Texture>		textures_;
 	static bool							loaded_;
 	static constexpr int				idleTextureIndex_ = 0;
 	uint8_t								framesBetweenMoves_;
