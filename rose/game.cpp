@@ -4,7 +4,7 @@
 #include <chrono>
 
 Game::Game()
-	: window_(sf::VideoMode(1000, 600), "SFML works")
+	: window_(sf::VideoMode(1000, 600), "Tale of Rose")
 	, map_(std::make_unique<GrassyMap>(1000, 600))
 	, link_(800, 300)
 {

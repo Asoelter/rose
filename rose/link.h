@@ -13,7 +13,6 @@ namespace Rose::Character
 {
 	class Link : public Attacker
 	{
-	CHARACTER_CLASS()
 	public:
 		/**
 		 * @brief Construct a new Link object

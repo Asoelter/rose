@@ -110,6 +110,7 @@ namespace Rose::Character
 	};
 }
 
+/*
 #define CHARACTER_CLASS()			private:\
 									static std::vector<sf::Texture> textures;\
 									static bool loaded;
@@ -120,3 +121,4 @@ namespace Rose::Character
 									{\
 										textures.push_back(texture);\
 									}\
+									*/
