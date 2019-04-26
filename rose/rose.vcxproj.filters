@@ -14,6 +14,7 @@
     <ClCompile Include="MainCharacterTextures.cpp" />
     <ClCompile Include="attacker.cpp" />
     <ClCompile Include="log.cpp" />
+    <ClCompile Include="game.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h" />
@@ -31,6 +32,7 @@
     <ClInclude Include="MainCharacterTextures.h" />
     <ClInclude Include="attacker.h" />
     <ClInclude Include="log.h" />
+    <ClInclude Include="game.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="warrior spritesheet calciumtrice.png" />

@@ -144,6 +144,7 @@
     <ClCompile Include="CharacterStats.cpp" />
     <ClCompile Include="Cowboy.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="link.cpp" />
     <ClCompile Include="log.cpp" />
     <ClCompile Include="main.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="ChaseUser.h" />
     <ClInclude Include="Cowboy.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="game.h" />
     <ClInclude Include="link.h" />
     <ClInclude Include="log.h" />
     <ClInclude Include="MainCharacter.h" />

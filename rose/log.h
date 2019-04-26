@@ -2,6 +2,7 @@
 #define LOG_H
 
 #include <iostream>
+#include <string>
 
 //Inspired from theChernoProject's youtube channel
 

@@ -25,9 +25,12 @@
 
 }*/
 
+//main must return int
 int main()
 {
 	Game game;
 	game.run();
+
+	return 0;
 }
 

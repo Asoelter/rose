@@ -1,4 +1,5 @@
-﻿actor.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
+﻿  game.cpp
+actor.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
 actor.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
 actor.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
 actor.obj : error LNK2005: "public: static class Map const * const Rose::Character::Actor::map" (?map@Actor@Character@Rose@@2PBVMap@@B) already defined in actor.obj
@@ -21,9 +22,6 @@ log.obj : error LNK2005: "private: static class std::basic_string<char,struct st
 log.obj : error LNK2005: "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const Rose::Logger::greenEnd" (?greenEnd@Logger@Rose@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B) already defined in log.obj
 main.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
 main.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
-main.obj : error LNK2005: "bool enabled" (?enabled@@3_NA) already defined in main.obj
-main.obj : error LNK2005: "class std::vector<class MainCharacter,class std::allocator<class MainCharacter> > mainCharacters" (?mainCharacters@@3V?$vector@VMainCharacter@@V?$allocator@VMainCharacter@@@std@@@std@@A) already defined in main.obj
-main.obj : error LNK2005: "class MainCharacterTextures mainCharactersTextures" (?mainCharactersTextures@@3VMainCharacterTextures@@A) already defined in main.obj
 MainCharacter.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
 MainCharacter.obj : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in actor.obj
 MainCharacterTextures.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in actor.obj
@@ -67,4 +65,4 @@ actor.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
 Cowboy.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
 link.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
 log.obj : error LNK2001: unresolved external symbol __imp___CrtDbgReportW
-C:\Users\soelt\Documents\Visual Studio 2017\Projects\rose\Release\rose.exe : fatal error LNK1120: 3 unresolved externals
+C:\Users\Brandon\Documents\GitHub\rose\Release\rose.exe : fatal error LNK1120: 3 unresolved externals
