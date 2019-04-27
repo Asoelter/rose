@@ -7,7 +7,7 @@ class HealthBar
 public:
 	const float maxHealth = 100;//This is just an idea for the max health
 	sf::Vector2f healthBarSize;
-	int currentHealth;
+	float currentHealth;
 	float currentHealthPercentage;
 
 	HealthBar(sf::RenderWindow &window);
