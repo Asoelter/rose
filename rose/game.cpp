@@ -5,7 +5,7 @@
 #include "HealthBar.h"
 
 Game::Game()
-	: window_(sf::VideoMode(1000, 600), "Tale of Rose")
+	: window_(sf::VideoMode(1920, 1080), "Tale of Rose")
 	, map_(std::make_unique<GrassyMap>(1000, 600))
 	, link_(800, 300)
 {
@@ -15,6 +15,22 @@ Game::Game()
 
 void Game::run()
 {
+	mainMenu();
+	if (gameState == p) {
+		play();
+	}
+	else if (gameState == t) {
+		test();
+	}
+	else if (gameState == q)
+	{
+		quit();
+	}
+
+
+}
+void Game::play()
+{
 	Skeleton skeleton; //This constructor taking a long time 
 	HealthBar healthBar(window_);
 
@@ -23,7 +39,7 @@ void Game::run()
 	auto stop = std::chrono::system_clock::now();
 	std::chrono::duration<double> length = stop - start;
 	Rose::Logger::info("Duration:", length.count());
-	
+
 	while (window_.isOpen())
 	{
 		sf::Event event;
@@ -47,11 +63,11 @@ void Game::run()
 			{
 				link_.moveLeft();
 			}
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 			{
 				link_.attack();
 			}
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 			{
 				window_.close();
 			}
@@ -60,17 +76,66 @@ void Game::run()
 		window_.clear(sf::Color::Black);
 		map_->drawTo(window_);
 		skeleton.drawTo(window_);
-		std::for_each(enemies.begin(), enemies.end(), [this](std::unique_ptr<Skeleton>& s) 
-		{
-			s->drawTo(this->window_);
-		});
+		std::for_each(enemies.begin(), enemies.end(), [this](std::unique_ptr<Skeleton>& s)
+			{
+				s->drawTo(this->window_);
+			});
 		link_.drawTo(window_);
 		healthBar.drawHealthBar(window_, link_);
 		window_.display();
 	}
-
 }
+void Game::test()
+{
+	// call all tests in here
+}
+void Game::quit()
+{
+	window_.close();
+}
+void Game::mainMenu()
+{
+	while (window_.isOpen())
+	{	
+		sf::Event event;
+		while (window_.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed) {
+				window_.close();
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+			{
+				window_.close();
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+				gameState = p;
+				window_.clear(sf::Color::Black);
+				break;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
+				gameState = t;
+				window_.clear(sf::Color::Black);
+				break;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+				gameState = q;
+				window_.clear(sf::Color::Black);
+				break;
+			}
 
+		}
+		if (gameState != w) {
+			break;
+		}
+		
+		sf::Texture texture;
+		texture.loadFromFile("assets/rose-rpg-main-screen.png");
+		sf::Sprite sprite(texture);
+		window_.clear(sf::Color::Black);
+		window_.draw(sprite);
+		window_.display();
+	}
+}
 
 std::vector<std::unique_ptr<Skeleton>> Game::generateEnemies(int amount)
 {
