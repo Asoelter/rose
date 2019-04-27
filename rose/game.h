@@ -8,6 +8,7 @@
 #include "link.h"
 #include "map.h"
 #include "Skeleton.h"
+#include "MainCharacter.h"
 
 class Game
 {
@@ -22,6 +23,7 @@ class Game
 		sf::RenderWindow		window_;
 		std::unique_ptr<Map>	map_;
 		Rose::Character::Link	link_;
+		Rose::Character::MainCharacter	mainCharacter_;
 };
 
 #endif //GAME_H

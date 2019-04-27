@@ -8,6 +8,7 @@ Game::Game()
 	: window_(sf::VideoMode(1000, 600), "Tale of Rose")
 	, map_(std::make_unique<GrassyMap>(1000, 600))
 	, link_(800, 300)
+	, mainCharacter_(300, 200)
 {
 	Rose::Character::Actor::setMap(map_.get());
 }
@@ -64,6 +65,7 @@ void Game::run()
 		{
 			s->drawTo(this->window_);
 		});
+		mainCharacter_.drawTo(window_);
 		link_.drawTo(window_);
 		healthBar.drawHealthBar(window_, link_);
 		window_.display();
