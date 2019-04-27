@@ -39,6 +39,23 @@ namespace Rose::Character
 	}
 
 
+	float Actor::getActorWidth() const
+	{
+			return 	sprite_.getLocalBounds().width;
+	}
+
+
+	float Actor::getActorHeight() const
+	{
+			return 	sprite_.getLocalBounds().height;
+	}
+
+
+	float Actor::getHealth() const {
+		return health_;
+	}
+
+
 	void Actor::drawTo(sf::RenderWindow & window)
 	{
 		assert(textures_);

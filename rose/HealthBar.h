@@ -1,5 +1,6 @@
 #pragma once
 #include "game.h"
+#include "actor.h"
 
 class HealthBar
 {
@@ -12,9 +13,9 @@ public:
 	HealthBar(sf::RenderWindow &window);
 	~HealthBar();
 
-	void calculateHealthPercentage(Rose::Character::Link link);
-	sf::RectangleShape createOutlineRect(Rose::Character::Link link);
-	sf::RectangleShape createHealthAmountRect(Rose::Character::Link link);
-	void drawHealthBar(sf::RenderWindow &window, Rose::Character::Link link);
+	void calculateHealthPercentage(Rose::Character::Actor &link);
+	sf::RectangleShape createOutlineRect(Rose::Character::Actor &link);
+	sf::RectangleShape createHealthAmountRect(Rose::Character::Actor &link);
+	void drawHealthBar(sf::RenderWindow &window, Rose::Character::Actor &link);
 };
 

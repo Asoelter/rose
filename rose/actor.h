@@ -79,6 +79,13 @@ namespace Rose::Character
 		 *
 		 * @param window The window to draw the actor to
 		 */
+
+		virtual float getHealth() const;
+
+		virtual float getActorWidth() const;
+
+		virtual float getActorHeight() const;
+
 		virtual void drawTo(sf::RenderWindow& window);
 
 
