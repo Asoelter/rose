@@ -2,6 +2,7 @@
 #include "game.h"
 #include "log.h"
 #include <chrono>
+#include "HealthBar.h"
 
 Game::Game()
 	: window_(sf::VideoMode(1000, 600), "Tale of Rose")
@@ -15,6 +16,7 @@ Game::Game()
 void Game::run()
 {
 	Skeleton skeleton; //This constructor taking a long time 
+	HealthBar healthBar(window_);
 
 	auto start = std::chrono::system_clock::now();
 	auto enemies = generateEnemies(5);
@@ -59,6 +61,7 @@ void Game::run()
 		map_->drawTo(window_);
 		link_.drawTo(window_);
 		skeleton.drawTo(window_);
+		healthBar.drawHealthBar(window_, link_);
 		std::for_each(enemies.begin(), enemies.end(), [this](std::unique_ptr<Skeleton>& s) 
 		{
 			s->drawTo(this->window_);

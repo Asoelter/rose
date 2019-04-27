@@ -86,6 +86,23 @@ namespace Rose::Character
 		--Actor::health_;
 	}
 
+	int Link::getHealth()
+	{
+		return Actor::health_;
+	}
+
+	float Link::getXPos(){
+		return xPos();
+	}
+
+	float Link::getYPos(){
+		return yPos();
+	}
+
+	sf::Vector2f Link::getPos() {
+		return Actor::sprite_.getPosition();
+	}
+
 	void Link::genericMove(int startingIndex, int endingIndex)
 	{
 		int& index = ++Actor::currentTextureIndex_;

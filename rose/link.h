@@ -33,12 +33,19 @@ namespace Rose::Character
 		void moveDown()	 override;
 		void moveLeft()	 override;
 
+		int getHealth();
+		float getXPos();
+		float getYPos();
+		sf::Vector2f Link::getPos();
+
 		virtual void attack()	 override;
 
 		virtual void drawTo(sf::RenderWindow& window) override;
 		virtual void damage() override;
 
 	private:
+		float xOffset;
+		float yOffset;
 		///////////////////
 		//HelperFunctions//
 		///////////////////
