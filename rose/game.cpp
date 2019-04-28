@@ -17,16 +17,28 @@ Game::Game()
 void Game::run()
 {
 	mainMenu();
-	if (gameState == p) {
-		play();
-	}
-	else if (gameState == t) {
-		test();
-	}
-	else if (gameState == q)
+	while(gameState != s_quit)
 	{
-		quit();
+		if (gameState == s_play) {
+			play();
+		}
+		else if (gameState == s_test) {
+			test();
+		}
+		else if (gameState == s_quit)
+		{
+			quit();
+		}
+		else if (gameState == s_lose)
+		{
+			lose();
+		}
+		else if (gameState == s_win)
+		{
+			win();
+		}
 	}
+	
 
 
 }
@@ -95,6 +107,70 @@ void Game::quit()
 {
 	window_.close();
 }
+void Game::win()
+{
+	while (window_.isOpen())
+	{
+		sf::Event event;
+		while (window_.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed) {
+				window_.close();
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+				gameState = s_quit;
+				window_.close();
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+				gameState = s_play;
+				break;
+			}
+
+		}
+		if(gameState != s_win)
+		{
+			break;
+		}
+		sf::Texture texture;
+		texture.loadFromFile("assets/rose-rpg-win-screen.png");
+		sf::Sprite sprite(texture);
+		window_.clear(sf::Color::Black);
+		window_.draw(sprite);
+		window_.display();
+	}
+}
+void Game::lose()
+{
+	while (window_.isOpen())
+	{
+		sf::Event event;
+		while (window_.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed) {
+				window_.close();
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+				gameState = s_quit;
+				window_.close();
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+				gameState = s_play;
+				break;
+			}
+
+		}
+		if(gameState != s_lose)
+		{
+			break;
+		}
+		sf::Texture texture;
+		texture.loadFromFile("assets/rose-rpg-lose-screen.png");
+		sf::Sprite sprite(texture);
+		window_.clear(sf::Color::Black);
+		window_.draw(sprite);
+		window_.display();
+	}
+}
 void Game::mainMenu()
 {
 	while (window_.isOpen())
@@ -110,23 +186,33 @@ void Game::mainMenu()
 				window_.close();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
-				gameState = p;
+				gameState = s_play;
 				window_.clear(sf::Color::Black);
 				break;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
-				gameState = t;
+				gameState = s_test;
 				window_.clear(sf::Color::Black);
 				break;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-				gameState = q;
+				gameState = s_quit;
+				window_.clear(sf::Color::Black);
+				break;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+				gameState = s_win;
+				window_.clear(sf::Color::Black);
+				break;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
+				gameState = s_lose;
 				window_.clear(sf::Color::Black);
 				break;
 			}
 
 		}
-		if (gameState != w) {
+		if (gameState != s_initial) {
 			break;
 		}
 		
@@ -138,6 +224,7 @@ void Game::mainMenu()
 		window_.display();
 	}
 }
+
 
 std::vector<std::unique_ptr<Skeleton>> Game::generateEnemies(int amount)
 {

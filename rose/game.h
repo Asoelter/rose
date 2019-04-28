@@ -16,7 +16,7 @@ class Game
 		Game();
 		enum State
 		{
-			p, t, q, w
+			s_play, s_test, s_quit, s_win, s_lose, s_initial
 		};
 
 		void run();
@@ -24,10 +24,12 @@ class Game
 		void play();
 		void test();
 		void quit();
+		void win();
+		void lose();
 
 	private:
 		std::vector<std::unique_ptr<Skeleton>> generateEnemies(int amount);
-		State gameState = w;
+		State gameState = s_initial;
 		sf::RenderWindow		window_;
 		std::unique_ptr<Map>	map_;
 		Rose::Character::Link	link_;
