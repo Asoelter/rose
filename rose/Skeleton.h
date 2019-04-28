@@ -17,7 +17,16 @@ public:
 	 * 
 	 */
 	Skeleton();
+	/**
+	* @brief constructs a new skeleton at a specified position.
+	* @param int xPos: The x position for the skeleton to spawn.
+	* @param int yPos: The y position for the skeleton to spawn.
+	*/
 	Skeleton(int xPos, int yPos);
+	/**
+	* @brief constructs a new skeleton at a specified position.
+	* @param sf::Vector2i position: position vector for the skeleton
+	*/
 	Skeleton(sf::Vector2i position);
 
 	/**
@@ -25,10 +34,21 @@ public:
 	 * 
 	 */
 	virtual ~Skeleton() = default;
-
+	/**
+	* @brief moves the skeleton upwards on the screen while cycling through animations.
+	*/
 	void moveUp();
+	/**
+	* @brief moves the skeleton right on the screen while cycling through animations.
+	*/
 	void moveRight();
+	/**
+	* @brief moves the skeleton down on the screen while cycling through animations.
+	*/
 	void moveDown();
+	/**
+	* @brief moves the skeleton left on the screen while cycling through animations.
+	*/
 	void moveLeft();
 
 	/**
@@ -44,8 +64,13 @@ public:
 	 * @param playerY The players vertical position 
 	 */
 	void chasePlayer(float playerX, float playerY);
-
+	/**
+	* @brief draws the skeleton to the window.
+	*/
 	virtual void drawTo(sf::RenderWindow& window);
+	/**
+	* @brief subtracts health from the skeleton.
+	*/
 	void damage();
 
 private:
