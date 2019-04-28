@@ -77,18 +77,11 @@ void Game::play()
 		window_.clear(sf::Color::Black);
 		map_->drawTo(window_);
 		skeleton.drawTo(window_);
-<<<<<<< HEAD
-		std::for_each(enemies.begin(), enemies.end(), [this](std::unique_ptr<Skeleton>& s)
-			{
-				s->drawTo(this->window_);
-			});
-=======
 		std::for_each(enemies.begin(), enemies.end(), [this](std::unique_ptr<Skeleton>& s) 
 		{
 			s->drawTo(this->window_);
 		});
 		mainCharacter_.drawTo(window_);
->>>>>>> 05b2801a60555006676de280bb60bd25c665f1c2
 		link_.drawTo(window_);
 		healthBar.drawHealthBar(window_, link_);
 		window_.display();
