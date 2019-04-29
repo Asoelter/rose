@@ -228,33 +228,37 @@ void Skeleton::shockWave()
 //chasing function
 void Skeleton::chasePlayer(float playerX, float playerY)
 {
-	if (m_xPos != playerX) 
-	{
-		if (m_xPos < playerX) 
+	bool withinX = false;
+	bool withinY = false;
+	float width = sprite_.getLocalBounds().width;
+	float height = sprite_.getLocalBounds().height;
+		if (m_xPos < (playerX - width + 10) )
 		{
-			Actor::sprite_.move(3.0f, 0.0f);
+			Actor::sprite_.move(1.0f, 0.0f);
 			this->moveRight();
-		}
-		if (m_xPos > playerX)
+		}else
+		if (m_xPos > (playerX))
 		{
-			Actor::sprite_.move(-3.0f, 0.0f);
+			Actor::sprite_.move(-1.0f, 0.0f);
 			this->moveLeft();
 		}
-	}
-	if (m_yPos != playerY)
-	{
-		if (m_yPos < playerY)
-		{
-			Actor::sprite_.move(0.0f, 3.0f);
-			this->moveDown();
+		else {
+			withinX = true;
 		}
-		if (m_yPos > playerY)
+		if (m_yPos < (playerY - height + 5))
 		{
-			Actor::sprite_.move(0.0f, 3.0f);
+			Actor::sprite_.move(0.0f, 1.0f);
+			this->moveDown();
+		}else
+		if (m_yPos > (playerY - 5))
+		{
+			Actor::sprite_.move(0.0f, 1.0f);
 			this->moveUp();
 		}
-	}
-	if (m_xPos == playerX && m_yPos == playerY) 
+		else {
+			withinY = true;
+		}
+	if (withinX && withinY) 
 	{
 		this->shockWave();
 	}

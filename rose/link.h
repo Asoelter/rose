@@ -57,7 +57,7 @@ namespace Rose::Character
 		int getHealth();
 		float getXPos();
 		float getYPos();
-		sf::Vector2f Link::getPos();
+		//sf::Vector2f Link::getPos();
 
 		virtual void attack()	 override;
 

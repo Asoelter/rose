@@ -53,12 +53,15 @@ class Game
 		*/
 		void lose();
 
+
+
+		std::vector<std::unique_ptr<Skeleton>> enemies;
+		Rose::Character::Link	link_;
+		sf::RenderWindow		window_;
 	private:
 		std::vector<std::unique_ptr<Skeleton>> generateEnemies(int amount);
 		State gameState = s_initial;
-		sf::RenderWindow		window_;
 		std::unique_ptr<Map>	map_;
-		Rose::Character::Link	link_;
 		Rose::Character::MainCharacter	mainCharacter_;
 };
 

@@ -331,9 +331,9 @@ namespace Rose::Character
 		return yPos();
 	}
 
-	sf::Vector2f MainCharacter::getPos() {
-		return Actor::sprite_.getPosition();
-	}
+	//sf::Vector2f MainCharacter::getPos() {
+	//	return Actor::sprite_.getPosition();
+	//}
 
 	void MainCharacter::animate() {
 		if (animationPicNumber < 59)

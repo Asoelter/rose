@@ -159,9 +159,9 @@ namespace Rose::Character
 		return yPos();
 	}
 
-	sf::Vector2f Link::getPos() {
-		return Actor::sprite_.getPosition();
-	}
+	//sf::Vector2f Link::getPos() {
+	//	return Actor::sprite_.getPosition();
+	//}
 
 	void Link::genericMove(int startingIndex, int endingIndex)
 	{

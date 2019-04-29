@@ -4,8 +4,9 @@
 #include <chrono>
 #include "HealthBar.h"
 
+
 Game::Game()
-	: window_(sf::VideoMode(1920, 1080), "Tale of Rose")
+	: window_(sf::VideoMode(1366, 768), "Tale of Rose")
 	, map_(std::make_unique<GrassyMap>(1000, 600))
 	, link_(800, 300)
 	, mainCharacter_(300, 200)
@@ -42,16 +43,36 @@ void Game::run()
 
 
 }
+
+
+void runAutomatedEnemies(Game *currentGame)
+{
+	int counter = 0;
+	while (true)
+	{
+		for (int i = 0; i < currentGame->enemies.size(); i++)
+		{
+			currentGame->enemies[i]->chasePlayer(currentGame->link_.xPos(), currentGame->link_.yPos());
+			currentGame->enemies[i]->drawTo(currentGame->window_);
+
+		}
+			sf::sleep(sf::milliseconds(100));
+	}
+}
+
 void Game::play()
 {
-	Skeleton skeleton; //This constructor taking a long time 
+	//Skeleton skeleton; //This constructor taking a long time 
 	HealthBar healthBar(window_);
 
 	auto start = std::chrono::system_clock::now();
-	auto enemies = generateEnemies(5);
+	enemies = generateEnemies(5);
 	auto stop = std::chrono::system_clock::now();
 	std::chrono::duration<double> length = stop - start;
 	Rose::Logger::info("Duration:", length.count());
+
+	sf::Thread automateEnemies(&runAutomatedEnemies, this);
+	automateEnemies.launch();
 
 	while (window_.isOpen())
 	{
@@ -88,7 +109,7 @@ void Game::play()
 
 		window_.clear(sf::Color::Black);
 		map_->drawTo(window_);
-		skeleton.drawTo(window_);
+		//skeleton.drawTo(window_);
 		std::for_each(enemies.begin(), enemies.end(), [this](std::unique_ptr<Skeleton>& s) 
 		{
 			s->drawTo(this->window_);
