@@ -72,6 +72,26 @@ public:
 	* @brief subtracts health from the skeleton.
 	*/
 	void damage();
+	/**
+	* @brief calls all testing functions
+	*/
+	void runTests();
+	/**
+	* @brief checks to see if skeleton position changes correctly along x axis
+	*/
+	void testMoveLeft();
+	/**
+	* @brief checks to see if skeleton position changes correctly along x axis
+	*/
+	void testMoveRight();
+	/**
+	* @brief checks to see if skeleton position changes correctly along y axis
+	*/
+	void testMoveUp();
+	/**
+	* @brief checks to see if skeleton position changes correctly along y axis
+	*/
+	void testMoveDown();
 
 private:
 	float m_xPos;

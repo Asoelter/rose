@@ -56,6 +56,66 @@ namespace Rose::Character
 		Actor::updatePosition();
 	}
 
+	void Link::runTests()
+	{
+		testMoveDown();
+		testMoveLeft();
+		testMoveUp();
+		testMoveRight();
+	}
+	void Link::testMoveDown()
+	{
+		float testPos = getYPos();
+		moveDown();
+		if(testPos == getYPos())
+		{
+			std::cout << "LINK--TEST MOVE DOWN -> TEST FAILED: Y VALUE DID NOT CHANGE\n";
+		}
+		else
+		{
+			std::cout << "LINK--TEST MOVE DOWN -> TEST PASSED: Y VALUE CORRECTLY CHANGED\n";
+		}
+	}
+	void Link::testMoveLeft() 
+	{
+		float testPos = getXPos();
+		moveLeft();
+		if (testPos == getXPos())
+		{
+			std::cout << "LINK--TEST MOVE LEFT -> TEST FAILED: X VALUE DID NOT CHANGE\n";
+		}
+		else
+		{
+			std::cout << "LINK--TEST MOVE LEFT -> TEST PASSED: X VALUE CORRECTLY CHANGED\n";
+		}
+	}
+	void Link::testMoveUp()
+	{
+		float testPos = getYPos();
+		moveUp();
+		if (testPos == getYPos())
+		{
+			std::cout << "LINK--TEST MOVE UP -> TEST FAILED: Y VALUE DID NOT CHANGE\n";
+		}
+		else
+		{
+			std::cout << "LINK--TEST MOVE UP -> TEST PASSED: Y VALUE CORRECTLY CHANGED\n";
+		}
+	}
+	void Link::testMoveRight()
+	{
+		float testPos = getXPos();
+		moveRight();
+		if (testPos == getXPos())
+		{
+			std::cout << "LINK--TEST MOVE RIGHT -> TEST FAILED: X VALUE DID NOT CHANGE\n";
+		}
+		else
+		{
+			std::cout << "LINK--TEST MOVE RIGHT -> TEST PASSED: X VALUE CORRECTLY CHANGED\n";
+		}
+	}
+
 	void Link::attack()
 	{
 		isAttacking_ = true;

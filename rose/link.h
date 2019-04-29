@@ -28,10 +28,31 @@ namespace Rose::Character
 		 */
 		~Link() = default;
 
+		
 		void moveUp()	 override;
 		void moveRight() override;
 		void moveDown()	 override;
 		void moveLeft()	 override;
+		/**
+		* @brief runs all tests for link
+		*/
+		void runTests();
+		/**
+		* @brief checks to see if characters position changes correctly along y axis
+		*/
+		void testMoveUp();
+		/**
+		* @brief checks to see if characters position changes correctly along x axis
+		*/
+		void testMoveRight();
+		/**
+		* @brief checks to see if characters position changes correctly along y axis
+		*/
+		void testMoveDown();
+		/**
+		* @brief checks to see if characters position changes correctly along x axis
+		*/
+		void testMoveLeft();
 
 		int getHealth();
 		float getXPos();

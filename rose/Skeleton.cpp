@@ -14,6 +14,7 @@ using namespace Rose::Character;
 std::vector<sf::Texture>		Skeleton::textures_;
 bool							Skeleton::loaded_ = false;
 
+//Constructors and destructors
 Skeleton::Skeleton()
 	: Enemy()
 	, framesBetweenMoves_(0)
@@ -29,8 +30,6 @@ Skeleton::Skeleton()
 	Actor::sprite_.setPosition({ 800.0f, 300.0f });
 	Actor::health_ = 3;
 }
-
-
 Skeleton::Skeleton(int xPos, int yPos)
 	: Enemy()
 	, framesBetweenMoves_(0)
@@ -46,7 +45,6 @@ Skeleton::Skeleton(int xPos, int yPos)
 	Actor::sprite_.setPosition(static_cast<float>(xPos), static_cast<float>(yPos));
 	Actor::health_ = 3;
 }
-
 Skeleton::Skeleton(sf::Vector2i position)
 	: Enemy()
 	, framesBetweenMoves_(0)
@@ -62,8 +60,7 @@ Skeleton::Skeleton(sf::Vector2i position)
 	Actor::sprite_.setPosition(static_cast<float>(position.x), static_cast<float>(position.y));
 	Actor::health_ = 3;
 }
-
-
+//movement functions
 void Skeleton::moveUp()
 {
 	if (Actor::currentTextureIndex_ < 60)
@@ -83,8 +80,6 @@ void Skeleton::moveUp()
 	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;
 }
-
-
 void Skeleton::moveRight()
 {
 	if (Actor::currentTextureIndex_ < 87)
@@ -104,8 +99,6 @@ void Skeleton::moveRight()
 	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;
 }
-
-
 void Skeleton::moveDown()
 {
 	if (Actor::currentTextureIndex_ < 78)
@@ -125,8 +118,6 @@ void Skeleton::moveDown()
 	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;
 }
-
-
 void Skeleton::moveLeft()
 {
 	if (Actor::currentTextureIndex_ < 69)
@@ -145,7 +136,79 @@ void Skeleton::moveLeft()
 	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;
 }
-// index 15-21
+//tests for movement functions
+void Skeleton::runTests()
+{
+	testMoveLeft();
+	testMoveRight();
+	testMoveDown();
+	testMoveUp();
+}
+void Skeleton::testMoveLeft()
+{
+	m_xPos = 10;
+	float testxPos = 10;
+
+	//test move left
+	moveLeft();
+	if(m_xPos == 10)
+	{
+		std::cout << "SKELETON--TEST MOVE LEFT -> TEST FAILED: X VALUE DID NOT CHANGE\n";
+	}
+	else
+	{
+		std::cout << "SKELETON--TEST MOVE LEFT -> TEST PASSED: X VALUE CORRECTLY CHANGED\n";
+	}
+}
+void Skeleton::testMoveRight()
+{
+	m_xPos = 10;
+	float testxPos = 10;
+
+	//test move right
+	moveRight();
+	if (m_xPos == 10)
+	{
+		std::cout << "SKELETON--TEST MOVE RIGHT -> TEST FAILED: X VALUE DID NOT CHANGE\n";
+	}
+	else
+	{
+		std::cout << "SKELETON--TEST MOVE RIGHT -> TEST PASSED: X VALUE CORRECTLY CHANGED\n";
+	}
+}
+void Skeleton::testMoveUp()
+{
+	m_yPos = 10;
+	float testyPos = 10;
+
+	//test move right
+	moveUp();
+	if (m_yPos == 10)
+	{
+		std::cout << "SKELETON--TEST MOVE UP -> TEST FAILED: X VALUE DID NOT CHANGE\n";
+	}
+	else
+	{
+		std::cout << "SKELETON--TEST MOVE UP -> TEST PASSED: Y VALUE CORRECTLY CHANGED\n";
+	}
+}
+void Skeleton::testMoveDown()
+{
+	m_yPos = 10;
+	float testyPos = 10;
+
+	//test move right
+	moveDown();
+	if (m_yPos == 10)
+	{
+		std::cout << "SKELETON--TEST MOVE DOWN -> TEST FAILED: X VALUE DID NOT CHANGE\n";
+	}
+	else
+	{
+		std::cout << "SKELETON--TEST MOVE DOWN -> TEST PASSED: Y VALUE CORRECTLY CHANGED\n";
+	}
+}
+//attacks
 void Skeleton::shockWave()
 {
 	if (Actor::currentTextureIndex_ > 13) 
@@ -162,7 +225,7 @@ void Skeleton::shockWave()
 	}
 	framesBetweenMoves_ = 0;
 }
-
+//chasing function
 void Skeleton::chasePlayer(float playerX, float playerY)
 {
 	if (m_xPos != playerX) 
@@ -196,8 +259,7 @@ void Skeleton::chasePlayer(float playerX, float playerY)
 		this->shockWave();
 	}
 }
-
-
+//draw to window
 void Skeleton::drawTo(sf::RenderWindow & window)
 {
 	++framesBetweenMoves_;
@@ -224,14 +286,12 @@ void Skeleton::drawTo(sf::RenderWindow & window)
 		Rose::Logger::info("SKELETON DEAD");
 	}
 }
-
-
+//take damage
 void Skeleton::damage()
 {
 	--Actor::health_;
 }
-
-
+//spritesheet loader
 void Skeleton::loadTexture(const std::string && fileName)
 {
 	sf::Texture loader;

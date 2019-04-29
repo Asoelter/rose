@@ -137,6 +137,12 @@ namespace Rose::Character
 		void moveDown()	 override;
 		void moveLeft()	 override;
 
+		void runTests();
+		void testMoveUp();
+		void testMoveRight();
+		void testMoveDown();
+		void testMoveLeft();
+
 		int getHealth();
 		float getXPos();
 		float getYPos();

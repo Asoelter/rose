@@ -211,7 +211,66 @@ namespace Rose::Character
 		Actor::sprite_.move(-4.0f, 0.0f);
 		Actor::updatePosition();
 	}
-
+	//TEST FUNCTIONS
+	void MainCharacter::runTests()
+	{
+		testMoveDown();
+		testMoveUp();
+		testMoveLeft();
+		testMoveRight();
+	}
+	void MainCharacter::testMoveDown()
+	{
+		float testPos = getYPos();
+		moveDown();
+		if (testPos == getYPos())
+		{
+			std::cout << "MAINCHARACTER--TEST MOVE DOWN -> TEST FAILED: Y VALUE DID NOT CHANGE\n";
+		}
+		else
+		{
+			std::cout << "MAINCHARACTER--TEST MOVE DOWN -> TEST PASSED: Y VALUE CORRECTLY CHANGED\n";
+		}
+	}
+	void MainCharacter::testMoveLeft()
+	{
+		float testPos = getXPos();
+		moveLeft();
+		if (testPos == getXPos())
+		{
+			std::cout << "MAINCHARACTER--TEST MOVE LEFT -> TEST FAILED: X VALUE DID NOT CHANGE\n";
+		}
+		else
+		{
+			std::cout << "MAINCHARACTER--TEST MOVE LEFT -> TEST PASSED: X VALUE CORRECTLY CHANGED\n";
+		}
+	}
+	void MainCharacter::testMoveUp()
+	{
+		float testPos = getYPos();
+		moveUp();
+		if (testPos == getYPos())
+		{
+			std::cout << "MAINCHARACTER--TEST MOVE UP -> TEST FAILED: Y VALUE DID NOT CHANGE\n";
+		}
+		else
+		{
+			std::cout << "MAINCHARACTER--TEST MOVE UP -> TEST PASSED: Y VALUE CORRECTLY CHANGED\n";
+		}
+	}
+	void MainCharacter::testMoveRight()
+	{
+		float testPos = getXPos();
+		moveRight();
+		if (testPos == getXPos())
+		{
+			std::cout << "MAINCHARACTER--TEST MOVE RIGHT -> TEST FAILED: X VALUE DID NOT CHANGE\n";
+		}
+		else
+		{
+			std::cout << "MAINCHARACTER--TEST MOVE RIGHT -> TEST PASSED: X VALUE CORRECTLY CHANGED\n";
+		}
+	}
 	void MainCharacter::attack()
 	{
 		isAttacking_ = true;
