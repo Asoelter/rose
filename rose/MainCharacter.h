@@ -137,10 +137,25 @@ namespace Rose::Character
 		void moveDown()	 override;
 		void moveLeft()	 override;
 
+		/**
+		* @brief runs all tests for MainCharacter
+		*/
 		void runTests();
+		/**
+		* @brief checks whether moveUp() function correctly changes y position
+		*/
 		void testMoveUp();
+		/**
+		* @brief checks whether moveRight() function correctly changes x position
+		*/
 		void testMoveRight();
+		/**
+		* @brief checks whether moveDown() function correctly changes y position
+		*/
 		void testMoveDown();
+		/**
+		* @brief checks whether moveLeft() function correctly changes x position
+		*/
 		void testMoveLeft();
 
 		int getHealth();
