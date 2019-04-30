@@ -9,8 +9,8 @@
 
 Game::Game()
 	: link_(800, 300)
-	, window_(sf::VideoMode(1920, 1080), "Tale of Rose")
-	, map_(std::make_unique<GrassyMap>(1920, 1080))
+	, window_(sf::VideoMode(1000, 600), "Tale of Rose")
+	, map_(std::make_unique<GrassyMap>(1000, 600))
 	, mainCharacter_(300, 200)
 {
 	Rose::Character::Actor::setMap(map_.get());

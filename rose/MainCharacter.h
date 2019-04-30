@@ -257,7 +257,8 @@ namespace Rose::Character
 		//Private data//
 		////////////////
 
-		static std::vector<sf::Texture> textures_;
+		sf::Texture completeSpriteSheetTexture;
+		//static std::vector<sf::Texture> textures_;
 		static bool						loaded_;
 		bool							isAttacking_;
 		int animationPicNumber;
