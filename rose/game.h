@@ -13,6 +13,9 @@
 class Game
 {
 	public:
+		int wave = 0;
+		sf::Text waveLabel;
+		bool done = false;
 		Game();
 		/**
 		* @brief enum describing the different game states

@@ -8,7 +8,7 @@
 
 
 Game::Game()
-	: window_(sf::VideoMode(1366, 768), "Tale of Rose")
+	: window_(sf::VideoMode(1000, 600), "Tale of Rose")
 	, map_(std::make_unique<GrassyMap>(1000, 600))
 	, link_(800, 300)
 	, mainCharacter_(300, 200)
@@ -65,14 +65,21 @@ void runAutomatedEnemies(Game *currentGame)
 void Game::play()
 {
 	//Skeleton skeleton; //This constructor taking a long time 
+	sf::RectangleShape tint(sf::Vector2f(1000.f, 600.f));
 	HealthBar healthBar(window_);
 
 	auto start = std::chrono::system_clock::now();
+	//first wave
+	sf::Font font;
+	font.loadFromFile("assets/impact.ttf");
+	waveLabel.setFont(font);
+	waveLabel.setString("WAVE 1: PRESS 'W' FOR NEXT WAVE");
+	waveLabel.setColor(sf::Color(0, 0, 0));
 	enemies = generateEnemies(5);
 	auto stop = std::chrono::system_clock::now();
 	std::chrono::duration<double> length = stop - start;
 	Rose::Logger::info("Duration:", length.count());
-
+	tint.setFillColor(sf::Color(0, 0, 0, 0));
 	sf::Thread automateEnemies(&runAutomatedEnemies, this);
 	automateEnemies.launch();
 
@@ -107,11 +114,37 @@ void Game::play()
 			{
 				window_.close();
 			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+			{
+				wave++;
+				if (wave == 2) {
+					//blue: wave 2
+					if (done == true) {
+						window_.close();
+					}
+					waveLabel.setString("Wave 2: PRESS 'W' FOR NEXT WAVE");
+
+					tint.setFillColor(sf::Color(0, 0, 200, 150));
+					enemies = generateEnemies(8);
+				}
+				else if (wave == 3) {
+					done = true;
+				}
+				else if (wave > 3) {
+					//purple wave 3
+					waveLabel.setString("Wave 3: PRESS 'W' TO QUIT");
+					wave = 1;
+					tint.setFillColor(sf::Color(200, 0, 100, 200));
+					enemies = generateEnemies(15);
+				}
+
+			}
 		}
 
 		window_.clear(sf::Color::Black);
 		map_->drawTo(window_);
 		//skeleton.drawTo(window_);
+		window_.draw(tint);
 		std::for_each(enemies.begin(), enemies.end(), [this](std::unique_ptr<Skeleton>& s) 
 		{
 			s->drawTo(this->window_);
@@ -119,6 +152,7 @@ void Game::play()
 		mainCharacter_.drawTo(window_);
 		link_.drawTo(window_);
 		healthBar.drawHealthBar(window_, link_);
+		window_.draw(waveLabel);
 		window_.display();
 	}
 }
@@ -285,11 +319,25 @@ std::vector<std::unique_ptr<Skeleton>> Game::generateEnemies(int amount)
 	auto right	= map_->width();
 	auto left	= 0;
 
-	std::array<sf::Vector2i, 4> positions = {
+	std::array<sf::Vector2i, 15> positions = {
+		//wave 1
 		sf::Vector2i(xMid, top),
 		sf::Vector2i(right, yMid),
 		sf::Vector2i(xMid, bot),
-		sf::Vector2i(left, yMid)
+		sf::Vector2i(left, yMid),
+		sf::Vector2i(xMid + 100, top + 100),
+		//wave 2
+		sf::Vector2i(xMid + 80, top + 200),
+		sf::Vector2i(right + 160, yMid + 240),
+		sf::Vector2i(xMid + 320, bot + 12),
+		sf::Vector2i(left + 65, yMid + 90),
+		sf::Vector2i(xMid + 50, top + 50),
+		//wave 3
+		sf::Vector2i(xMid + 28, top + 100),
+		sf::Vector2i(right + 97, yMid + 186),
+		sf::Vector2i(xMid + 145, bot + 210),
+		sf::Vector2i(left + 630, yMid + 4),
+		sf::Vector2i(xMid + 2, top + 112)
 	};
 
 	std::vector<std::unique_ptr<Skeleton>> rval;
