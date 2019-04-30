@@ -1,7 +1,9 @@
+#define CATCH_CONFIG_RUNNER
 #include <algorithm>
 #include "game.h"
 #include "log.h"
 #include <chrono>
+#include "catch.hpp"
 #include "HealthBar.h"
 
 
@@ -122,6 +124,7 @@ void Game::play()
 }
 void Game::test()
 {
+	int result = Catch::Session().run();
 	// call all tests in here
 	Skeleton skeleton; //This constructor taking a long time 
 	while (window_.isOpen())

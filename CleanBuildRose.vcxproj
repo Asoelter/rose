@@ -33,11 +33,13 @@
     <ClCompile Include="rose\MainCharacterTextures.cpp" />
     <ClCompile Include="rose\map.cpp" />
     <ClCompile Include="rose\Skeleton.cpp" />
+    <ClCompile Include="rose\Tests.cpp" />
     <ClCompile Include="rose\tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rose\actor.h" />
     <ClInclude Include="rose\attacker.h" />
+    <ClInclude Include="rose\catch.hpp" />
     <ClInclude Include="rose\CharacterStats.h" />
     <ClInclude Include="rose\ChaseUser.h" />
     <ClInclude Include="rose\Cowboy.h" />
