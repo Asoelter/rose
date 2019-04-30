@@ -8,9 +8,9 @@
 
 
 Game::Game()
-	: window_(sf::VideoMode(1000, 600), "Tale of Rose")
+	: link_(800, 300)
+	, window_(sf::VideoMode(1000, 600), "Tale of Rose")
 	, map_(std::make_unique<GrassyMap>(1000, 600))
-	, link_(800, 300)
 	, mainCharacter_(300, 200)
 {
 	Rose::Character::Actor::setMap(map_.get());
@@ -49,10 +49,9 @@ void Game::run()
 
 void runAutomatedEnemies(Game *currentGame)
 {
-	int counter = 0;
 	while (true)
 	{
-		for (int i = 0; i < currentGame->enemies.size(); i++)
+		for (std::vector<Skeleton>::size_type i = 0; i < currentGame->enemies.size(); i++)
 		{
 			currentGame->enemies[i]->chasePlayer(currentGame->link_.xPos(), currentGame->link_.yPos());
 			currentGame->enemies[i]->drawTo(currentGame->window_);
@@ -158,7 +157,7 @@ void Game::play()
 }
 void Game::test()
 {
-	int result = Catch::Session().run();
+	Catch::Session().run();
 	// call all tests in here
 	Skeleton skeleton; //This constructor taking a long time 
 	while (window_.isOpen())

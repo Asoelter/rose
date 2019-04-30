@@ -147,7 +147,6 @@ void Skeleton::runTests()
 void Skeleton::testMoveLeft()
 {
 	m_xPos = 10;
-	float testxPos = 10;
 
 	//test move left
 	moveLeft();
@@ -163,7 +162,6 @@ void Skeleton::testMoveLeft()
 void Skeleton::testMoveRight()
 {
 	m_xPos = 10;
-	float testxPos = 10;
 
 	//test move right
 	moveRight();
@@ -179,7 +177,6 @@ void Skeleton::testMoveRight()
 void Skeleton::testMoveUp()
 {
 	m_yPos = 10;
-	float testyPos = 10;
 
 	//test move right
 	moveUp();
@@ -195,7 +192,6 @@ void Skeleton::testMoveUp()
 void Skeleton::testMoveDown()
 {
 	m_yPos = 10;
-	float testyPos = 10;
 
 	//test move right
 	moveDown();
