@@ -11,8 +11,7 @@
 
 using namespace Rose::Character;
 
-//std::vector<sf::Texture>		Skeleton::textures_;
-std::vector<int> Skeleton::textureRectsDescribedByFourInts_;
+std::vector<sf::Texture>		Skeleton::textures_;
 bool							Skeleton::loaded_ = false;
 
 //Constructors and destructors
@@ -20,15 +19,11 @@ Skeleton::Skeleton()
 	: Enemy()
 	, framesBetweenMoves_(0)
 {
-	//Actor::textures_ = &textures_;
-	Actor::textureRectsDescribedByFourInts_ = &textureRectsDescribedByFourInts_;
-	completeSpriteSheet.loadFromFile("assets/skeletonSpriteSheet.png");
-	sf::Texture texture;
-	texture.loadFromImage(completeSpriteSheet);
-	Actor::completeSpriteSheetTexture = texture;
+	Actor::textures_ = &textures_;
+
 	if(!loaded_)
 	{
-		loadTexture();
+		loadTexture("assets/skeletonSpriteSheet.png");
 		loaded_ = true;
 	}
 
@@ -39,15 +34,11 @@ Skeleton::Skeleton(int xPos, int yPos)
 	: Enemy()
 	, framesBetweenMoves_(0)
 {
-	//Actor::textures_ = &textures_;
-	Actor::textureRectsDescribedByFourInts_ = &textureRectsDescribedByFourInts_;
-	completeSpriteSheet.loadFromFile("assets/skeletonSpriteSheet.png");
-	sf::Texture texture;
-	texture.loadFromImage(completeSpriteSheet);
-	Actor::completeSpriteSheetTexture = texture;
-	if (!loaded_)
+	Actor::textures_ = &textures_;
+
+	if(!loaded_)
 	{
-		loadTexture();
+		loadTexture("assets/skeletonSpriteSheet.png");
 		loaded_ = true;
 	}
 
@@ -58,15 +49,11 @@ Skeleton::Skeleton(sf::Vector2i position)
 	: Enemy()
 	, framesBetweenMoves_(0)
 {
-	//Actor::textures_ = &textures_;
-	Actor::textureRectsDescribedByFourInts_ = &textureRectsDescribedByFourInts_;
-	completeSpriteSheet.loadFromFile("assets/skeletonSpriteSheet.png");
-	sf::Texture texture;
-	texture.loadFromImage(completeSpriteSheet);
-	Actor::completeSpriteSheetTexture = texture;
-	if (!loaded_)
+	Actor::textures_ = &textures_;
+
+	if(!loaded_)
 	{
-		loadTexture();
+		loadTexture("assets/skeletonSpriteSheet.png");
 		loaded_ = true;
 	}
 
@@ -309,9 +296,9 @@ void Skeleton::damage()
 	--Actor::health_;
 }
 //spritesheet loader
-void Skeleton::loadTexture()
+void Skeleton::loadTexture(const std::string && fileName)
 {
-	//sf::Texture loader;
+	sf::Texture loader;
 	int leftEdge = 0;
 
 	//Row 1-4: 7 textures per row
@@ -322,13 +309,10 @@ void Skeleton::loadTexture()
 		for (int j = 0; j < 7; j++) 
 		{
 			leftEdge = 64 * j;
-			textureRectsDescribedByFourInts_.push_back(leftEdge);
-			textureRectsDescribedByFourInts_.push_back(64 * i);
-			textureRectsDescribedByFourInts_.push_back(64);
-			textureRectsDescribedByFourInts_.push_back(64);
-			//bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64*i, 64, 64));
-			//assert(success);
-			//textures_.push_back(loader);
+			
+			bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64*i, 64, 64));
+			assert(success);
+			textures_.push_back(loader);
 		}
 	}
 
@@ -340,13 +324,9 @@ void Skeleton::loadTexture()
 		{
 			leftEdge = 64 * j;
 
-			textureRectsDescribedByFourInts_.push_back(leftEdge);
-			textureRectsDescribedByFourInts_.push_back(64 * i + 256);
-			textureRectsDescribedByFourInts_.push_back(64);
-			textureRectsDescribedByFourInts_.push_back(64);
-			//bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 256, 64, 64));
-			//assert(success);
-			//textures_.push_back(loader);
+			bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 256, 64, 64));
+			assert(success);
+			textures_.push_back(loader);
 		}
 	}
 
@@ -357,13 +337,10 @@ void Skeleton::loadTexture()
 		for (int j = 0; j < 9; j++) 
 		{
 			leftEdge = 64 * j;
-			textureRectsDescribedByFourInts_.push_back(leftEdge);
-			textureRectsDescribedByFourInts_.push_back(64 * i + 512);
-			textureRectsDescribedByFourInts_.push_back(64);
-			textureRectsDescribedByFourInts_.push_back(64);
-			//bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 512, 64, 64));
-			//assert(success);
-			//textures_.push_back(loader);
+
+			bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 512, 64, 64));
+			assert(success);
+			textures_.push_back(loader);
 		}
 	}
 
@@ -375,13 +352,9 @@ void Skeleton::loadTexture()
 		{
 			leftEdge = 64 * j;
 
-			textureRectsDescribedByFourInts_.push_back(leftEdge);
-			textureRectsDescribedByFourInts_.push_back(64 * i + 768);
-			textureRectsDescribedByFourInts_.push_back(64);
-			textureRectsDescribedByFourInts_.push_back(64);
-			//bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 768, 64, 64));
-			//assert(success);
-			//textures_.push_back(loader);
+			bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 768, 64, 64));
+			assert(success);
+			textures_.push_back(loader);
 		}
 	}
 
@@ -392,13 +365,10 @@ void Skeleton::loadTexture()
 		for (int j = 0; j < 6; j++)
 		{
 			leftEdge = 64 * j;
-			textureRectsDescribedByFourInts_.push_back(leftEdge);
-			textureRectsDescribedByFourInts_.push_back(64 * i + 1024);
-			textureRectsDescribedByFourInts_.push_back(64);
-			textureRectsDescribedByFourInts_.push_back(64);
-			//bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 1024, 64, 64));
-			//assert(success);
-			//textures_.push_back(loader);
+
+			bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 64 * i + 1024, 64, 64));
+			assert(success);
+			textures_.push_back(loader);
 		}
 	}
  
@@ -407,12 +377,9 @@ void Skeleton::loadTexture()
 	for (int j = 0; j < 6; j++)
 	{
 		leftEdge = 64 * j;
-		textureRectsDescribedByFourInts_.push_back(leftEdge);
-		textureRectsDescribedByFourInts_.push_back(64 * 1280);
-		textureRectsDescribedByFourInts_.push_back(64);
-		textureRectsDescribedByFourInts_.push_back(64);
-		//bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 1280, 64, 64));
-		//assert(success);
-		//textures_.push_back(loader);
+
+		bool success = loader.loadFromFile(std::move(fileName), sf::IntRect(leftEdge, 1280, 64, 64));
+		assert(success);
+		textures_.push_back(loader);
 	}
 }

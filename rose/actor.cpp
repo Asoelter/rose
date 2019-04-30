@@ -12,7 +12,6 @@ namespace Rose::Character
 
 	Actor::Actor()
 		: textures_(nullptr)
-		, textureRectsDescribedByFourInts_(nullptr)
 		, sprite_()
 		, occupiedTile_(nullptr)
 		, currentOrientation_(Orientation::IDLE)
@@ -59,17 +58,9 @@ namespace Rose::Character
 
 	void Actor::drawTo(sf::RenderWindow & window)
 	{
-		if (textures_ != nullptr) {
-			sprite_.setTexture((*textures_)[currentTextureIndex_]);
-			window.draw(sprite_);
-		}
-		else{
-			//sf::Sprite sprite;
-			sprite_.setTexture(completeSpriteSheetTexture);
-			sprite_.setTextureRect(sf::IntRect((*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_], (*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_ + 1], (*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_ + 2], (*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_ + 3]));
-			window.draw(sprite_);
-		}
-
+		assert(textures_);
+		sprite_.setTexture((*textures_)[currentTextureIndex_]);
+		window.draw(sprite_);
 	}
 
 

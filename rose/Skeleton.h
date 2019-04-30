@@ -96,7 +96,6 @@ public:
 private:
 	float m_xPos;
 	float m_yPos;
-	sf::Image completeSpriteSheet;
 	//float enemyMovementSpeed = 3; //Unused so commented out
 
 	/**
@@ -105,10 +104,9 @@ private:
 	 * @param fileName The name of the file to 
 	 * load the textures from 
 	 */
-	void loadTexture();
+	void loadTexture(const std::string&& fileName);
 
-	static std::vector<int> textureRectsDescribedByFourInts_;
-	//static std::vector<sf::Texture>		textures_;
+	static std::vector<sf::Texture>		textures_;
 	static bool							loaded_;
 	static constexpr int				idleTextureIndex_ = 0;
 	uint8_t								framesBetweenMoves_;

@@ -67,7 +67,6 @@ namespace Rose::Character
 	private:
 		float xOffset;
 		float yOffset;
-		sf::Image completeSpriteSheet;
 		///////////////////
 		//HelperFunctions//
 		///////////////////
@@ -136,7 +135,7 @@ namespace Rose::Character
 		 * @param fileName The name of the file to load the
 		 * textures from
 		 */
-		void loadTextures();
+		void loadTextures(const std::string&& fileName);
 
 		/**
 		 * @brief Loads the approprate textures for when the
@@ -146,7 +145,7 @@ namespace Rose::Character
 		 * @param fileName The name of the file to load the
 		 * textures from
 		 */
-		void loadWalkDownTextures();
+		void loadWalkDownTextures(const std::string& fileName);
 
 		/**
 		 * @brief Loads the approprate textures for when the
@@ -156,7 +155,7 @@ namespace Rose::Character
 		 * @param fileName The name of the file to load the
 		 * textures from
 		 */
-		void loadWalkLeftTextures();
+		void loadWalkLeftTextures(const std::string& fileName);
 
 		/**
 		 * @brief Loads the approprate textures for when the
@@ -165,7 +164,7 @@ namespace Rose::Character
 		 * @param fileName The name of the file to load the
 		 * textures from
 		 */
-		void loadWalkUpTextures();
+		void loadWalkUpTextures(const std::string& fileName);
 
 		/**
 		 * @brief Loads the approprate textures for when the
@@ -175,7 +174,7 @@ namespace Rose::Character
 		 * @param fileName The name of the file to load the
 		 * textures from
 		 */
-		void loadWalkRightTextures();
+		void loadWalkRightTextures(const std::string& fileName);
 
 		/**
 		 * @brief Loads the approprate textures for when the
@@ -185,7 +184,7 @@ namespace Rose::Character
 		 * @param fileName The name of the file to load the
 		 * textures from
 		 */
-		void loadSwordDownTextures();
+		void loadSwordDownTextures(const std::string& fileName);
 
 		/**
 		 * @brief Loads the approprate textures for when the
@@ -195,7 +194,7 @@ namespace Rose::Character
 		 * @param fileName The name of the file to load the
 		 * textures from
 		 */
-		void loadSwordLeftTextures();
+		void loadSwordLeftTextures(const std::string& fileName);
 
 		/**
 		 * @brief Loads the approprate textures for when the
@@ -205,7 +204,7 @@ namespace Rose::Character
 		 * @param fileName The name of the file to load the
 		 * textures from
 		 */
-		void loadSwordUpTextures();
+		void loadSwordUpTextures(const std::string& fileName);
 
 		/**
 		 * @brief Loads the approprate textures for when the
@@ -215,7 +214,7 @@ namespace Rose::Character
 		 * @param fileName The name of the file to load the
 		 * textures from
 		 */
-		void loadSwordRightTextures();
+		void loadSwordRightTextures(const std::string& fileName);
 
 		/**
 		 * @brief A debug function for printing useful info
@@ -258,7 +257,7 @@ namespace Rose::Character
 		//Private data//
 		////////////////
 
-		static std::vector<int> textureRectsDescribedByFourInts_;
+		static std::vector<sf::Texture> textures_;
 		static bool						loaded_;
 		bool							isAttacking_;
 	};

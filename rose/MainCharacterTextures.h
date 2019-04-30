@@ -7,8 +7,7 @@
 class MainCharacterTextures
 {
 public:
-	//std::vector<sf::Texture> textures;
-	sf::Texture completeSpriteSheetTexture;
+	std::vector<sf::Texture> textures;
 	MainCharacterTextures(std::string filename);
 	~MainCharacterTextures();
 };

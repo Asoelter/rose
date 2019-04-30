@@ -106,8 +106,6 @@ namespace Rose::Character
 		Tile* occupiedTile() const;
 		std::pair<int, int> mapIndices() const;
 
-		sf::Texture completeSpriteSheetTexture;
-		std::vector<int>*	textureRectsDescribedByFourInts_;
 		std::vector<sf::Texture>*	textures_;
 		sf::Sprite					sprite_;
 		Tile*						occupiedTile_;
