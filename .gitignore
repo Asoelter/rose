@@ -10,4 +10,7 @@
 .vs/CleanBuildRose/v15/Browse.VC.db
 *.ipch
 .vs/CleanBuildRose/v15/ipch/AutoPCH/44a9c7509ce123c/MAIN.ipch
+**/*.o
+**/main
 *.tlog
+.vscode/ipch/*
