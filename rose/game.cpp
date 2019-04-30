@@ -9,8 +9,8 @@
 
 Game::Game()
 	: link_(800, 300)
-	, window_(sf::VideoMode(1000, 600), "Tale of Rose")
-	, map_(std::make_unique<GrassyMap>(1000, 600))
+	, window_(sf::VideoMode(1920, 1080), "Tale of Rose")
+	, map_(std::make_unique<GrassyMap>(1920, 1080))
 	, mainCharacter_(300, 200)
 {
 	Rose::Character::Actor::setMap(map_.get());
@@ -65,7 +65,7 @@ void Game::play()
 {
 	//Skeleton skeleton; //This constructor taking a long time 
 	sf::RectangleShape tint(sf::Vector2f(1000.f, 600.f));
-	HealthBar healthBar(window_);
+	HealthBar healthBar;
 
 	auto start = std::chrono::system_clock::now();
 	//first wave
@@ -300,7 +300,7 @@ void Game::mainMenu()
 		}
 		
 		sf::Texture texture;
-		texture.loadFromFile("assets/rose-rpg-main-screen.png");
+		texture.loadFromFile("assets/title_screen/rose-rpg-main-screen.png");
 		sf::Sprite sprite(texture);
 		window_.clear(sf::Color::Black);
 		window_.draw(sprite);

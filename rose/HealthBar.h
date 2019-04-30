@@ -10,7 +10,7 @@ public:
 	float currentHealth;
 	float currentHealthPercentage;
 
-	HealthBar(sf::RenderWindow &window);
+	HealthBar();
 	~HealthBar();
 
 	void calculateHealthPercentage(Rose::Character::Actor &link);

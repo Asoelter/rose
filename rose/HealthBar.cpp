@@ -5,7 +5,7 @@
 
 
 
-HealthBar::HealthBar(sf::RenderWindow &window)
+HealthBar::HealthBar()
 {
 	healthBarSize = sf::Vector2f(18, 5);// this size really fits link
 }

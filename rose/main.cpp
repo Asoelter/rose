@@ -29,8 +29,8 @@
 int main()
 {
 	Game game;
-	//game.run();
-	game.test();
+	game.run();
+	//game.test();
 	return 0;
 }
 

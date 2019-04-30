@@ -29,7 +29,8 @@ class Game
 		*/
 		void run();
 		/**
-		* @brief displays the main menu and changes gameState depending on user input
+		* @brief displays the main menu and changes gameState depending 
+		* on user input
 		*/
 		/**
 		* @brief begins main game loop
@@ -48,23 +49,27 @@ class Game
 		*/
 		void quit();
 		/**
-		* @brief displays win screen and allows user to press p to play again or q to quit.
+		* @brief displays win screen and allows user to press p to 
+		* play again or q to quit.
 		*/
 		void win();
 		/**
-		* @brief displays lose screen and allows user to press p to play again or q to quit.
+		* @brief displays lose screen and allows user to press p to 
+		* play again or q to quit.
 		*/
 		void lose();
 
 
 
-		std::vector<std::unique_ptr<Skeleton>> enemies;
-		Rose::Character::Link	link_;
-		sf::RenderWindow		window_;
+		std::vector<std::unique_ptr<Skeleton>>	enemies;
+		Rose::Character::Link					link_;
+		sf::RenderWindow						window_;
+
 	private:
 		std::vector<std::unique_ptr<Skeleton>> generateEnemies(int amount);
-		State gameState = s_initial;
-		std::unique_ptr<Map>	map_;
+
+		State gameState =				s_initial;
+		std::unique_ptr<Map>			map_;
 		Rose::Character::MainCharacter	mainCharacter_;
 };
 
