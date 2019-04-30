@@ -28,9 +28,21 @@
 //main must return int
 int main()
 {
+
+	//std::make_unique<GrassyMap>(1000, 600);
+	//std::cout << "made";
+	//Rose::Character::Link(800, 300);
+	//std::cout << "made";
+	//Rose::Character::MainCharacter();
+	//std::cout << "made";
+	//Skeleton();
+	//std::cout << "made";
+
+
 	Game game;
 	//game.run();
-	game.test();
+	//game.test();
+	game.play();
 	return 0;
 }
 

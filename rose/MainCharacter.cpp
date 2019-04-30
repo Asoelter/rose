@@ -160,7 +160,7 @@
 
 #define persistant static
 
-std::vector<sf::Texture>	Rose::Character::MainCharacter::textures_;
+//std::vector<sf::Texture>	Rose::Character::MainCharacter::textures_;
 bool						Rose::Character::MainCharacter::loaded_ = false;
 
 namespace Rose::Character
@@ -172,7 +172,7 @@ namespace Rose::Character
 		, animationPicNumber(0)
 	{
 		currentOrientation_ = Orientation::IDLE;
-		Actor::textures_ = &textures_;
+		//Actor::textures_ = &textures_;
 		if (!loaded_)
 		{
 			loadTextures("assets/warrior spritesheet calciumtrice.png");
@@ -292,13 +292,16 @@ namespace Rose::Character
 		}
 
 		sf::Sprite sprite;
+		sprite.setTexture(completeSpriteSheetTexture);
 		if (currentOrientation_ == Orientation::IDLE)
 		{
-			sprite.setTexture(textures_[10 + (((animationPicNumber - (animationPicNumber % 5)) / 5) - 1)]);
+			sprite.setTextureRect(sf::IntRect((animationPicNumber % 5) * 32, 0, 32, 32));
 		}
+		//[10 + (((animationPicNumber - (animationPicNumber % 5)) / 5) - 1)]
 		else
 		{
-			sprite.setTexture(textures_[20 + (((animationPicNumber - (animationPicNumber % 5)) / 5) - 1)]);
+			sprite.setTextureRect(sf::IntRect((animationPicNumber % 5) * 32, 1, 32, 32));
+			//sprite.setTexture(textures_[20 + (((animationPicNumber - (animationPicNumber % 5)) / 5) - 1)]);
 		}
 		sprite.setOrigin(16.f, 16.f);
 		if (currentOrientation_ == Orientation::FACING_LEFT) {
@@ -382,7 +385,7 @@ namespace Rose::Character
 	void MainCharacter::loadTextures(const std::string fileName)
 	{
 		MainCharacterTextures textureLoader(fileName);
-		textures_ = textureLoader.textures;
+		completeSpriteSheetTexture = textureLoader.completeSpriteSheetTexture;
 	}
 
 	void MainCharacter::printAttackDebugInfo() const

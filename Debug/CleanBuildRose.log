@@ -1,0 +1,5 @@
+﻿  actor.cpp
+c:\users\brandon\documents\github\rose\rose\actor.cpp(56): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+c:\users\brandon\documents\github\rose\rose\actor.cpp(89): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\brandon\documents\github\rose\rose\actor.cpp(90): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  CleanBuildRose.vcxproj -> C:\Users\Brandon\Documents\GitHub\rose\Debug\CleanBuildRose.exe

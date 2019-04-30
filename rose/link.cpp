@@ -4,7 +4,7 @@
 
 #define persistant static
 
-std::vector<sf::Texture>	Rose::Character::Link::textures_;
+std::vector<int>	Rose::Character::Link::textureRectsDescribedByFourInts_;
 bool						Rose::Character::Link::loaded_ = false;
 
 namespace Rose::Character
@@ -14,10 +14,14 @@ namespace Rose::Character
 		: Attacker()
 		, isAttacking_(false)
 	{
-		Actor::textures_ = &textures_;
+		Actor::textureRectsDescribedByFourInts_ = &textureRectsDescribedByFourInts_;
 		if(!loaded_)
 		{
-			loadTextures("assets/link2.png");
+			completeSpriteSheet.loadFromFile("assets/link2.png");
+			sf::Texture texture;
+			texture.loadFromImage(completeSpriteSheet);
+			Actor::completeSpriteSheetTexture = texture;
+			loadTextures();
 			loaded_ = true;
 		}
 		Actor::sprite_.setPosition(static_cast<float>(xPos), static_cast<float>(yPos));
@@ -218,264 +222,292 @@ namespace Rose::Character
 	}
 
 
-	void Link::loadTextures(const std::string&& fileName)
+	void Link::loadTextures()
 	{
-		loadWalkDownTextures(fileName);
-		loadWalkLeftTextures(fileName);
-		loadWalkUpTextures(fileName);
-		loadWalkRightTextures(fileName);
-		loadSwordDownTextures(fileName);
-		loadSwordLeftTextures(fileName);
-		loadSwordUpTextures(fileName);
-		loadSwordRightTextures(fileName);
+		loadWalkDownTextures();
+		loadWalkLeftTextures();
+		loadWalkUpTextures();
+		loadWalkRightTextures();
+		loadSwordDownTextures();
+		loadSwordLeftTextures();
+		loadSwordUpTextures();
+		loadSwordRightTextures();
 
 	}
 
-	void Link::loadWalkDownTextures(const std::string& fileName)
+	void Link::loadWalkDownTextures()
 	{
-		sf::Texture loader;
-		bool success = true;
 
 		//If BE_EXACT is defined then the exact coordinates of the texture are
 		//used, otherwise a for loop is used to approximate. I'm hoping the for 
 		//loop is close enough 
-		success = loader.loadFromFile(fileName, sf::IntRect(3, 31, 16, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(3);
+		textureRectsDescribedByFourInts_.push_back(31);
+		textureRectsDescribedByFourInts_.push_back(16);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(33, 31, 16, 24));
-		assert(success);
-		textures_.push_back(loader);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(63, 30, 16, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(33);
+		textureRectsDescribedByFourInts_.push_back(31);
+		textureRectsDescribedByFourInts_.push_back(16);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(93, 30, 16, 24)); //IDLE
-		assert(success);
-		textures_.push_back(loader);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(123, 31, 16, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(63);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(16);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(153, 30, 16, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(93);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(16);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(183, 30, 16, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(123);
+		textureRectsDescribedByFourInts_.push_back(31);
+		textureRectsDescribedByFourInts_.push_back(16);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(213, 30, 16, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(153);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(16);
+		textureRectsDescribedByFourInts_.push_back(24);
+
+		textureRectsDescribedByFourInts_.push_back(183);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(16);
+		textureRectsDescribedByFourInts_.push_back(24);
+
+		textureRectsDescribedByFourInts_.push_back(213);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(16);
+		textureRectsDescribedByFourInts_.push_back(24);
 	}
 
-	void Link::loadWalkLeftTextures(const std::string& fileName)
+	void Link::loadWalkLeftTextures()
 	{
-		sf::Texture loader;
-		bool success = true;
+		textureRectsDescribedByFourInts_.push_back(392);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(392, 30, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(361);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(361, 30, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(331);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(331, 30, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(301);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(301, 30, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(272);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(272, 30, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
-
-		success = loader.loadFromFile(fileName, sf::IntRect(241, 30, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(241);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 	}
 
-	void Link::loadWalkUpTextures(const std::string& fileName)
+	void Link::loadWalkUpTextures()
 	{
-		sf::Texture loader;
-		bool success = true;
+		textureRectsDescribedByFourInts_.push_back(2);
+		textureRectsDescribedByFourInts_.push_back(120);
+		textureRectsDescribedByFourInts_.push_back(17);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(2, 120, 17, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(32);
+		textureRectsDescribedByFourInts_.push_back(120);
+		textureRectsDescribedByFourInts_.push_back(17);
+		textureRectsDescribedByFourInts_.push_back(24);;
 
-		success = loader.loadFromFile(fileName, sf::IntRect(32, 120, 17, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(62);
+		textureRectsDescribedByFourInts_.push_back(121);
+		textureRectsDescribedByFourInts_.push_back(17);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(62, 121, 17, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(92);
+		textureRectsDescribedByFourInts_.push_back(121);
+		textureRectsDescribedByFourInts_.push_back(17);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(92, 121, 17, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(122);
+		textureRectsDescribedByFourInts_.push_back(120);
+		textureRectsDescribedByFourInts_.push_back(17);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(122, 120, 17, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(152);
+		textureRectsDescribedByFourInts_.push_back(120);
+		textureRectsDescribedByFourInts_.push_back(17);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(152, 120, 17, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(182);
+		textureRectsDescribedByFourInts_.push_back(121);
+		textureRectsDescribedByFourInts_.push_back(17);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(182, 121, 17, 24));
-		assert(success);
-		textures_.push_back(loader);
-
-		success = loader.loadFromFile(fileName, sf::IntRect(212, 121, 17, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(212);
+		textureRectsDescribedByFourInts_.push_back(121);
+		textureRectsDescribedByFourInts_.push_back(17);
+		textureRectsDescribedByFourInts_.push_back(24);
 	}
 
-	void Link::loadWalkRightTextures(const std::string& fileName)
+	void Link::loadWalkRightTextures()
 	{
-		sf::Texture loader;
-		bool success = true;
+		textureRectsDescribedByFourInts_.push_back(241);
+		textureRectsDescribedByFourInts_.push_back(120);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(241, 120, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(272);
+		textureRectsDescribedByFourInts_.push_back(120);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(272, 120, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(301);
+		textureRectsDescribedByFourInts_.push_back(120);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(301, 120, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(331);
+		textureRectsDescribedByFourInts_.push_back(120);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(331, 120, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(361);
+		textureRectsDescribedByFourInts_.push_back(120);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(361, 120, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
-
-		success = loader.loadFromFile(fileName, sf::IntRect(392, 120, 19, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(392);
+		textureRectsDescribedByFourInts_.push_back(120);
+		textureRectsDescribedByFourInts_.push_back(19);
+		textureRectsDescribedByFourInts_.push_back(24);
 	}
 
-	void Link::loadSwordDownTextures(const std::string& fileName)
+	void Link::loadSwordDownTextures()
 	{
-		sf::Texture loader;
-		bool success = true;
+		textureRectsDescribedByFourInts_.push_back(1);
+		textureRectsDescribedByFourInts_.push_back(90);
+		textureRectsDescribedByFourInts_.push_back(20);
+		textureRectsDescribedByFourInts_.push_back(23);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(1, 90, 20, 23));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(90);
+		textureRectsDescribedByFourInts_.push_back(22);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(30, 90, 22, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(61);
+		textureRectsDescribedByFourInts_.push_back(86);
+		textureRectsDescribedByFourInts_.push_back(20);
+		textureRectsDescribedByFourInts_.push_back(31);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(61, 86, 20, 31));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(91);
+		textureRectsDescribedByFourInts_.push_back(86);
+		textureRectsDescribedByFourInts_.push_back(20);
+		textureRectsDescribedByFourInts_.push_back(31);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(91, 86, 20, 31));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(115);
+		textureRectsDescribedByFourInts_.push_back(87);
+		textureRectsDescribedByFourInts_.push_back(28);
+		textureRectsDescribedByFourInts_.push_back(29);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(115, 87, 28, 29));
-		assert(success);
-		textures_.push_back(loader);
-
-		success = loader.loadFromFile(fileName, sf::IntRect(145, 88, 32, 27));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(145);
+		textureRectsDescribedByFourInts_.push_back(88);
+		textureRectsDescribedByFourInts_.push_back(32);
+		textureRectsDescribedByFourInts_.push_back(27);
 	}
 
-	void Link::loadSwordLeftTextures(const std::string& fileName)
+	void Link::loadSwordLeftTextures()
 	{
-		sf::Texture loader;
-		bool success = true;
+		textureRectsDescribedByFourInts_.push_back(359);
+		textureRectsDescribedByFourInts_.push_back(86);
+		textureRectsDescribedByFourInts_.push_back(23);
+		textureRectsDescribedByFourInts_.push_back(31);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(359, 86, 23, 31));
-		assert(success);
-		 textures_.push_back(loader);
+		 textureRectsDescribedByFourInts_.push_back(327);
+		 textureRectsDescribedByFourInts_.push_back(91);
+		 textureRectsDescribedByFourInts_.push_back(28);
+		 textureRectsDescribedByFourInts_.push_back(21);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(327, 91, 28, 21));
-		assert(success);
-		 textures_.push_back(loader);
+		 textureRectsDescribedByFourInts_.push_back(295);
+		 textureRectsDescribedByFourInts_.push_back(91);
+		 textureRectsDescribedByFourInts_.push_back(31);
+		 textureRectsDescribedByFourInts_.push_back(21);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(295, 91, 31, 21));
-		assert(success);
-		 textures_.push_back(loader);
+		 textureRectsDescribedByFourInts_.push_back(268);
+		 textureRectsDescribedByFourInts_.push_back(90);
+		 textureRectsDescribedByFourInts_.push_back(26);
+		 textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(268, 90, 26, 24));
-		assert(success);
-		 textures_.push_back(loader);
-
-		success = loader.loadFromFile(fileName, sf::IntRect(242, 90, 18, 23));
-		assert(success);
-		textures_.push_back(loader);
+		 textureRectsDescribedByFourInts_.push_back(242);
+		 textureRectsDescribedByFourInts_.push_back(90);
+		 textureRectsDescribedByFourInts_.push_back(18);
+		 textureRectsDescribedByFourInts_.push_back(23);
 	}
 
-	void Link::loadSwordUpTextures(const std::string& fileName)
+	void Link::loadSwordUpTextures()
 	{
-		sf::Texture loader;
-		bool success = true;
+		textureRectsDescribedByFourInts_.push_back(0);
+		textureRectsDescribedByFourInts_.push_back(181);
+		textureRectsDescribedByFourInts_.push_back(22);
+		textureRectsDescribedByFourInts_.push_back(22);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(0, 181, 22, 22));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(30);
+		textureRectsDescribedByFourInts_.push_back(177);
+		textureRectsDescribedByFourInts_.push_back(22);
+		textureRectsDescribedByFourInts_.push_back(30);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(30, 177, 22, 30));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(61);
+		textureRectsDescribedByFourInts_.push_back(174);
+		textureRectsDescribedByFourInts_.push_back(20);
+		textureRectsDescribedByFourInts_.push_back(35);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(61, 174, 20, 35));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(89);
+		textureRectsDescribedByFourInts_.push_back(177);
+		textureRectsDescribedByFourInts_.push_back(24);
+		textureRectsDescribedByFourInts_.push_back(30);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(89, 177, 24, 30));
-		assert(success);
-		textures_.push_back(loader);
-
-		success = loader.loadFromFile(fileName, sf::IntRect(115, 180, 32, 23));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(115);
+		textureRectsDescribedByFourInts_.push_back(180);
+		textureRectsDescribedByFourInts_.push_back(32);
+		textureRectsDescribedByFourInts_.push_back(23);
 	}
 
-	void Link::loadSwordRightTextures(const std::string& fileName)
+	void Link::loadSwordRightTextures()
 	{
-		sf::Texture loader;
-		bool success = true;
+		textureRectsDescribedByFourInts_.push_back(242);
+		textureRectsDescribedByFourInts_.push_back(180);
+		textureRectsDescribedByFourInts_.push_back(18);
+		textureRectsDescribedByFourInts_.push_back(23);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(242, 180, 18, 23));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(268);
+		textureRectsDescribedByFourInts_.push_back(180);
+		textureRectsDescribedByFourInts_.push_back(28);
+		textureRectsDescribedByFourInts_.push_back(26);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(268, 180, 26, 24));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(295);
+		textureRectsDescribedByFourInts_.push_back(181);
+		textureRectsDescribedByFourInts_.push_back(35);
+		textureRectsDescribedByFourInts_.push_back(25);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(295, 181, 31, 21));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(327);
+		textureRectsDescribedByFourInts_.push_back(181);
+		textureRectsDescribedByFourInts_.push_back(33);
+		textureRectsDescribedByFourInts_.push_back(24);
 
-		success = loader.loadFromFile(fileName, sf::IntRect(327, 181, 28, 12));
-		assert(success);
-		textures_.push_back(loader);
-
-		success = loader.loadFromFile(fileName, sf::IntRect(359, 176, 23, 31));
-		assert(success);
-		textures_.push_back(loader);
+		textureRectsDescribedByFourInts_.push_back(359);
+		textureRectsDescribedByFourInts_.push_back(176);
+		textureRectsDescribedByFourInts_.push_back(25);
+		textureRectsDescribedByFourInts_.push_back(35);
 	}
 
 	void Link::printAttackDebugInfo() const
