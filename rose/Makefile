@@ -1,6 +1,6 @@
-CXX_FLAGS   = clang++ -std=c++17 -O2 -g -Wall -Wextra -pedantic -Wno-unknown-pragmas
-HEADERS     = actor.h attacker.h Cowboy.h tile.h MainCharacter.h CharacterStats.h link.h map.h Skeleton.h Enemy.h MainCharacterTextures.h log.h game.h
-OBJECTS     = main.o actor.o attacker.o Cowboy.o tile.o MainCharacter.o CharacterStats.o link.o map.o Skeleton.o Enemy.o MainCharacterTextures.o log.o game.o
+CXX_FLAGS   = g++ -std=c++17 -O2 -g -Wall -Wextra -pedantic -Wno-unknown-pragmas -Wno-comment
+HEADERS     = actor.h attacker.h Cowboy.h tile.h MainCharacter.h CharacterStats.h link.h map.h Skeleton.h Enemy.h MainCharacterTextures.h log.h game.h HealthBar.h
+OBJECTS     = main.o actor.o attacker.o Cowboy.o tile.o MainCharacter.o CharacterStats.o link.o map.o Skeleton.o Enemy.o MainCharacterTextures.o log.o game.o HealthBar.o
 
 main: $(OBJECTS)
 	$(CXX_FLAGS) $(OBJECTS) -o main -lsfml-graphics -lsfml-window -lsfml-system
@@ -46,6 +46,9 @@ log.o: log.h log.cpp
 
 game.o: game.h game.cpp
 	$(CXX_FLAGS) -c game.cpp
+
+HealthBar.o: HealthBar.h HealthBar.cpp
+	$(CXX_FLAGS) -c HealthBar.cpp
 
 clean: 
 	rm *.o main
