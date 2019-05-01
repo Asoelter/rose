@@ -39,15 +39,19 @@ namespace Rose::Character
 	void Link::moveUp()
 	{
 		genericMove(startOfWalkUp, endOfWalkUp);
-		Actor::sprite_.move(0.0f, -4.0f);
+		if (getYPos() > minY) {
+			Actor::sprite_.move(0.0f, -4.0f);
+		}
 		currentOrientation_ = Orientation::FACING_UP;
 		Actor::updatePosition();
 	}
 
 	void Link::moveRight()
 	{
+		if (getXPos() < maxX) {
+			Actor::sprite_.move(4.0f, 0.0f);
+		}
 		genericMove(startOfWalkRight, endOfWalkRight);
-		Actor::sprite_.move(4.0f, 0.0f);
 		currentOrientation_ = Orientation::FACING_RIGHT;
 		Actor::updatePosition();
 	}
@@ -55,7 +59,9 @@ namespace Rose::Character
 	void Link::moveDown()
 	{
 		genericMove(startOfWalkDown, endOfWalkDown);
-		Actor::sprite_.move(0.0f, 4.0f);
+		if (getYPos() < maxY) {
+			Actor::sprite_.move(0.0f, 4.0f);
+		}
 		currentOrientation_ = Orientation::FACING_DOWN;
 		Actor::updatePosition();
 	}
@@ -63,7 +69,10 @@ namespace Rose::Character
 	void Link::moveLeft()
 	{
 		genericMove(startOfWalkLeft, endOfWalkLeft);
-		Actor::sprite_.move(-4.0f, 0.0f);
+		if (getXPos() > minX) {
+			Actor::sprite_.move(-4.0f, 0.0f);
+		}
+		
 		currentOrientation_ = Orientation::FACING_LEFT;
 		Actor::updatePosition();
 	}
