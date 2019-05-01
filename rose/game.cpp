@@ -201,32 +201,34 @@ void Game::test()
 {
 	Catch::Session().run();
 	// call all tests in here
-	Skeleton skeleton; //This constructor taking a long time 
-	while (window_.isOpen())
-	{
-		sf::Event event;
-		while (window_.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window_.close();
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-			{
-				window_.close();
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-			{
-				skeleton.runTests();
-				link_.runTests();
-				mainCharacter_.runTests();
-			}
-		}
+	//Skeleton skeleton; //This constructor taking a long time 
+	//while (window_.isOpen())
+	//{
+	//	sf::Event event;
+	//	while (window_.pollEvent(event))
+	//	{
+	//		if (event.type == sf::Event::Closed)
+	//			window_.close();
+	//		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+	//		{
+	//			window_.close();
+	//		}
+	//		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+	//		{
+	//			skeleton.runTests();
+	//			link_.runTests();
+	//			mainCharacter_.runTests();
+	//		}
+	//	}
 
-		window_.clear(sf::Color::Black);
-		link_.drawTo(window_);
-		skeleton.drawTo(window_);
-		mainCharacter_.drawTo(window_);
-		window_.display();
-	}
+	//	window_.clear(sf::Color::Black);
+	//	link_.drawTo(window_);
+	//	skeleton.drawTo(window_);
+	//	mainCharacter_.drawTo(window_);
+	//	window_.display();
+	//}
+	quit();
+	exit(0);
 }
 void Game::quit()
 {

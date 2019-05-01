@@ -12,7 +12,7 @@ public:
 	virtual ~Enemy() = default;
 
 
-	virtual void follow(const Rose::Character::Actor& actor);
+	//virtual void follow(const Rose::Character::Actor& actor);
 
 protected:
 	double m_health = 100;
