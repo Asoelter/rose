@@ -9,8 +9,8 @@
 
 Game::Game()
 	: link_(800, 300)
-	, window_(sf::VideoMode(1000, 600), "Tale of Rose")
-	, map_(std::make_unique<GrassyMap>(1000, 600))
+	, window_(sf::VideoMode(1920, 1080), "Tale of Rose")
+	, map_(std::make_unique<GrassyMap>(1920, 1080))
 	, mainCharacter_(300, 200)
 {
 	Rose::Character::Actor::setMap(map_.get());
@@ -64,7 +64,7 @@ void runAutomatedEnemies(Game *currentGame)
 void Game::play()
 {
 	//Skeleton skeleton; //This constructor taking a long time 
-	sf::RectangleShape tint(sf::Vector2f(1000.f, 600.f));
+	sf::RectangleShape tint(sf::Vector2f(1920.f, 1080.f));
 	HealthBar healthBar;
 
 	auto start = std::chrono::system_clock::now();
