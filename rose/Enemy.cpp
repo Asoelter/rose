@@ -31,26 +31,26 @@ int Enemy::sendXP(int x)
 }
 
 
-void Enemy::follow(const Rose::Character::Actor& actor)
-{
-	auto xDiff = actor.xPos() - this->xPos();
-	auto yDiff = actor.yPos() - this->yPos();
-
-	if(xDiff > 0)
-	{
-		moveRight();
-	}
-	else
-	{
-		moveLeft();
-	}
-
-	if(yDiff > 0)
-	{
-		moveUp();
-	}
-	else
-	{
-		moveDown();
-	}
-}
+//void Enemy::follow(const Rose::Character::Actor& actor)
+//{
+//	auto xDiff = actor.xPos() - this->xPos();
+//	auto yDiff = actor.yPos() - this->yPos();
+//
+//	if(xDiff > 0)
+//	{
+//		moveRight();
+//	}
+//	else
+//	{
+//		moveLeft();
+//	}
+//
+//	if(yDiff > 0)
+//	{
+//		moveUp();
+//	}
+//	else
+//	{
+//		moveDown();
+//	}
+//}
