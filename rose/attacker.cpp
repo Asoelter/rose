@@ -110,18 +110,7 @@ namespace Rose::Character
 		{
 			if(victim)
 			{
-				if(dynamic_cast<Skeleton*>(victim))
-				{
-					victim->damage();
-				}
-				else if (dynamic_cast<Link*>(victim))
-				{
-					victim->damage();
-				}
-				else
-				{
-					Rose::Logger::error("non valid character passed");
-				}
+				victim->damage();
 			}
 		}
 	}

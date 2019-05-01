@@ -22,23 +22,30 @@ void Game::run()
 	mainMenu();
 	while(gameState != s_quit)
 	{
-		if (gameState == s_play) {
+		if (gameState == s_play) 
+		{
 			play();
+			Rose::Logger::info("Left play");
 		}
-		else if (gameState == s_test) {
+		if (gameState == s_test) 
+		{
 			test();
 		}
-		else if (gameState == s_quit)
+		if (gameState == s_quit)
 		{
 			quit();
 		}
-		else if (gameState == s_lose)
+		if (gameState == s_lose)
 		{
+			Rose::Logger::info("Entered lose");
 			lose();
+			Rose::Logger::info("Lose");
 		}
-		else if (gameState == s_win)
+		if (gameState == s_win)
 		{
+			Rose::Logger::info("Entered win");
 			win();
+			Rose::Logger::info("Won");
 		}
 	}
 }
@@ -179,6 +186,7 @@ void Game::play()
 		window_.draw(waveLabel);
 		window_.display();
 	}
+	Rose::Logger::info("Broken out of play loop");
 }
 void Game::test()
 {
@@ -359,6 +367,7 @@ void Game::updateEnemies()
 	for(index i = 0; i < removeIndices.size(); ++i)
 	{
 		std::swap(enemies[i], enemies.back());
+		assert(enemies.back());
 		enemies.pop_back();
 	}
 }
