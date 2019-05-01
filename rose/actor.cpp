@@ -59,6 +59,7 @@ namespace Rose::Character
 
 	void Actor::drawTo(sf::RenderWindow & window)
 	{
+		Actor::updatePosition();
 		if (textures_ != nullptr) {
 			sprite_.setTexture((*textures_)[currentTextureIndex_]);
 			window.draw(sprite_);
@@ -81,10 +82,16 @@ namespace Rose::Character
 
 	void Actor::updatePosition()
 	{
+		
 		auto width = Actor::map->width();
 		auto height = Actor::map->height();
 		auto tileWdith = Actor::map->tileWidth();
 		auto tileHeight = Actor::map->tileHeight();
+
+		std::cout << "\nxPos:" << xPos();
+		std::cout << "\nyPos:" << xPos();
+		std::cout << "\nwidth:" << width;
+		std::cout << "\nyheight:" << height;
 
 		horizontalTileIndex_ = std::floor((width - xPos()) / tileWdith);
 		verticalTileIndex_ = std::floor((height - yPos()) / tileHeight);
@@ -93,7 +100,12 @@ namespace Rose::Character
 		{
 			occupiedTile_->setOccupier(nullptr);
 		}
-
+		if ((horizontalTileIndex_ >= 600) || (verticalTileIndex_ >= 600))
+		{
+			std::cout << "This is broken";
+		}
+		std::cout << "\nverticalTileIndex:" << verticalTileIndex_;
+		std::cout << "\nhorizontalTileIndex_:" << horizontalTileIndex_;
 		occupiedTile_ = Actor::map->tileAt(verticalTileIndex_, horizontalTileIndex_);
 		occupiedTile_->setOccupier(this);
 	}

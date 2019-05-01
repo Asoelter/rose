@@ -284,15 +284,17 @@ void Skeleton::drawTo(sf::RenderWindow & window)
 
 	Actor::drawTo(window);
 #ifdef DEBUG
-	//static int count = 0;
+	static int count = 0;
 
-	//if(count % 100 == 0)
-	//{
-	//	Rose::Logger::info("Skeleton index:", Actor::horizontalTileIndex_, ',', Actor::verticalTileIndex_);
-	//	Rose::Logger::info("Skeleton Health", Actor::health_);
-	//}
+	if(count % 100 == 0)
+	{
+		//Rose::Logger::info("Skeleton index:", Actor::horizontalTileIndex_, ',', Actor::verticalTileIndex_);
+		std::cout << Actor::horizontalTileIndex_;
+		//Rose::Logger::info("Skeleton Health", Actor::health_);
+		std::cout << Actor::verticalTileIndex_;
+	}
 
-	//++count;
+	++count;
 #endif 
 	if(Actor::health_ <= 0)
 	{

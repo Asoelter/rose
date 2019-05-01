@@ -1,0 +1,4 @@
+﻿  game.cpp
+c:\users\brandon\documents\github\rose\rose\game.cpp(77): warning C4996: 'sf::Text::setColor': was declared deprecated
+  c:\users\brandon\documents\github\rose\sfml\include\sfml\graphics\text.hpp(210): note: see declaration of 'sf::Text::setColor'
+  CleanBuildRose.vcxproj -> C:\Users\Brandon\Documents\GitHub\rose\Debug\CleanBuildRose.exe

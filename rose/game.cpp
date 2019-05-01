@@ -55,6 +55,7 @@ void runAutomatedEnemies(Game *currentGame)
 		{
 			currentGame->enemies[i]->chasePlayer(currentGame->link_.xPos(), currentGame->link_.yPos());
 			currentGame->enemies[i]->drawTo(currentGame->window_);
+			currentGame->link_.drawTo(currentGame->window_);
 
 		}
 			sf::sleep(sf::milliseconds(100));
@@ -319,24 +320,39 @@ std::vector<std::unique_ptr<Skeleton>> Game::generateEnemies(int amount)
 	auto left	= 0;
 
 	std::array<sf::Vector2i, 15> positions = {
-		//wave 1
-		sf::Vector2i(xMid, top),
-		sf::Vector2i(right, yMid),
-		sf::Vector2i(xMid, bot),
-		sf::Vector2i(left, yMid),
-		sf::Vector2i(xMid + 100, top + 100),
-		//wave 2
-		sf::Vector2i(xMid + 80, top + 200),
-		sf::Vector2i(right + 160, yMid + 240),
-		sf::Vector2i(xMid + 320, bot + 12),
-		sf::Vector2i(left + 65, yMid + 90),
-		sf::Vector2i(xMid + 50, top + 50),
-		//wave 3
-		sf::Vector2i(xMid + 28, top + 100),
-		sf::Vector2i(right + 97, yMid + 186),
-		sf::Vector2i(xMid + 145, bot + 210),
-		sf::Vector2i(left + 630, yMid + 4),
-		sf::Vector2i(xMid + 2, top + 112)
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100),
+		sf::Vector2i(100, 100)
+		////wave 1
+		//sf::Vector2i(xMid, top),
+		//sf::Vector2i(right, yMid),
+		//sf::Vector2i(xMid, bot),
+		//sf::Vector2i(left, yMid),
+		//sf::Vector2i(xMid + 100, top + 100),
+		////wave 2
+		//sf::Vector2i(xMid + 80, top + 200),
+		//sf::Vector2i(right + 160, yMid + 240),
+		//sf::Vector2i(xMid + 320, bot + 12),
+		//sf::Vector2i(left + 65, yMid + 90),
+		//sf::Vector2i(xMid + 50, top + 50),
+		////wave 3
+		//sf::Vector2i(xMid + 28, top + 100),
+		//sf::Vector2i(right + 97, yMid + 186),
+		//sf::Vector2i(xMid + 145, bot + 210),
+		//sf::Vector2i(left + 630, yMid + 4),
+		//sf::Vector2i(xMid + 2, top + 112)
 	};
 
 	std::vector<std::unique_ptr<Skeleton>> rval;
