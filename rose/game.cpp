@@ -129,7 +129,13 @@ void Game::play()
 					waveLabel.setString("Wave 2: PRESS 'W' FOR NEXT WAVE");
 
 					tint.setFillColor(sf::Color(0, 0, 200, 150));
+#ifdef _WIN32
+					automateEnemies.terminate();
+#endif
 					enemies = generateEnemies(8);
+#ifdef _WIN32
+					automateEnemies.launch();
+#endif
 				}
 				else if (wave == 3) {
 					done = true;
@@ -139,7 +145,13 @@ void Game::play()
 					waveLabel.setString("Wave 3: PRESS 'W' TO QUIT");
 					wave = 1;
 					tint.setFillColor(sf::Color(200, 0, 100, 200));
+#ifdef _WIN32
+					automateEnemies.terminate();
+#endif
 					enemies = generateEnemies(15);
+#ifdef _WIN32
+					automateEnemies.launch();
+#endif
 				}
 
 			}
