@@ -25,18 +25,18 @@ void Game::run()
 		if (gameState == s_play) {
 			play();
 		}
-		else if (gameState == s_test) {
+		if (gameState == s_test) {
 			test();
 		}
-		else if (gameState == s_quit)
+		if (gameState == s_quit)
 		{
 			quit();
 		}
-		else if (gameState == s_lose)
+		if (gameState == s_lose)
 		{
 			lose();
 		}
-		else if (gameState == s_win)
+		if (gameState == s_win)
 		{
 			win();
 		}
@@ -170,14 +170,31 @@ void Game::play()
 		{
 			gameState = s_lose;
 			Rose::Logger::warn("Link is dead");
-			break;
 		}
-
-		mainCharacter_.drawTo(window_);
-		link_.drawTo(window_);
-		healthBar.drawHealthBar(window_, link_);
-		window_.draw(waveLabel);
-		window_.display();
+		if (gameState == s_win) {
+			sf::Texture texture;
+			texture.loadFromFile("assets/rose-rpg-win-screen.png");
+			sf::Sprite sprite(texture);
+			window_.clear(sf::Color::Black);
+			window_.draw(sprite);
+			window_.display();
+		}
+		if (gameState == s_lose) {
+			sf::Texture texture;
+			texture.loadFromFile("assets/rose-rpg-lose-screen.png");
+			sf::Sprite sprite(texture);
+			window_.clear(sf::Color::Black);
+			window_.draw(sprite);
+			window_.display();
+		}
+		else {
+			mainCharacter_.drawTo(window_);
+			link_.drawTo(window_);
+			healthBar.drawHealthBar(window_, link_);
+			window_.draw(waveLabel);
+			window_.display();
+		}
+		
 	}
 }
 void Game::test()

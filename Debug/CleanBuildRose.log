@@ -1,10 +1,4 @@
-﻿  HealthBar.cpp
-  Tests.cpp
-d:\ku\classes\eecs_448\rose\rose\tests.cpp(15): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  game.cpp
-d:\ku\classes\eecs_448\rose\rose\game.cpp(76): warning C4996: 'sf::Text::setColor': was declared deprecated
+﻿  game.cpp
+d:\ku\classes\eecs_448\rose\rose\game.cpp(72): warning C4996: 'sf::Text::setColor': was declared deprecated
   d:\ku\classes\eecs_448\rose\sfml\include\sfml\graphics\text.hpp(210): note: see declaration of 'sf::Text::setColor'
-  link.cpp
-  main.cpp
-  Generating Code...
   CleanBuildRose.vcxproj -> D:\KU\Classes\EECS_448\rose\Debug\CleanBuildRose.exe
