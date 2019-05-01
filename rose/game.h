@@ -66,6 +66,7 @@ class Game
 		sf::RenderWindow						window_;
 
 	private:
+		bool canWin = false;
 		void updateEnemies();
 		std::vector<std::unique_ptr<Skeleton>> generateEnemies(int amount);
 

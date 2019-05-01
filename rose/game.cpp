@@ -135,7 +135,8 @@ void Game::play()
 				else if (wave > 3) {
 					//purple wave 3
 					waveLabel.setString("Wave 3: PRESS 'W' TO QUIT");
-					wave = 1;
+					wave = 4;
+					canWin = true;
 					tint.setFillColor(sf::Color(200, 0, 100, 200));
 #ifdef _WIN32
 					automateEnemies.terminate();
@@ -143,6 +144,7 @@ void Game::play()
 					enemies = generateEnemies(15);
 #ifdef _WIN32
 					automateEnemies.launch();
+
 #endif
 				}
 			}
@@ -165,7 +167,11 @@ void Game::play()
 		{
 			s->drawTo(this->window_);
 		});
-
+		if (enemies.size() == 0) {
+			if (wave == 4) {
+				gameState = s_win;
+			}
+		}
 		if(!link_.isAlive())
 		{
 			gameState = s_lose;
@@ -179,7 +185,7 @@ void Game::play()
 			window_.draw(sprite);
 			window_.display();
 		}
-		if (gameState == s_lose) {
+		else if (gameState == s_lose) {
 			sf::Texture texture;
 			texture.loadFromFile("assets/rose-rpg-lose-screen.png");
 			sf::Sprite sprite(texture);
@@ -187,6 +193,7 @@ void Game::play()
 			window_.draw(sprite);
 			window_.display();
 		}
+
 		else {
 			mainCharacter_.drawTo(window_);
 			link_.drawTo(window_);
