@@ -26,8 +26,15 @@ namespace Rose::Character
 			loaded_ = true;
 		}
 		Actor::sprite_.setPosition(static_cast<float>(xPos), static_cast<float>(yPos));
-		Actor::health_ = 1;
+		Actor::health_ = 100;
 	}
+
+
+	Link::~Link()
+	{
+		Actor::occupiedTile_->setOccupier(nullptr);
+	}
+
 
 	void Link::moveUp()
 	{

@@ -54,6 +54,8 @@ Skeleton::Skeleton(int xPos, int yPos)
 	Actor::sprite_.setPosition(static_cast<float>(xPos), static_cast<float>(yPos));
 	Actor::health_ = 3;
 }
+
+
 Skeleton::Skeleton(sf::Vector2i position)
 	: Enemy()
 	, framesBetweenMoves_(0)
@@ -73,6 +75,14 @@ Skeleton::Skeleton(sf::Vector2i position)
 	Actor::sprite_.setPosition(static_cast<float>(position.x), static_cast<float>(position.y));
 	Actor::health_ = 3;
 }
+
+
+Skeleton::~Skeleton()
+{
+	Actor::occupiedTile_->setOccupier(nullptr);
+}
+
+
 //movement functions
 void Skeleton::moveUp()
 {
@@ -222,7 +232,7 @@ void Skeleton::testMoveDown()
 	}
 }
 //attacks
-void Skeleton::shockWave()
+void Skeleton::attack()
 {
 	if (Actor::currentTextureIndex_ > 13) 
 	{
@@ -237,6 +247,8 @@ void Skeleton::shockWave()
 		Actor::currentTextureIndex_++;
 	}
 	framesBetweenMoves_ = 0;
+
+	Attacker::attack();
 }
 //chasing function
 void Skeleton::chasePlayer(float playerX, float playerY)
@@ -273,7 +285,7 @@ void Skeleton::chasePlayer(float playerX, float playerY)
 		}
 	if (withinX && withinY) 
 	{
-		this->shockWave();
+		this->attack();
 	}
 }
 //draw to window
@@ -287,19 +299,7 @@ void Skeleton::drawTo(sf::RenderWindow & window)
 	}
 
 	Actor::drawTo(window);
-#ifdef DEBUG
-	static int count = 0;
 
-	if(count % 100 == 0)
-	{
-		//Rose::Logger::info("Skeleton index:", Actor::horizontalTileIndex_, ',', Actor::verticalTileIndex_);
-		std::cout << Actor::horizontalTileIndex_;
-		//Rose::Logger::info("Skeleton Health", Actor::health_);
-		std::cout << Actor::verticalTileIndex_;
-	}
-
-	++count;
-#endif 
 	if(Actor::health_ <= 0)
 	{
 		Rose::Logger::info("SKELETON DEAD");

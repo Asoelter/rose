@@ -1,6 +1,9 @@
 #include "attacker.h"
+#include "Skeleton.h"
+#include "link.h"
 
 #include <array>
+#include <cassert>
 #define DEBUG
 
 #ifdef DEBUG
@@ -12,7 +15,6 @@ namespace Rose::Character
 {
 	void Attacker::attack()
 	{
-		Rose::Logger::info("Start");
 		auto attackerIndices = Rose::Character::Actor::mapIndices();
 		std::array<Index, 5> victimIndices;
 
@@ -21,71 +23,71 @@ namespace Rose::Character
 		case Orientation::IDLE:
 		case Orientation::FACING_DOWN:
 		{
-			victimIndices[2].x = attackerIndices.first - 2;
-			victimIndices[2].y = attackerIndices.second + 1;
+			victimIndices[0].x = attackerIndices.first - 2;
+			victimIndices[0].y = attackerIndices.second + 1;
 
-			victimIndices[2].x = attackerIndices.first - 1;
-			victimIndices[2].y = attackerIndices.second + 1;
+			victimIndices[1].x = attackerIndices.first - 1;
+			victimIndices[1].y = attackerIndices.second + 1;
 
 			victimIndices[2].x = attackerIndices.first;
 			victimIndices[2].y = attackerIndices.second + 1;
 
-			victimIndices[2].x = attackerIndices.first + 1;
-			victimIndices[2].y = attackerIndices.second + 1;
+			victimIndices[3].x = attackerIndices.first + 1;
+			victimIndices[3].y = attackerIndices.second + 1;
 
-			victimIndices[2].x = attackerIndices.first + 2;
-			victimIndices[2].y = attackerIndices.second + 1;
+			victimIndices[4].x = attackerIndices.first + 2;
+			victimIndices[4].y = attackerIndices.second + 1;
 		}break;
 		case Orientation::FACING_LEFT:
 		{
-			victimIndices[2].x = attackerIndices.first - 1;
-			victimIndices[2].y = attackerIndices.second -2;
+			victimIndices[0].x = attackerIndices.first - 1;
+			victimIndices[0].y = attackerIndices.second -2;
 
-			victimIndices[2].x = attackerIndices.first - 1;
-			victimIndices[2].y = attackerIndices.second - 1;
+			victimIndices[1].x = attackerIndices.first - 1;
+			victimIndices[1].y = attackerIndices.second - 1;
 
 			victimIndices[2].x = attackerIndices.first - 1;
 			victimIndices[2].y = attackerIndices.second;
 
-			victimIndices[2].x = attackerIndices.first - 1;
-			victimIndices[2].y = attackerIndices.second + 1;
+			victimIndices[3].x = attackerIndices.first - 1;
+			victimIndices[3].y = attackerIndices.second + 1;
 
-			victimIndices[2].x = attackerIndices.first - 1;
-			victimIndices[2].y = attackerIndices.second + 2;
+			victimIndices[4].x = attackerIndices.first - 1;
+			victimIndices[4].y = attackerIndices.second + 2;
 		}break;
 		case Orientation::FACING_UP:
 		{
-			victimIndices[2].x = attackerIndices.first - 2;
-			victimIndices[2].y = attackerIndices.second -1;
+			victimIndices[0].x = attackerIndices.first - 2;
+			victimIndices[0].y = attackerIndices.second -1;
 
-			victimIndices[2].x = attackerIndices.first - 1;
-			victimIndices[2].y = attackerIndices.second - 1;
+			victimIndices[1].x = attackerIndices.first - 1;
+			victimIndices[1].y = attackerIndices.second - 1;
 
 			victimIndices[2].x = attackerIndices.first;
 			victimIndices[2].y = attackerIndices.second - 1;
 
-			victimIndices[2].x = attackerIndices.first + 1;
-			victimIndices[2].y = attackerIndices.second - 1;
+			victimIndices[3].x = attackerIndices.first + 1;
+			victimIndices[3].y = attackerIndices.second - 1;
 
-			victimIndices[2].x = attackerIndices.first + 2;
-			victimIndices[2].y = attackerIndices.second - 1;
+			victimIndices[4].x = attackerIndices.first + 2;
+			victimIndices[4].y = attackerIndices.second - 1;
 		}break;
 		case Orientation::FACING_RIGHT:
 		{
-			victimIndices[2].x = attackerIndices.first + 1;
-			victimIndices[2].y = attackerIndices.second -2;
+			victimIndices[0].x = attackerIndices.first + 1;
+			victimIndices[0].y = attackerIndices.second -2;
 
-			victimIndices[2].x = attackerIndices.first + 1;
-			victimIndices[2].y = attackerIndices.second - 1;
+			victimIndices[1].x = attackerIndices.first + 1;
+			victimIndices[1].y = attackerIndices.second - 1;
 
 			victimIndices[2].x = attackerIndices.first + 1;
 			victimIndices[2].y = attackerIndices.second;
 
-			victimIndices[2].x = attackerIndices.first + 1;
-			victimIndices[2].y = attackerIndices.second + 1;
+			victimIndices[3].x = attackerIndices.first + 1;
+			victimIndices[3].y = attackerIndices.second + 1;
 
-			victimIndices[2].x = attackerIndices.first + 1;
-			victimIndices[2].y = attackerIndices.second + 2;
+			victimIndices[4].x = attackerIndices.first + 1;
+			victimIndices[4].y = attackerIndices.second + 2;
 
 		}break;
 		}
@@ -108,10 +110,19 @@ namespace Rose::Character
 		{
 			if(victim)
 			{
-				victim->damage();
+				if(dynamic_cast<Skeleton*>(victim))
+				{
+					victim->damage();
+				}
+				else if (dynamic_cast<Link*>(victim))
+				{
+					victim->damage();
+				}
+				else
+				{
+					Rose::Logger::error("non valid character passed");
+				}
 			}
 		}
-
-		Rose::Logger::info("end");
 	}
 }

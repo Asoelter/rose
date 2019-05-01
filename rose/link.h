@@ -26,7 +26,7 @@ namespace Rose::Character
 		 * @brief Destroy the Link object
 		 *
 		 */
-		~Link() = default;
+		~Link();
 
 		
 		void moveUp()	 override;
@@ -229,30 +229,30 @@ namespace Rose::Character
 		//Helper Indices//
 		//////////////////
 
-		static constexpr int startOfWalkDown = 0;
-		static constexpr int startOfWalkLeft = 8;
-		static constexpr int startOfWalkUp = 14;
-		static constexpr int startOfWalkRight = 22;
+		static constexpr int startOfWalkDown	= 0;
+		static constexpr int startOfWalkLeft	= 8;
+		static constexpr int startOfWalkUp		= 14;
+		static constexpr int startOfWalkRight	= 22;
 
-		static constexpr int startOfSwordDown = 28;
-		static constexpr int startOfSwordLeft = 34;
-		static constexpr int startOfSwordUp = 39;
-		static constexpr int startOfSwordRight = 44;
+		static constexpr int startOfSwordDown	= 28;
+		static constexpr int startOfSwordLeft	= 34;
+		static constexpr int startOfSwordUp		= 39;
+		static constexpr int startOfSwordRight	= 44;
 
-		static constexpr int endOfWalkDown = 7;
-		static constexpr int endOfWalkLeft = 13;
-		static constexpr int endOfWalkUp = 21;
-		static constexpr int endOfWalkRight = 27;
+		static constexpr int endOfWalkDown		= 7;
+		static constexpr int endOfWalkLeft		= 13;
+		static constexpr int endOfWalkUp		= 21;
+		static constexpr int endOfWalkRight		= 27;
 
-		static constexpr int endOfSwordDown = 33;
-		static constexpr int endOfSwordLeft = 38;
-		static constexpr int endOfSwordUp = 43;
-		static constexpr int endOfSwordRight = 48;
+		static constexpr int endOfSwordDown		= 33;
+		static constexpr int endOfSwordLeft		= 38;
+		static constexpr int endOfSwordUp		= 43;
+		static constexpr int endOfSwordRight	= 48;
 
-		static constexpr int downIdle = 0;
-		static constexpr int leftIdle = 10;
-		static constexpr int upIdle = 17;
-		static constexpr int rightIdle = 25;
+		static constexpr int downIdle			= 0;
+		static constexpr int leftIdle			= 10;
+		static constexpr int upIdle				= 17;
+		static constexpr int rightIdle			= 25;
 
 		////////////////
 		//Private data//

@@ -9,8 +9,8 @@
 
 Game::Game()
 	: link_(800, 300)
-	, window_(sf::VideoMode(1000, 600), "Tale of Rose")
-	, map_(std::make_unique<GrassyMap>(1000, 600))
+	, window_(sf::VideoMode(1920, 1080), "Tale of Rose")
+	, map_(std::make_unique<GrassyMap>(1920, 1080))
 	, mainCharacter_(300, 200)
 {
 	Rose::Character::Actor::setMap(map_.get());
@@ -41,9 +41,6 @@ void Game::run()
 			win();
 		}
 	}
-	
-
-
 }
 
 
@@ -64,21 +61,18 @@ void runAutomatedEnemies(Game *currentGame)
 void Game::play()
 {
 	//Skeleton skeleton; //This constructor taking a long time 
-	sf::RectangleShape tint(sf::Vector2f(1000.f, 600.f));
+	sf::RectangleShape tint(sf::Vector2f(1920.f, 1080.f));
 	HealthBar healthBar;
 
-	auto start = std::chrono::system_clock::now();
 	//first wave
 	sf::Font font;
 	font.loadFromFile("assets/impact.ttf");
 	waveLabel.setFont(font);
 	waveLabel.setString("WAVE 1: PRESS 'W' FOR NEXT WAVE");
 	waveLabel.setColor(sf::Color(0, 0, 0));
-	enemies = generateEnemies(1);
-	auto stop = std::chrono::system_clock::now();
-	std::chrono::duration<double> length = stop - start;
-	Rose::Logger::info("Duration:", length.count());
+	enemies = generateEnemies(5);
 	tint.setFillColor(sf::Color(0, 0, 0, 0));
+
 #ifdef _WIN32
 	sf::Thread automateEnemies(&runAutomatedEnemies, this);
 	automateEnemies.launch();
@@ -150,7 +144,6 @@ void Game::play()
 					automateEnemies.launch();
 #endif
 				}
-
 			}
 		}
 
@@ -165,11 +158,20 @@ void Game::play()
 		{
 			updateEnemies();
 		}
+
 		window_.draw(tint);
+
 		std::for_each(enemies.begin(), enemies.end(), [this](std::unique_ptr<Skeleton>& s) 
 		{
 			s->drawTo(this->window_);
 		});
+
+		if(!link_.isAlive())
+		{
+			gameState = s_lose;
+			Rose::Logger::warn("Link is dead");
+			break;
+		}
 
 		mainCharacter_.drawTo(window_);
 		link_.drawTo(window_);

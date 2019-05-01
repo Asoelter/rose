@@ -33,7 +33,7 @@ public:
 	 * @brief Destroy the Skeleton object
 	 * 
 	 */
-	virtual ~Skeleton() = default;
+	virtual ~Skeleton();
 	/**
 	* @brief moves the skeleton upwards on the screen while 
 	* cycling through animations.
@@ -59,7 +59,7 @@ public:
 	 * @brief The skeletons attack
 	 * 
 	 */
-	void shockWave();
+	void attack();
 
 	/**
 	 * @brief Chases the player

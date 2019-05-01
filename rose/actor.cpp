@@ -100,13 +100,13 @@ namespace Rose::Character
 	void Actor::updatePosition()
 	{
 		
-		auto width = Actor::map->width();
-		auto height = Actor::map->height();
-		auto tileWdith = Actor::map->tileWidth();
+		auto width		= Actor::map->width();
+		auto height		= Actor::map->height();
+		auto tileWdith	= Actor::map->tileWidth();
 		auto tileHeight = Actor::map->tileHeight();
 
-		horizontalTileIndex_	= map->horizontalTiles() - std::floor((width - xPos()) / tileWdith);
-		verticalTileIndex_		= map->verticalTiles() - std::floor((height - yPos()) / tileHeight);
+		horizontalTileIndex_ = map->horizontalTiles() - std::floor((width - xPos()) / tileWdith);
+		verticalTileIndex_	 = map->verticalTiles() - std::floor((height - yPos()) / tileHeight);
 
 		if (occupiedTile_)
 		{
@@ -126,6 +126,6 @@ namespace Rose::Character
 
 	std::pair<int, int> Actor::mapIndices() const
 	{
-		return std::make_pair(horizontalTileIndex_, verticalTileIndex_);
+		return std::make_pair(verticalTileIndex_, horizontalTileIndex_);
 	}
 }
