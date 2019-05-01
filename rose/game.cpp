@@ -339,11 +339,6 @@ void Game::mainMenu()
 				window_.clear(sf::Color::Black);
 				break;
 			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-				gameState = s_quit;
-				window_.clear(sf::Color::Black);
-				break;
-			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 				gameState = s_win;
 				window_.clear(sf::Color::Black);
