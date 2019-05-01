@@ -67,10 +67,10 @@ namespace Rose::Character
 	private:
 		float xOffset;
 		float yOffset;
-		const float minX = 0.f;
-		const float minY = 0.f;
-		const float maxX = 1890.f;
-		const float maxY = 1050.f;
+		const float minX = 20.f;
+		const float minY = 20.f;
+		const float maxX = 1870.f;
+		const float maxY = 1030.f;
 		sf::Image completeSpriteSheet;
 		///////////////////
 		//HelperFunctions//

@@ -1,7 +1,4 @@
 ﻿  game.cpp
 d:\dev\rose\rose\game.cpp(73): warning C4996: 'sf::Text::setColor': was declared deprecated
   d:\dev\rose\sfml\include\sfml\graphics\text.hpp(210): note: see declaration of 'sf::Text::setColor'
-  HealthBar.cpp
-  main.cpp
-  Generating Code...
   CleanBuildRose.vcxproj -> D:\Dev\rose\Debug\CleanBuildRose.exe

@@ -135,7 +135,7 @@ void Game::play()
 				}
 				else if (wave > 3) {
 					//purple wave 3
-					waveLabel.setString("Wave 3: PRESS 'W' TO QUIT");
+					waveLabel.setString("");
 					wave = 4;
 					canWin = true;
 					tint.setFillColor(sf::Color(200, 0, 100, 200));
@@ -321,11 +321,6 @@ void Game::mainMenu()
 				window_.clear(sf::Color::Black);
 				break;
 			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-				gameState = s_quit;
-				window_.clear(sf::Color::Black);
-				break;
-			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 				gameState = s_win;
 				window_.clear(sf::Color::Black);
@@ -343,7 +338,7 @@ void Game::mainMenu()
 		}
 		
 		sf::Texture texture;
-		texture.loadFromFile("assets/title_screen/rose-rpg-main-screen.png");
+		texture.loadFromFile("assets/rose-rpg-main-screen.png");
 		sf::Sprite sprite(texture);
 		window_.clear(sf::Color::Black);
 		window_.draw(sprite);
