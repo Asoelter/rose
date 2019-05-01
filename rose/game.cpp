@@ -1,9 +1,11 @@
-#define CATCH_CONFIG_RUNNER
+#ifdef FINAL
+#	define CATCH_CONFIG_RUNNER
+#	include "catch.hpp"
+#endif
 #include <algorithm>
 #include "game.h"
 #include "log.h"
 #include <chrono>
-#include "catch.hpp"
 #include "HealthBar.h"
 
 
@@ -11,7 +13,6 @@ Game::Game()
 	: link_(800, 300)
 	, window_(sf::VideoMode(1920, 1080), "Tale of Rose")
 	, map_(std::make_unique<GrassyMap>(1920, 1080))
-	, mainCharacter_(300, 200)
 {
 	Rose::Character::Actor::setMap(map_.get());
 }
@@ -195,7 +196,6 @@ void Game::play()
 		}
 
 		else {
-			mainCharacter_.drawTo(window_);
 			link_.drawTo(window_);
 			healthBar.drawHealthBar(window_, link_);
 			window_.draw(waveLabel);
@@ -207,41 +207,19 @@ void Game::play()
 
 void Game::test()
 {
+#ifdef FINAL
 	Catch::Session().run();
-	// call all tests in here
-	//Skeleton skeleton; //This constructor taking a long time 
-	//while (window_.isOpen())
-	//{
-	//	sf::Event event;
-	//	while (window_.pollEvent(event))
-	//	{
-	//		if (event.type == sf::Event::Closed)
-	//			window_.close();
-	//		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-	//		{
-	//			window_.close();
-	//		}
-	//		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-	//		{
-	//			skeleton.runTests();
-	//			link_.runTests();
-	//			mainCharacter_.runTests();
-	//		}
-	//	}
-
-	//	window_.clear(sf::Color::Black);
-	//	link_.drawTo(window_);
-	//	skeleton.drawTo(window_);
-	//	mainCharacter_.drawTo(window_);
-	//	window_.display();
-	//}
+#endif
 	quit();
 	exit(0);
 }
+
 void Game::quit()
 {
+	gameState = s_quit;
 	window_.close();
 }
+
 void Game::win()
 {
 	while (window_.isOpen())
@@ -273,6 +251,8 @@ void Game::win()
 		window_.draw(sprite);
 		window_.display();
 	}
+
+	gameState = s_quit;
 }
 void Game::lose()
 {
@@ -305,6 +285,8 @@ void Game::lose()
 		window_.draw(sprite);
 		window_.display();
 	}
+
+	gameState = s_quit;
 }
 
 void Game::moveEnemies()
@@ -386,7 +368,6 @@ void Game::updateEnemies()
 	for(index i = 0; i < removeIndices.size(); ++i)
 	{
 		std::swap(enemies[i], enemies.back());
-		assert(enemies.back());
 		enemies.pop_back();
 	}
 }

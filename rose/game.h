@@ -72,7 +72,6 @@ class Game
 
 		State gameState =				s_initial;
 		std::unique_ptr<Map>			map_;
-		Rose::Character::MainCharacter	mainCharacter_;
 };
 
 #endif //GAME_H
