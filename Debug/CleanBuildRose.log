@@ -1,7 +1,70 @@
-﻿  game.cpp
+﻿  HealthBar.cpp
+  Tests.cpp
+d:\dev\rose\rose\tests.cpp(18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\tests.cpp(67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\tests.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  attacker.cpp
+d:\dev\rose\rose\attacker.cpp(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(32): warning C4244: '=': conversion from '_Ty1' to 'float', possible loss of data
+          with
+          [
+              _Ty1=int
+          ]
+d:\dev\rose\rose\attacker.cpp(33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(36): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(46): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(47): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(49): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(50): warning C4244: '=': conversion from '_Ty2' to 'float', possible loss of data
+          with
+          [
+              _Ty2=int
+          ]
+d:\dev\rose\rose\attacker.cpp(52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(53): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(64): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(66): warning C4244: '=': conversion from '_Ty1' to 'float', possible loss of data
+          with
+          [
+              _Ty1=int
+          ]
+d:\dev\rose\rose\attacker.cpp(67): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(69): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(70): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(72): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(73): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(78): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(80): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(81): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(83): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(84): warning C4244: '=': conversion from '_Ty2' to 'float', possible loss of data
+          with
+          [
+              _Ty2=int
+          ]
+d:\dev\rose\rose\attacker.cpp(86): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(87): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(89): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(90): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\dev\rose\rose\attacker.cpp(100): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  game.cpp
 d:\dev\rose\rose\game.cpp(73): warning C4996: 'sf::Text::setColor': was declared deprecated
   d:\dev\rose\sfml\include\sfml\graphics\text.hpp(210): note: see declaration of 'sf::Text::setColor'
-  HealthBar.cpp
+  link.cpp
   main.cpp
   Generating Code...
   CleanBuildRose.vcxproj -> D:\Dev\rose\Debug\CleanBuildRose.exe

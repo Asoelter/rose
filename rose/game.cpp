@@ -134,7 +134,7 @@ void Game::play()
 				}
 				else if (wave > 3) {
 					//purple wave 3
-					waveLabel.setString("Wave 3: PRESS 'W' TO QUIT");
+					waveLabel.setString("");
 					wave = 4;
 					canWin = true;
 					tint.setFillColor(sf::Color(200, 0, 100, 200));
