@@ -11,8 +11,9 @@ namespace Rose::Character
 	Map const* Actor::map = nullptr;
 
 	Actor::Actor()
-		: textures_(nullptr)
-		, textureRectsDescribedByFourInts_(nullptr)
+		: completeSpriteSheetTexture()
+		, textureRectsDescribedByFourInts_()
+		, textures_(nullptr)
 		, sprite_()
 		, occupiedTile_(nullptr)
 		, currentOrientation_(Orientation::IDLE)
@@ -42,13 +43,13 @@ namespace Rose::Character
 
 	float Actor::getActorWidth() const
 	{
-			return 	sprite_.getLocalBounds().width;
+		return 	sprite_.getLocalBounds().width;
 	}
 
 
 	float Actor::getActorHeight() const
 	{
-			return 	sprite_.getLocalBounds().height;
+		return 	sprite_.getLocalBounds().height;
 	}
 
 
@@ -88,11 +89,6 @@ namespace Rose::Character
 		auto tileWdith = Actor::map->tileWidth();
 		auto tileHeight = Actor::map->tileHeight();
 
-		std::cout << "\nxPos:" << xPos();
-		std::cout << "\nyPos:" << xPos();
-		std::cout << "\nwidth:" << width;
-		std::cout << "\nyheight:" << height;
-
 		horizontalTileIndex_ = std::floor((width - xPos()) / tileWdith);
 		verticalTileIndex_ = std::floor((height - yPos()) / tileHeight);
 
@@ -100,12 +96,6 @@ namespace Rose::Character
 		{
 			occupiedTile_->setOccupier(nullptr);
 		}
-		if ((horizontalTileIndex_ >= 600) || (verticalTileIndex_ >= 600))
-		{
-			std::cout << "This is broken";
-		}
-		std::cout << "\nverticalTileIndex:" << verticalTileIndex_;
-		std::cout << "\nhorizontalTileIndex_:" << horizontalTileIndex_;
 		occupiedTile_ = Actor::map->tileAt(verticalTileIndex_, horizontalTileIndex_);
 		occupiedTile_->setOccupier(this);
 	}

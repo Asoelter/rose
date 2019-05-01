@@ -1,5 +1,6 @@
 #include "attacker.h"
 
+#include <array>
 #define DEBUG
 
 #ifdef DEBUG
@@ -11,46 +12,105 @@ namespace Rose::Character
 {
 	void Attacker::attack()
 	{
+		Rose::Logger::info("Start");
 		auto attackerIndices = Rose::Character::Actor::mapIndices();
-		int victimXpos = 0;
-		int victimYpos = 0;
+		std::array<Index, 5> victimIndices;
 
 		switch (Actor::currentOrientation_)
 		{
 		case Orientation::IDLE:
 		case Orientation::FACING_DOWN:
 		{
-			victimXpos = attackerIndices.first;
-			victimYpos = attackerIndices.second + 1;
+			victimIndices[2].x = attackerIndices.first - 2;
+			victimIndices[2].y = attackerIndices.second + 1;
+
+			victimIndices[2].x = attackerIndices.first - 1;
+			victimIndices[2].y = attackerIndices.second + 1;
+
+			victimIndices[2].x = attackerIndices.first;
+			victimIndices[2].y = attackerIndices.second + 1;
+
+			victimIndices[2].x = attackerIndices.first + 1;
+			victimIndices[2].y = attackerIndices.second + 1;
+
+			victimIndices[2].x = attackerIndices.first + 2;
+			victimIndices[2].y = attackerIndices.second + 1;
 		}break;
 		case Orientation::FACING_LEFT:
 		{
-			victimXpos = attackerIndices.first - 1;
-			victimYpos = attackerIndices.second;
+			victimIndices[2].x = attackerIndices.first - 1;
+			victimIndices[2].y = attackerIndices.second -2;
+
+			victimIndices[2].x = attackerIndices.first - 1;
+			victimIndices[2].y = attackerIndices.second - 1;
+
+			victimIndices[2].x = attackerIndices.first - 1;
+			victimIndices[2].y = attackerIndices.second;
+
+			victimIndices[2].x = attackerIndices.first - 1;
+			victimIndices[2].y = attackerIndices.second + 1;
+
+			victimIndices[2].x = attackerIndices.first - 1;
+			victimIndices[2].y = attackerIndices.second + 2;
 		}break;
 		case Orientation::FACING_UP:
 		{
-			victimXpos = attackerIndices.first;
-			victimYpos = attackerIndices.second - 1;
+			victimIndices[2].x = attackerIndices.first - 2;
+			victimIndices[2].y = attackerIndices.second -1;
+
+			victimIndices[2].x = attackerIndices.first - 1;
+			victimIndices[2].y = attackerIndices.second - 1;
+
+			victimIndices[2].x = attackerIndices.first;
+			victimIndices[2].y = attackerIndices.second - 1;
+
+			victimIndices[2].x = attackerIndices.first + 1;
+			victimIndices[2].y = attackerIndices.second - 1;
+
+			victimIndices[2].x = attackerIndices.first + 2;
+			victimIndices[2].y = attackerIndices.second - 1;
 		}break;
 		case Orientation::FACING_RIGHT:
 		{
-			victimXpos = attackerIndices.first + 1;
-			victimYpos = attackerIndices.second;
+			victimIndices[2].x = attackerIndices.first + 1;
+			victimIndices[2].y = attackerIndices.second -2;
+
+			victimIndices[2].x = attackerIndices.first + 1;
+			victimIndices[2].y = attackerIndices.second - 1;
+
+			victimIndices[2].x = attackerIndices.first + 1;
+			victimIndices[2].y = attackerIndices.second;
+
+			victimIndices[2].x = attackerIndices.first + 1;
+			victimIndices[2].y = attackerIndices.second + 1;
+
+			victimIndices[2].x = attackerIndices.first + 1;
+			victimIndices[2].y = attackerIndices.second + 2;
+
 		}break;
 		}
 
-		auto victimTile = Actor::map->tileAt(victimYpos, victimXpos);
-		auto victim = victimTile->occupier();
+		std::array<Tile*, 5> victimTiles;
+		std::array<Actor*, 5> victims;
 
-#		ifdef DEBUG
-		Rose::Logger::info("ATTACKER INDEX: ", attackerIndices.first, ", ", attackerIndices.second);
-		Rose::Logger::info("VICTIM INDEX: ", victimXpos, ", ", victimYpos);
-#		endif 
-
-		if (victim)
+		for(std::vector<Tile*>::size_type i = 0; i < victimIndices.size(); ++i)
 		{
-			victim->damage();
+			victimTiles[i] = map->tileAt(victimIndices[i].x, victimIndices[i].y);
 		}
+
+		for(std::vector<Actor*>::size_type i = 0; i < victimTiles.size(); ++i)
+		{
+			victims[i] = victimTiles[i]->occupier();
+		}
+
+		for(const auto& victim : victims)
+		{
+			if(victim)
+			{
+				victim->damage();
+			}
+		}
+
+		Rose::Logger::info("end");
 	}
 }

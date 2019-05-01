@@ -33,7 +33,7 @@ Skeleton::Skeleton()
 	}
 
 	Actor::sprite_.setPosition({ 800.0f, 300.0f });
-	Actor::health_ = 3;
+	Actor::health_ = 1;
 }
 Skeleton::Skeleton(int xPos, int yPos)
 	: Enemy()
@@ -89,6 +89,7 @@ void Skeleton::moveUp()
 	}
 
 	Actor::sprite_.move({ 0.0f, -4.0f });
+	Actor::currentOrientation_ = Orientation::FACING_UP;
 	m_xPos = Actor::sprite_.getPosition().x;
 	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;
@@ -108,6 +109,7 @@ void Skeleton::moveRight()
 	}
 
 	Actor::sprite_.move({ 4.0f, 0.0f });
+	Actor::currentOrientation_ = Orientation::FACING_RIGHT;
 	m_xPos = Actor::sprite_.getPosition().x;
 	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;
@@ -127,6 +129,7 @@ void Skeleton::moveDown()
 	}
 
 	Actor::sprite_.move({ 0.0f, 4.0f });
+	Actor::currentOrientation_ = Orientation::FACING_DOWN;
 	m_xPos = Actor::sprite_.getPosition().x;
 	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;
@@ -145,6 +148,7 @@ void Skeleton::moveLeft()
 	}
 
 	Actor::sprite_.move({ -4.0f, 0.0f });
+	Actor::currentOrientation_ = Orientation::FACING_LEFT;
 	m_xPos = Actor::sprite_.getPosition().x;
 	m_yPos = Actor::sprite_.getPosition().y;
 	framesBetweenMoves_ = 0;

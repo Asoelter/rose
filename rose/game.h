@@ -58,7 +58,7 @@ class Game
 		* play again or q to quit.
 		*/
 		void lose();
-
+		void moveEnemies();
 
 
 		std::vector<std::unique_ptr<Skeleton>>	enemies;

@@ -35,19 +35,23 @@ public:
 	 */
 	virtual ~Skeleton() = default;
 	/**
-	* @brief moves the skeleton upwards on the screen while cycling through animations.
+	* @brief moves the skeleton upwards on the screen while 
+	* cycling through animations.
 	*/
 	void moveUp();
 	/**
-	* @brief moves the skeleton right on the screen while cycling through animations.
+	* @brief moves the skeleton right on the screen while 
+	* cycling through animations.
 	*/
 	void moveRight();
 	/**
-	* @brief moves the skeleton down on the screen while cycling through animations.
+	* @brief moves the skeleton down on the screen while 
+	* cycling through animations.
 	*/
 	void moveDown();
 	/**
-	* @brief moves the skeleton left on the screen while cycling through animations.
+	* @brief moves the skeleton left on the screen while 
+	* cycling through animations.
 	*/
 	void moveLeft();
 
@@ -77,7 +81,8 @@ public:
 	*/
 	void runTests();
 	/**
-	* @brief checks to see if skeleton position changes correctly along x axis
+	* @brief checks to see if skeleton position changes 
+	* correctly along x axis
 	*/
 	void testMoveLeft();
 	/**

@@ -258,7 +258,7 @@ namespace Rose::Character
 		//Private data//
 		////////////////
 
-		static std::vector<int> textureRectsDescribedByFourInts_;
+		static std::vector<int>			textureRectsDescribedByFourInts_;
 		static bool						loaded_;
 		bool							isAttacking_;
 	};

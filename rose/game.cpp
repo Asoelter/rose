@@ -53,9 +53,11 @@ void runAutomatedEnemies(Game *currentGame)
 	{
 		for (std::vector<Skeleton>::size_type i = 0; i < currentGame->enemies.size(); i++)
 		{
+			Rose::Logger::info("Start of loop");
 			currentGame->enemies[i]->chasePlayer(currentGame->link_.xPos(), currentGame->link_.yPos());
 			currentGame->enemies[i]->drawTo(currentGame->window_);
 			currentGame->link_.drawTo(currentGame->window_);
+			Rose::Logger::info("End of loop");
 
 		}
 			sf::sleep(sf::milliseconds(100));
@@ -80,8 +82,10 @@ void Game::play()
 	std::chrono::duration<double> length = stop - start;
 	Rose::Logger::info("Duration:", length.count());
 	tint.setFillColor(sf::Color(0, 0, 0, 0));
+#ifdef _WIN32
 	sf::Thread automateEnemies(&runAutomatedEnemies, this);
 	automateEnemies.launch();
+#endif 
 
 	while (window_.isOpen())
 	{
@@ -144,6 +148,9 @@ void Game::play()
 		window_.clear(sf::Color::Black);
 		map_->drawTo(window_);
 		//skeleton.drawTo(window_);
+#ifdef __linux__
+		moveEnemies();
+#endif
 		window_.draw(tint);
 		std::for_each(enemies.begin(), enemies.end(), [this](std::unique_ptr<Skeleton>& s) 
 		{
@@ -255,6 +262,15 @@ void Game::lose()
 		window_.display();
 	}
 }
+
+void Game::moveEnemies()
+{
+	for(const auto& enemy : enemies)
+	{
+		enemy->chasePlayer(link_.xPos(), link_.yPos());
+	}
+}
+
 void Game::mainMenu()
 {
 	while (window_.isOpen())
@@ -312,12 +328,12 @@ void Game::mainMenu()
 
 std::vector<std::unique_ptr<Skeleton>> Game::generateEnemies(int amount)
 {
-	auto xMid	= map_->width() / 2;
-	auto yMid	= map_->height() / 2;
-	auto top	= 0; 
-	auto bot	= map_->height();
-	auto right	= map_->width();
-	auto left	= 0;
+	//auto xMid	= map_->width() / 2;
+	//auto yMid	= map_->height() / 2;
+	//auto top	= 0; 
+	//auto bot	= map_->height();
+	//auto right	= map_->width();
+	//auto left	= 0;
 
 	std::array<sf::Vector2i, 15> positions = {
 		sf::Vector2i(100, 100),
@@ -356,12 +372,10 @@ std::vector<std::unique_ptr<Skeleton>> Game::generateEnemies(int amount)
 	};
 
 	std::vector<std::unique_ptr<Skeleton>> rval;
-	int index = 0;
 
 	for(int i = 0; i < amount; ++i)
 	{
-		rval.emplace_back(std::make_unique<Skeleton>(Skeleton(positions[index])));
-		index = (index + 1) % positions.size();
+		rval.emplace_back(std::make_unique<Skeleton>(Skeleton(positions[i])));
 	}
 
 	return rval;

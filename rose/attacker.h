@@ -27,6 +27,13 @@ namespace Rose::Character
 		 *
 		 */
 		Attacker() : Actor() {}
+
+	private:
+		struct Index
+		{
+			float x;
+			float y;
+		};
 	};
 }
 

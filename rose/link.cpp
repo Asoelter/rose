@@ -1,6 +1,7 @@
 #include "link.h"
 #include <cassert>
 #include <iostream>
+#include "log.h"
 
 #define persistant static
 
@@ -25,7 +26,7 @@ namespace Rose::Character
 			loaded_ = true;
 		}
 		Actor::sprite_.setPosition(static_cast<float>(xPos), static_cast<float>(yPos));
-		Actor::health_ = 20;
+		Actor::health_ = 1;
 	}
 
 	void Link::moveUp()
@@ -140,6 +141,10 @@ namespace Rose::Character
 			}
 		}
 
+		if(health_ <= 0)
+		{
+			Rose::Logger::info("LINK IS DEAD");
+		}
 
 		Attacker::drawTo(window);
 	}
