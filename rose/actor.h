@@ -87,6 +87,7 @@ namespace Rose::Character
 		virtual float getActorHeight() const;
 
 		virtual void drawTo(sf::RenderWindow& window);
+		virtual bool isAlive() const;
 
 
 		static void setMap(Map* map);
@@ -116,6 +117,7 @@ namespace Rose::Character
 		int							horizontalTileIndex_;
 		int							verticalTileIndex_;
 		int							health_;
+		bool						isAlive_;
 	};
 }
 

@@ -53,12 +53,9 @@ void runAutomatedEnemies(Game *currentGame)
 	{
 		for (std::vector<Skeleton>::size_type i = 0; i < currentGame->enemies.size(); i++)
 		{
-			Rose::Logger::info("Start of loop");
 			currentGame->enemies[i]->chasePlayer(currentGame->link_.xPos(), currentGame->link_.yPos());
 			currentGame->enemies[i]->drawTo(currentGame->window_);
 			currentGame->link_.drawTo(currentGame->window_);
-			Rose::Logger::info("End of loop");
-
 		}
 			sf::sleep(sf::milliseconds(100));
 	}
@@ -77,7 +74,7 @@ void Game::play()
 	waveLabel.setFont(font);
 	waveLabel.setString("WAVE 1: PRESS 'W' FOR NEXT WAVE");
 	waveLabel.setColor(sf::Color(0, 0, 0));
-	enemies = generateEnemies(5);
+	enemies = generateEnemies(1);
 	auto stop = std::chrono::system_clock::now();
 	std::chrono::duration<double> length = stop - start;
 	Rose::Logger::info("Duration:", length.count());
@@ -145,17 +142,23 @@ void Game::play()
 			}
 		}
 
+
 		window_.clear(sf::Color::Black);
 		map_->drawTo(window_);
 		//skeleton.drawTo(window_);
 #ifdef __linux__
 		moveEnemies();
 #endif
+		if(enemies.size() > 0)
+		{
+			updateEnemies();
+		}
 		window_.draw(tint);
 		std::for_each(enemies.begin(), enemies.end(), [this](std::unique_ptr<Skeleton>& s) 
 		{
 			s->drawTo(this->window_);
 		});
+
 		mainCharacter_.drawTo(window_);
 		link_.drawTo(window_);
 		healthBar.drawHealthBar(window_, link_);
@@ -326,6 +329,27 @@ void Game::mainMenu()
 }
 
 
+void Game::updateEnemies()
+{
+	using index = std::vector<Skeleton>::size_type;
+	std::vector<index> removeIndices;
+
+	for(index i = 0; i < enemies.size(); ++i)
+	{
+		if(!enemies[i]->isAlive())
+		{
+			removeIndices.push_back(i);
+		}
+	}
+
+	for(index i = 0; i < removeIndices.size(); ++i)
+	{
+		std::swap(enemies[i], enemies.back());
+		enemies.pop_back();
+	}
+}
+
+
 std::vector<std::unique_ptr<Skeleton>> Game::generateEnemies(int amount)
 {
 	//auto xMid	= map_->width() / 2;
@@ -337,38 +361,20 @@ std::vector<std::unique_ptr<Skeleton>> Game::generateEnemies(int amount)
 
 	std::array<sf::Vector2i, 15> positions = {
 		sf::Vector2i(100, 100),
+		sf::Vector2i(200, 100),
+		sf::Vector2i(300, 100),
+		sf::Vector2i(400, 100),
+		sf::Vector2i(500, 100),
+		sf::Vector2i(600, 100),
+		sf::Vector2i(700, 100),
 		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100),
-		sf::Vector2i(100, 100)
-		////wave 1
-		//sf::Vector2i(xMid, top),
-		//sf::Vector2i(right, yMid),
-		//sf::Vector2i(xMid, bot),
-		//sf::Vector2i(left, yMid),
-		//sf::Vector2i(xMid + 100, top + 100),
-		////wave 2
-		//sf::Vector2i(xMid + 80, top + 200),
-		//sf::Vector2i(right + 160, yMid + 240),
-		//sf::Vector2i(xMid + 320, bot + 12),
-		//sf::Vector2i(left + 65, yMid + 90),
-		//sf::Vector2i(xMid + 50, top + 50),
-		////wave 3
-		//sf::Vector2i(xMid + 28, top + 100),
-		//sf::Vector2i(right + 97, yMid + 186),
-		//sf::Vector2i(xMid + 145, bot + 210),
-		//sf::Vector2i(left + 630, yMid + 4),
-		//sf::Vector2i(xMid + 2, top + 112)
+		sf::Vector2i(100, 200),
+		sf::Vector2i(100, 300),
+		sf::Vector2i(100, 400),
+		sf::Vector2i(100, 500),
+		sf::Vector2i(100, 600),
+		sf::Vector2i(100, 700),
+		sf::Vector2i(200, 200)
 	};
 
 	std::vector<std::unique_ptr<Skeleton>> rval;

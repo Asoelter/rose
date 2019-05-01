@@ -50,6 +50,7 @@ public:
 	 * @param window The window to draw the tile to
 	 */
 	virtual void drawTo(sf::RenderWindow& window);
+	virtual void setColor(sf::Color color);
 
 	/**
 	 * @brief Returns the width of the tile in pixels 

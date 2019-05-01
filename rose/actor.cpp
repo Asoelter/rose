@@ -21,6 +21,7 @@ namespace Rose::Character
 		, horizontalTileIndex_(0)
 		, verticalTileIndex_(0)
 		, health_(0)
+		, isAlive_(true)
 	{
 		if(map)
 		{
@@ -53,7 +54,8 @@ namespace Rose::Character
 	}
 
 
-	float Actor::getHealth() const {
+	float Actor::getHealth() const 
+	{
 		return health_;
 	}
 
@@ -68,10 +70,24 @@ namespace Rose::Character
 		else{
 			//sf::Sprite sprite;
 			sprite_.setTexture(completeSpriteSheetTexture);
-			sprite_.setTextureRect(sf::IntRect((*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_], (*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_ + 1], (*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_ + 2], (*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_ + 3]));
+			sprite_.setTextureRect(sf::IntRect((*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_], 
+						(*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_ + 1],
+						(*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_ + 2], 
+						(*textureRectsDescribedByFourInts_)[4 * currentTextureIndex_ + 3]));
 			window.draw(sprite_);
 		}
 
+		if(health_ <= 0)
+		{
+			isAlive_ = false;
+		}
+
+	}
+
+	
+	bool Actor::isAlive() const
+	{
+		return isAlive_;
 	}
 
 
@@ -89,15 +105,17 @@ namespace Rose::Character
 		auto tileWdith = Actor::map->tileWidth();
 		auto tileHeight = Actor::map->tileHeight();
 
-		horizontalTileIndex_ = std::floor((width - xPos()) / tileWdith);
-		verticalTileIndex_ = std::floor((height - yPos()) / tileHeight);
+		horizontalTileIndex_	= map->horizontalTiles() - std::floor((width - xPos()) / tileWdith);
+		verticalTileIndex_		= map->verticalTiles() - std::floor((height - yPos()) / tileHeight);
 
 		if (occupiedTile_)
 		{
+			occupiedTile_->setColor(sf::Color::Transparent);
 			occupiedTile_->setOccupier(nullptr);
 		}
 		occupiedTile_ = Actor::map->tileAt(verticalTileIndex_, horizontalTileIndex_);
 		occupiedTile_->setOccupier(this);
+		occupiedTile_->setColor(sf::Color::Blue);
 	}
 
 

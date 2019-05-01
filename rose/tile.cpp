@@ -46,6 +46,12 @@ void Tile::drawTo(sf::RenderWindow & window)
 }
 
 
+void Tile::setColor(sf::Color color)
+{
+	sprite_.setColor(color);
+}
+
+
 float Tile::width() const
 {
 	return sprite_.getGlobalBounds().width;
