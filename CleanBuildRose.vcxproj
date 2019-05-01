@@ -57,6 +57,7 @@
     <ClInclude Include="rose\tile.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\rose-rpg-main-screen.png" />
     <Image Include="assets\rpg_pack\tiles\generic-rpg-tile01.png" />
     <Image Include="assets\rpg_pack\tiles\generic-rpg-tile02.png" />
     <Image Include="rose\assets\18thCenturyAssets.png" />
@@ -64,7 +65,6 @@
     <Image Include="rose\assets\link2.png" />
     <Image Include="rose\assets\skeletonSpriteSheet.png" />
     <Image Include="rose\assets\title_screen\background.jpg" />
-    <Image Include="rose\assets\title_screen\rose-rpg-main-screen.png" />
     <Image Include="rose\warrior spritesheet calciumtrice.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -361,7 +361,7 @@ void Game::mainMenu()
 		}
 		
 		sf::Texture texture;
-		texture.loadFromFile("assets/title_screen/rose-rpg-main-screen.png");
+		texture.loadFromFile("assets/rose-rpg-main-screen.png");
 		sf::Sprite sprite(texture);
 		window_.clear(sf::Color::Black);
 		window_.draw(sprite);

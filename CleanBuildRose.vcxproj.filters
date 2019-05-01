@@ -139,13 +139,13 @@
     <Image Include="rose\assets\title_screen\background.jpg">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="rose\assets\title_screen\rose-rpg-main-screen.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="assets\rpg_pack\tiles\generic-rpg-tile02.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="assets\rpg_pack\tiles\generic-rpg-tile01.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\rose-rpg-main-screen.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
