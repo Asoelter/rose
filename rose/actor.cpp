@@ -110,12 +110,10 @@ namespace Rose::Character
 
 		if (occupiedTile_)
 		{
-			occupiedTile_->setColor(sf::Color::Transparent);
 			occupiedTile_->setOccupier(nullptr);
 		}
 		occupiedTile_ = Actor::map->tileAt(verticalTileIndex_, horizontalTileIndex_);
 		occupiedTile_->setOccupier(this);
-		occupiedTile_->setColor(sf::Color::Blue);
 	}
 
 

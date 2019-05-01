@@ -98,7 +98,6 @@ namespace Rose::Character
 		for(std::vector<Tile*>::size_type i = 0; i < victimIndices.size(); ++i)
 		{
 			victimTiles[i] = map->tileAt(victimIndices[i].x, victimIndices[i].y);
-			victimTiles[i]->setColor(sf::Color::Red);
 		}
 
 		for(std::vector<Actor*>::size_type i = 0; i < victimTiles.size(); ++i)

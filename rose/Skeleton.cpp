@@ -288,6 +288,7 @@ void Skeleton::chasePlayer(float playerX, float playerY)
 		this->attack();
 	}
 }
+
 //draw to window
 void Skeleton::drawTo(sf::RenderWindow & window)
 {
@@ -299,17 +300,14 @@ void Skeleton::drawTo(sf::RenderWindow & window)
 	}
 
 	Actor::drawTo(window);
-
-	if(Actor::health_ <= 0)
-	{
-		Rose::Logger::info("SKELETON DEAD");
-	}
 }
+
 //take damage
 void Skeleton::damage()
 {
 	--Actor::health_;
 }
+
 //spritesheet loader
 void Skeleton::loadTexture()
 {

@@ -16,7 +16,6 @@ Game::Game()
 	Rose::Character::Actor::setMap(map_.get());
 }
 
-
 void Game::run()
 {
 	mainMenu();
@@ -25,7 +24,6 @@ void Game::run()
 		if (gameState == s_play) 
 		{
 			play();
-			Rose::Logger::info("Left play");
 		}
 		if (gameState == s_test) 
 		{
@@ -37,15 +35,11 @@ void Game::run()
 		}
 		if (gameState == s_lose)
 		{
-			Rose::Logger::info("Entered lose");
 			lose();
-			Rose::Logger::info("Lose");
 		}
 		if (gameState == s_win)
 		{
-			Rose::Logger::info("Entered win");
 			win();
-			Rose::Logger::info("Won");
 		}
 	}
 }
@@ -85,7 +79,7 @@ void Game::play()
 	automateEnemies.launch();
 #endif 
 
-	while (window_.isOpen())
+	while (window_.isOpen() && gameState == s_play)
 	{
 		sf::Event event;
 		while (window_.pollEvent(event))
@@ -157,7 +151,6 @@ void Game::play()
 
 		window_.clear(sf::Color::Black);
 		map_->drawTo(window_);
-		//skeleton.drawTo(window_);
 #ifdef __linux__
 		moveEnemies();
 #endif
@@ -177,17 +170,34 @@ void Game::play()
 		{
 			gameState = s_lose;
 			Rose::Logger::warn("Link is dead");
-			break;
 		}
-
-		mainCharacter_.drawTo(window_);
-		link_.drawTo(window_);
-		healthBar.drawHealthBar(window_, link_);
-		window_.draw(waveLabel);
-		window_.display();
+		if (gameState == s_win) {
+			sf::Texture texture;
+			texture.loadFromFile("assets/rose-rpg-win-screen.png");
+			sf::Sprite sprite(texture);
+			window_.clear(sf::Color::Black);
+			window_.draw(sprite);
+			window_.display();
+		}
+		if (gameState == s_lose) {
+			sf::Texture texture;
+			texture.loadFromFile("assets/rose-rpg-lose-screen.png");
+			sf::Sprite sprite(texture);
+			window_.clear(sf::Color::Black);
+			window_.draw(sprite);
+			window_.display();
+		}
+		else {
+			mainCharacter_.drawTo(window_);
+			link_.drawTo(window_);
+			healthBar.drawHealthBar(window_, link_);
+			window_.draw(waveLabel);
+			window_.display();
+		}
 	}
-	Rose::Logger::info("Broken out of play loop");
 }
+
+
 void Game::test()
 {
 	Catch::Session().run();
@@ -375,13 +385,6 @@ void Game::updateEnemies()
 
 std::vector<std::unique_ptr<Skeleton>> Game::generateEnemies(int amount)
 {
-	//auto xMid	= map_->width() / 2;
-	//auto yMid	= map_->height() / 2;
-	//auto top	= 0; 
-	//auto bot	= map_->height();
-	//auto right	= map_->width();
-	//auto left	= 0;
-
 	std::array<sf::Vector2i, 15> positions = {
 		sf::Vector2i(100, 100),
 		sf::Vector2i(200, 100),
