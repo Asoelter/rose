@@ -86,7 +86,7 @@ Inheritance diagram for Map:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8497952fd6e1f0584d868e6ceb97d42d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a8497952fd6e1f0584d868e6ceb97d42d">Map</a> (int width, int height)</td></tr>
+<tr class="memitem:a8497952fd6e1f0584d868e6ceb97d42d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a8497952fd6e1f0584d868e6ceb97d42d">Map</a> (int <a class="el" href="classMap.html#a22c34c8f3c83d69a4ceceefbaf3eec07">width</a>, int <a class="el" href="classMap.html#a66196099a6d3dac0df04189446d2adb8">height</a>)</td></tr>
 <tr class="memdesc:a8497952fd6e1f0584d868e6ceb97d42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classMap.html" title="A Base class for all other map classes to inherit from.">Map</a> object.  <a href="#a8497952fd6e1f0584d868e6ceb97d42d">More...</a><br /></td></tr>
 <tr class="separator:a8497952fd6e1f0584d868e6ceb97d42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1debdd8c6fec2993906ec9626045c80c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a1debdd8c6fec2993906ec9626045c80c">~Map</a> ()=default</td></tr>
@@ -95,6 +95,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acbc620429ff8e8de0a62ad322581535f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#acbc620429ff8e8de0a62ad322581535f">drawTo</a> (sf::RenderWindow &amp;window)</td></tr>
 <tr class="memdesc:acbc620429ff8e8de0a62ad322581535f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the map to the window.  <a href="#acbc620429ff8e8de0a62ad322581535f">More...</a><br /></td></tr>
 <tr class="separator:acbc620429ff8e8de0a62ad322581535f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c34c8f3c83d69a4ceceefbaf3eec07"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a22c34c8f3c83d69a4ceceefbaf3eec07">width</a> () const</td></tr>
+<tr class="memdesc:a22c34c8f3c83d69a4ceceefbaf3eec07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the width of the map in pixels.  <a href="#a22c34c8f3c83d69a4ceceefbaf3eec07">More...</a><br /></td></tr>
+<tr class="separator:a22c34c8f3c83d69a4ceceefbaf3eec07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66196099a6d3dac0df04189446d2adb8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a66196099a6d3dac0df04189446d2adb8">height</a> () const</td></tr>
+<tr class="memdesc:a66196099a6d3dac0df04189446d2adb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the height of the map in pixels.  <a href="#a66196099a6d3dac0df04189446d2adb8">More...</a><br /></td></tr>
+<tr class="separator:a66196099a6d3dac0df04189446d2adb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad00fc857019548a36d64436d03360e9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#aad00fc857019548a36d64436d03360e9">tileWidth</a> () const</td></tr>
+<tr class="memdesc:aad00fc857019548a36d64436d03360e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the width of each tile in pixels.  <a href="#aad00fc857019548a36d64436d03360e9">More...</a><br /></td></tr>
+<tr class="separator:aad00fc857019548a36d64436d03360e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac722cf9e28d26a31155b505b42aa439f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#ac722cf9e28d26a31155b505b42aa439f">tileHeight</a> () const</td></tr>
+<tr class="memdesc:ac722cf9e28d26a31155b505b42aa439f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the height of each tile in pixels.  <a href="#ac722cf9e28d26a31155b505b42aa439f">More...</a><br /></td></tr>
+<tr class="separator:ac722cf9e28d26a31155b505b42aa439f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144dfbc2a51f8337b02831fa77b1d51f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a144dfbc2a51f8337b02831fa77b1d51f">verticalTiles</a> () const</td></tr>
+<tr class="memdesc:a144dfbc2a51f8337b02831fa77b1d51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of vertical tiles.  <a href="#a144dfbc2a51f8337b02831fa77b1d51f">More...</a><br /></td></tr>
+<tr class="separator:a144dfbc2a51f8337b02831fa77b1d51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae03349d7594b92d943b52fe5de3864a9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#ae03349d7594b92d943b52fe5de3864a9">horizontalTiles</a> () const</td></tr>
+<tr class="memdesc:ae03349d7594b92d943b52fe5de3864a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of horizontal tiles in pixels.  <a href="#ae03349d7594b92d943b52fe5de3864a9">More...</a><br /></td></tr>
+<tr class="separator:ae03349d7594b92d943b52fe5de3864a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a901031825f0a02cfc888e6748c47d672"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a901031825f0a02cfc888e6748c47d672">tileAt</a> (int row, int col) const</td></tr>
+<tr class="memdesc:a901031825f0a02cfc888e6748c47d672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the tile at the given indices.  <a href="#a901031825f0a02cfc888e6748c47d672">More...</a><br /></td></tr>
+<tr class="separator:a901031825f0a02cfc888e6748c47d672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -207,6 +228,220 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>height_</b></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a66196099a6d3dac0df04189446d2adb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66196099a6d3dac0df04189446d2adb8">&#9670;&nbsp;</a></span>height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Map::height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the height of the map in pixels. </p>
+<dl class="section return"><dt>Returns</dt><dd>auto The height of the map in pixels </dd></dl>
+
+</div>
+</div>
+<a id="ae03349d7594b92d943b52fe5de3864a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae03349d7594b92d943b52fe5de3864a9">&#9670;&nbsp;</a></span>horizontalTiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Map::horizontalTiles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of horizontal tiles in pixels. </p>
+<dl class="section return"><dt>Returns</dt><dd>auto The number of horizontal tiles in pixels </dd></dl>
+
+</div>
+</div>
+<a id="a901031825f0a02cfc888e6748c47d672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a901031825f0a02cfc888e6748c47d672">&#9670;&nbsp;</a></span>tileAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Map::tileAt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a pointer to the tile at the given indices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>The Vertical index of the tile</td></tr>
+    <tr><td class="paramname">col</td><td>The horizontal index of the tile</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>auto A pointer to the tile </dd></dl>
+
+</div>
+</div>
+<a id="ac722cf9e28d26a31155b505b42aa439f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac722cf9e28d26a31155b505b42aa439f">&#9670;&nbsp;</a></span>tileHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Map::tileHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the height of each tile in pixels. </p>
+<dl class="section return"><dt>Returns</dt><dd>auto The height of each tile in pixels </dd></dl>
+
+</div>
+</div>
+<a id="aad00fc857019548a36d64436d03360e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad00fc857019548a36d64436d03360e9">&#9670;&nbsp;</a></span>tileWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Map::tileWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the width of each tile in pixels. </p>
+<dl class="section return"><dt>Returns</dt><dd>auto The width of each tile in pixels </dd></dl>
+
+</div>
+</div>
+<a id="a144dfbc2a51f8337b02831fa77b1d51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a144dfbc2a51f8337b02831fa77b1d51f">&#9670;&nbsp;</a></span>verticalTiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Map::verticalTiles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of vertical tiles. </p>
+<dl class="section return"><dt>Returns</dt><dd>auto The number of vertical tiles </dd></dl>
+
+</div>
+</div>
+<a id="a22c34c8f3c83d69a4ceceefbaf3eec07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c34c8f3c83d69a4ceceefbaf3eec07">&#9670;&nbsp;</a></span>width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Map::width </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the width of the map in pixels. </p>
+<dl class="section return"><dt>Returns</dt><dd>auto The width of the map in pixels </dd></dl>
 
 </div>
 </div>

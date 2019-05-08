@@ -54,8 +54,25 @@ namespace Rose::Character
 		*/
 		void testMoveLeft();
 
+		/**
+		 * @brief Get the characters health
+		 * 
+		 * @return int The characters health
+		 */
 		int getHealth();
+
+		/**
+		 * @brief Get the x position of the character
+		 * 
+		 * @return float The x postion of the character
+		 */
 		float getXPos();
+
+		/**
+		 * @brief Get the x position of the character
+		 * 
+		 * @return float The x position of the character
+		 */
 		float getYPos();
 		//sf::Vector2f Link::getPos();
 

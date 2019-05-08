@@ -82,14 +82,41 @@ namespace Rose::Character
 
 		virtual float getHealth() const;
 
+		/**
+		 * @brief Get the width of the actor
+		 * 
+		 * @return float the width of the actor
+		 */
 		virtual float getActorWidth() const;
 
+		/**
+		 * @brief Get the height of the actor
+		 * 
+		 * @return float The height of the actor
+		 */
 		virtual float getActorHeight() const;
 
+		/**
+		 * @brief Draws the actor to the window
+		 * 
+		 * @param window The window to draw to 
+		 */
 		virtual void drawTo(sf::RenderWindow& window);
+
+		/**
+		 * @brief Returns whether or not the actor is still alive 
+		 * 
+		 * @return true The actor is alive
+		 * @return false The actor is dead
+		 */
 		virtual bool isAlive() const;
 
-
+		/**
+		 * @brief Sets a pointer to the map that the actors
+		 * are being displayed one
+		 * 
+		 * @param map The map that the actors are being displayed on 
+		 */
 		static void setMap(Map* map);
 		static Map const *	map;
 
@@ -103,8 +130,26 @@ namespace Rose::Character
 			FACING_RIGHT
 		};
 
+		/**
+		 * @brief Updates the characters position
+		 * 
+		 */
 		void updatePosition();
+
+		/**
+		 * @brief Returns a pointer to the tile the 
+		 * actor is occupying.
+		 * 
+		 * @return Tile* The tile the actor is occupying
+		 */
 		Tile* occupiedTile() const;
+
+		/**
+		 * @brief Returns the map indices of the tile the actor is occupying
+		 * 
+		 * @return std::pair<int, int> The indices of the tile the actor
+		 * is occupying
+		 */
 		std::pair<int, int> mapIndices() const;
 
 		sf::Texture					completeSpriteSheetTexture;

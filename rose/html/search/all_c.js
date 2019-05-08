@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['width',['width',['../classTile.html#a819194106af71d48f48d0fedfcccc31e',1,'Tile']]]
+  ['occupiedtile',['occupiedTile',['../classRose_1_1Character_1_1Actor.html#a8a0a1dd7636a381483393049ff98f035',1,'Rose::Character::Actor']]],
+  ['occupier',['occupier',['../classRose_1_1Tile.html#acce49d5fa69fa6c8945f4b2efe79f718',1,'Rose::Tile']]]
 ];

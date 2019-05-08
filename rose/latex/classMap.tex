@@ -18,12 +18,26 @@ Inheritance diagram for Map\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMap_a8497952fd6e1f0584d868e6ceb97d42d}{Map}} (int width, int height)
+\mbox{\hyperlink{classMap_a8497952fd6e1f0584d868e6ceb97d42d}{Map}} (int \mbox{\hyperlink{classMap_a22c34c8f3c83d69a4ceceefbaf3eec07}{width}}, int \mbox{\hyperlink{classMap_a66196099a6d3dac0df04189446d2adb8}{height}})
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMap}{Map}} object. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classMap_a1debdd8c6fec2993906ec9626045c80c}{$\sim$\+Map}} ()=default
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classMap}{Map}} object. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classMap_acbc620429ff8e8de0a62ad322581535f}{draw\+To}} (sf\+::\+Render\+Window \&window)
-\begin{DoxyCompactList}\small\item\em Draws the map to the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draws the map to the window. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classMap_a22c34c8f3c83d69a4ceceefbaf3eec07}{width}} () const
+\begin{DoxyCompactList}\small\item\em Returns the width of the map in pixels. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classMap_a66196099a6d3dac0df04189446d2adb8}{height}} () const
+\begin{DoxyCompactList}\small\item\em Returns the height of the map in pixels. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classMap_aad00fc857019548a36d64436d03360e9}{tile\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Returns the width of each tile in pixels. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classMap_ac722cf9e28d26a31155b505b42aa439f}{tile\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Returns the height of each tile in pixels. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classMap_a144dfbc2a51f8337b02831fa77b1d51f}{vertical\+Tiles}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of vertical tiles. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classMap_ae03349d7594b92d943b52fe5de3864a9}{horizontal\+Tiles}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of horizontal tiles in pixels. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classMap_a901031825f0a02cfc888e6748c47d672}{tile\+At}} (int row, int col) const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the tile at the given indices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -89,6 +103,104 @@ Draws the map to the window.
 {\em window} & The window to draw the map to \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classMap_a66196099a6d3dac0df04189446d2adb8}\label{classMap_a66196099a6d3dac0df04189446d2adb8}} 
+\index{Map@{Map}!height@{height}}
+\index{height@{height}!Map@{Map}}
+\subsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily auto Map\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the height of the map in pixels. 
+
+\begin{DoxyReturn}{Returns}
+auto The height of the map in pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_ae03349d7594b92d943b52fe5de3864a9}\label{classMap_ae03349d7594b92d943b52fe5de3864a9}} 
+\index{Map@{Map}!horizontalTiles@{horizontalTiles}}
+\index{horizontalTiles@{horizontalTiles}!Map@{Map}}
+\subsubsection{\texorpdfstring{horizontalTiles()}{horizontalTiles()}}
+{\footnotesize\ttfamily auto Map\+::horizontal\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of horizontal tiles in pixels. 
+
+\begin{DoxyReturn}{Returns}
+auto The number of horizontal tiles in pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a901031825f0a02cfc888e6748c47d672}\label{classMap_a901031825f0a02cfc888e6748c47d672}} 
+\index{Map@{Map}!tileAt@{tileAt}}
+\index{tileAt@{tileAt}!Map@{Map}}
+\subsubsection{\texorpdfstring{tileAt()}{tileAt()}}
+{\footnotesize\ttfamily auto Map\+::tile\+At (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a pointer to the tile at the given indices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The Vertical index of the tile\\
+\hline
+{\em col} & The horizontal index of the tile\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+auto A pointer to the tile 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_ac722cf9e28d26a31155b505b42aa439f}\label{classMap_ac722cf9e28d26a31155b505b42aa439f}} 
+\index{Map@{Map}!tileHeight@{tileHeight}}
+\index{tileHeight@{tileHeight}!Map@{Map}}
+\subsubsection{\texorpdfstring{tileHeight()}{tileHeight()}}
+{\footnotesize\ttfamily auto Map\+::tile\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the height of each tile in pixels. 
+
+\begin{DoxyReturn}{Returns}
+auto The height of each tile in pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_aad00fc857019548a36d64436d03360e9}\label{classMap_aad00fc857019548a36d64436d03360e9}} 
+\index{Map@{Map}!tileWidth@{tileWidth}}
+\index{tileWidth@{tileWidth}!Map@{Map}}
+\subsubsection{\texorpdfstring{tileWidth()}{tileWidth()}}
+{\footnotesize\ttfamily auto Map\+::tile\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the width of each tile in pixels. 
+
+\begin{DoxyReturn}{Returns}
+auto The width of each tile in pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a144dfbc2a51f8337b02831fa77b1d51f}\label{classMap_a144dfbc2a51f8337b02831fa77b1d51f}} 
+\index{Map@{Map}!verticalTiles@{verticalTiles}}
+\index{verticalTiles@{verticalTiles}!Map@{Map}}
+\subsubsection{\texorpdfstring{verticalTiles()}{verticalTiles()}}
+{\footnotesize\ttfamily auto Map\+::vertical\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of vertical tiles. 
+
+\begin{DoxyReturn}{Returns}
+auto The number of vertical tiles 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a22c34c8f3c83d69a4ceceefbaf3eec07}\label{classMap_a22c34c8f3c83d69a4ceceefbaf3eec07}} 
+\index{Map@{Map}!width@{width}}
+\index{width@{width}!Map@{Map}}
+\subsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily auto Map\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the width of the map in pixels. 
+
+\begin{DoxyReturn}{Returns}
+auto The width of the map in pixels 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

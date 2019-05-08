@@ -73,6 +73,14 @@ public:
 	 */
 	void setOccupier(Rose::Character::Actor* occupier);
 
+	/**
+	 * @brief Returns a pointer to the character
+	 * that occupies the tile. Returns nullptr if
+	 * there is no occupying character
+	 * 
+	 * @return Rose::Character::Actor* A pointer to 
+	 * the occupying character 
+	 */
 	Rose::Character::Actor* occupier();
 
 private:

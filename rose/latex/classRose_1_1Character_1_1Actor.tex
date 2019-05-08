@@ -1,0 +1,376 @@
+\hypertarget{classRose_1_1Character_1_1Actor}{}\section{Rose\+::Character\+::Actor Class Reference}
+\label{classRose_1_1Character_1_1Actor}\index{Rose::Character::Actor@{Rose::Character::Actor}}
+
+
+Base class for any character type to inherit from.  
+
+
+
+
+{\ttfamily \#include $<$actor.\+h$>$}
+
+Inheritance diagram for Rose\+::Character\+::Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.696370cm]{classRose_1_1Character_1_1Actor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRose_1_1Character_1_1Actor_a49b83c9e65da067866238127affa120a}{Actor}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Actor}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classRose_1_1Character_1_1Actor_ae8e15757a90d2195048964e6bbf8487b}{$\sim$\+Actor}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Actor}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRose_1_1Character_1_1Actor_afd7130be2654a3fa94122cf532de4b79}{move\+Up}} ()=0
+\begin{DoxyCompactList}\small\item\em Moves the actor up. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a89ce0e5d1d6d25b1612867b982221dc9}{move\+Right}} ()=0
+\begin{DoxyCompactList}\small\item\em Moves the actor to the right. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a3ccb744404ed29c77fe9420f274a6826}{move\+Down}} ()=0
+\begin{DoxyCompactList}\small\item\em Moves the actor down. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a45191259db61cf46cb3d99bf186b48d3}{move\+Left}} ()=0
+\begin{DoxyCompactList}\small\item\em Moves the actor left. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a8d835beb192c864967c7a9b3a5f7f579}{damage}} ()=0
+\begin{DoxyCompactList}\small\item\em Makes the actor take damage. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a0668a9c0c457d1c45e709b48111ba79d}{x\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em Returns the position of the actor in screen coordinates measured from the left side of the screen. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a967b03cbbd0be4e1761cf3e99f4bb207}{y\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em Returns the position of the actor in screen coordinates measured from the top of the screen. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a8de428b4a1c3cae77a506f1e9a9125f1}{get\+Health}} () const
+\begin{DoxyCompactList}\small\item\em Draws the actor to the window. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a903e41f008d672f0c47e672d9cad1221}{get\+Actor\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Get the width of the actor. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{classRose_1_1Character_1_1Actor_aa277151a54544a2161d8ea1b4e4b5a41}{get\+Actor\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Get the height of the actor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a1433ef76e892a8c57597115071c256d8}{draw\+To}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Draws the actor to the window. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classRose_1_1Character_1_1Actor_adda43e4e628cbfb11c36ab909aceba89}{is\+Alive}} () const
+\begin{DoxyCompactList}\small\item\em Returns whether or not the actor is still alive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a86d4d7577bddeb7914067d937e770991}{set\+Map}} (\mbox{\hyperlink{classMap}{Map}} $\ast$map)
+\begin{DoxyCompactList}\small\item\em Sets a pointer to the map that the actors are being displayed one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_aad957819d906297b425c9eddcbeed8aa}\label{classRose_1_1Character_1_1Actor_aad957819d906297b425c9eddcbeed8aa}} 
+static \mbox{\hyperlink{classMap}{Map}} const  $\ast$ {\bfseries map} = nullptr
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_ab0d422b812b0eeb68175ab8d77e4f4a9}\label{classRose_1_1Character_1_1Actor_ab0d422b812b0eeb68175ab8d77e4f4a9}} 
+enum {\bfseries Orientation} \{ \newline
+{\bfseries I\+D\+LE}, 
+{\bfseries F\+A\+C\+I\+N\+G\+\_\+\+D\+O\+WN}, 
+{\bfseries F\+A\+C\+I\+N\+G\+\_\+\+L\+E\+FT}, 
+{\bfseries F\+A\+C\+I\+N\+G\+\_\+\+UP}, 
+\newline
+{\bfseries F\+A\+C\+I\+N\+G\+\_\+\+R\+I\+G\+HT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRose_1_1Character_1_1Actor_ab0bb6eb9619dab556e682572c3ec9f95}{update\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Updates the characters position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRose_1_1Tile}{Tile}} $\ast$ \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a8a0a1dd7636a381483393049ff98f035}{occupied\+Tile}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the tile the actor is occupying. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a98c5e21f71da3341eba49da5b55757e0}{map\+Indices}} () const
+\begin{DoxyCompactList}\small\item\em Returns the map indices of the tile the actor is occupying. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a154034e57c94a0f5d2197856d953ffc0}\label{classRose_1_1Character_1_1Actor_a154034e57c94a0f5d2197856d953ffc0}} 
+sf\+::\+Texture {\bfseries complete\+Sprite\+Sheet\+Texture}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a8e1a1853df655bd7388add1854de4707}\label{classRose_1_1Character_1_1Actor_a8e1a1853df655bd7388add1854de4707}} 
+std\+::vector$<$ int $>$ $\ast$ {\bfseries texture\+Rects\+Described\+By\+Four\+Ints\+\_\+}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a6f1fcade89f64ebaa1ea166a08bb4075}\label{classRose_1_1Character_1_1Actor_a6f1fcade89f64ebaa1ea166a08bb4075}} 
+std\+::vector$<$ sf\+::\+Texture $>$ $\ast$ {\bfseries textures\+\_\+}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_aedd0c9af625084a3771a2a2394021459}\label{classRose_1_1Character_1_1Actor_aedd0c9af625084a3771a2a2394021459}} 
+sf\+::\+Sprite {\bfseries sprite\+\_\+}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a92c2502aec26ccebe66f5f9ff0cf2a10}\label{classRose_1_1Character_1_1Actor_a92c2502aec26ccebe66f5f9ff0cf2a10}} 
+\mbox{\hyperlink{classRose_1_1Tile}{Tile}} $\ast$ {\bfseries occupied\+Tile\+\_\+}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a91422a56f499bd4ac04c627168af01cb}\label{classRose_1_1Character_1_1Actor_a91422a56f499bd4ac04c627168af01cb}} 
+Orientation {\bfseries current\+Orientation\+\_\+}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a173fe8cc847412dd45e89210f41c5817}\label{classRose_1_1Character_1_1Actor_a173fe8cc847412dd45e89210f41c5817}} 
+int {\bfseries current\+Texture\+Index\+\_\+}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_aca14231d396a2919b6c20db6fcfff458}\label{classRose_1_1Character_1_1Actor_aca14231d396a2919b6c20db6fcfff458}} 
+int {\bfseries horizontal\+Tile\+Index\+\_\+}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_add9be456b9b8d1652ae80c000f774134}\label{classRose_1_1Character_1_1Actor_add9be456b9b8d1652ae80c000f774134}} 
+int {\bfseries vertical\+Tile\+Index\+\_\+}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a1a57a4b6ef63cc736a1e136e33a6d060}\label{classRose_1_1Character_1_1Actor_a1a57a4b6ef63cc736a1e136e33a6d060}} 
+int {\bfseries health\+\_\+}
+\item 
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_ac2ea7e7b4a1dae31e7f4aae3a2f1192f}\label{classRose_1_1Character_1_1Actor_ac2ea7e7b4a1dae31e7f4aae3a2f1192f}} 
+bool {\bfseries is\+Alive\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for any character type to inherit from. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a49b83c9e65da067866238127affa120a}\label{classRose_1_1Character_1_1Actor_a49b83c9e65da067866238127affa120a}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!Actor@{Actor}}
+\index{Actor@{Actor}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{Actor()}{Actor()}}
+{\footnotesize\ttfamily Rose\+::\+Character\+::\+Actor\+::\+Actor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Actor}} object. 
+
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_ae8e15757a90d2195048964e6bbf8487b}\label{classRose_1_1Character_1_1Actor_ae8e15757a90d2195048964e6bbf8487b}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!````~Actor@{$\sim$Actor}}
+\index{````~Actor@{$\sim$Actor}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{$\sim$Actor()}{~Actor()}}
+{\footnotesize\ttfamily virtual Rose\+::\+Character\+::\+Actor\+::$\sim$\+Actor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Actor}} object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a8d835beb192c864967c7a9b3a5f7f579}\label{classRose_1_1Character_1_1Actor_a8d835beb192c864967c7a9b3a5f7f579}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!damage@{damage}}
+\index{damage@{damage}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{damage()}{damage()}}
+{\footnotesize\ttfamily virtual void Rose\+::\+Character\+::\+Actor\+::damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Makes the actor take damage. 
+
+
+
+Implemented in \mbox{\hyperlink{classRose_1_1Character_1_1MainCharacter_a95fd982ce2de2f75067e68fc4ec49fdc}{Rose\+::\+Character\+::\+Main\+Character}}, \mbox{\hyperlink{classRose_1_1Character_1_1Link_a7918cd89bf9da3eced41055567c7c27c}{Rose\+::\+Character\+::\+Link}}, and \mbox{\hyperlink{classSkeleton_a43f844458b102aa18c65bcbbc5078e27}{Skeleton}}.
+
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a1433ef76e892a8c57597115071c256d8}\label{classRose_1_1Character_1_1Actor_a1433ef76e892a8c57597115071c256d8}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!drawTo@{drawTo}}
+\index{drawTo@{drawTo}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{drawTo()}{drawTo()}}
+{\footnotesize\ttfamily void Rose\+::\+Character\+::\+Actor\+::draw\+To (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draws the actor to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to draw to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classRose_1_1Character_1_1MainCharacter_a6c30ae81a27fa3cc5fff16ebe7c9f8be}{Rose\+::\+Character\+::\+Main\+Character}}, \mbox{\hyperlink{classRose_1_1Character_1_1Link_a7992daadbfc55011376b94604909668c}{Rose\+::\+Character\+::\+Link}}, \mbox{\hyperlink{classSkeleton_aa39ac09590a5274536dc2fc125cc62e6}{Skeleton}}, and \mbox{\hyperlink{classCowboy_af7e8a3e9cdcd9054b63a3661ca3f69a6}{Cowboy}}.
+
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_aa277151a54544a2161d8ea1b4e4b5a41}\label{classRose_1_1Character_1_1Actor_aa277151a54544a2161d8ea1b4e4b5a41}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!getActorHeight@{getActorHeight}}
+\index{getActorHeight@{getActorHeight}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{getActorHeight()}{getActorHeight()}}
+{\footnotesize\ttfamily float Rose\+::\+Character\+::\+Actor\+::get\+Actor\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the height of the actor. 
+
+\begin{DoxyReturn}{Returns}
+float The height of the actor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a903e41f008d672f0c47e672d9cad1221}\label{classRose_1_1Character_1_1Actor_a903e41f008d672f0c47e672d9cad1221}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!getActorWidth@{getActorWidth}}
+\index{getActorWidth@{getActorWidth}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{getActorWidth()}{getActorWidth()}}
+{\footnotesize\ttfamily float Rose\+::\+Character\+::\+Actor\+::get\+Actor\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the width of the actor. 
+
+\begin{DoxyReturn}{Returns}
+float the width of the actor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a8de428b4a1c3cae77a506f1e9a9125f1}\label{classRose_1_1Character_1_1Actor_a8de428b4a1c3cae77a506f1e9a9125f1}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily float Rose\+::\+Character\+::\+Actor\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draws the actor to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to draw the actor to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_adda43e4e628cbfb11c36ab909aceba89}\label{classRose_1_1Character_1_1Actor_adda43e4e628cbfb11c36ab909aceba89}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!isAlive@{isAlive}}
+\index{isAlive@{isAlive}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{isAlive()}{isAlive()}}
+{\footnotesize\ttfamily bool Rose\+::\+Character\+::\+Actor\+::is\+Alive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns whether or not the actor is still alive. 
+
+\begin{DoxyReturn}{Returns}
+true The actor is alive 
+
+false The actor is dead 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a98c5e21f71da3341eba49da5b55757e0}\label{classRose_1_1Character_1_1Actor_a98c5e21f71da3341eba49da5b55757e0}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!mapIndices@{mapIndices}}
+\index{mapIndices@{mapIndices}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{mapIndices()}{mapIndices()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, int $>$ Rose\+::\+Character\+::\+Actor\+::map\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Returns the map indices of the tile the actor is occupying. 
+
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$int, int$>$ The indices of the tile the actor is occupying 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a3ccb744404ed29c77fe9420f274a6826}\label{classRose_1_1Character_1_1Actor_a3ccb744404ed29c77fe9420f274a6826}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!moveDown@{moveDown}}
+\index{moveDown@{moveDown}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{moveDown()}{moveDown()}}
+{\footnotesize\ttfamily virtual void Rose\+::\+Character\+::\+Actor\+::move\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves the actor down. 
+
+
+
+Implemented in \mbox{\hyperlink{classRose_1_1Character_1_1MainCharacter_ac6a35f90921775e254bbb723998e84cd}{Rose\+::\+Character\+::\+Main\+Character}}, \mbox{\hyperlink{classSkeleton_aee2055fa3d1db80392b365aa40c878bf}{Skeleton}}, \mbox{\hyperlink{classRose_1_1Character_1_1Link_a3e1834381624bf9012ea3921695d9007}{Rose\+::\+Character\+::\+Link}}, and \mbox{\hyperlink{classCowboy_a25b9c66203a4a5e762984ca0bed511e0}{Cowboy}}.
+
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a45191259db61cf46cb3d99bf186b48d3}\label{classRose_1_1Character_1_1Actor_a45191259db61cf46cb3d99bf186b48d3}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!moveLeft@{moveLeft}}
+\index{moveLeft@{moveLeft}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{moveLeft()}{moveLeft()}}
+{\footnotesize\ttfamily virtual void Rose\+::\+Character\+::\+Actor\+::move\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves the actor left. 
+
+
+
+Implemented in \mbox{\hyperlink{classRose_1_1Character_1_1MainCharacter_a80dd452d836ec63345c0afbfff664a7e}{Rose\+::\+Character\+::\+Main\+Character}}, \mbox{\hyperlink{classSkeleton_ab03c65cdabc94f280443691653112d3a}{Skeleton}}, \mbox{\hyperlink{classCowboy_a487cf6b5d1e37586e6e9b408d2aaad1a}{Cowboy}}, and \mbox{\hyperlink{classRose_1_1Character_1_1Link_aab6113b81cfa995d11c6aa34894021cf}{Rose\+::\+Character\+::\+Link}}.
+
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a89ce0e5d1d6d25b1612867b982221dc9}\label{classRose_1_1Character_1_1Actor_a89ce0e5d1d6d25b1612867b982221dc9}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!moveRight@{moveRight}}
+\index{moveRight@{moveRight}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{moveRight()}{moveRight()}}
+{\footnotesize\ttfamily virtual void Rose\+::\+Character\+::\+Actor\+::move\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves the actor to the right. 
+
+
+
+Implemented in \mbox{\hyperlink{classRose_1_1Character_1_1MainCharacter_a08b5eae4f7ccabe74d1764993b0dcf91}{Rose\+::\+Character\+::\+Main\+Character}}, \mbox{\hyperlink{classSkeleton_a3d8ce7b8a1d10e4a33a27f0eee54042e}{Skeleton}}, \mbox{\hyperlink{classRose_1_1Character_1_1Link_ad93043b13d83e8afb6f33c3c2572b05b}{Rose\+::\+Character\+::\+Link}}, and \mbox{\hyperlink{classCowboy_a2094d31b2535a25ef8a40945473cf884}{Cowboy}}.
+
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_afd7130be2654a3fa94122cf532de4b79}\label{classRose_1_1Character_1_1Actor_afd7130be2654a3fa94122cf532de4b79}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!moveUp@{moveUp}}
+\index{moveUp@{moveUp}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{moveUp()}{moveUp()}}
+{\footnotesize\ttfamily virtual void Rose\+::\+Character\+::\+Actor\+::move\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves the actor up. 
+
+
+
+Implemented in \mbox{\hyperlink{classRose_1_1Character_1_1MainCharacter_a9f967f5ad98eaae08948ab65bfd1a90b}{Rose\+::\+Character\+::\+Main\+Character}}, \mbox{\hyperlink{classSkeleton_a0ddbea7574ada0b5cef0cadbd4a0dd9f}{Skeleton}}, \mbox{\hyperlink{classRose_1_1Character_1_1Link_a74ccaa0d2cf7af5b1980378d0cb14b22}{Rose\+::\+Character\+::\+Link}}, and \mbox{\hyperlink{classCowboy_a3c4b0540c47492d02fa64b4740a35bcf}{Cowboy}}.
+
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a8a0a1dd7636a381483393049ff98f035}\label{classRose_1_1Character_1_1Actor_a8a0a1dd7636a381483393049ff98f035}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!occupiedTile@{occupiedTile}}
+\index{occupiedTile@{occupiedTile}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{occupiedTile()}{occupiedTile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRose_1_1Tile}{Tile}} $\ast$ Rose\+::\+Character\+::\+Actor\+::occupied\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Returns a pointer to the tile the actor is occupying. 
+
+\begin{DoxyReturn}{Returns}
+Tile$\ast$ The tile the actor is occupying 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a86d4d7577bddeb7914067d937e770991}\label{classRose_1_1Character_1_1Actor_a86d4d7577bddeb7914067d937e770991}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!setMap@{setMap}}
+\index{setMap@{setMap}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{setMap()}{setMap()}}
+{\footnotesize\ttfamily void Rose\+::\+Character\+::\+Actor\+::set\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMap}{Map}} $\ast$}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets a pointer to the map that the actors are being displayed one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & The map that the actors are being displayed on \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_ab0bb6eb9619dab556e682572c3ec9f95}\label{classRose_1_1Character_1_1Actor_ab0bb6eb9619dab556e682572c3ec9f95}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!updatePosition@{updatePosition}}
+\index{updatePosition@{updatePosition}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{updatePosition()}{updatePosition()}}
+{\footnotesize\ttfamily void Rose\+::\+Character\+::\+Actor\+::update\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Updates the characters position. 
+
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a0668a9c0c457d1c45e709b48111ba79d}\label{classRose_1_1Character_1_1Actor_a0668a9c0c457d1c45e709b48111ba79d}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!xPos@{xPos}}
+\index{xPos@{xPos}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{xPos()}{xPos()}}
+{\footnotesize\ttfamily float Rose\+::\+Character\+::\+Actor\+::x\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the position of the actor in screen coordinates measured from the left side of the screen. 
+
+\begin{DoxyReturn}{Returns}
+float the x-\/position of the actor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRose_1_1Character_1_1Actor_a967b03cbbd0be4e1761cf3e99f4bb207}\label{classRose_1_1Character_1_1Actor_a967b03cbbd0be4e1761cf3e99f4bb207}} 
+\index{Rose::Character::Actor@{Rose::Character::Actor}!yPos@{yPos}}
+\index{yPos@{yPos}!Rose::Character::Actor@{Rose::Character::Actor}}
+\subsubsection{\texorpdfstring{yPos()}{yPos()}}
+{\footnotesize\ttfamily float Rose\+::\+Character\+::\+Actor\+::y\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the position of the actor in screen coordinates measured from the top of the screen. 
+
+\begin{DoxyReturn}{Returns}
+float The y-\/position of the actor 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+actor.\+h\item 
+actor.\+cpp\end{DoxyCompactItemize}

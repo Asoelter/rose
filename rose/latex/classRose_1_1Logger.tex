@@ -1,0 +1,209 @@
+\hypertarget{classRose_1_1Logger}{}\section{Rose\+::Logger Class Reference}
+\label{classRose_1_1Logger}\index{Rose::Logger@{Rose::Logger}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classRose_1_1Logger_af47728667625563c478e9286237fee94}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the logging ability (depricated) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classRose_1_1Logger_a5db9f7e908e98b211bfb841b58610530}{error}} (const std\+::string \&msg)
+\begin{DoxyCompactList}\small\item\em Displays the message in the terminal in red text. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classRose_1_1Logger_ab745f1411496f7226630eb91a54d444b}{warn}} (const std\+::string \&msg)
+\begin{DoxyCompactList}\small\item\em Displays the message in the terminal in yellow text. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classRose_1_1Logger_af83ea76e9be1d077d1802527080d0b5f}{info}} (const std\+::string \&msg)
+\begin{DoxyCompactList}\small\item\em Displays the message in the terminal in green text. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classRose_1_1Logger_ac7392ff1d51a6c25cb772fbed791f906}{error}} (const std\+::string \&\&msg)
+\begin{DoxyCompactList}\small\item\em Displays the message in the terminal in red text. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classRose_1_1Logger_aa950e16771d3c0b62dfafe6f39088d86}{warn}} (const std\+::string \&\&msg)
+\begin{DoxyCompactList}\small\item\em Displays the message in the terminal in yellow text. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classRose_1_1Logger_a87823e875bcc3f838693af93e19c9d25}{info}} (const std\+::string \&\&msg)
+\begin{DoxyCompactList}\small\item\em Displays the message in the terminal in green text. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename... Params$>$ }\\static void \mbox{\hyperlink{classRose_1_1Logger_ac876e2e27367310de3aea6f9d137c0fc}{error}} (T msg, Params... params)
+\begin{DoxyCompactList}\small\item\em Displays the message and the following parameters to the terminal in red text. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename... Params$>$ }\\static void \mbox{\hyperlink{classRose_1_1Logger_ad5905f310c92e3878eeaa9a4afe1c7f2}{warn}} (T msg, Params... params)
+\begin{DoxyCompactList}\small\item\em Displays the message and the following parameters to the terminal in yellow text. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename... Params$>$ }\\static void \mbox{\hyperlink{classRose_1_1Logger_a5b25729e6095f1aec47f82540999c13b}{info}} (T msg, Params... params)
+\begin{DoxyCompactList}\small\item\em Displays the message and the following parameters to the terminal in green text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRose_1_1Logger_a5db9f7e908e98b211bfb841b58610530}\label{classRose_1_1Logger_a5db9f7e908e98b211bfb841b58610530}} 
+\index{Rose::Logger@{Rose::Logger}!error@{error}}
+\index{error@{error}!Rose::Logger@{Rose::Logger}}
+\subsubsection{\texorpdfstring{error()}{error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Rose\+::\+Logger\+::error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Displays the message in the terminal in red text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Logger_ac7392ff1d51a6c25cb772fbed791f906}\label{classRose_1_1Logger_ac7392ff1d51a6c25cb772fbed791f906}} 
+\index{Rose::Logger@{Rose::Logger}!error@{error}}
+\index{error@{error}!Rose::Logger@{Rose::Logger}}
+\subsubsection{\texorpdfstring{error()}{error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Rose\+::\+Logger\+::error (\begin{DoxyParamCaption}\item[{const std\+::string \&\&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Displays the message in the terminal in red text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Logger_ac876e2e27367310de3aea6f9d137c0fc}\label{classRose_1_1Logger_ac876e2e27367310de3aea6f9d137c0fc}} 
+\index{Rose::Logger@{Rose::Logger}!error@{error}}
+\index{error@{error}!Rose::Logger@{Rose::Logger}}
+\subsubsection{\texorpdfstring{error()}{error()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename... Params$>$ \\
+static void Rose\+::\+Logger\+::error (\begin{DoxyParamCaption}\item[{T}]{msg,  }\item[{Params...}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Displays the message and the following parameters to the terminal in red text. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of message to display (must have ostream operator)\\
+\hline
+{\em Params} & A variadic parameter that can contain any number of any type of additional messages to display\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The first message to display\\
+\hline
+{\em params} & The following messages to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Logger_af83ea76e9be1d077d1802527080d0b5f}\label{classRose_1_1Logger_af83ea76e9be1d077d1802527080d0b5f}} 
+\index{Rose::Logger@{Rose::Logger}!info@{info}}
+\index{info@{info}!Rose::Logger@{Rose::Logger}}
+\subsubsection{\texorpdfstring{info()}{info()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Rose\+::\+Logger\+::info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Displays the message in the terminal in green text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Logger_a87823e875bcc3f838693af93e19c9d25}\label{classRose_1_1Logger_a87823e875bcc3f838693af93e19c9d25}} 
+\index{Rose::Logger@{Rose::Logger}!info@{info}}
+\index{info@{info}!Rose::Logger@{Rose::Logger}}
+\subsubsection{\texorpdfstring{info()}{info()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Rose\+::\+Logger\+::info (\begin{DoxyParamCaption}\item[{const std\+::string \&\&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Displays the message in the terminal in green text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Logger_a5b25729e6095f1aec47f82540999c13b}\label{classRose_1_1Logger_a5b25729e6095f1aec47f82540999c13b}} 
+\index{Rose::Logger@{Rose::Logger}!info@{info}}
+\index{info@{info}!Rose::Logger@{Rose::Logger}}
+\subsubsection{\texorpdfstring{info()}{info()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename... Params$>$ \\
+static void Rose\+::\+Logger\+::info (\begin{DoxyParamCaption}\item[{T}]{msg,  }\item[{Params...}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Displays the message and the following parameters to the terminal in green text. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of message to display (must have ostream operator)\\
+\hline
+{\em Params} & A variadic parameter that can contain any number of any type of additional messages to display\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The first message to display\\
+\hline
+{\em params} & The following messages to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Logger_af47728667625563c478e9286237fee94}\label{classRose_1_1Logger_af47728667625563c478e9286237fee94}} 
+\index{Rose::Logger@{Rose::Logger}!init@{init}}
+\index{init@{init}!Rose::Logger@{Rose::Logger}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Rose\+::\+Logger\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the logging ability (depricated) 
+
+\mbox{\Hypertarget{classRose_1_1Logger_ab745f1411496f7226630eb91a54d444b}\label{classRose_1_1Logger_ab745f1411496f7226630eb91a54d444b}} 
+\index{Rose::Logger@{Rose::Logger}!warn@{warn}}
+\index{warn@{warn}!Rose::Logger@{Rose::Logger}}
+\subsubsection{\texorpdfstring{warn()}{warn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Rose\+::\+Logger\+::warn (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Displays the message in the terminal in yellow text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Logger_aa950e16771d3c0b62dfafe6f39088d86}\label{classRose_1_1Logger_aa950e16771d3c0b62dfafe6f39088d86}} 
+\index{Rose::Logger@{Rose::Logger}!warn@{warn}}
+\index{warn@{warn}!Rose::Logger@{Rose::Logger}}
+\subsubsection{\texorpdfstring{warn()}{warn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Rose\+::\+Logger\+::warn (\begin{DoxyParamCaption}\item[{const std\+::string \&\&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Displays the message in the terminal in yellow text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Logger_ad5905f310c92e3878eeaa9a4afe1c7f2}\label{classRose_1_1Logger_ad5905f310c92e3878eeaa9a4afe1c7f2}} 
+\index{Rose::Logger@{Rose::Logger}!warn@{warn}}
+\index{warn@{warn}!Rose::Logger@{Rose::Logger}}
+\subsubsection{\texorpdfstring{warn()}{warn()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename... Params$>$ \\
+static void Rose\+::\+Logger\+::warn (\begin{DoxyParamCaption}\item[{T}]{msg,  }\item[{Params...}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Displays the message and the following parameters to the terminal in yellow text. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of message to display (must have ostream operator)\\
+\hline
+{\em Params} & A variadic parameter that can contain any number of any type of additional messages to display\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The first message to display\\
+\hline
+{\em params} & The following messages to display \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+log.\+h\item 
+log.\+cpp\end{DoxyCompactItemize}

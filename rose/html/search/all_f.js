@@ -1,10 +1,18 @@
 var searchData=
 [
-  ['_7eactor',['~Actor',['../classActor.html#a4e8d9d909ec2c3d3205682e83bf8ff18',1,'Actor']]],
-  ['_7ecowboy',['~Cowboy',['../classCowboy.html#a2a82f675073318efefd3a0f6c297fe08',1,'Cowboy']]],
-  ['_7eenemy',['~Enemy',['../classEnemy.html#aafb628c66008e33afdd750e2f492bd98',1,'Enemy']]],
-  ['_7elink',['~Link',['../classLink.html#a7be82ff147159742ad26febff8a9439b',1,'Link']]],
-  ['_7emap',['~Map',['../classMap.html#a1debdd8c6fec2993906ec9626045c80c',1,'Map']]],
-  ['_7eskeleton',['~Skeleton',['../classSkeleton.html#ae6a32fa46fd502bc2f6c2cfafff24003',1,'Skeleton']]],
-  ['_7etile',['~Tile',['../classTile.html#aecd90209e168f26bcdf36c2e445f424a',1,'Tile']]]
+  ['randomfloatinggenerator',['RandomFloatingGenerator',['../classCatch_1_1Generators_1_1RandomFloatingGenerator.html',1,'Catch::Generators']]],
+  ['randomintegergenerator',['RandomIntegerGenerator',['../classCatch_1_1Generators_1_1RandomIntegerGenerator.html',1,'Catch::Generators']]],
+  ['rangegenerator',['RangeGenerator',['../classCatch_1_1Generators_1_1RangeGenerator.html',1,'Catch::Generators']]],
+  ['regexmatcher',['RegexMatcher',['../structCatch_1_1Matchers_1_1StdString_1_1RegexMatcher.html',1,'Catch::Matchers::StdString']]],
+  ['registrarfortagaliases',['RegistrarForTagAliases',['../structCatch_1_1RegistrarForTagAliases.html',1,'Catch']]],
+  ['repeatgenerator',['RepeatGenerator',['../classCatch_1_1Generators_1_1RepeatGenerator.html',1,'Catch::Generators']]],
+  ['resultdisposition',['ResultDisposition',['../structCatch_1_1ResultDisposition.html',1,'Catch']]],
+  ['resultwas',['ResultWas',['../structCatch_1_1ResultWas.html',1,'Catch']]],
+  ['reusablestringstream',['ReusableStringStream',['../classCatch_1_1ReusableStringStream.html',1,'Catch']]],
+  ['rewrap',['rewrap',['../structCatch_1_1rewrap.html',1,'Catch']]],
+  ['rewrap_3c_20container_2c_20list_3c_20elems_2e_2e_2e_20_3e_20_3e',['rewrap&lt; Container, List&lt; elems... &gt; &gt;',['../structCatch_1_1rewrap_3_01Container_00_01List_3_01elems_8_8_8_01_4_01_4.html',1,'Catch']]],
+  ['rewrap_3c_20container_2c_20list_3c_20elems_2e_2e_2e_20_3e_2c_20elements_2e_2e_2e_20_3e',['rewrap&lt; Container, List&lt; Elems... &gt;, Elements... &gt;',['../structCatch_1_1rewrap_3_01Container_00_01List_3_01Elems_8_8_8_01_4_00_01Elements_8_8_8_01_4.html',1,'Catch']]],
+  ['rose',['Rose',['../namespaceRose.html',1,'']]],
+  ['run',['run',['../classGame.html#a1ab78f5ed0d5ea879157357cf2fb2afa',1,'Game']]],
+  ['runtests',['RunTests',['../structCatch_1_1RunTests.html',1,'Catch::RunTests'],['../classRose_1_1Character_1_1Link.html#ac2a390484679c8a05e297c6f86ef0b52',1,'Rose::Character::Link::runTests()'],['../classRose_1_1Character_1_1MainCharacter.html#a1411e3f7d908bc8861440364cda0a799',1,'Rose::Character::MainCharacter::runTests()'],['../classSkeleton.html#a41d14404f1c8d295508f7043e314a731',1,'Skeleton::runTests()']]]
 ];

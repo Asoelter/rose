@@ -12,7 +12,7 @@ A class for drawing a \mbox{\hyperlink{classSkeleton}{Skeleton}} character.
 Inheritance diagram for Skeleton\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classSkeleton}
+\includegraphics[height=4.000000cm]{classSkeleton}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -20,22 +20,49 @@ Inheritance diagram for Skeleton\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classSkeleton_af01a02f1ce9ae4c801cd6e66ccf7407f}{Skeleton}} ()
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classSkeleton}{Skeleton}} object. \end{DoxyCompactList}\item 
-virtual \mbox{\hyperlink{classSkeleton_ae6a32fa46fd502bc2f6c2cfafff24003}{$\sim$\+Skeleton}} ()=default
+\mbox{\hyperlink{classSkeleton_a71cc79a27794a470070b3d8691b8e716}{Skeleton}} (int \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a0668a9c0c457d1c45e709b48111ba79d}{x\+Pos}}, int \mbox{\hyperlink{classRose_1_1Character_1_1Actor_a967b03cbbd0be4e1761cf3e99f4bb207}{y\+Pos}})
+\begin{DoxyCompactList}\small\item\em constructs a new skeleton at a specified position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSkeleton_af8700e3ac47511a9e84f913c1df78495}{Skeleton}} (sf\+::\+Vector2i position)
+\begin{DoxyCompactList}\small\item\em constructs a new skeleton at a specified position. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSkeleton_aeece886a4e2f039128144f94f25efd10}{$\sim$\+Skeleton}} ()
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classSkeleton}{Skeleton}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSkeleton_a0ddbea7574ada0b5cef0cadbd4a0dd9f}\label{classSkeleton_a0ddbea7574ada0b5cef0cadbd4a0dd9f}} 
 void \mbox{\hyperlink{classSkeleton_a0ddbea7574ada0b5cef0cadbd4a0dd9f}{move\+Up}} ()
-\begin{DoxyCompactList}\small\item\em Moves the actor up. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em moves the skeleton upwards on the screen while cycling through animations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSkeleton_a3d8ce7b8a1d10e4a33a27f0eee54042e}\label{classSkeleton_a3d8ce7b8a1d10e4a33a27f0eee54042e}} 
 void \mbox{\hyperlink{classSkeleton_a3d8ce7b8a1d10e4a33a27f0eee54042e}{move\+Right}} ()
-\begin{DoxyCompactList}\small\item\em Moves the actor to the right. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em moves the skeleton right on the screen while cycling through animations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSkeleton_aee2055fa3d1db80392b365aa40c878bf}\label{classSkeleton_aee2055fa3d1db80392b365aa40c878bf}} 
 void \mbox{\hyperlink{classSkeleton_aee2055fa3d1db80392b365aa40c878bf}{move\+Down}} ()
-\begin{DoxyCompactList}\small\item\em Moves the actor down. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em moves the skeleton down on the screen while cycling through animations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSkeleton_ab03c65cdabc94f280443691653112d3a}\label{classSkeleton_ab03c65cdabc94f280443691653112d3a}} 
 void \mbox{\hyperlink{classSkeleton_ab03c65cdabc94f280443691653112d3a}{move\+Left}} ()
-\begin{DoxyCompactList}\small\item\em Moves the actor left. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSkeleton_a6113054cad95c0eefbe3c64c58027f86}{shock\+Wave}} ()
+\begin{DoxyCompactList}\small\item\em moves the skeleton left on the screen while cycling through animations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSkeleton_a90927f96174510cebe29d6bb39f4387c}{attack}} ()
 \begin{DoxyCompactList}\small\item\em The skeletons attack. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSkeleton_aefa4683beb507bafaa2b20eaba4f478d}{chase\+Player}} (float playerX, float playerY)
 \begin{DoxyCompactList}\small\item\em Chases the player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSkeleton_aa39ac09590a5274536dc2fc125cc62e6}\label{classSkeleton_aa39ac09590a5274536dc2fc125cc62e6}} 
 virtual void \mbox{\hyperlink{classSkeleton_aa39ac09590a5274536dc2fc125cc62e6}{draw\+To}} (sf\+::\+Render\+Window \&window)
-\begin{DoxyCompactList}\small\item\em Draws the actor to the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em draws the skeleton to the window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSkeleton_a43f844458b102aa18c65bcbbc5078e27}\label{classSkeleton_a43f844458b102aa18c65bcbbc5078e27}} 
+void \mbox{\hyperlink{classSkeleton_a43f844458b102aa18c65bcbbc5078e27}{damage}} ()
+\begin{DoxyCompactList}\small\item\em subtracts health from the skeleton. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSkeleton_a41d14404f1c8d295508f7043e314a731}\label{classSkeleton_a41d14404f1c8d295508f7043e314a731}} 
+void \mbox{\hyperlink{classSkeleton_a41d14404f1c8d295508f7043e314a731}{run\+Tests}} ()
+\begin{DoxyCompactList}\small\item\em calls all testing functions \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSkeleton_a6188fba17d9a166d71cfcd7e2b27d5ec}\label{classSkeleton_a6188fba17d9a166d71cfcd7e2b27d5ec}} 
+void \mbox{\hyperlink{classSkeleton_a6188fba17d9a166d71cfcd7e2b27d5ec}{test\+Move\+Left}} ()
+\begin{DoxyCompactList}\small\item\em checks to see if skeleton position changes correctly along x axis \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSkeleton_aa495a3cad8742af1b6fe06450f1d1add}\label{classSkeleton_aa495a3cad8742af1b6fe06450f1d1add}} 
+void \mbox{\hyperlink{classSkeleton_aa495a3cad8742af1b6fe06450f1d1add}{test\+Move\+Right}} ()
+\begin{DoxyCompactList}\small\item\em checks to see if skeleton position changes correctly along x axis \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSkeleton_a57e8784bea0a76af7c86536673edd15c}\label{classSkeleton_a57e8784bea0a76af7c86536673edd15c}} 
+void \mbox{\hyperlink{classSkeleton_a57e8784bea0a76af7c86536673edd15c}{test\+Move\+Up}} ()
+\begin{DoxyCompactList}\small\item\em checks to see if skeleton position changes correctly along y axis \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSkeleton_ae92e985bae7156d0c7ebaacc7bcf2019}\label{classSkeleton_ae92e985bae7156d0c7ebaacc7bcf2019}} 
+void \mbox{\hyperlink{classSkeleton_ae92e985bae7156d0c7ebaacc7bcf2019}{test\+Move\+Down}} ()
+\begin{DoxyCompactList}\small\item\em checks to see if skeleton position changes correctly along y axis \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -48,18 +75,50 @@ A class for drawing a \mbox{\hyperlink{classSkeleton}{Skeleton}} character.
 \mbox{\Hypertarget{classSkeleton_af01a02f1ce9ae4c801cd6e66ccf7407f}\label{classSkeleton_af01a02f1ce9ae4c801cd6e66ccf7407f}} 
 \index{Skeleton@{Skeleton}!Skeleton@{Skeleton}}
 \index{Skeleton@{Skeleton}!Skeleton@{Skeleton}}
-\subsubsection{\texorpdfstring{Skeleton()}{Skeleton()}}
+\subsubsection{\texorpdfstring{Skeleton()}{Skeleton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Skeleton\+::\+Skeleton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Construct a new \mbox{\hyperlink{classSkeleton}{Skeleton}} object. 
 
-\mbox{\Hypertarget{classSkeleton_ae6a32fa46fd502bc2f6c2cfafff24003}\label{classSkeleton_ae6a32fa46fd502bc2f6c2cfafff24003}} 
+\mbox{\Hypertarget{classSkeleton_a71cc79a27794a470070b3d8691b8e716}\label{classSkeleton_a71cc79a27794a470070b3d8691b8e716}} 
+\index{Skeleton@{Skeleton}!Skeleton@{Skeleton}}
+\index{Skeleton@{Skeleton}!Skeleton@{Skeleton}}
+\subsubsection{\texorpdfstring{Skeleton()}{Skeleton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Skeleton\+::\+Skeleton (\begin{DoxyParamCaption}\item[{int}]{x\+Pos,  }\item[{int}]{y\+Pos }\end{DoxyParamCaption})}
+
+
+
+constructs a new skeleton at a specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & x\+Pos\+: The x position for the skeleton to spawn. \\
+\hline
+{\em int} & y\+Pos\+: The y position for the skeleton to spawn. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSkeleton_af8700e3ac47511a9e84f913c1df78495}\label{classSkeleton_af8700e3ac47511a9e84f913c1df78495}} 
+\index{Skeleton@{Skeleton}!Skeleton@{Skeleton}}
+\index{Skeleton@{Skeleton}!Skeleton@{Skeleton}}
+\subsubsection{\texorpdfstring{Skeleton()}{Skeleton()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Skeleton\+::\+Skeleton (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{position }\end{DoxyParamCaption})}
+
+
+
+constructs a new skeleton at a specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sf\+::\+Vector2i} & position\+: position vector for the skeleton \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSkeleton_aeece886a4e2f039128144f94f25efd10}\label{classSkeleton_aeece886a4e2f039128144f94f25efd10}} 
 \index{Skeleton@{Skeleton}!````~Skeleton@{$\sim$Skeleton}}
 \index{````~Skeleton@{$\sim$Skeleton}!Skeleton@{Skeleton}}
 \subsubsection{\texorpdfstring{$\sim$Skeleton()}{~Skeleton()}}
-{\footnotesize\ttfamily virtual Skeleton\+::$\sim$\+Skeleton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+{\footnotesize\ttfamily Skeleton\+::$\sim$\+Skeleton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -68,6 +127,20 @@ Destroy the \mbox{\hyperlink{classSkeleton}{Skeleton}} object.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSkeleton_a90927f96174510cebe29d6bb39f4387c}\label{classSkeleton_a90927f96174510cebe29d6bb39f4387c}} 
+\index{Skeleton@{Skeleton}!attack@{attack}}
+\index{attack@{attack}!Skeleton@{Skeleton}}
+\subsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily void Skeleton\+::attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The skeletons attack. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classRose_1_1Character_1_1Attacker_a49ee8dfa04018f90c7fd5fa20ba4fcad}{Rose\+::\+Character\+::\+Attacker}}.
+
 \mbox{\Hypertarget{classSkeleton_aefa4683beb507bafaa2b20eaba4f478d}\label{classSkeleton_aefa4683beb507bafaa2b20eaba4f478d}} 
 \index{Skeleton@{Skeleton}!chasePlayer@{chasePlayer}}
 \index{chasePlayer@{chasePlayer}!Skeleton@{Skeleton}}
@@ -85,91 +158,6 @@ Chases the player.
 {\em playerY} & The players vertical position \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classSkeleton_aa39ac09590a5274536dc2fc125cc62e6}\label{classSkeleton_aa39ac09590a5274536dc2fc125cc62e6}} 
-\index{Skeleton@{Skeleton}!drawTo@{drawTo}}
-\index{drawTo@{drawTo}!Skeleton@{Skeleton}}
-\subsubsection{\texorpdfstring{drawTo()}{drawTo()}}
-{\footnotesize\ttfamily void Skeleton\+::draw\+To (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Draws the actor to the window. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em window} & The window to draw the actor to \\
-\hline
-\end{DoxyParams}
-
-
-Reimplemented from \mbox{\hyperlink{classActor_af73a6f6670f0507c9e55ec2f61293535}{Actor}}.
-
-\mbox{\Hypertarget{classSkeleton_aee2055fa3d1db80392b365aa40c878bf}\label{classSkeleton_aee2055fa3d1db80392b365aa40c878bf}} 
-\index{Skeleton@{Skeleton}!moveDown@{moveDown}}
-\index{moveDown@{moveDown}!Skeleton@{Skeleton}}
-\subsubsection{\texorpdfstring{moveDown()}{moveDown()}}
-{\footnotesize\ttfamily void Skeleton\+::move\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Moves the actor down. 
-
-
-
-Implements \mbox{\hyperlink{classActor_ad2737cd62ea0c96f75853afb5d1fd83a}{Actor}}.
-
-\mbox{\Hypertarget{classSkeleton_ab03c65cdabc94f280443691653112d3a}\label{classSkeleton_ab03c65cdabc94f280443691653112d3a}} 
-\index{Skeleton@{Skeleton}!moveLeft@{moveLeft}}
-\index{moveLeft@{moveLeft}!Skeleton@{Skeleton}}
-\subsubsection{\texorpdfstring{moveLeft()}{moveLeft()}}
-{\footnotesize\ttfamily void Skeleton\+::move\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Moves the actor left. 
-
-
-
-Implements \mbox{\hyperlink{classActor_a522d6069bacaa9985db7a234bde2c8b6}{Actor}}.
-
-\mbox{\Hypertarget{classSkeleton_a3d8ce7b8a1d10e4a33a27f0eee54042e}\label{classSkeleton_a3d8ce7b8a1d10e4a33a27f0eee54042e}} 
-\index{Skeleton@{Skeleton}!moveRight@{moveRight}}
-\index{moveRight@{moveRight}!Skeleton@{Skeleton}}
-\subsubsection{\texorpdfstring{moveRight()}{moveRight()}}
-{\footnotesize\ttfamily void Skeleton\+::move\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Moves the actor to the right. 
-
-
-
-Implements \mbox{\hyperlink{classActor_a9176d8f8ec68fcbd91c48223e7c65775}{Actor}}.
-
-\mbox{\Hypertarget{classSkeleton_a0ddbea7574ada0b5cef0cadbd4a0dd9f}\label{classSkeleton_a0ddbea7574ada0b5cef0cadbd4a0dd9f}} 
-\index{Skeleton@{Skeleton}!moveUp@{moveUp}}
-\index{moveUp@{moveUp}!Skeleton@{Skeleton}}
-\subsubsection{\texorpdfstring{moveUp()}{moveUp()}}
-{\footnotesize\ttfamily void Skeleton\+::move\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Moves the actor up. 
-
-
-
-Implements \mbox{\hyperlink{classActor_afaa299f90233461ee4df96dcfda3008a}{Actor}}.
-
-\mbox{\Hypertarget{classSkeleton_a6113054cad95c0eefbe3c64c58027f86}\label{classSkeleton_a6113054cad95c0eefbe3c64c58027f86}} 
-\index{Skeleton@{Skeleton}!shockWave@{shockWave}}
-\index{shockWave@{shockWave}!Skeleton@{Skeleton}}
-\subsubsection{\texorpdfstring{shockWave()}{shockWave()}}
-{\footnotesize\ttfamily void Skeleton\+::shock\+Wave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-The skeletons attack. 
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

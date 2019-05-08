@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['characterstats',['CharacterStats',['../classCharacterStats.html',1,'']]],
-  ['cowboy',['Cowboy',['../classCowboy.html',1,'']]]
+  ['benchmarklooper',['BenchmarkLooper',['../classCatch_1_1BenchmarkLooper.html',1,'Catch']]],
+  ['binaryexpr',['BinaryExpr',['../classCatch_1_1BinaryExpr.html',1,'Catch']]]
 ];

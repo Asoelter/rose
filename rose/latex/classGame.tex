@@ -1,0 +1,82 @@
+\hypertarget{classGame}{}\section{Game Class Reference}
+\label{classGame}\index{Game@{Game}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame_addc0d11b008aeca49c8bd8d5ed80559e}\label{classGame_addc0d11b008aeca49c8bd8d5ed80559e}} 
+enum \mbox{\hyperlink{classGame_addc0d11b008aeca49c8bd8d5ed80559e}{State}} \{ \newline
+{\bfseries s\+\_\+play}, 
+{\bfseries s\+\_\+test}, 
+{\bfseries s\+\_\+quit}, 
+{\bfseries s\+\_\+win}, 
+\newline
+{\bfseries s\+\_\+lose}, 
+{\bfseries s\+\_\+initial}
+ \}
+\begin{DoxyCompactList}\small\item\em enum describing the different game states \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame_a1ab78f5ed0d5ea879157357cf2fb2afa}\label{classGame_a1ab78f5ed0d5ea879157357cf2fb2afa}} 
+void \mbox{\hyperlink{classGame_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}} ()
+\begin{DoxyCompactList}\small\item\em calls main menu then checks game state until in s\+\_\+quit() \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a5ed7fc5be77080f7f6dd5363f7f007a1}{main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em displays the main menu and changes game\+State depending on user input \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_aa333825d0bca80e91e53c7e23f053405}\label{classGame_aa333825d0bca80e91e53c7e23f053405}} 
+void \mbox{\hyperlink{classGame_aa333825d0bca80e91e53c7e23f053405}{play}} ()
+\begin{DoxyCompactList}\small\item\em begins main game loop \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a991c1a8d7fd73ab1c2095b12674169a0}\label{classGame_a991c1a8d7fd73ab1c2095b12674169a0}} 
+void \mbox{\hyperlink{classGame_a991c1a8d7fd73ab1c2095b12674169a0}{test}} ()
+\begin{DoxyCompactList}\small\item\em begins test loop \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a8272be134d16c277bb014ad6a22fc357}\label{classGame_a8272be134d16c277bb014ad6a22fc357}} 
+void \mbox{\hyperlink{classGame_a8272be134d16c277bb014ad6a22fc357}{quit}} ()
+\begin{DoxyCompactList}\small\item\em closes main window \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a4d95b74e7496c0be1c829af66bf1f9f5}\label{classGame_a4d95b74e7496c0be1c829af66bf1f9f5}} 
+void \mbox{\hyperlink{classGame_a4d95b74e7496c0be1c829af66bf1f9f5}{win}} ()
+\begin{DoxyCompactList}\small\item\em displays win screen and allows user to press p to play again or q to quit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a83ccbec9f423d3035b024184d1ff80c9}\label{classGame_a83ccbec9f423d3035b024184d1ff80c9}} 
+void \mbox{\hyperlink{classGame_a83ccbec9f423d3035b024184d1ff80c9}{lose}} ()
+\begin{DoxyCompactList}\small\item\em displays lose screen and allows user to press p to play again or q to quit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a5a2ab72063d3d3f01c71b4318c840128}\label{classGame_a5a2ab72063d3d3f01c71b4318c840128}} 
+void {\bfseries move\+Enemies} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame_acf2f285294fa7afaaecc38b9900dfa05}\label{classGame_acf2f285294fa7afaaecc38b9900dfa05}} 
+int {\bfseries wave} = 0
+\item 
+\mbox{\Hypertarget{classGame_a6ddb0bfea798aa7a561f2e5a2e97234e}\label{classGame_a6ddb0bfea798aa7a561f2e5a2e97234e}} 
+sf\+::\+Text {\bfseries wave\+Label}
+\item 
+\mbox{\Hypertarget{classGame_a75fbaca88268efde270cdccd44be8ce4}\label{classGame_a75fbaca88268efde270cdccd44be8ce4}} 
+bool {\bfseries done} = false
+\item 
+\mbox{\Hypertarget{classGame_a7d383b1aaa581b920bb1e755fa183053}\label{classGame_a7d383b1aaa581b920bb1e755fa183053}} 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classSkeleton}{Skeleton}} $>$ $>$ {\bfseries enemies}
+\item 
+\mbox{\Hypertarget{classGame_a696ebd6aed1596f45406ebc18bccf2c7}\label{classGame_a696ebd6aed1596f45406ebc18bccf2c7}} 
+\mbox{\hyperlink{classRose_1_1Character_1_1Link}{Rose\+::\+Character\+::\+Link}} {\bfseries link\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame_a5ad8d824f754300de05b9fc994d9c52e}\label{classGame_a5ad8d824f754300de05b9fc994d9c52e}} 
+sf\+::\+Render\+Window {\bfseries window\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGame_a5ed7fc5be77080f7f6dd5363f7f007a1}\label{classGame_a5ed7fc5be77080f7f6dd5363f7f007a1}} 
+\index{Game@{Game}!mainMenu@{mainMenu}}
+\index{mainMenu@{mainMenu}!Game@{Game}}
+\subsubsection{\texorpdfstring{mainMenu()}{mainMenu()}}
+{\footnotesize\ttfamily void Game\+::main\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+displays the main menu and changes game\+State depending on user input 
+
+begins main game loop 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+game.\+h\item 
+game.\+cpp\end{DoxyCompactItemize}

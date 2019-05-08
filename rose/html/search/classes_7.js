@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tile',['Tile',['../classTile.html',1,'']]]
+  ['healthbar',['HealthBar',['../classHealthBar.html',1,'']]]
 ];

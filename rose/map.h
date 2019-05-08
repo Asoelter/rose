@@ -38,15 +38,57 @@ class Map
 		 */
 		virtual void drawTo(sf::RenderWindow& window);
 		
+		/**
+		 * @brief Returns the width of the map in pixels
+		 * 
+		 * @return auto The width of the map in pixels
+		 */
 		auto width()					const {return width_;}
+
+		/**
+		 * @brief Returns the height of the map in pixels
+		 * 
+		 * @return auto The height of the map in pixels
+		 */
 		auto height()					const {return height_;}
 
+		/**
+		 * @brief Returns the width of each tile in pixels
+		 * 
+		 * @return auto The width of each tile in pixels
+		 */
 		auto tileWidth()				const {return tiles_[0][0]->width();}
+
+		/**
+		 * @brief Returns the height of each tile in pixels
+		 * 
+		 * @return auto The height of each tile in pixels
+		 */
 		auto tileHeight()				const {return tiles_[0][0]->height();}
 
+		/**
+		 * @brief Returns the number of vertical tiles
+		 * 
+		 * @return auto The number of vertical tiles
+		 */
 		auto verticalTiles()			const {return tiles_.size();}
+
+		/**
+		 * @brief Returns the number of horizontal tiles in pixels
+		 * 
+		 * @return auto The number of horizontal tiles in pixels 
+		 */
 		auto horizontalTiles()			const {return tiles_[1].size();}
 
+		/**
+		 * @brief Returns a pointer to the tile at the given indices
+		 * 
+		 * @param row The Vertical index of the tile
+		 * 
+		 * @param col The horizontal index of the tile
+		 *  
+		 * @return auto A pointer to the tile  
+		 */
 		auto tileAt(int row, int col)	const {return tiles_[row][col].get();}
 
 	protected:

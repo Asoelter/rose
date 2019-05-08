@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ypos',['yPos',['../classActor.html#a7792909f3e9ca8eff707cf7b21b712fe',1,'Actor']]]
+  ['quit',['quit',['../classGame.html#a8272be134d16c277bb014ad6a22fc357',1,'Game']]]
 ];

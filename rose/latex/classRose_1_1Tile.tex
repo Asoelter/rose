@@ -1,0 +1,172 @@
+\hypertarget{classRose_1_1Tile}{}\section{Rose\+::Tile Class Reference}
+\label{classRose_1_1Tile}\index{Rose::Tile@{Rose::Tile}}
+Inheritance diagram for Rose\+::Tile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRose_1_1Tile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRose_1_1Tile_aa56994a706f8b5f5468d7fa7c9820346}{Tile}} (const std\+::string \&file\+Name, const sf\+::\+Vector2f \&position)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classRose_1_1Tile}{Tile}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRose_1_1Tile_a6583b7a8d50b38d972865eb3440251fc}{Tile}} (const std\+::string \&\&file\+Name, const sf\+::\+Vector2f \&\&position)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classRose_1_1Tile}{Tile}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRose_1_1Tile_a480e50775203166df068f0cfc889d91b}{Tile}} (const \mbox{\hyperlink{classRose_1_1Tile}{Tile}} \&other)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classRose_1_1Tile}{Tile}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classRose_1_1Tile_a793bce7c8764240826df99058f7d8f32}{$\sim$\+Tile}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classRose_1_1Tile}{Tile}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRose_1_1Tile_ab83f64c1d7fdeba49f9d84bd1a33e612}{draw\+To}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Draws the tile to the window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRose_1_1Tile_a76d736e6b459becc1b5ef124363dbe59}\label{classRose_1_1Tile_a76d736e6b459becc1b5ef124363dbe59}} 
+virtual void {\bfseries set\+Color} (sf\+::\+Color color)
+\item 
+float \mbox{\hyperlink{classRose_1_1Tile_a819194106af71d48f48d0fedfcccc31e}{width}} () const
+\begin{DoxyCompactList}\small\item\em Returns the width of the tile in pixels. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classRose_1_1Tile_a93878ba24748c81017215d97efd1a2f0}{height}} () const
+\begin{DoxyCompactList}\small\item\em Returns the height of the tile in pixels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRose_1_1Tile_ab82cc04b5c43ad0838b993b90a14fff3}{set\+Occupier}} (\mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} $\ast$\mbox{\hyperlink{classRose_1_1Tile_acce49d5fa69fa6c8945f4b2efe79f718}{occupier}})
+\begin{DoxyCompactList}\small\item\em Set the Occupier Actor. (Not currently implemented) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} $\ast$ \mbox{\hyperlink{classRose_1_1Tile_acce49d5fa69fa6c8945f4b2efe79f718}{occupier}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the character that occupies the tile. Returns nullptr if there is no occupying character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRose_1_1Tile_aa56994a706f8b5f5468d7fa7c9820346}\label{classRose_1_1Tile_aa56994a706f8b5f5468d7fa7c9820346}} 
+\index{Rose::Tile@{Rose::Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Rose::Tile@{Rose::Tile}}
+\subsubsection{\texorpdfstring{Tile()}{Tile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name,  }\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \mbox{\hyperlink{classRose_1_1Tile}{Tile}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the file to load the texture from \\
+\hline
+{\em position} & A vector that contains the screen coordinates to display the tile at \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Tile_a6583b7a8d50b38d972865eb3440251fc}\label{classRose_1_1Tile_a6583b7a8d50b38d972865eb3440251fc}} 
+\index{Rose::Tile@{Rose::Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Rose::Tile@{Rose::Tile}}
+\subsubsection{\texorpdfstring{Tile()}{Tile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}\item[{const std\+::string \&\&}]{file\+Name,  }\item[{const sf\+::\+Vector2f \&\&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \mbox{\hyperlink{classRose_1_1Tile}{Tile}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the file to load the texture from \\
+\hline
+{\em position} & A vector that contains the screen coordinates to display the tile at \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Tile_a480e50775203166df068f0cfc889d91b}\label{classRose_1_1Tile_a480e50775203166df068f0cfc889d91b}} 
+\index{Rose::Tile@{Rose::Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Rose::Tile@{Rose::Tile}}
+\subsubsection{\texorpdfstring{Tile()}{Tile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRose_1_1Tile}{Tile}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classRose_1_1Tile}{Tile}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The tile object to copy from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Tile_a793bce7c8764240826df99058f7d8f32}\label{classRose_1_1Tile_a793bce7c8764240826df99058f7d8f32}} 
+\index{Rose::Tile@{Rose::Tile}!````~Tile@{$\sim$Tile}}
+\index{````~Tile@{$\sim$Tile}!Rose::Tile@{Rose::Tile}}
+\subsubsection{\texorpdfstring{$\sim$Tile()}{~Tile()}}
+{\footnotesize\ttfamily virtual Rose\+::\+Tile\+::$\sim$\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{classRose_1_1Tile}{Tile}} object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRose_1_1Tile_ab83f64c1d7fdeba49f9d84bd1a33e612}\label{classRose_1_1Tile_ab83f64c1d7fdeba49f9d84bd1a33e612}} 
+\index{Rose::Tile@{Rose::Tile}!drawTo@{drawTo}}
+\index{drawTo@{drawTo}!Rose::Tile@{Rose::Tile}}
+\subsubsection{\texorpdfstring{drawTo()}{drawTo()}}
+{\footnotesize\ttfamily void Tile\+::draw\+To (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draws the tile to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to draw the tile to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Tile_a93878ba24748c81017215d97efd1a2f0}\label{classRose_1_1Tile_a93878ba24748c81017215d97efd1a2f0}} 
+\index{Rose::Tile@{Rose::Tile}!height@{height}}
+\index{height@{height}!Rose::Tile@{Rose::Tile}}
+\subsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily float Tile\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the height of the tile in pixels. 
+
+\begin{DoxyReturn}{Returns}
+float The height of the tile in pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRose_1_1Tile_acce49d5fa69fa6c8945f4b2efe79f718}\label{classRose_1_1Tile_acce49d5fa69fa6c8945f4b2efe79f718}} 
+\index{Rose::Tile@{Rose::Tile}!occupier@{occupier}}
+\index{occupier@{occupier}!Rose::Tile@{Rose::Tile}}
+\subsubsection{\texorpdfstring{occupier()}{occupier()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} $\ast$ Tile\+::occupier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the character that occupies the tile. Returns nullptr if there is no occupying character. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}}$\ast$ A pointer to the occupying character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRose_1_1Tile_ab82cc04b5c43ad0838b993b90a14fff3}\label{classRose_1_1Tile_ab82cc04b5c43ad0838b993b90a14fff3}} 
+\index{Rose::Tile@{Rose::Tile}!setOccupier@{setOccupier}}
+\index{setOccupier@{setOccupier}!Rose::Tile@{Rose::Tile}}
+\subsubsection{\texorpdfstring{setOccupier()}{setOccupier()}}
+{\footnotesize\ttfamily void Tile\+::set\+Occupier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} $\ast$}]{occupier }\end{DoxyParamCaption})}
+
+
+
+Set the Occupier Actor. (Not currently implemented) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em occupier} & The actor that is occupying the tile \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRose_1_1Tile_a819194106af71d48f48d0fedfcccc31e}\label{classRose_1_1Tile_a819194106af71d48f48d0fedfcccc31e}} 
+\index{Rose::Tile@{Rose::Tile}!width@{width}}
+\index{width@{width}!Rose::Tile@{Rose::Tile}}
+\subsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily float Tile\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the width of the tile in pixels. 
+
+\begin{DoxyReturn}{Returns}
+float The width of the tile in pixels 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tile.\+h\item 
+tile.\+cpp\end{DoxyCompactItemize}

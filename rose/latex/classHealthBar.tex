@@ -1,0 +1,132 @@
+\hypertarget{classHealthBar}{}\section{Health\+Bar Class Reference}
+\label{classHealthBar}\index{HealthBar@{HealthBar}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHealthBar_a05f694deecdc0399d9c5fb230493df05}{Health\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Health Bar object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHealthBar_a4a67801ba7a3b2e82e61d0cd02247771}{$\sim$\+Health\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Health Bar object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHealthBar_a61e6713d7078197e549d5d979d2b34c6}{calculate\+Health\+Percentage}} (\mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} \&link)
+\begin{DoxyCompactList}\small\item\em Calculates the percentage of health the character has left. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{classHealthBar_a79b4a771bcf2dcea3723089e075451d0}{create\+Outline\+Rect}} (\mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} \&link)
+\begin{DoxyCompactList}\small\item\em Create the border of the healthbar. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{classHealthBar_ab6275c757258bfa46f6416201bdd3c83}{create\+Health\+Amount\+Rect}} (\mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} \&link)
+\begin{DoxyCompactList}\small\item\em Create a rectangle the shows the amount of health the actor has remaining. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHealthBar_a698ad26d6a842a1365bf7655a7e69def}{draw\+Health\+Bar}} (sf\+::\+Render\+Window \&window, \mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} \&link)
+\begin{DoxyCompactList}\small\item\em Draws the healthbar to the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHealthBar_a2a55f0591eb2afb398ef7f512fde2c82}\label{classHealthBar_a2a55f0591eb2afb398ef7f512fde2c82}} 
+const float {\bfseries max\+Health} = 100
+\item 
+\mbox{\Hypertarget{classHealthBar_a23f47ac8e49fe7abbe30560f3acf5013}\label{classHealthBar_a23f47ac8e49fe7abbe30560f3acf5013}} 
+sf\+::\+Vector2f {\bfseries health\+Bar\+Size}
+\item 
+\mbox{\Hypertarget{classHealthBar_aa7ececd74ac938c7244d15bff93e0d67}\label{classHealthBar_aa7ececd74ac938c7244d15bff93e0d67}} 
+float {\bfseries current\+Health}
+\item 
+\mbox{\Hypertarget{classHealthBar_a4876beef8e90e9a8aecb37002077342d}\label{classHealthBar_a4876beef8e90e9a8aecb37002077342d}} 
+float {\bfseries current\+Health\+Percentage}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHealthBar_a05f694deecdc0399d9c5fb230493df05}\label{classHealthBar_a05f694deecdc0399d9c5fb230493df05}} 
+\index{HealthBar@{HealthBar}!HealthBar@{HealthBar}}
+\index{HealthBar@{HealthBar}!HealthBar@{HealthBar}}
+\subsubsection{\texorpdfstring{HealthBar()}{HealthBar()}}
+{\footnotesize\ttfamily Health\+Bar\+::\+Health\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Health Bar object. 
+
+\mbox{\Hypertarget{classHealthBar_a4a67801ba7a3b2e82e61d0cd02247771}\label{classHealthBar_a4a67801ba7a3b2e82e61d0cd02247771}} 
+\index{HealthBar@{HealthBar}!````~HealthBar@{$\sim$HealthBar}}
+\index{````~HealthBar@{$\sim$HealthBar}!HealthBar@{HealthBar}}
+\subsubsection{\texorpdfstring{$\sim$HealthBar()}{~HealthBar()}}
+{\footnotesize\ttfamily Health\+Bar\+::$\sim$\+Health\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Health Bar object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHealthBar_a61e6713d7078197e549d5d979d2b34c6}\label{classHealthBar_a61e6713d7078197e549d5d979d2b34c6}} 
+\index{HealthBar@{HealthBar}!calculateHealthPercentage@{calculateHealthPercentage}}
+\index{calculateHealthPercentage@{calculateHealthPercentage}!HealthBar@{HealthBar}}
+\subsubsection{\texorpdfstring{calculateHealthPercentage()}{calculateHealthPercentage()}}
+{\footnotesize\ttfamily void Health\+Bar\+::calculate\+Health\+Percentage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} \&}]{link }\end{DoxyParamCaption})}
+
+
+
+Calculates the percentage of health the character has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link} & The character to calculate the percentage of health remaining \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHealthBar_ab6275c757258bfa46f6416201bdd3c83}\label{classHealthBar_ab6275c757258bfa46f6416201bdd3c83}} 
+\index{HealthBar@{HealthBar}!createHealthAmountRect@{createHealthAmountRect}}
+\index{createHealthAmountRect@{createHealthAmountRect}!HealthBar@{HealthBar}}
+\subsubsection{\texorpdfstring{createHealthAmountRect()}{createHealthAmountRect()}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Health\+Bar\+::create\+Health\+Amount\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} \&}]{link }\end{DoxyParamCaption})}
+
+
+
+Create a rectangle the shows the amount of health the actor has remaining. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link} & The actor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sf\+::\+Rectangle\+Shape The healthbar 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHealthBar_a79b4a771bcf2dcea3723089e075451d0}\label{classHealthBar_a79b4a771bcf2dcea3723089e075451d0}} 
+\index{HealthBar@{HealthBar}!createOutlineRect@{createOutlineRect}}
+\index{createOutlineRect@{createOutlineRect}!HealthBar@{HealthBar}}
+\subsubsection{\texorpdfstring{createOutlineRect()}{createOutlineRect()}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Health\+Bar\+::create\+Outline\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} \&}]{link }\end{DoxyParamCaption})}
+
+
+
+Create the border of the healthbar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link} & The character to create the outline for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sf\+::\+Rectangle\+Shape The outline rectangle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHealthBar_a698ad26d6a842a1365bf7655a7e69def}\label{classHealthBar_a698ad26d6a842a1365bf7655a7e69def}} 
+\index{HealthBar@{HealthBar}!drawHealthBar@{drawHealthBar}}
+\index{drawHealthBar@{drawHealthBar}!HealthBar@{HealthBar}}
+\subsubsection{\texorpdfstring{drawHealthBar()}{drawHealthBar()}}
+{\footnotesize\ttfamily void Health\+Bar\+::draw\+Health\+Bar (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{\mbox{\hyperlink{classRose_1_1Character_1_1Actor}{Rose\+::\+Character\+::\+Actor}} \&}]{link }\end{DoxyParamCaption})}
+
+
+
+Draws the healthbar to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to draw to\\
+\hline
+{\em link} & The character who\textquotesingle{}s healthbar is being drawn \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Health\+Bar.\+h\item 
+Health\+Bar.\+cpp\end{DoxyCompactItemize}
